@@ -660,9 +660,9 @@ yazdır(selamla("Mehmet"))</code></pre>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
     <script src="/static/js/prism-hudhudscript.js"></script>
 
-    <script nonce="n-8eRzlWUgvTZnK_h6dPmOdrnW6I8HeF0IEUpEAGk2Q">
+    <script nonce="kG8xZME8NT3ZveATCJ6NmivN5303KLYNhYYrKg84e9M">
         window.SITE_LANGUAGE = 'en';
-        window.CSRF_TOKEN = '199f74eb80fbdfce2ec10b850ad095be7719a45de5875bf8799f3c16cdc82fd0';
+        window.CSRF_TOKEN = '07bfdbfa2d5de17e91eba6ddb379b6ee2ba1254f80e19e614cd847c63efc30d5';
 
         // Mobile menu toggle
         document.getElementById('mobile-menu-btn').addEventListener('click', function() {
@@ -855,36 +855,93 @@ yazdır(selamla("Mehmet"))</code></pre>
             };
         }
 
+        // Statik sitede genel dil değiştirme fonksiyonu
+        window.changeLanguage = function(targetLang) {
+            if (!targetLang) return;
+            
+            localStorage.setItem('hudhudscript_language', targetLang);
+            document.cookie = 'lang=' + targetLang + ';path=/;max-age=31536000;SameSite=Lax';
+
+            var path = window.location.pathname;
+
+            // Mevcut dil önekini yoldan kaldır
+            for (var i = 0; i < enabledLangs.length; i++) {
+                var l = enabledLangs[i];
+                if (l !== 'en') {
+                    if (path === '/' + l || path === '/' + l + '/') {
+                        path = '/';
+                        break;
+                    } else if (path.startsWith('/' + l + '/')) {
+                        path = path.substring(l.length + 1);
+                        break;
+                    }
+                }
+            }
+
+            if (!path.startsWith('/')) path = '/' + path;
+
+            // Hedef dile yönlendir
+            var newUrl;
+            if (targetLang === 'en') {
+                newUrl = path;
+            } else {
+                newUrl = '/' + targetLang + (path === '/' ? '/' : path);
+            }
+
+            window.location.href = newUrl;
+        };
+
         patchMultiLangCodeViewer();
 
         document.addEventListener('DOMContentLoaded', function() {
             patchMultiLangCodeViewer();
             initStaticProjectFiles();
 
-            // Genel dil değiştirici yönlendirmesi
+            // Dil seçici açılır menü öğelerini bağla
             document.querySelectorAll('.lang-dropdown-item').forEach(function(item) {
                 item.onclick = function(e) {
                     e.preventDefault();
                     e.stopPropagation();
                     var targetLang = this.getAttribute('data-lang');
-                    if (!targetLang || targetLang === currentLang) return;
-                    
-                    var path = window.location.pathname;
-                    for (var i = 0; i < enabledLangs.length; i++) {
-                        var l = enabledLangs[i];
-                        if (l !== 'en' && path.startsWith('/' + l + '/')) {
-                            path = path.substring(l.length + 1);
-                            break;
-                        } else if (l !== 'en' && path === '/' + l) {
-                            path = '/';
-                            break;
-                        }
+                    if (targetLang) {
+                        window.changeLanguage(targetLang);
                     }
-                    
-                    var newUrl = targetLang === 'en' ? path : ('/' + targetLang + (path.startsWith('/') ? path : '/' + path));
-                    window.location.href = newUrl;
                 };
             });
+
+            // Dahili linklerde mevcut dili koruma güvenlik ağı
+            if (currentLang !== 'en') {
+                document.addEventListener('click', function(e) {
+                    var link = e.target.closest('a');
+                    if (!link) return;
+                    var href = link.getAttribute('href');
+                    if (!href) return;
+
+                    if (href.startsWith('#') || href.startsWith('http://') || href.startsWith('https://') || href.startsWith('mailto:') || href.startsWith('javascript:')) return;
+                    if (href.startsWith('/static/') || href.startsWith('/api/')) return;
+
+                    if (href === '/' || href === '') {
+                        e.preventDefault();
+                        window.location.href = '/' + currentLang + '/';
+                        return;
+                    }
+
+                    if (href.startsWith('/') && !href.startsWith('/' + currentLang + '/') && href !== '/' + currentLang) {
+                        var startsWithOther = false;
+                        for (var i = 0; i < enabledLangs.length; i++) {
+                            var l = enabledLangs[i];
+                            if (l !== 'en' && (href.startsWith('/' + l + '/') || href === '/' + l)) {
+                                startsWithOther = true;
+                                break;
+                            }
+                        }
+                        if (!startsWithOther) {
+                            e.preventDefault();
+                            window.location.href = '/' + currentLang + href;
+                        }
+                    }
+                });
+            }
         });
     })();
     </script>
