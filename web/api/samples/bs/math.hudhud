@@ -1,0 +1,54 @@
+// BS - Math Module
+
+function add(a, b) {
+    vrati a + b;
+}
+
+function subtract(a, b) {
+    vrati a - b;
+}
+
+function multiply(a, b) {
+    vrati a * b;
+}
+
+function divide(a, b) {
+    ako (b == 0) {
+        štampaj("Error: Division by zero!");
+        vrati 0;
+    } inače {
+        vrati a / b;
+    }
+}
+
+function square(x) {
+    vrati x * x;
+}
+
+function cube(x) {
+    vrati x * x * x;
+}
+
+function abs(x) {
+    ako (x < 0) {
+        vrati -x;
+    } inače {
+        vrati x;
+    }
+}
+
+function max(a, b) {
+    ako (a > b) {
+        vrati a;
+    } inače {
+        vrati b;
+    }
+}
+
+function min(a, b) {
+    ako (a < b) {
+        vrati a;
+    } inače {
+        vrati b;
+    }
+}

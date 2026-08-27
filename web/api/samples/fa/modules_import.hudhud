@@ -1,0 +1,31 @@
+// FA - Modules Import Example
+
+// Import math module (direct access)
+استفاده "math.hudhud";
+
+// Import physics with alias (access via fizik.functionName)
+استفاده "physics.hudhud" به_عنوان fizik;
+
+// Import chemistry (direct access)
+استفاده "chemistry.hudhud";
+
+// Using math functions (direct)
+بگذار sum = add(10, 5);
+چاپ(sum);
+
+بگذار product = multiply(4, 7);
+چاپ(product);
+
+// Using physics functions (via alias: fizik.functionName)
+بگذار f = fizik.force(10, 9.8);
+چاپ(f);
+
+بگذار ke = fizik.kineticEnergy(5, 10);
+چاپ(ke);
+
+// Using chemistry functions (direct)
+بگذار d = density(100, 50);
+چاپ(d);
+
+بگذار c = concentration(2, 5);
+چاپ(c);

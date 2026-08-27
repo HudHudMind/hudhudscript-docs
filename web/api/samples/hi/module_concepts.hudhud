@@ -1,0 +1,42 @@
+// हिन्दी - Modules & Code Organization
+// Demonstrates module system: उपयोग_करो/आयात like Rust, Java, C++, Python
+
+// Import math module
+"math.hudhud" kullan;
+
+// Example syntax variations:
+// "math.hudhud" उपयोग_करो;
+// "math.hudhud" से { add, subtract } उपयोग_करो;
+// "math.hudhud" math के_रूप_में उपयोग_करो;
+
+// Using functions से math module
+मान_लो sum = add(10, 5);
+छापो(sum);
+
+मान_लो diff = subtract(20, 8);
+छापो(diff);
+
+मान_लो product = multiply(4, 7);
+छापो(product);
+
+मान_लो quotient = divide(15, 3);
+छापो(quotient);
+
+मान_लो squared = square(5);
+छापो(squared);
+
+मान_लो cubed = cube(3);
+छापो(cubed);
+
+मान_लो absolute = abs(-42);
+छापो(absolute);
+
+मान_लो maximum = max(100, 50);
+छापो(maximum);
+
+मान_लो minimum = min(100, 50);
+छापो(minimum);
+
+// Complex calculation using multiple functions
+मान_लो result = add(multiply(5, 3), divide(20, 4));
+छापो(result);

@@ -1,0 +1,13 @@
+// Português - Arrays
+// Arrays com palavras-chave nativas
+
+// Criar arrays
+seja números = [1, 2, 3, 4, 5];
+seja nomes = ["Alice", "Bruno", "Carlos"];
+
+// Acessar elementos
+seja primeiro = números[0];
+seja segundo = números[1];
+
+// Resultado
+primeiro;

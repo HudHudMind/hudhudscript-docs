@@ -1,0 +1,18 @@
+// Türkçe - Veri İşleme
+// Türkçe - Yerel anahtar kelimelerle veri işleme
+
+// Veri tanımla
+değişken değer1 = 100;
+değişken değer2 = 200;
+değişken değer3 = 300;
+
+// Hesapla
+değişken toplam = değer1+ değer2+ değer3;
+değişken ortalama = toplam / 3;
+
+// Koşullu işleme
+eğer (ortalama > 150) {
+    değişken durum_bilgisi = "yüksek";
+} değilse {
+    değişken durum_bilgisi = "düşük";
+}

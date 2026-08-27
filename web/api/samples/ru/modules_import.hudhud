@@ -1,0 +1,31 @@
+// Русский - Modules Import Example
+
+// Import math module (direct access)
+использовать "matematika.hudhud";
+
+// Import physics with alias (access via fizik.functionName)
+использовать "fizika.hudhud" как fizik;
+
+// Import chemistry (direct access)
+использовать "himiya.hudhud";
+
+// Using math functions (direct)
+пусть sum = сложить(10, 5);
+печать(sum);
+
+пусть product = умножить(4, 7);
+печать(product);
+
+// Using physics functions (via alias: fizik.functionName)
+пусть f = fizik.сила(10, 9.8);
+печать(f);
+
+пусть ke = fizik.кинетическаяЭнергия(5, 10);
+печать(ke);
+
+// Using chemistry functions (direct)
+пусть d = плотность(100, 50);
+печать(d);
+
+пусть c = концентрация(2, 5);
+печать(c);

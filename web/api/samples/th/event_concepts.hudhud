@@ -1,0 +1,36 @@
+// ภาษาไทย - Event Concepts
+
+เหตุการณ์ UserLogin {
+    พิมพ์("User logged in");
+}
+
+เหตุการณ์ DataReceived {
+    พิมพ์("Data received");
+}
+
+เหตุการณ์ ErrorOccurred {
+    พิมพ์("Error occurred");
+}
+
+ฟังก์ชัน on_login(username) {
+    พิมพ์("Login: " + username);
+    คืน "Welcome, " + username;
+}
+
+ฟังก์ชัน on_data(source) {
+    พิมพ์("Data from: " + source);
+    คืน "Processed: " + source;
+}
+
+ฟังก์ชัน on_error(message) {
+    พิมพ์("Error: " + message);
+    คืน "Handled: " + message;
+}
+
+พิมพ์("=== Event System ===");
+ให้ r1 = on_login("admin");
+พิมพ์(r1);
+ให้ r2 = on_data("sensor_1");
+พิมพ์(r2);
+ให้ r3 = on_error("timeout");
+พิมพ์(r3);

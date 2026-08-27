@@ -1,0 +1,19 @@
+// Deutsch - Demo
+funktion grüße(name) {
+    zurück "Hallo, " + name + "!";
+}
+
+funktion addiere(a, b) {
+    zurück a + b;
+}
+
+lasse nachricht = grüße("Welt");
+drucke(nachricht);
+
+lasse summe = 0;
+lasse zähler = 1;
+während (zähler <= 10) {
+    summe = addiere(summe, zähler);
+    zähler = zähler + 1;
+}
+drucke("Summe 1-10: " + summe);

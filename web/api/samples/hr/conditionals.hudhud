@@ -1,0 +1,14 @@
+// Hrvatski - Uvjetna logika
+neka bodovi = 85;
+
+ako (bodovi >= 90) {
+    ispiši(1000);
+} inače {
+    ako (bodovi >= 80) {
+        ispiši(2000);
+    } inače {
+        ispiši(3000);
+    }
+}
+
+ispiši(999);

@@ -1,0 +1,21 @@
+// Français - Physics Module
+
+fonction vitesse(distance, time) {
+    retourner distance / time;
+}
+
+fonction force(mass, acceleration) {
+    retourner mass * acceleration;
+}
+
+fonction energieCinetique(mass, velocity) {
+    retourner 0.5 * mass * velocity * velocity;
+}
+
+fonction energiePotentielle(mass, gravity, height) {
+    retourner mass * gravity * height;
+}
+
+fonction quantite(mass, velocity) {
+    retourner mass * velocity;
+}

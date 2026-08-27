@@ -1,0 +1,9 @@
+// State Machine Example
+ให้ state = "initial";
+
+ถ้า (state == "initial") {
+    พิมพ์("Starting");
+    state = "running";
+}
+
+พิมพ์(state);

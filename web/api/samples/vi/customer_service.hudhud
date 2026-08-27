@@ -1,0 +1,8 @@
+// Tiếng Việt - Nhân viên dịch vụ khách hàng
+// Sử dụng từ khóa tiếng Việt
+
+đặt lời_chào = "Xin chào, tôi có thể giúp gì cho bạn?";
+đặt phản_hồi = "Tôi sẽ hỗ trợ yêu cầu của bạn.";
+
+in_ra(lời_chào);
+in_ra(phản_hồi);

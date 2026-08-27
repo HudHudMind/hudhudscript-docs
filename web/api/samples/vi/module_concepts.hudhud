@@ -1,0 +1,42 @@
+// Tiếng Việt - Modules & Code Organization
+// Demonstrates module system: sử_dụng/nhập like Rust, Java, C++, Python
+
+// Import math module
+sử_dụng "math.hudhud";
+
+// Example syntax variations:
+// sử_dụng "math.hudhud";
+// sử_dụng { add, subtract } từ "math.hudhud";
+// sử_dụng "math.hudhud" như math;
+
+// Using functions từ math module
+cho sum = add(10, 5);
+in_ra(sum);
+
+cho diff = subtract(20, 8);
+in_ra(diff);
+
+cho product = multiply(4, 7);
+in_ra(product);
+
+cho quotient = divide(15, 3);
+in_ra(quotient);
+
+cho squared = square(5);
+in_ra(squared);
+
+cho cubed = cube(3);
+in_ra(cubed);
+
+cho absolute = abs(-42);
+in_ra(absolute);
+
+cho maximum = max(100, 50);
+in_ra(maximum);
+
+cho minimum = min(100, 50);
+in_ra(minimum);
+
+// Complex calculation using multiple functions
+cho result = add(multiply(5, 3), divide(20, 4));
+in_ra(result);

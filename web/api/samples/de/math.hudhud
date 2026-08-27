@@ -1,0 +1,63 @@
+// DE - Math Module
+
+// Addition
+function add(a, b) {
+    zurück a + b;
+}
+
+// Subtraction
+function subtract(a, b) {
+    zurück a - b;
+}
+
+// Multiplication
+function multiply(a, b) {
+    zurück a * b;
+}
+
+// Division
+function divide(a, b) {
+    wenn (b == 0) {
+        drucken("Error: Division by zero!");
+        zurück 0;
+    } sonst {
+        zurück a / b;
+    }
+}
+
+// Square
+function square(x) {
+    zurück x * x;
+}
+
+// Cube
+function cube(x) {
+    zurück x * x * x;
+}
+
+// Absolute value
+function abs(x) {
+    wenn (x < 0) {
+        zurück -x;
+    } sonst {
+        zurück x;
+    }
+}
+
+// Maximum
+function max(a, b) {
+    wenn (a > b) {
+        zurück a;
+    } sonst {
+        zurück b;
+    }
+}
+
+// Minimum
+function min(a, b) {
+    wenn (a < b) {
+        zurück a;
+    } sonst {
+        zurück b;
+    }
+}

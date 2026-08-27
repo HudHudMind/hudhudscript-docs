@@ -1,0 +1,21 @@
+// FA - Physics Module
+
+تابع speed(distance, time) {
+    برگردان distance / time;
+}
+
+تابع force(mass, acceleration) {
+    برگردان mass * acceleration;
+}
+
+تابع kineticEnergy(mass, velocity) {
+    برگردان 0.5 * mass * velocity * velocity;
+}
+
+تابع potentialEnergy(mass, gravity, height) {
+    برگردان mass * gravity * height;
+}
+
+تابع momentum(mass, velocity) {
+    برگردان mass * velocity;
+}

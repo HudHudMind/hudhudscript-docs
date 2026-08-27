@@ -1,0 +1,6 @@
+// Tiếng Việt - Basic Example with NATIVE keywords
+biến a = 10;
+biến b = 20;
+biến tổng = a + b;
+
+in_ra(tổng);

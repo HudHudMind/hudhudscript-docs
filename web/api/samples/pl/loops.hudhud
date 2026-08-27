@@ -1,0 +1,10 @@
+// Polski - Pętle
+niech licznik = 0;
+niech maksimum = 5;
+
+dopóki (licznik < maksimum) {
+    drukuj(licznik);
+    licznik = licznik + 1;
+}
+
+drukuj(999);

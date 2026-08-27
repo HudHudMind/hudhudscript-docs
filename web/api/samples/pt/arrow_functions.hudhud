@@ -1,0 +1,27 @@
+// Portugues - Funcoes Seta
+// Sintaxe moderna e concisa para funcoes
+
+// Funcao seta - sintaxe curta
+seja somar = (a, b) => a + b;
+seja multiplicar = (x, y) => x * y;
+
+imprima(somar(5, 3));      // 8
+imprima(multiplicar(4, 7)); // 28
+
+// Funcao seta com bloco
+seja calcular = (a, b) => {
+    seja soma = a + b;
+    seja produto = a * b;
+    retorna soma + produto;
+};
+
+seja resultado = calcular(5, 3);
+imprima(resultado);  // 23 (8 + 15)
+
+// Parametro unico (sem necessidade de parenteses)
+seja quadrado = x => x * x;
+imprima(quadrado(6));  // 36
+
+// Sem parametros
+seja saudar = () => "Ola!";
+imprima(saudar());  // Ola!

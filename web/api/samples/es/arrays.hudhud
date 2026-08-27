@@ -1,0 +1,13 @@
+// Español - Arreglos
+// Arreglos con palabras clave nativas
+
+// Crear arreglos
+sea números = [1, 2, 3, 4, 5];
+sea nombres = ["Alicia", "Roberto", "Carlos"];
+
+// Acceder a elementos
+sea primero = números[0];
+sea segundo = números[1];
+
+// Resultado
+primero;

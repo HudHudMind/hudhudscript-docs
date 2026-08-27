@@ -1,0 +1,42 @@
+// 中文 - Modules & Code Organization
+// Demonstrates module system: 使用/导入 like Rust, Java, C++, Python
+
+// Import math module
+使用 "math.hudhud";
+
+// Example syntax variations:
+// 使用 "math.hudhud";
+// 使用 { add, subtract } 从 "math.hudhud";
+// 使用 "math.hudhud" 作为 math;
+
+// Using functions 从 math module
+变量 sum = add(10, 5);
+打印(sum);
+
+变量 diff = subtract(20, 8);
+打印(diff);
+
+变量 product = multiply(4, 7);
+打印(product);
+
+变量 quotient = divide(15, 3);
+打印(quotient);
+
+变量 squared = square(5);
+打印(squared);
+
+变量 cubed = cube(3);
+打印(cubed);
+
+变量 absolute = abs(-42);
+打印(absolute);
+
+变量 maximum = max(100, 50);
+打印(maximum);
+
+变量 minimum = min(100, 50);
+打印(minimum);
+
+// Complex calculation using multiple functions
+变量 result = add(multiply(5, 3), divide(20, 4));
+打印(result);

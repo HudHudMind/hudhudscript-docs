@@ -1,0 +1,17 @@
+// Español - Función de saludo
+
+función saluda(nombre) {
+    sea mensaje = "Hola, " + nombre + "!";
+    imprime(mensaje);
+    retornar mensaje;
+}
+
+función suma(a, b) {
+    retornar a + b;
+}
+
+sea resultado = saluda("Mundo");
+imprime(resultado);
+
+sea total = suma(42, 58);
+imprime("suma: " + total);

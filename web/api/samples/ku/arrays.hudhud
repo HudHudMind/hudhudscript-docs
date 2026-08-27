@@ -1,0 +1,13 @@
+// Kurdi - Arrays
+// Arrays with native keywords
+
+// Create arrays
+guherbar jimarekan = [1, 2, 3, 4, 5];
+guherbar navan = ["Ehmed", "Fatma", "Hesen"];
+
+// Access elements
+guherbar yekem = jimarekan[0];
+guherbar duyem = jimarekan[1];
+
+// Result
+yekem;

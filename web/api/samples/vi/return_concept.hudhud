@@ -1,0 +1,44 @@
+// Tiếng Việt - Khái niệm Trả về
+// return
+
+hàm bình_phương(x) {
+    trả về x * x;
+}
+
+hàm lập_phương(x) {
+    trả về x * x * x;
+}
+
+print("=== Math Functions ===");
+print("bình_phương(5): " + bình_phương(5));
+print("lập_phương(3): " + lập_phương(3));
+
+hàm tuyệt_đối(x) {
+    nếu (x < 0) {
+        trả về -x;
+    }
+    trả về x;
+}
+
+print("\n=== Absolute ===");
+print("tuyệt_đối(-7): " + tuyệt_đối(-7));
+print("tuyệt_đối(3): " + tuyệt_đối(3));
+
+hàm tạo_điểm(x, y) {
+    trả về { x: x, y: y };
+}
+
+đặt p = tạo_điểm(10, 20);
+print("\n=== Point ===");
+print("Point: (" + p.x + ", " + p.y + ")");
+
+hàm factorial(n) {
+    nếu (n <= 1) {
+        trả về 1;
+    }
+    trả về n * factorial(n - 1);
+}
+
+print("\n=== Factorial ===");
+print("5! = " + factorial(5));
+print("10! = " + factorial(10));

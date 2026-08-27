@@ -1,0 +1,9 @@
+// State Machine Example
+değişken state = "initial";
+
+eğer (state == "initial") {
+    yaz("Starting");
+    state = "running";
+}
+
+yaz(state);

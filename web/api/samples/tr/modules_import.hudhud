@@ -1,0 +1,31 @@
+// Türkçe - Modül İçe Aktarma Örneği
+
+// Matematik modülünü içe aktar (cebir.topla() şeklinde erişilir)
+"cebir.hudhud" kullan
+
+// Fizik modülünü takma adla içe aktar (fizik.kuvvet() şeklinde)
+"fizik.hudhud" fizik olarak kullan
+
+// Kimya modülünü içe aktar (kimya.yogunluk() şeklinde erişilir)
+"kimya.hudhud" kullan
+
+// Matematik fonksiyonları (modül adı üzerinden)
+değişken toplam = cebir.topla(10, 5)
+yaz(toplam)
+
+değişken hesap = cebir.carp(4, 7)
+yaz(hesap)
+
+// Fizik fonksiyonları (takma ad: fizik)
+değişken f = fizik.kuvvet(10, 9.8)
+yaz(f)
+
+değişken ke = fizik.kinetikEnerji(5, 10)
+yaz(ke)
+
+// Kimya fonksiyonları (modül adı üzerinden)
+değişken d = kimya.yogunluk(100, 50)
+yaz(d)
+
+değişken c = kimya.konsantrasyon(2, 5)
+yaz(c)

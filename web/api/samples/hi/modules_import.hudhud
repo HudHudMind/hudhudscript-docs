@@ -1,0 +1,31 @@
+// HI - Modules Import Example
+
+// Import math module (direct access)
+उपयोग_करो "math.hudhud";
+
+// Import physics with alias (access via fizik.functionName)
+उपयोग_करो "physics.hudhud" के_रूप_में fizik;
+
+// Import chemistry (direct access)
+उपयोग_करो "chemistry.hudhud";
+
+// Using math functions (direct)
+मान_लो sum = add(10, 5);
+प्रिंट(sum);
+
+मान_लो product = multiply(4, 7);
+प्रिंट(product);
+
+// Using physics functions (via alias: fizik.functionName)
+मान_लो f = fizik.force(10, 9.8);
+प्रिंट(f);
+
+मान_लो ke = fizik.kineticEnergy(5, 10);
+प्रिंट(ke);
+
+// Using chemistry functions (direct)
+मान_लो d = density(100, 50);
+प्रिंट(d);
+
+मान_लो c = concentration(2, 5);
+प्रिंट(c);

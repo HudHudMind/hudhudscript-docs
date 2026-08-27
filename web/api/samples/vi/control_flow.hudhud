@@ -1,0 +1,23 @@
+// Tiếng Việt - Luồng Điều Khiển
+biến bộ_đếm = 0;
+biến tối_đa = 5;
+
+// Loop
+trong_khi (bộ_đếm < tối_đa) {
+    bộ_đếm = bộ_đếm + 1;
+}
+
+// Conditional
+biến điểm = 85;
+
+nếu (điểm >= 90) {
+    điểm;
+} nếu_không {
+    nếu (điểm >= 80) {
+        điểm;
+    } nếu_không {
+        điểm;
+    }
+}
+
+bộ_đếm;

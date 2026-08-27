@@ -1,0 +1,42 @@
+// ไทย - Modules & Code Organization
+// Demonstrates module system: ใช้/นำเข้า like Rust, Java, C++, Python
+
+// Import math module
+ใช้ "math.hudhud";
+
+// Example syntax variations:
+// ใช้ "math.hudhud";
+// ใช้ { add, subtract } จาก "math.hudhud";
+// ใช้ "math.hudhud" เป็น math;
+
+// Using functions จาก math module
+ให้ sum = add(10, 5);
+พิมพ์(sum);
+
+ให้ diff = subtract(20, 8);
+พิมพ์(diff);
+
+ให้ product = multiply(4, 7);
+พิมพ์(product);
+
+ให้ quotient = divide(15, 3);
+พิมพ์(quotient);
+
+ให้ squared = square(5);
+พิมพ์(squared);
+
+ให้ cubed = cube(3);
+พิมพ์(cubed);
+
+ให้ absolute = abs(-42);
+พิมพ์(absolute);
+
+ให้ maximum = max(100, 50);
+พิมพ์(maximum);
+
+ให้ minimum = min(100, 50);
+พิมพ์(minimum);
+
+// Complex calculation using multiple functions
+ให้ result = add(multiply(5, 3), divide(20, 4));
+พิมพ์(result);

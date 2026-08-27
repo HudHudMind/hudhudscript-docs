@@ -1,0 +1,12 @@
+// Indonesia - Logika kondisional
+biar nilai = 85;
+
+jika (nilai >= 90) {
+    nilai;
+} kalau {
+    jika (nilai >= 80) {
+        nilai;
+    } kalau {
+        nilai;
+    }
+}

@@ -1,0 +1,36 @@
+// Русский - Event Concepts
+
+событие UserLogin {
+    печать("User logged in");
+}
+
+событие DataReceived {
+    печать("Data received");
+}
+
+событие ErrorOccurred {
+    печать("Error occurred");
+}
+
+функция on_login(username) {
+    печать("Login: " + username);
+    вернуть "Welcome, " + username;
+}
+
+функция on_data(source) {
+    печать("Data from: " + source);
+    вернуть "Processed: " + source;
+}
+
+функция on_error(message) {
+    печать("Error: " + message);
+    вернуть "Handled: " + message;
+}
+
+печать("=== Event System ===");
+пусть r1 = on_login("admin");
+печать(r1);
+пусть r2 = on_data("sensor_1");
+печать(r2);
+пусть r3 = on_error("timeout");
+печать(r3);

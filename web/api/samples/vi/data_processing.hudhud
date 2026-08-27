@@ -1,0 +1,12 @@
+// Tiếng Việt - Data Processing
+// Using NATIVE Tiếng Việt keywords
+
+cho data1 = 100;
+cho data2 = 200;
+cho data3 = 300;
+
+cho total = value1+ value2+ value3;
+cho average = total / 3;
+
+in_ra(total);
+in_ra(average);

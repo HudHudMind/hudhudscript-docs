@@ -1,0 +1,21 @@
+// Italiano - Modulo di chimica
+
+funzione massa_molare(atomi, peso_atomico) {
+    ritorna atomi * peso_atomico;
+}
+
+funzione concentrazione(moli, volume) {
+    ritorna moli / volume;
+}
+
+funzione pH(concentrazione_idrogeno) {
+    ritorna 14 - concentrazione_idrogeno;
+}
+
+funzione densità(massa, volume) {
+    ritorna massa / volume;
+}
+
+funzione diluizione(c1, v1, v2) {
+    ritorna (c1 * v1) / v2;
+}

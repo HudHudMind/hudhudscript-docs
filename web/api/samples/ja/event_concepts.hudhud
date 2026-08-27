@@ -1,0 +1,36 @@
+// 日本語 - Event Concepts
+
+イベント UserLogin {
+    表示("User logged in");
+}
+
+イベント DataReceived {
+    表示("Data received");
+}
+
+イベント ErrorOccurred {
+    表示("Error occurred");
+}
+
+関数 on_login(username) {
+    表示("Login: " + username);
+    返す "Welcome, " + username;
+}
+
+関数 on_data(source) {
+    表示("Data from: " + source);
+    返す "Processed: " + source;
+}
+
+関数 on_error(message) {
+    表示("Error: " + message);
+    返す "Handled: " + message;
+}
+
+表示("=== Event System ===");
+変数 r1 = on_login("admin");
+表示(r1);
+変数 r2 = on_data("sensor_1");
+表示(r2);
+変数 r3 = on_error("timeout");
+表示(r3);

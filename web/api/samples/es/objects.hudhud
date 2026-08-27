@@ -1,0 +1,16 @@
+// Español - Objetos
+// Objetos con palabras clave nativas
+
+// Crear objeto
+sea persona = {
+    nombre: "Alicia",
+    edad: 30,
+    ciudad: "Madrid"
+};
+
+// Acceder a propiedades
+sea nombre = persona.nombre;
+sea edad = persona.edad;
+
+// Resultado
+nombre;

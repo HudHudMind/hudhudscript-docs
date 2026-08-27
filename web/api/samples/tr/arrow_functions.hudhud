@@ -1,0 +1,27 @@
+// Türkçe - Ok Fonksiyonları
+// Fonksiyonlar için modern, kısa sözdizimi
+
+// Ok fonksiyonu - kısa sözdizimi
+değişken topla = (a, b) => a + b;
+değişken çarp = (x, y) => x * y;
+
+yazdır(topla(5, 3));      // 8
+yazdır(çarp(4, 7)); // 28
+
+// Bloklu ok fonksiyonu
+değişken hesapla = (a, b) => {
+    değişken toplam = a + b;
+    değişken çarpım = a * b;
+    dön toplam + çarpım;
+};
+
+değişken sonuç = hesapla(5, 3);
+yazdır(sonuç);  // 23 (8 + 15)
+
+// Tek parametre (parantez gerekmez)
+değişken kare = x => x * x;
+yazdır(kare(6));  // 36
+
+// Parametresiz
+değişken selamla = () => "Merhaba!";
+yazdır(selamla());  // Merhaba!

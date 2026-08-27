@@ -1,0 +1,8 @@
+// Português - Agente de Atendimento ao Cliente
+// Usando palavras-chave NATIVAS do Português
+
+seja saudação = "Olá, como posso ajudá-lo?";
+seja resposta = "Vou ajudá-lo com o seu pedido.";
+
+imprima(saudação);
+imprima(resposta);

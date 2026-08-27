@@ -1,0 +1,31 @@
+// PT - Modules Import Example
+
+// Import math module (direct access)
+usar "math.hudhud";
+
+// Import physics with alias (access via fizik.functionName)
+usar "physics.hudhud" como fizik;
+
+// Import chemistry (direct access)
+usar "chemistry.hudhud";
+
+// Using math functions (direct)
+variável sum = add(10, 5);
+imprimir(sum);
+
+variável product = multiply(4, 7);
+imprimir(product);
+
+// Using physics functions (via alias: fizik.functionName)
+variável f = fizik.force(10, 9.8);
+imprimir(f);
+
+variável ke = fizik.kineticEnergy(5, 10);
+imprimir(ke);
+
+// Using chemistry functions (direct)
+variável d = density(100, 50);
+imprimir(d);
+
+variável c = concentration(2, 5);
+imprimir(c);

@@ -1,0 +1,60 @@
+// Polski - Koncepcje Switch/Case
+// switch/case/default
+
+funkcja typ_dnia(day) {
+    wybierz (day) {
+        przypadek "Monday":
+        przypadek "Tuesday":
+        przypadek "Wednesday":
+        przypadek "Thursday":
+        przypadek "Friday":
+            zwróć "Dzień roboczy";
+        przypadek "Saturday":
+        przypadek "Sunday":
+            zwróć "Weekend";
+        domyślnie:
+            zwróć "Nieznany";
+    }
+}
+
+drukuj("=== Day Types ===");
+drukuj("Monday: " + typ_dnia("Monday"));
+drukuj("Saturday: " + typ_dnia("Saturday"));
+drukuj("Holiday: " + typ_dnia("Holiday"));
+
+funkcja litera_oceny(score) {
+    wybierz (score) {
+        przypadek 90:
+            zwróć "A";
+        przypadek 80:
+            zwróć "B";
+        przypadek 70:
+            zwróć "C";
+        przypadek 60:
+            zwróć "D";
+        domyślnie:
+            zwróć "F";
+    }
+}
+
+drukuj("\n=== Grades ===");
+drukuj("90: " + litera_oceny(90));
+drukuj("70: " + litera_oceny(70));
+drukuj("50: " + litera_oceny(50));
+
+funkcja komunikat_statusu(code) {
+    wybierz (code) {
+        przypadek 200:
+            zwróć "OK";
+        przypadek 404:
+            zwróć "Not Found";
+        przypadek 500:
+            zwróć "Server Error";
+        domyślnie:
+            zwróć "Nieznany Status";
+    }
+}
+
+drukuj("\n=== HTTP Status ===");
+drukuj("200: " + komunikat_statusu(200));
+drukuj("404: " + komunikat_statusu(404));

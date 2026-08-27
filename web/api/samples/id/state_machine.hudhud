@@ -1,0 +1,9 @@
+// State Machine Example
+biarkan state = "initial";
+
+jika (state == "initial") {
+    cetak("Starting");
+    state = "running";
+}
+
+cetak(state);

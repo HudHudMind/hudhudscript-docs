@@ -1,0 +1,13 @@
+// Kurdi - Lup
+// Minaken lupe bi peyven esli
+
+// Lupa sade - berhevok ji 1 heta 5
+bila berhevok = 0;
+bila jimarvan = 1;
+
+dema (jimarvan <= 5) {
+    berhevok = berhevok + jimarvan;
+    jimarvan = jimarvan + 1;
+}
+
+berhevok;

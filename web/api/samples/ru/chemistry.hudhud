@@ -1,0 +1,26 @@
+// RU - Chemistry Module
+
+// Molar Mass
+функция molarMass(atoms, atomicWeight) {
+    вернуть atoms * atomicWeight;
+}
+
+// Concentration = Moles / Volume
+функция concentration(moles, volume) {
+    вернуть moles / volume;
+}
+
+// pH calculation
+функция pH(hydrogenConcentration) {
+    вернуть 14 - hydrogenConcentration;
+}
+
+// Density = Mass / Volume
+функция density(mass, volume) {
+    вернуть mass / volume;
+}
+
+// Dilution: C1*V1 = C2*V2
+функция dilution(c1, v1, v2) {
+    вернуть (c1 * v1) / v2;
+}

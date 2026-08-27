@@ -1,0 +1,38 @@
+// Italiano - Concetti di Entità
+
+sia utente = {
+    id: 1,
+    nome: "Alice",
+    email: "alice@esempio.com",
+    ruolo: "sviluppatore"
+};
+
+sia prodotto = {
+    id: 101,
+    nome: "HudHudScript IDE",
+    versione: "2.0",
+    prezzo: 49
+};
+
+sia ordine = {
+    id: 1001,
+    id_utente: 1,
+    id_prodotto: 101,
+    quantità: 2,
+    stato: "confermato"
+};
+
+funzione info_entità(entità) {
+    ritorna "Entità #" + entità.id + ": " + entità.nome;
+}
+
+funzione calcola_totale(ordine, prezzo) {
+    ritorna ordine.quantità * prezzo;
+}
+
+stampa("=== Sistema di Entità ===");
+stampa(info_entità(utente));
+stampa(info_entità(prodotto));
+sia totale = calcola_totale(ordine, prodotto.prezzo);
+stampa("Ordine #" + ordine.id + " totale: " + totale);
+stampa("Stato: " + ordine.stato);

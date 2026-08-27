@@ -1,0 +1,36 @@
+// हिन्दी - Event Concepts
+
+घटना UserLogin {
+    प्रिंट("User logged in");
+}
+
+घटना DataReceived {
+    प्रिंट("Data received");
+}
+
+घटना ErrorOccurred {
+    प्रिंट("Error occurred");
+}
+
+फ़ंक्शन on_login(username) {
+    प्रिंट("Login: " + username);
+    वापस "Welcome, " + username;
+}
+
+फ़ंक्शन on_data(source) {
+    प्रिंट("Data from: " + source);
+    वापस "Processed: " + source;
+}
+
+फ़ंक्शन on_error(message) {
+    प्रिंट("Error: " + message);
+    वापस "Handled: " + message;
+}
+
+प्रिंट("=== Event System ===");
+मान r1 = on_login("admin");
+प्रिंट(r1);
+मान r2 = on_data("sensor_1");
+प्रिंट(r2);
+मान r3 = on_error("timeout");
+प्रिंट(r3);

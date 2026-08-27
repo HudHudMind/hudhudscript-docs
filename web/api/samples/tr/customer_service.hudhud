@@ -1,0 +1,35 @@
+// Türkçe - Müşteri Hizmetleri Ajanı
+
+yasa saygi_yasasi {
+    açıklama: "Ajan nazik ve saygılı olmalıdır",
+    öncelik: 1
+}
+
+anayasa hizmet_anayasasi {
+    yasalar: [saygi_yasasi],
+    açıklama: "Müşteri hizmetleri çerçevesi"
+}
+
+ajan hizmet_ajanı {
+    model: "gpt-4"
+}
+
+işlev karşıla(müşteri_adı) {
+    değişken mesaj = "Merhaba " + müşteri_adı + ", size nasıl yardımcı olabilirim?";
+    yazdır(mesaj);
+    dön mesaj;
+}
+
+işlev talep_işle(tür, detay) {
+    eğer (tür == "şikayet") {
+        yazdır("Rahatsızlık için özür dilerim. Sorununuzu çözmek için buradayım.");
+    } değilse {
+        yazdır("İletişime geçtiğiniz için teşekkürler. Talebinizi şimdi işliyorum.");
+    }
+    dön "İşlendi: " + tür + " - " + detay;
+}
+
+yazdır("=== Müşteri Hizmetleri Ajanı ===");
+karşıla("Ahmet");
+değişken sonuç = talep_işle("şikayet", "kargo gecikmesi");
+yazdır(sonuç);

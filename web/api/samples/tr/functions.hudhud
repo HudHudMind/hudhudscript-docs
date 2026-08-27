@@ -1,0 +1,58 @@
+// Türkçe - Fonksiyonlar
+// Fonksiyon tanımlama ve kullanma örnekleri
+
+// Basit fonksiyon
+işlev selamla() {
+    yaz("Merhaba Dünya!");
+}
+
+// Parametreli fonksiyon
+işlev topla(a, b) {
+    dön a + b;
+}
+
+// Çoklu parametreli fonksiyon
+işlev hesapla(sayı1, sayı2, işlem) {
+    eğer (işlem == "topla") {
+        dön sayı1 + sayı2;
+    } değilse ama (işlem == "çıkar") {
+        dön sayı1 - sayı2;
+    } değilse ama (işlem == "çarp") {
+        dön sayı1 * sayı2;
+    } değilse ama (işlem == "böl") {
+        dön sayı1 / sayı2;
+    } hiçbiri değilse {
+        dön 0;
+    }
+}
+
+// Matematiksel fonksiyonlar
+işlev kare(x) {
+    dön x * x;
+}
+
+işlev küp(x) {
+    dön x * x * x;
+}
+
+// Fonksiyonları kullanma
+selamla();
+
+değişken sonuç1 = topla(5, 3);
+yaz(sonuç1);
+
+değişken sonuç2 = hesapla(10, 5, "topla");
+yaz(sonuç2);
+
+değişken sonuç3 = hesapla(10, 5, "çarp");
+yaz(sonuç3);
+
+değişken kare_sonuç = kare(4);
+yaz(kare_sonuç);
+
+değişken küp_sonuç = küp(3);
+yaz(küp_sonuç);
+
+// Fonksiyon ile hesaplama
+değişken toplam = topla(kare(3), küp(2));
+yaz(toplam);

@@ -1,0 +1,42 @@
+// Español - Conceptos Switch/Case
+// Usando if-else para condiciones múltiples
+
+función tipo_dia(dia) {
+    si (dia == "Lunes") { devolver "Día laborable"; }
+    si (dia == "Martes") { devolver "Día laborable"; }
+    si (dia == "Miércoles") { devolver "Día laborable"; }
+    si (dia == "Jueves") { devolver "Día laborable"; }
+    si (dia == "Viernes") { devolver "Día laborable"; }
+    si (dia == "Sábado") { devolver "Fin de semana"; }
+    si (dia == "Domingo") { devolver "Fin de semana"; }
+    devolver "Desconocido";
+}
+
+imprimir("=== Tipos de Día ===");
+imprimir("Lunes: " + tipo_dia("Lunes"));
+imprimir("Sábado: " + tipo_dia("Sábado"));
+imprimir("Feriado: " + tipo_dia("Feriado"));
+
+función letra_grado(puntaje) {
+    si (puntaje == 90) { devolver "A"; }
+    si (puntaje == 80) { devolver "B"; }
+    si (puntaje == 70) { devolver "C"; }
+    si (puntaje == 60) { devolver "D"; }
+    devolver "F";
+}
+
+imprimir("=== Calificaciones ===");
+imprimir("90: " + letra_grado(90));
+imprimir("70: " + letra_grado(70));
+imprimir("50: " + letra_grado(50));
+
+función mensaje_estado(código) {
+    si (código == 200) { devolver "OK"; }
+    si (código == 404) { devolver "No encontrado"; }
+    si (código == 500) { devolver "Error del servidor"; }
+    devolver "Estado desconocido";
+}
+
+imprimir("=== Estado HTTP ===");
+imprimir("200: " + mensaje_estado(200));
+imprimir("404: " + mensaje_estado(404));

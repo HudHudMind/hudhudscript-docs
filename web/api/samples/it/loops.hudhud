@@ -1,0 +1,10 @@
+// Italiano - Esempio di ciclo
+sia contatore = 0;
+sia massimo = 5;
+
+mentre (contatore < massimo) {
+    stampa(contatore);
+    contatore = contatore + 1;
+}
+
+stampa(999);

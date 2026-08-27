@@ -1,0 +1,14 @@
+// Italiano - Logica condizionale
+sia punteggio = 85;
+
+se (punteggio >= 90) {
+    stampa(1000);
+} altrimenti {
+    se (punteggio >= 80) {
+        stampa(2000);
+    } altrimenti {
+        stampa(3000);
+    }
+}
+
+stampa(999);

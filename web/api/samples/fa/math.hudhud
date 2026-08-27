@@ -1,0 +1,54 @@
+// FA - Math Module
+
+function add(a, b) {
+    برگردان a + b;
+}
+
+function subtract(a, b) {
+    برگردان a - b;
+}
+
+function multiply(a, b) {
+    برگردان a * b;
+}
+
+function divide(a, b) {
+    اگر (b == 0) {
+        چاپ("Error: Division by zero!");
+        برگردان 0;
+    } وگرنه {
+        برگردان a / b;
+    }
+}
+
+function square(x) {
+    برگردان x * x;
+}
+
+function cube(x) {
+    برگردان x * x * x;
+}
+
+function abs(x) {
+    اگر (x < 0) {
+        برگردان -x;
+    } وگرنه {
+        برگردان x;
+    }
+}
+
+function max(a, b) {
+    اگر (a > b) {
+        برگردان a;
+    } وگرنه {
+        برگردان b;
+    }
+}
+
+function min(a, b) {
+    اگر (a < b) {
+        برگردان a;
+    } وگرنه {
+        برگردان b;
+    }
+}

@@ -1,0 +1,17 @@
+// English - Greeting Function
+
+function greet(name) {
+    let message = "Hello, " + name + "!";
+    print(message);
+    return message;
+}
+
+function add(a, b) {
+    return a + b;
+}
+
+let result = greet("World");
+print(result);
+
+let sum = add(42, 58);
+print("sum: " + sum);

@@ -1,0 +1,19 @@
+// Polski - Demo
+funkcja powitaj(imię) {
+    zwróć "Cześć, " + imię + "!";
+}
+
+funkcja dodaj(a, b) {
+    zwróć a + b;
+}
+
+niech wiadomość = powitaj("Świat");
+drukuj(wiadomość);
+
+niech suma = 0;
+niech licznik = 1;
+podczas (licznik <= 10) {
+    suma = dodaj(suma, licznik);
+    licznik = licznik + 1;
+}
+drukuj("Suma 1-10: " + suma);

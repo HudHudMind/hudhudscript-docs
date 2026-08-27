@@ -1,0 +1,21 @@
+// EL - Chemistry Module
+
+συνάρτηση molarMass(atoms, atomicWeight) {
+    επιστροφή atoms * atomicWeight;
+}
+
+συνάρτηση concentration(moles, volume) {
+    επιστροφή moles / volume;
+}
+
+συνάρτηση pH(hydrogenConcentration) {
+    επιστροφή 14 - hydrogenConcentration;
+}
+
+συνάρτηση density(mass, volume) {
+    επιστροφή mass / volume;
+}
+
+συνάρτηση dilution(c1, v1, v2) {
+    επιστροφή (c1 * v1) / v2;
+}

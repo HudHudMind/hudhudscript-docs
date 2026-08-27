@@ -1,0 +1,133 @@
+// LOOPCHAIN
+// Every delivery stage leaves real file, execution, patch, or diff evidence.
+
+chain DeliveryPipeline {
+    loop Plan {
+        step write_plan {
+            let stage = Temp.dir("hudhud-plan-");
+            let plan_file = stage.path + "/plan.md";
+            let plan = "# Plan\n1. Generate code\n2. Run tests\n3. Review diff\n";
+
+            file.write(plan_file, plan);
+            result.bytes = file.read(plan_file).length;
+            print("Plan: " + plan_file);
+
+            gate plan_gate {
+                when result.bytes == plan.length -> done
+                else -> retry
+            }
+        }
+    }
+    on_done: next
+    on_fail: fail
+
+    loop Build {
+        step generate_program {
+            let stage = Temp.dir("hudhud-compile-");
+            let app_file = stage.path + "/app.js";
+
+            file.write(app_file, "console.log(['lexer', 'parser', 'vm'].length);\n");
+            result.output = exec.output("node " + app_file);
+            print("Compiled module count: " + result.output);
+
+            gate build_gate {
+                when result.output.length == 2 -> done
+                else -> retry
+            }
+        }
+    }
+    on_done: next
+    on_fail: fail
+
+    loop UnitTest {
+        step run_generated_test {
+            let stage = Temp.dir("hudhud-unit-");
+            let test_file = stage.path + "/unit.js";
+
+            file.write(
+                test_file,
+                "const checks = [2 + 3 === 5, 3 * 3 === 9, 8 / 2 === 4];\nconsole.log(checks.filter(Boolean).length);\n"
+            );
+            result.passed = exec.output("node " + test_file);
+            print("Unit tests passed: " + result.passed);
+
+            gate unit_gate {
+                when result.passed.length == 2 -> done
+                else -> retry
+            }
+        }
+    }
+    on_done: next
+    on_fail: fail
+
+    loop IntegrationTest {
+        step test_contract {
+            let stage = Temp.dir("hudhud-integration-");
+            let contract_file = stage.path + "/contract.js";
+
+            file.write(
+                contract_file,
+                "const response = {status: 200, body: {ready: true}};\nconsole.log(response.status === 200 && response.body.ready);\n"
+            );
+            result.output = exec.output("node " + contract_file);
+            print("Integration contract: " + result.output);
+
+            gate integration_gate {
+                when result.output.length == 5 -> done
+                else -> retry
+            }
+        }
+    }
+    on_done: next
+    on_fail: fail
+
+    loop Review {
+        step patch_and_show_diff {
+            let stage = Temp.dir("hudhud-diff-");
+            let app_file = stage.path + "/app.js";
+
+            file.write(app_file, "const timeout = 5;\nconsole.log(timeout);\n");
+            exec.output("git -C " + stage.path + " init -q");
+            exec.output("git -C " + stage.path + " add app.js");
+            let patch_result = fs.patch_apply(
+                app_file,
+                "const timeout = 5;",
+                "const timeout = 30;"
+            );
+            result.diff = exec.output(
+                "git -C " + stage.path + " diff --no-ext-diff -- app.js"
+            );
+            print(result.diff);
+
+            gate review_gate {
+                when patch_result.replacements == 1
+                    && result.diff.length > 0 -> done
+                else -> fail
+            }
+        }
+    }
+    on_done: next
+    on_fail: fail
+
+    loop Deploy {
+        step deploy_and_probe {
+            let release = Temp.dir("hudhud-deploy-");
+            let artifact = release.path + "/app.js";
+
+            file.write(artifact, "console.log('healthy');\n");
+            result.health = exec.output("node " + artifact);
+            print("Deployed artifact: " + artifact);
+            print("Health probe: " + result.health);
+
+            gate deploy_gate {
+                when file.exists(artifact)
+                    && result.health.length == 8 -> done
+                else -> fail
+            }
+        }
+    }
+    on_done: done
+    on_fail: fail
+}
+
+run chain DeliveryPipeline;

@@ -1,0 +1,64 @@
+// Italiano - Funzioni
+// Esempi di definizione e uso di funzioni
+
+// Funzione semplice
+funzione saluta() {
+    stampa("Ciao Mondo!");
+}
+
+// Funzione con parametri
+funzione somma(a, b) {
+    ritorna a + b;
+}
+
+// Funzione con più parametri
+funzione calcola(num1, num2, operazione) {
+    se (operazione == "somma") {
+        ritorna num1 + num2;
+    } altrimenti {
+        se (operazione == "sottrai") {
+            ritorna num1 - num2;
+        } altrimenti {
+            se (operazione == "moltiplica") {
+                ritorna num1 * num2;
+            } altrimenti {
+                se (operazione == "dividi") {
+                    ritorna num1 / num2;
+                } altrimenti {
+                    ritorna 0;
+                }
+            }
+        }
+    }
+}
+
+// Funzioni matematiche
+funzione quadrato(x) {
+    ritorna x * x;
+}
+
+funzione cubo(x) {
+    ritorna x * x * x;
+}
+
+// Uso delle funzioni
+saluta();
+
+sia risultato1 = somma(5, 3);
+stampa(risultato1);
+
+sia risultato2 = calcola(10, 5, "somma");
+stampa(risultato2);
+
+sia risultato3 = calcola(10, 5, "moltiplica");
+stampa(risultato3);
+
+sia risultato_quadrato = quadrato(4);
+stampa(risultato_quadrato);
+
+sia risultato_cubo = cubo(3);
+stampa(risultato_cubo);
+
+// Composizione di funzioni
+sia totale = somma(quadrato(3), cubo(2));
+stampa(totale);

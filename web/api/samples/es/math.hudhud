@@ -1,0 +1,63 @@
+// ES - Math Module
+
+// Addition
+función add(a, b) {
+    retornar a + b;
+}
+
+// Subtraction
+función subtract(a, b) {
+    retornar a - b;
+}
+
+// Multiplication
+función multiply(a, b) {
+    retornar a * b;
+}
+
+// Division
+función divide(a, b) {
+    si (b == 0) {
+        imprimir("Error: Division by zero!");
+        retornar 0;
+    } sino {
+        retornar a / b;
+    }
+}
+
+// Square
+función square(x) {
+    retornar x * x;
+}
+
+// Cube
+función cube(x) {
+    retornar x * x * x;
+}
+
+// Absolute value
+función abs(x) {
+    si (x < 0) {
+        retornar -x;
+    } sino {
+        retornar x;
+    }
+}
+
+// Maximum
+función max(a, b) {
+    si (a > b) {
+        retornar a;
+    } sino {
+        retornar b;
+    }
+}
+
+// Minimum
+función min(a, b) {
+    si (a < b) {
+        retornar a;
+    } sino {
+        retornar b;
+    }
+}

@@ -1,0 +1,38 @@
+// Bosanski - Koncepti entiteta
+
+neka korisnik = {
+    id: 1,
+    ime: "Amina",
+    email: "amina@primjer.com",
+    uloga: "programer"
+};
+
+neka proizvod = {
+    id: 101,
+    ime: "HudHudScript IDE",
+    verzija: "2.0",
+    cijena: 49
+};
+
+neka narudžba = {
+    id: 1001,
+    korisnik_id: 1,
+    proizvod_id: 101,
+    količina: 2,
+    status: "potvrđeno"
+};
+
+funkcija info_entiteta(entitet) {
+    vrati "Entitet #" + entitet.id + ": " + entitet.ime;
+}
+
+funkcija izračunaj_ukupno(narudžba, cijena) {
+    vrati narudžba.količina * cijena;
+}
+
+ispiši("=== Sistem entiteta ===");
+ispiši(info_entiteta(korisnik));
+ispiši(info_entiteta(proizvod));
+neka ukupno = izračunaj_ukupno(narudžba, proizvod.cijena);
+ispiši("Narudžba #" + narudžba.id + " ukupno: " + ukupno);
+ispiši("Status: " + narudžba.status);

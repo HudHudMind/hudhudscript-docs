@@ -1,0 +1,37 @@
+// Français - Fonctions
+// Exemples de définition et d'utilisation de fonctions
+
+// Fonction simple
+fonction saluer() {
+    affiche("Bonjour le monde!");
+}
+
+// Fonction avec paramètres
+fonction ajouter(a, b) {
+    retourner a + b;
+}
+
+// Fonctions mathématiques
+fonction carré(x) {
+    retourner x * x;
+}
+
+fonction cube(x) {
+    retourner x * x * x;
+}
+
+// Utilisation des fonctions
+saluer();
+
+soit résultat1 = ajouter(5, 3);
+affiche(résultat1);
+
+soit résultat_carré = carré(4);
+affiche(résultat_carré);
+
+soit résultat_cube = cube(3);
+affiche(résultat_cube);
+
+// Composition de fonctions
+soit total = ajouter(carré(3), cube(2));
+affiche(total);

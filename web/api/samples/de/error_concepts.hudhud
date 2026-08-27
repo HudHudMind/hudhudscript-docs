@@ -1,0 +1,53 @@
+// Deutsch - Fehlerkonzepte
+// Einfache Validierungsfunktionen
+
+funktion alter_validieren(alter) {
+    wenn (alter < 0) {
+        zurück { gültig: falsch, fehler: "Ungültiges Alter: negativ" };
+    }
+    wenn (alter > 150) {
+        zurück { gültig: falsch, fehler: "Ungültiges Alter: zu groß" };
+    }
+    zurück { gültig: wahr, alter: alter };
+}
+
+funktion email_validieren(email) {
+    wenn (email == "") {
+        zurück { gültig: falsch, fehler: "Leere E-Mail" };
+    }
+    zurück { gültig: wahr, email: email };
+}
+
+drucke("=== Validierung ===");
+
+// Altersvalidierung
+lasse alter_ergebnis1 = alter_validieren(25);
+wenn (alter_ergebnis1.gültig) {
+    drucke("Alter 25 ist gültig");
+} sonst {
+    drucke("Fehler: " + alter_ergebnis1.fehler);
+}
+
+lasse alter_ergebnis2 = alter_validieren(-5);
+wenn (alter_ergebnis2.gültig) {
+    drucke("Alter ist gültig");
+} sonst {
+    drucke("Fehler: " + alter_ergebnis2.fehler);
+}
+
+// E-Mail-Validierung
+lasse email_ergebnis1 = email_validieren("user@example.com");
+wenn (email_ergebnis1.gültig) {
+    drucke("E-Mail gültig: " + email_ergebnis1.email);
+} sonst {
+    drucke("E-Mail Fehler: " + email_ergebnis1.fehler);
+}
+
+lasse email_ergebnis2 = email_validieren("");
+wenn (email_ergebnis2.gültig) {
+    drucke("E-Mail gültig");
+} sonst {
+    drucke("E-Mail Fehler: " + email_ergebnis2.fehler);
+}
+
+drucke("Validierung abgeschlossen");

@@ -1,0 +1,19 @@
+// Hrvatski - Demo
+function pozdravi(ime) {
+    return "Zdravo, " + ime + "!";
+}
+
+function zbroji(a, b) {
+    return a + b;
+}
+
+let poruka = pozdravi("Svijet");
+print(poruka);
+
+let zbir = 0;
+let brojac = 1;
+while (brojac <= 10) {
+    zbir = zbroji(zbir, brojac);
+    brojac = brojac + 1;
+}
+print("Zbir 1-10: " + zbir);

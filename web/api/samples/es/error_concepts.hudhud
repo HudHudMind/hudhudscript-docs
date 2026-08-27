@@ -1,0 +1,51 @@
+// Español - Conceptos de Error
+// Funciones simples de validación
+
+función validar_edad(edad) {
+    si (edad < 0) {
+        devolver { válido: falso, error: "Edad inválida: negativa" };
+    }
+    si (edad > 150) {
+        devolver { válido: falso, error: "Edad inválida: demasiado grande" };
+    }
+    devolver { válido: verdadero, edad: edad };
+}
+
+función validar_email(email) {
+    si (email == "") {
+        devolver { válido: falso, error: "Email vacío" };
+    }
+    devolver { válido: verdadero, email: email };
+}
+
+imprimir("=== Validación ===");
+
+definir resultado_edad1 = validar_edad(25);
+si (resultado_edad1.válido) {
+    imprimir("Edad 25 es válida");
+} sino {
+    imprimir("Error: " + resultado_edad1.error);
+}
+
+definir resultado_edad2 = validar_edad(-5);
+si (resultado_edad2.válido) {
+    imprimir("Edad es válida");
+} sino {
+    imprimir("Error: " + resultado_edad2.error);
+}
+
+definir resultado_email1 = validar_email("user@example.com");
+si (resultado_email1.válido) {
+    imprimir("Email válido: " + resultado_email1.email);
+} sino {
+    imprimir("Error de email: " + resultado_email1.error);
+}
+
+definir resultado_email2 = validar_email("");
+si (resultado_email2.válido) {
+    imprimir("Email válido");
+} sino {
+    imprimir("Error de email: " + resultado_email2.error);
+}
+
+imprimir("Validación completada");

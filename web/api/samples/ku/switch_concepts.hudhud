@@ -1,0 +1,60 @@
+// Kurdi - Tegehen Switch/Case
+// switch/case/default
+
+fonksiyon tipa_roje(day) {
+    hilbijere (day) {
+        rewş "Monday":
+        rewş "Tuesday":
+        rewş "Wednesday":
+        rewş "Thursday":
+        rewş "Friday":
+            vegerine "Roja kar";
+        rewş "Saturday":
+        rewş "Sunday":
+            vegerine "Dawiya hefte";
+        standard:
+            vegerine "Nenas";
+    }
+}
+
+çap_bike("=== Day Types ===");
+çap_bike("Monday: " + tipa_roje("Monday"));
+çap_bike("Saturday: " + tipa_roje("Saturday"));
+çap_bike("Holiday: " + tipa_roje("Holiday"));
+
+fonksiyon tipa_note(score) {
+    hilbijere (score) {
+        rewş 90:
+            vegerine "A";
+        rewş 80:
+            vegerine "B";
+        rewş 70:
+            vegerine "C";
+        rewş 60:
+            vegerine "D";
+        standard:
+            vegerine "F";
+    }
+}
+
+çap_bike("\n=== Grades ===");
+çap_bike("90: " + tipa_note(90));
+çap_bike("70: " + tipa_note(70));
+çap_bike("50: " + tipa_note(50));
+
+fonksiyon peyama_rewşe(code) {
+    hilbijere (code) {
+        rewş 200:
+            vegerine "OK";
+        rewş 404:
+            vegerine "Not Found";
+        rewş 500:
+            vegerine "Server Error";
+        standard:
+            vegerine "Nenas Status";
+    }
+}
+
+çap_bike("\n=== HTTP Status ===");
+çap_bike("200: " + peyama_rewşe(200));
+çap_bike("404: " + peyama_rewşe(404));

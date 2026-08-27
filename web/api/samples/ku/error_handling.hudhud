@@ -1,0 +1,56 @@
+// Kurdi - Reveberiya xeletiyan
+// try/catch/finally, throw
+
+// Basic try/catch
+fonksiyon parve(a, b) {
+    eger (b == 0) {
+        baveje "Xeletiya dabeşkirina bi sifire";
+    }
+    vegerine a / b;
+}
+
+biceribine {
+    bila result = parve(10, 2);
+    çap_bike("10 / 2 = " + result);
+} bigire (error) {
+    çap_bike("Xeleti: " + error);
+}
+
+// Try/catch/finally
+çap_bike("
+=== Pevajokirina pele ===");
+
+fonksiyon pele_bişopine(filename) {
+    eger (filename == "") {
+        baveje "Xeletiya nave pele vala";
+    }
+    çap_bike("Pevajokirin: " + filename);
+    vegerine "Dane ji " + filename;
+}
+
+biceribine {
+    bila data = pele_bişopine("report.txt");
+    çap_bike("Encam: " + data);
+} bigire (error) {
+    çap_bike("Xeleti: " + error);
+} di_dawiye {
+    çap_bike("Paqijkirin temam");
+}
+
+// Nested error handling
+çap_bike("
+=== Reveberiya xeletiyan a hundurin ===");
+
+biceribine {
+    çap_bike("Bloka biceribine ya derve");
+    biceribine {
+        baveje "Xeletiya hundurin";
+    } bigire (inner_err) {
+        çap_bike("Hundurin hat girtin: " + inner_err);
+        baveje "Xeletiya ji nu ve aveti";
+    }
+} bigire (outer_err) {
+    çap_bike("Derve hat girtin: " + outer_err);
+} di_dawiye {
+    çap_bike("Hemu qediya");
+}

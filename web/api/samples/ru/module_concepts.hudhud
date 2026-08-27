@@ -1,0 +1,42 @@
+// Русский - Modules & Code Organization
+// Demonstrates module system: использовать/импорт like Rust, Java, C++, Python
+
+// Import math module
+использовать "math.hudhud";
+
+// Example syntax variations:
+// использовать "math.hudhud";
+// использовать { add, subtract } из "math.hudhud";
+// использовать "math.hudhud" как math;
+
+// Using functions из math module
+пусть sum = add(10, 5);
+печать(sum);
+
+пусть diff = subtract(20, 8);
+печать(diff);
+
+пусть product = multiply(4, 7);
+печать(product);
+
+пусть quotient = divide(15, 3);
+печать(quotient);
+
+пусть squared = square(5);
+печать(squared);
+
+пусть cubed = cube(3);
+печать(cubed);
+
+пусть absolute = abs(-42);
+печать(absolute);
+
+пусть maximum = max(100, 50);
+печать(maximum);
+
+пусть minimum = min(100, 50);
+печать(minimum);
+
+// Complex calculation using multiple functions
+пусть result = add(multiply(5, 3), divide(20, 4));
+печать(result);

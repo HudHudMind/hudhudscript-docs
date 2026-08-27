@@ -1,0 +1,84 @@
+// Türkçe - Seç/Durum Kavramları
+// if-else ile çoklu durum kontrolü
+
+işlev gün_tipi(day) {
+    eğer (day == "Monday") {
+        dön "Hafta içi";
+    } değilse {
+        eğer (day == "Tuesday") {
+            dön "Hafta içi";
+        } değilse {
+            eğer (day == "Wednesday") {
+                dön "Hafta içi";
+            } değilse {
+                eğer (day == "Thursday") {
+                    dön "Hafta içi";
+                } değilse {
+                    eğer (day == "Friday") {
+                        dön "Hafta içi";
+                    } değilse {
+                        eğer (day == "Saturday") {
+                            dön "Hafta sonu";
+                        } değilse {
+                            eğer (day == "Sunday") {
+                                dön "Hafta sonu";
+                            } değilse {
+                                dön "Bilinmeyen";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+yazdır("=== Gün Tipleri ===");
+yazdır("Monday: " + gün_tipi("Monday"));
+yazdır("Saturday: " + gün_tipi("Saturday"));
+yazdır("Holiday: " + gün_tipi("Holiday"));
+
+işlev not_harfi(score) {
+    eğer (score == 90) {
+        dön "A";
+    } değilse {
+        eğer (score == 80) {
+            dön "B";
+        } değilse {
+            eğer (score == 70) {
+                dön "C";
+            } değilse {
+                eğer (score == 60) {
+                    dön "D";
+                } değilse {
+                    dön "F";
+                }
+            }
+        }
+    }
+}
+
+yazdır("=== Not Harfleri ===");
+yazdır("90: " + not_harfi(90));
+yazdır("70: " + not_harfi(70));
+yazdır("50: " + not_harfi(50));
+
+işlev durum_mesajı(code) {
+    eğer (code == 200) {
+        dön "OK";
+    } değilse {
+        eğer (code == 404) {
+            dön "Not Found";
+        } değilse {
+            eğer (code == 500) {
+                dön "Server Error";
+            } değilse {
+                dön "Bilinmeyen Status";
+            }
+        }
+    }
+}
+
+yazdır("=== HTTP Durum Kodları ===");
+yazdır("200: " + durum_mesajı(200));
+yazdır("404: " + durum_mesajı(404));

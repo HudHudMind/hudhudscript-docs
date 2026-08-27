@@ -1,0 +1,54 @@
+// Deutsch - Math Module
+
+function addieren(a, b) {
+    zurück a + b;
+}
+
+function subtrahieren(a, b) {
+    zurück a - b;
+}
+
+function multiplizieren(a, b) {
+    zurück a * b;
+}
+
+function dividieren(a, b) {
+    wenn (b == 0) {
+        drucken("Error: Division by zero!");
+        zurück 0;
+    } sonst {
+        zurück a / b;
+    }
+}
+
+function quadrat(x) {
+    zurück x * x;
+}
+
+function kubik(x) {
+    zurück x * x * x;
+}
+
+function absolut(x) {
+    wenn (x < 0) {
+        zurück -x;
+    } sonst {
+        zurück x;
+    }
+}
+
+function maximum(a, b) {
+    wenn (a > b) {
+        zurück a;
+    } sonst {
+        zurück b;
+    }
+}
+
+function minimum(a, b) {
+    wenn (a < b) {
+        zurück a;
+    } sonst {
+        zurück b;
+    }
+}

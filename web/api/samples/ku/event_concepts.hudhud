@@ -1,0 +1,36 @@
+// Kurdi - Event Concepts
+
+buyer UserLogin {
+    çap_bike("User logged in");
+}
+
+buyer DataReceived {
+    çap_bike("Data received");
+}
+
+buyer ErrorOccurred {
+    çap_bike("Error occurred");
+}
+
+fonksiyon on_login(username) {
+    çap_bike("Login: " + username);
+    vegerine "Welcome, " + username;
+}
+
+fonksiyon on_data(source) {
+    çap_bike("Data from: " + source);
+    vegerine "Processed: " + source;
+}
+
+fonksiyon on_error(message) {
+    çap_bike("Error: " + message);
+    vegerine "Handled: " + message;
+}
+
+çap_bike("=== Event System ===");
+bila r1 = on_login("admin");
+çap_bike(r1);
+bila r2 = on_data("sensor_1");
+çap_bike(r2);
+bila r3 = on_error("timeout");
+çap_bike(r3);

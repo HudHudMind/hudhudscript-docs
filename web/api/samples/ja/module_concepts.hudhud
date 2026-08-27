@@ -1,0 +1,42 @@
+// 日本語 - Modules & Code Organization
+// Demonstrates module system: tsukau/インポート like Rust, Java, C++, Python
+
+// Import math module
+"math.hudhud" kullan;
+
+// Example syntax variations:
+// tsukau "math.hudhud";
+// "math.hudhud" kara { add, subtract } tsukau;
+// tsukau "math.hudhud" toshite math;
+
+// Using functions から math module
+定義 sum = add(10, 5);
+insatsu(sum);
+
+定義 diff = subtract(20, 8);
+insatsu(diff);
+
+定義 product = multiply(4, 7);
+insatsu(product);
+
+定義 quotient = divide(15, 3);
+insatsu(quotient);
+
+定義 squared = square(5);
+insatsu(squared);
+
+定義 cubed = cube(3);
+insatsu(cubed);
+
+定義 absolute = abs(-42);
+insatsu(absolute);
+
+定義 maximum = max(100, 50);
+insatsu(maximum);
+
+定義 minimum = min(100, 50);
+insatsu(minimum);
+
+// Complex calculation using multiple functions
+定義 result = add(multiply(5, 3), divide(20, 4));
+insatsu(result);

@@ -1,0 +1,30 @@
+// Türkçe - Sabitler (Constants)
+
+// Sabit tanımlama - değiştirilemez
+sabit PI = 3.14159;
+sabit MAKSIMUM_DENEME = 3;
+sabit UYGULAMA_ADI = "HudHudScript";
+
+yaz(PI);
+yaz(MAKSIMUM_DENEME);
+yaz(UYGULAMA_ADI);
+
+// Sabit ile hesaplama
+sabit YARICAP = 5;
+değişken alan = PI * YARICAP * YARICAP;
+yaz(alan);
+
+// Sabit dizi
+sabit RENKLER = ["kırmızı", "yeşil", "mavi"];
+yaz(RENKLER);
+
+// Sabit nesne
+sabit AYARLAR = {
+    dil: "tr",
+    tema: "koyu",
+    bildirimler: doğru
+};
+yaz(AYARLAR);
+
+// HATA: Sabit değiştirilemez
+// PI = 3.14;  // Bu hata verir!

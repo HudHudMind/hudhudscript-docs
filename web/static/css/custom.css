@@ -1,0 +1,197 @@
+/* Custom styles for HudHudScript website */
+/* Moved from inline <style> to external CSS for better CSP compatibility */
+
+body {
+    font-family: 'Inter', 'Noto Sans JP', 'Noto Sans Arabic', 'Noto Sans SC', 'Noto Sans Bengali', 'Noto Sans Thai', 'Noto Sans Devanagari', 'Noto Sans', sans-serif;
+}
+
+code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Language-specific font families */
+.lang-ja, .lang-ja * {
+    font-family: 'Noto Sans JP', sans-serif !important;
+}
+
+.lang-ar, .lang-ar * {
+    font-family: 'Noto Sans Arabic', sans-serif !important;
+}
+
+.lang-fa, .lang-fa * {
+    font-family: 'Noto Sans Arabic', sans-serif !important;
+}
+
+.lang-ku, .lang-ku * {
+    font-family: 'Noto Sans Arabic', sans-serif !important;
+}
+
+.lang-zh, .lang-zh * {
+    font-family: 'Noto Sans SC', sans-serif !important;
+}
+
+.lang-bn, .lang-bn * {
+    font-family: 'Noto Sans Bengali', sans-serif !important;
+}
+
+.lang-hi, .lang-hi * {
+    font-family: 'Noto Sans Devanagari', sans-serif !important;
+}
+
+.lang-th, .lang-th * {
+    font-family: 'Noto Sans Thai', sans-serif !important;
+}
+
+.lang-ru, .lang-ru *, .lang-sr, .lang-sr * {
+    font-family: 'Noto Sans', 'Inter', sans-serif !important;
+}
+
+.lang-es, .lang-de, .lang-fr, .lang-it, .lang-pt,
+.lang-en, .lang-tr, .lang-id, .lang-vi, .lang-el,
+.lang-pl, .lang-bs, .lang-hr {
+    font-family: 'Inter', sans-serif !important;
+}
+
+.rtl {
+    direction: rtl;
+}
+
+/* Gradient backgrounds */
+.gradient-bg {
+    background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+}
+
+/* Code block styling */
+.code-block {
+    background: #0d1117;
+    border-radius: 8px;
+    padding: 1.5rem;
+    overflow-x: auto;
+}
+
+/* Feature cards */
+.feature-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.feature-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    border-left-color: #f59e0b;
+}
+
+/* Navigation links */
+.nav-link {
+    transition: all 0.15s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #fbbf24;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0.5rem;
+    right: 0.5rem;
+    height: 2px;
+    background: #f59e0b;
+    border-radius: 1px;
+}
+
+/* Navigation dropdown */
+.nav-dropdown:hover .nav-dropdown-menu {
+    display: block !important;
+}
+.nav-dropdown-menu {
+    z-index: 50;
+    min-width: 160px;
+}
+.nav-dropdown-menu > div {
+    animation: dropdownIn 0.15s ease;
+}
+@keyframes dropdownIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.nav-dropdown-btn {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: inherit;
+}
+
+/* Mobile menu */
+#mobile-menu.hidden {
+    display: none;
+}
+
+/* Terminal window effect */
+.terminal-window {
+    background: #0d1117;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    overflow: hidden;
+}
+
+.terminal-header {
+    background: #161b22;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid #30363d;
+}
+
+.terminal-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+/* HudHud Brand Orange Buttons & Utilities */
+.btn-hudhud-orange,
+.bg-orange-500 {
+    background-color: #f97316 !important;
+    color: #ffffff !important;
+}
+
+.btn-hudhud-orange:hover,
+.hover\:bg-orange-600:hover {
+    background-color: #ea580c !important;
+    color: #ffffff !important;
+}
+
+.hover\:bg-orange-700:hover {
+    background-color: #c2410c !important;
+    color: #ffffff !important;
+}
+
+.text-orange-500 {
+    color: #f97316 !important;
+}
+
+.text-orange-600 {
+    color: #ea580c !important;
+}
+
+.text-orange-700 {
+    color: #c2410c !important;
+}
+
+.bg-orange-50 {
+    background-color: #fff7ed !important;
+}
+
+.bg-orange-100 {
+    background-color: #ffedd5 !important;
+}
+
+.shadow-orange-500\/25,
+.shadow-orange-500\/20 {
+    box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.25), 0 4px 6px -4px rgba(249, 115, 22, 0.25) !important;
+}
+

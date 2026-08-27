@@ -1,0 +1,21 @@
+// 日本語 - Physics Module
+
+関数 sokudo(distance, time) {
+    戻る distance / time;
+}
+
+関数 chikara(mass, acceleration) {
+    戻る mass * acceleration;
+}
+
+関数 undoEnergi(mass, velocity) {
+    戻る 0.5 * mass * velocity * velocity;
+}
+
+関数 ichiEnergi(mass, gravity, height) {
+    戻る mass * gravity * height;
+}
+
+関数 undo(mass, velocity) {
+    戻る mass * velocity;
+}

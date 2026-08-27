@@ -1,0 +1,50 @@
+// Deutsch - Fehlerbehandlung
+// Einfache Fehlerkontrolle mit if-else
+
+// Funktion zur Fehlerprüfung
+funktion teile(a, b) {
+    wenn (b == 0) {
+        zurück { fehler: wahr, nachricht: "Division durch Null Fehler", wert: 0 };
+    }
+    zurück { fehler: falsch, nachricht: "", wert: a / b };
+}
+
+drucke("=== Divisionsoperation ===");
+
+// Erste Division
+drucke("10 / 2 Operation:");
+lasse ergebnis1 = teile(10, 2);
+wenn (ergebnis1.fehler) {
+    drucke("Fehler: " + ergebnis1.nachricht);
+} sonst {
+    drucke("10 / 2 = " + ergebnis1.wert);
+}
+
+// Division durch Null
+drucke("10 / 0 Operation:");
+lasse ergebnis2 = teile(10, 0);
+wenn (ergebnis2.fehler) {
+    drucke("Fehler erkannt: " + ergebnis2.nachricht);
+} sonst {
+    drucke("Ergebnis: " + ergebnis2.wert);
+}
+
+// Beispiel für Dateiverarbeitung
+drucke("=== Dateiverarbeitung ===");
+
+funktion datei_verarbeiten(dateiname) {
+    wenn (dateiname == "") {
+        zurück { erfolgreich: falsch, nachricht: "Leerer Dateiname Fehler" };
+    }
+    drucke("Verarbeite: " + dateiname);
+    zurück { erfolgreich: wahr, daten: "Daten von " + dateiname };
+}
+
+lasse datei_ergebnis = datei_verarbeiten("bericht.txt");
+wenn (datei_ergebnis.erfolgreich) {
+    drucke("Ergebnis: " + datei_ergebnis.daten);
+} sonst {
+    drucke("Fehler: " + datei_ergebnis.nachricht);
+}
+
+drucke("Alles erledigt");

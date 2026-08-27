@@ -1,0 +1,23 @@
+// Kurdi - Kontrola Herikine
+guherbar jimarker = 0;
+guherbar heri_zede = 5;
+
+// Loop
+dema_ku (jimarker < heri_zede) {
+    jimarker = jimarker + 1;
+}
+
+// Conditional
+guherbar xal = 85;
+
+eger (xal >= 90) {
+    xal;
+} weki_din {
+    eger (xal >= 80) {
+        xal;
+    } weki_din {
+        xal;
+    }
+}
+
+jimarker;

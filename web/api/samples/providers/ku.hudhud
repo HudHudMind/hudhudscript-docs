@@ -1,0 +1,24 @@
+// Kurdi - providers.hudhud
+
+dabinker DeepSeekProvider {
+    apiKey: env("DEEPSEEK_API_KEY"),
+    type: "deepseek",
+    nav: "DeepSeek API",
+    baseUrl: env("DEEPSEEK_BASE_URL"),
+    germahi: 0.8
+}
+
+dabinker AnthropicProvider {
+    apiKey: env("ANTHROPIC_API_KEY"),
+    type: "anthropic",
+    nav: "Anthropic Claude",
+    model: "claude-opus-4.6",
+    germahi: 0.9
+}
+
+dabinker OpenAIProvider {
+    apiKey: env("OPENAI_API_KEY"),
+    type: "openai",
+    nav: "OpenAI GPT",
+    germahi: 0.6
+}

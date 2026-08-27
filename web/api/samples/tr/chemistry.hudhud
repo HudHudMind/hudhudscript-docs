@@ -1,0 +1,27 @@
+// Türkçe - Chemistry Module
+// Basic chemistry calculations
+
+// Molar Mass calculation (simplified)
+işlev molarMass(atoms, atomicWeight) {
+    dön atoms * atomicWeight;
+}
+
+// Concentration = Moles / Volume
+işlev concentration(moles, volume) {
+    dön moles / volume;
+}
+
+// pH calculation (simplified: -log[H+])
+işlev pH(hydrogenConcentration) {
+    dön 14 - hydrogenConcentration;
+}
+
+// Density = Mass / Volume
+işlev density(mass, volume) {
+    dön mass / volume;
+}
+
+// Dilution: C1*V1 = C2*V2
+işlev dilution(c1, v1, v2) {
+    dön (c1 * v1) / v2;
+}

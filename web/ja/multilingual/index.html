@@ -1,0 +1,1760 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HudHudScript - Multi-lingual AI Agent Programming Language</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/logo/hudhud-32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/logo/hudhud-96.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="/static/images/logo/hudhud-256.png">
+
+    
+
+    <!-- Tailwind CSS -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+Arabic:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Noto+Sans+Bengali:wght@400;700&family=Noto+Sans+Thai:wght@400;700&family=Noto+Sans+Devanagari:wght@400;700&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Prism.js for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+    <!-- Tailwind CSS (Compiled) -->
+    <link rel="stylesheet" href="/static/css/tailwind-output.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/custom.css?v=0.0.99">
+
+    <!-- HudHudScript Code Runner (global) -->
+    <link rel="stylesheet" href="/static/css/hudhud-code-runner.css">
+
+    
+</head>
+<body class="bg-slate-50 text-slate-900">
+    <!-- Environment Badge -->
+    
+
+    <!-- Navigation -->
+    <nav class="bg-slate-900 border-b border-slate-700/50 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-14">
+                <!-- Logo -->
+                <a href="/" class="flex items-center gap-2 flex-shrink-0">
+                    <img src="/static/images/logo/hudhud-48.png" alt="HudHudScript" width="32" height="32" class="rounded">
+                    <span class="text-xl font-bold text-white tracking-tight">HudHud<span class="text-amber-400">Script</span></span>
+                </a>
+
+                <!-- Center nav (desktop) -->
+                <div class="hidden lg:flex items-center space-x-1">
+                    <a href="/" class="nav-link text-slate-300 hover:text-white px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800">
+                        ホーム
+                    </a>
+                    <a href="/multilingual" class="nav-link text-slate-300 hover:text-white px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800">
+                        🌐 多言語
+                    </a>
+                    <!-- Belgeler -->
+                    <div class="nav-dropdown relative">
+                        <button class="nav-dropdown-btn text-slate-300 hover:text-white px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800 flex items-center gap-1 whitespace-nowrap">
+                            ドキュメント <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="nav-dropdown-menu absolute top-full left-0 pt-1 hidden">
+                            <div class="bg-slate-800 border border-slate-700 rounded-lg shadow-xl py-1 w-40">
+                                <a href="/docs" class="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-700">ドキュメント</a>
+                                <a href="/examples" class="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-700">例</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tools -->
+                    <div class="nav-dropdown relative">
+                        <button class="nav-dropdown-btn text-slate-300 hover:text-white px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800 flex items-center gap-1 whitespace-nowrap">
+                            ツール <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="nav-dropdown-menu absolute top-full left-0 pt-1 hidden">
+                            <div class="bg-slate-800 border border-slate-700 rounded-lg shadow-xl py-1 w-40">
+                                <a href="/tools" class="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-700">ツール</a>
+                                <a href="/paradigms" class="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-700">パラダイム</a>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Downloads -->
+                    <div class="nav-dropdown relative">
+                        <button class="nav-dropdown-btn text-slate-300 hover:text-white px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800 flex items-center gap-1 whitespace-nowrap">
+                            ダウンロード <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="nav-dropdown-menu absolute top-full left-0 pt-1 hidden">
+                            <div class="bg-slate-800 border border-slate-700 rounded-lg shadow-xl py-1 w-56">
+                                <a href="/download/hudhud-script" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-slate-700">
+                                    <div class="font-medium">HudHudScript</div>
+                                    <div class="text-xs text-slate-500 mt-0.5">Multi-lingual agentic programming language ,  SOP, governance</div>
+                                </a>
+                                <a href="/download/hudhud-aide" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-slate-700">
+                                    <div class="font-medium">HudHud AIDE</div>
+                                    <div class="text-xs text-slate-500 mt-0.5">Official IDE ,  syntax highlighting, autocomplete, AI assistance for 23 languages</div>
+                                </a>
+                                <a href="/download/hudhud-linux" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-slate-700">
+                                    <div class="font-medium text-slate-500">HudHud Linux</div>
+                                    <div class="text-xs text-slate-600 mt-0.5">Modern Linux distro powered by HudHudScript</div>
+                                    <span class="text-xs text-amber-500 font-medium">近日公開</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- About -->
+                    <div class="nav-dropdown relative">
+                        <button class="nav-dropdown-btn text-slate-300 hover:text-white px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800 flex items-center gap-1 whitespace-nowrap">
+                            について <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="nav-dropdown-menu absolute top-full left-0 pt-1 hidden">
+                            <div class="bg-slate-800 border border-slate-700 rounded-lg shadow-xl py-1 w-44">
+                                <a href="/about/language" class="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-700">言語について</a>
+                                <a href="/blog/" class="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-700">ブログ</a>
+                                <a href="/contributors" class="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-700">貢献者</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right side -->
+                <div class="flex items-center gap-3 flex-shrink-0">
+                    <div class="lang-dropdown-wrapper relative" data-lang-selector data-current="ja">
+                        <button type="button" class="lang-dropdown-btn flex items-center gap-1.5 bg-slate-800 border border-slate-600 text-slate-300 rounded-md px-3 py-2 pr-8 text-sm hover:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 focus:border-amber-500 transition w-full">
+                            <span class="lang-flag inline-block flex-shrink-0"><img src="https://flagcdn.com/24x18/jp.png" srcset="https://flagcdn.com/48x36/jp.png 2x" width="24" height="18" alt="JP" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                            <span class="lang-name whitespace-nowrap">日本語</span>
+                            <svg class="lang-chevron w-4 h-4 ml-auto flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="lang-dropdown-menu hidden absolute p-2 top-full right-0 mt-1 bg-slate-800 border border-slate-600 rounded-md shadow-xl z-50 max-h-64 overflow-y-auto min-w-[240px]">
+                            
+                            <button type="button" data-lang="ar" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/sa.png" srcset="https://flagcdn.com/48x36/sa.png 2x" width="24" height="18" alt="SA" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>العربية</span>
+                            </button>
+                            
+                            <button type="button" data-lang="ja" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition bg-slate-700 text-amber-400">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/jp.png" srcset="https://flagcdn.com/48x36/jp.png 2x" width="24" height="18" alt="JP" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>日本語</span>
+                            </button>
+                            
+                            <button type="button" data-lang="zh" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/cn.png" srcset="https://flagcdn.com/48x36/cn.png 2x" width="24" height="18" alt="CN" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>中文</span>
+                            </button>
+                            
+                            <button type="button" data-lang="hi" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/in.png" srcset="https://flagcdn.com/48x36/in.png 2x" width="24" height="18" alt="IN" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>हिन्दी</span>
+                            </button>
+                            
+                            <button type="button" data-lang="bn" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/bd.png" srcset="https://flagcdn.com/48x36/bd.png 2x" width="24" height="18" alt="BD" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>বাংলা</span>
+                            </button>
+                            
+                            <button type="button" data-lang="bs" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/ba.png" srcset="https://flagcdn.com/48x36/ba.png 2x" width="24" height="18" alt="BA" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Bosanski</span>
+                            </button>
+                            
+                            <button type="button" data-lang="de" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/de.png" srcset="https://flagcdn.com/48x36/de.png 2x" width="24" height="18" alt="DE" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Deutsch</span>
+                            </button>
+                            
+                            <button type="button" data-lang="el" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/gr.png" srcset="https://flagcdn.com/48x36/gr.png 2x" width="24" height="18" alt="GR" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Ελληνικά</span>
+                            </button>
+                            
+                            <button type="button" data-lang="en" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/gb.png" srcset="https://flagcdn.com/48x36/gb.png 2x" width="24" height="18" alt="GB" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>English</span>
+                            </button>
+                            
+                            <button type="button" data-lang="es" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/es.png" srcset="https://flagcdn.com/48x36/es.png 2x" width="24" height="18" alt="ES" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Español</span>
+                            </button>
+                            
+                            <button type="button" data-lang="fa" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/ir.png" srcset="https://flagcdn.com/48x36/ir.png 2x" width="24" height="18" alt="IR" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>فارسی</span>
+                            </button>
+                            
+                            <button type="button" data-lang="fr" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/fr.png" srcset="https://flagcdn.com/48x36/fr.png 2x" width="24" height="18" alt="FR" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Français</span>
+                            </button>
+                            
+                            <button type="button" data-lang="hr" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/hr.png" srcset="https://flagcdn.com/48x36/hr.png 2x" width="24" height="18" alt="HR" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Hrvatski</span>
+                            </button>
+                            
+                            <button type="button" data-lang="id" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/id.png" srcset="https://flagcdn.com/48x36/id.png 2x" width="24" height="18" alt="ID" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Bahasa Indonesia</span>
+                            </button>
+                            
+                            <button type="button" data-lang="it" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/it.png" srcset="https://flagcdn.com/48x36/it.png 2x" width="24" height="18" alt="IT" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Italiano</span>
+                            </button>
+                            
+                            <button type="button" data-lang="ku" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0">🌍</span>
+                                <span>Kurdî</span>
+                            </button>
+                            
+                            <button type="button" data-lang="pl" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/pl.png" srcset="https://flagcdn.com/48x36/pl.png 2x" width="24" height="18" alt="PL" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Polski</span>
+                            </button>
+                            
+                            <button type="button" data-lang="pt" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/pt.png" srcset="https://flagcdn.com/48x36/pt.png 2x" width="24" height="18" alt="PT" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Português</span>
+                            </button>
+                            
+                            <button type="button" data-lang="ru" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/ru.png" srcset="https://flagcdn.com/48x36/ru.png 2x" width="24" height="18" alt="RU" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Русский</span>
+                            </button>
+                            
+                            <button type="button" data-lang="sr" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/rs.png" srcset="https://flagcdn.com/48x36/rs.png 2x" width="24" height="18" alt="RS" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Српски</span>
+                            </button>
+                            
+                            <button type="button" data-lang="th" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/th.png" srcset="https://flagcdn.com/48x36/th.png 2x" width="24" height="18" alt="TH" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>ไทย</span>
+                            </button>
+                            
+                            <button type="button" data-lang="tr" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/tr.png" srcset="https://flagcdn.com/48x36/tr.png 2x" width="24" height="18" alt="TR" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Türkçe</span>
+                            </button>
+                            
+                            <button type="button" data-lang="vi" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/vn.png" srcset="https://flagcdn.com/48x36/vn.png 2x" width="24" height="18" alt="VN" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Tiếng Việt</span>
+                            </button>
+                            
+                        </div>
+                    </div>
+
+                    <a href="https://github.com/HudHudMind/hudhudscript"
+                       target="_blank" rel="noopener noreferrer"
+                       class="hidden sm:inline-flex items-center gap-1.5 bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold text-sm px-4 py-1.5 rounded-md transition">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        GitHub
+                    </a>
+
+                    <!-- Mobile hamburger -->
+                    <button id="mobile-menu-btn" class="lg:hidden text-slate-300 hover:text-white p-1">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-slate-800 border-t border-slate-700 px-4 py-3 space-y-1">
+            <a href="/" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">ホーム</a>
+            <a href="/docs" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">ドキュメント</a>
+            <a href="/examples" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">例</a>
+            <a href="/multilingual" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">多言語</a>
+            
+            <a href="/tools" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">ツール</a>
+            <a href="/paradigms" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">パラダイム</a>
+            
+            <a href="/download" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">ダウンロード</a>
+            <a href="/blog/" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">ブログ</a>
+            <a href="/about/language" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">について</a>
+            <a href="/contributors" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">貢献者</a>
+        </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        
+<!-- Hero Section -->
+<div class="gradient-bg text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+        <div class="text-center">
+            <img src="/static/images/logo/hudhud-128.png" alt="HudHudScript" width="96" height="96" class="mx-auto mb-6 drop-shadow-2xl">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight">
+                コードを <span class="text-amber-400">あなたの言語で</span>
+            </h1>
+            <p class="text-lg sm:text-xl mb-4 text-slate-300 max-w-2xl mx-auto">
+                ガバナンスを内蔵した多言語エージェントプログラミング言語
+            </p>
+            <p class="text-base mb-10 text-slate-400 max-w-3xl mx-auto">
+                英語、トルコ語、日本語、アラビア語でコードを書けます。同じプログラム、異なる言語。
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+                
+                <a href="/download"
+                   class="inline-flex items-center justify-center px-8 py-3.5 text-base font-semibold rounded-lg border-2 border-slate-400 text-white hover:bg-white/10 transition">
+                    ダウンロード
+                </a>
+            </div>
+
+            <!-- Interactive Hero Editor - Two Panels -->
+            <div class="max-w-6xl mx-auto">
+                <!-- Language flag selector -->
+                <div class="flex items-center justify-center gap-1 flex-wrap mb-3" id="hero-lang-flags">
+                    
+                    
+                    <button
+                            id="hero-flag-en"
+                            class="hero-flag-btn px-1 py-1 rounded hover:bg-white/20 transition"
+                            data-action="switch-hero" data-lang="en" title="en"><img src="https://flagcdn.com/24x18/gb.png" srcset="https://flagcdn.com/48x36/gb.png 2x" width="24" height="18" alt="GB" class="inline-block rounded-sm relative -top-px" loading="lazy"></button>
+                    
+                    <button
+                            id="hero-flag-tr"
+                            class="hero-flag-btn px-1 py-1 rounded hover:bg-white/20 transition"
+                            data-action="switch-hero" data-lang="tr" title="tr"><img src="https://flagcdn.com/24x18/tr.png" srcset="https://flagcdn.com/48x36/tr.png 2x" width="24" height="18" alt="TR" class="inline-block rounded-sm relative -top-px" loading="lazy"></button>
+                    
+                    <button
+                            id="hero-flag-ar"
+                            class="hero-flag-btn px-1 py-1 rounded hover:bg-white/20 transition"
+                            data-action="switch-hero" data-lang="ar" title="ar"><img src="https://flagcdn.com/24x18/sa.png" srcset="https://flagcdn.com/48x36/sa.png 2x" width="24" height="18" alt="SA" class="inline-block rounded-sm relative -top-px" loading="lazy"></button>
+                    
+                    <button
+                            id="hero-flag-ja"
+                            class="hero-flag-btn px-1 py-1 rounded hover:bg-white/20 transition"
+                            data-action="switch-hero" data-lang="ja" title="ja"><img src="https://flagcdn.com/24x18/jp.png" srcset="https://flagcdn.com/48x36/jp.png 2x" width="24" height="18" alt="JP" class="inline-block rounded-sm relative -top-px" loading="lazy"></button>
+                    
+                    <button
+                            id="hero-flag-zh"
+                            class="hero-flag-btn px-1 py-1 rounded hover:bg-white/20 transition"
+                            data-action="switch-hero" data-lang="zh" title="zh"><img src="https://flagcdn.com/24x18/cn.png" srcset="https://flagcdn.com/48x36/cn.png 2x" width="24" height="18" alt="CN" class="inline-block rounded-sm relative -top-px" loading="lazy"></button>
+                    
+                    <button
+                            id="hero-flag-ru"
+                            class="hero-flag-btn px-1 py-1 rounded hover:bg-white/20 transition"
+                            data-action="switch-hero" data-lang="ru" title="ru"><img src="https://flagcdn.com/24x18/ru.png" srcset="https://flagcdn.com/48x36/ru.png 2x" width="24" height="18" alt="RU" class="inline-block rounded-sm relative -top-px" loading="lazy"></button>
+                    
+                    <button
+                            id="hero-flag-fa"
+                            class="hero-flag-btn px-1 py-1 rounded hover:bg-white/20 transition"
+                            data-action="switch-hero" data-lang="fa" title="fa"><img src="https://flagcdn.com/24x18/ir.png" srcset="https://flagcdn.com/48x36/ir.png 2x" width="24" height="18" alt="IR" class="inline-block rounded-sm relative -top-px" loading="lazy"></button>
+                    
+                    <button
+                            id="hero-flag-th"
+                            class="hero-flag-btn px-1 py-1 rounded hover:bg-white/20 transition"
+                            data-action="switch-hero" data-lang="th" title="th"><img src="https://flagcdn.com/24x18/th.png" srcset="https://flagcdn.com/48x36/th.png 2x" width="24" height="18" alt="TH" class="inline-block rounded-sm relative -top-px" loading="lazy"></button>
+                    
+                    <button
+                            id="hero-flag-pl"
+                            class="hero-flag-btn px-1 py-1 rounded hover:bg-white/20 transition"
+                            data-action="switch-hero" data-lang="pl" title="pl"><img src="https://flagcdn.com/24x18/pl.png" srcset="https://flagcdn.com/48x36/pl.png 2x" width="24" height="18" alt="PL" class="inline-block rounded-sm relative -top-px" loading="lazy"></button>
+                    
+                    <button
+                            id="hero-flag-hr"
+                            class="hero-flag-btn px-1 py-1 rounded hover:bg-white/20 transition"
+                            data-action="switch-hero" data-lang="hr" title="hr"><img src="https://flagcdn.com/24x18/hr.png" srcset="https://flagcdn.com/48x36/hr.png 2x" width="24" height="18" alt="HR" class="inline-block rounded-sm relative -top-px" loading="lazy"></button>
+                    
+                    <button
+                            id="hero-flag-bs"
+                            class="hero-flag-btn px-1 py-1 rounded hover:bg-white/20 transition"
+                            data-action="switch-hero" data-lang="bs" title="bs"><img src="https://flagcdn.com/24x18/ba.png" srcset="https://flagcdn.com/48x36/ba.png 2x" width="24" height="18" alt="BA" class="inline-block rounded-sm relative -top-px" loading="lazy"></button>
+                    
+                    <button
+                            id="hero-flag-sr"
+                            class="hero-flag-btn px-1 py-1 rounded hover:bg-white/20 transition"
+                            data-action="switch-hero" data-lang="sr" title="sr"><img src="https://flagcdn.com/24x18/rs.png" srcset="https://flagcdn.com/48x36/rs.png 2x" width="24" height="18" alt="RS" class="inline-block rounded-sm relative -top-px" loading="lazy"></button>
+                    
+                    <button
+                            id="hero-flag-de"
+                            class="hero-flag-btn px-1 py-1 rounded hover:bg-white/20 transition"
+                            data-action="switch-hero" data-lang="de" title="de"><img src="https://flagcdn.com/24x18/de.png" srcset="https://flagcdn.com/48x36/de.png 2x" width="24" height="18" alt="DE" class="inline-block rounded-sm relative -top-px" loading="lazy"></button>
+                    
+                    <button
+                            id="hero-flag-fr"
+                            class="hero-flag-btn px-1 py-1 rounded hover:bg-white/20 transition"
+                            data-action="switch-hero" data-lang="fr" title="fr"><img src="https://flagcdn.com/24x18/fr.png" srcset="https://flagcdn.com/48x36/fr.png 2x" width="24" height="18" alt="FR" class="inline-block rounded-sm relative -top-px" loading="lazy"></button>
+                    
+                    <button
+                            id="hero-flag-es"
+                            class="hero-flag-btn px-1 py-1 rounded hover:bg-white/20 transition"
+                            data-action="switch-hero" data-lang="es" title="es"><img src="https://flagcdn.com/24x18/es.png" srcset="https://flagcdn.com/48x36/es.png 2x" width="24" height="18" alt="ES" class="inline-block rounded-sm relative -top-px" loading="lazy"></button>
+                    
+                    <button
+                            id="hero-flag-it"
+                            class="hero-flag-btn px-1 py-1 rounded hover:bg-white/20 transition"
+                            data-action="switch-hero" data-lang="it" title="it"><img src="https://flagcdn.com/24x18/it.png" srcset="https://flagcdn.com/48x36/it.png 2x" width="24" height="18" alt="IT" class="inline-block rounded-sm relative -top-px" loading="lazy"></button>
+                    
+                    <button
+                            id="hero-flag-pt"
+                            class="hero-flag-btn px-1 py-1 rounded hover:bg-white/20 transition"
+                            data-action="switch-hero" data-lang="pt" title="pt"><img src="https://flagcdn.com/24x18/pt.png" srcset="https://flagcdn.com/48x36/pt.png 2x" width="24" height="18" alt="PT" class="inline-block rounded-sm relative -top-px" loading="lazy"></button>
+                    
+                    <button
+                            id="hero-flag-hi"
+                            class="hero-flag-btn px-1 py-1 rounded hover:bg-white/20 transition"
+                            data-action="switch-hero" data-lang="hi" title="hi"><img src="https://flagcdn.com/24x18/in.png" srcset="https://flagcdn.com/48x36/in.png 2x" width="24" height="18" alt="IN" class="inline-block rounded-sm relative -top-px" loading="lazy"></button>
+                    
+                    <button
+                            id="hero-flag-bn"
+                            class="hero-flag-btn px-1 py-1 rounded hover:bg-white/20 transition"
+                            data-action="switch-hero" data-lang="bn" title="bn"><img src="https://flagcdn.com/24x18/bd.png" srcset="https://flagcdn.com/48x36/bd.png 2x" width="24" height="18" alt="BD" class="inline-block rounded-sm relative -top-px" loading="lazy"></button>
+                    
+                    <button
+                            id="hero-flag-id"
+                            class="hero-flag-btn px-1 py-1 rounded hover:bg-white/20 transition"
+                            data-action="switch-hero" data-lang="id" title="id"><img src="https://flagcdn.com/24x18/id.png" srcset="https://flagcdn.com/48x36/id.png 2x" width="24" height="18" alt="ID" class="inline-block rounded-sm relative -top-px" loading="lazy"></button>
+                    
+                    <button
+                            id="hero-flag-vi"
+                            class="hero-flag-btn px-1 py-1 rounded hover:bg-white/20 transition"
+                            data-action="switch-hero" data-lang="vi" title="vi"><img src="https://flagcdn.com/24x18/vn.png" srcset="https://flagcdn.com/48x36/vn.png 2x" width="24" height="18" alt="VN" class="inline-block rounded-sm relative -top-px" loading="lazy"></button>
+                    
+                    <button
+                            id="hero-flag-el"
+                            class="hero-flag-btn px-1 py-1 rounded hover:bg-white/20 transition"
+                            data-action="switch-hero" data-lang="el" title="el"><img src="https://flagcdn.com/24x18/gr.png" srcset="https://flagcdn.com/48x36/gr.png 2x" width="24" height="18" alt="GR" class="inline-block rounded-sm relative -top-px" loading="lazy"></button>
+                    
+                    <button
+                            id="hero-flag-ku"
+                            class="hero-flag-btn px-1 py-1 rounded hover:bg-white/20 transition"
+                            data-action="switch-hero" data-lang="ku" title="ku">🌍</button>
+                    
+                </div>
+
+                <!-- Two-panel editor -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-0.5">
+                    <!-- Left: agent.hudhud -->
+                    <div class="terminal-window text-left" id="hero-code-block">
+                        <div class="terminal-header">
+                            <div class="flex items-center gap-1.5">
+                                <span class="terminal-dot bg-red-500"></span>
+                                <span class="terminal-dot bg-yellow-500"></span>
+                                <span class="terminal-dot bg-green-500"></span>
+                                <span class="ml-2 text-xs text-slate-500 font-mono" id="hero-filename">demo.hudhud</span>
+                            </div>
+                        </div>
+                        <div class="hudhud-code-block" id="hero-code-container" data-lang="en" data-file="samples/hero/en/demo.hudhud" data-actions="check,run">
+                            <pre class="p-3 text-xs leading-relaxed" id="hero-pre"><code id="hero-code" class="language-hudhudscript">// English - Demo
+function greet(name) {
+    return &#34;Hello, &#34; + name + &#34;!&#34;;
+}
+
+function add(a, b) {
+    return a + b;
+}
+
+let message = greet(&#34;World&#34;);
+print(message);
+
+let sum = 0;
+let i = 1;
+while (i &lt;= 10) {
+    sum = add(sum, i);
+    i = i + 1;
+}
+print(&#34;Sum 1-10: &#34; + sum);
+</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Right: providers.hudhud -->
+                    <div class="terminal-window text-left">
+                        <div class="terminal-header">
+                            <div class="flex items-center gap-1.5">
+                                <span class="terminal-dot bg-red-500"></span>
+                                <span class="terminal-dot bg-yellow-500"></span>
+                                <span class="terminal-dot bg-green-500"></span>
+                                <span class="ml-2 text-xs text-slate-500 font-mono" id="provider-filename">providers.hudhud</span>
+                            </div>
+                        </div>
+                        <div class="no-runner" id="provider-code-container">
+                            <pre class="p-3 text-xs leading-relaxed"><code id="provider-code" class="language-hudhudscript">// English - providers.hudhud
+
+provider DeepSeekProvider {
+    apiKey: env(&#34;DEEPSEEK_API_KEY&#34;),
+    type: &#34;deepseek&#34;,
+    name: &#34;DeepSeek API&#34;,
+    baseUrl: env(&#34;DEEPSEEK_BASE_URL&#34;),
+    temperature: 0.8
+}
+
+provider AnthropicProvider {
+    apiKey: env(&#34;ANTHROPIC_API_KEY&#34;),
+    type: &#34;anthropic&#34;,
+    name: &#34;Anthropic Claude&#34;,
+    model: &#34;claude-opus-4.6&#34;,
+    temperature: 0.9
+}
+
+provider OpenAIProvider {
+    apiKey: env(&#34;OPENAI_API_KEY&#34;),
+    type: &#34;openai&#34;,
+    name: &#34;OpenAI GPT&#34;,
+    temperature: 0.6
+}
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Language banner -->
+<div class="bg-slate-100 border-b border-slate-200 py-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-sm text-slate-600">
+            <span class="font-semibold text-slate-900">23 対応言語</span>  , 
+            Arabic, Japanese, Chinese, Hindi, Bengali, German, Greek, English, Spanish, Persian, French, Croatian, Indonesian, Italian, Kurdish, Polish, Portuguese, Russian, Serbian, Thai, Turkish, Vietnamese, Bosnian
+        </p>
+    </div>
+</div>
+
+<!-- Code Example Section -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+    <div class="text-center mb-10">
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+            同じプログラム、異なる人間の言語
+        </h2>
+        <p class="text-lg text-slate-600 mb-6">
+            <span id="rotating-subtitle">母国語でカスタマーサービスAIエージェントを作成</span>
+        </p>
+        <div class="flex flex-wrap justify-center gap-3">
+            <a href="/docs/keywords" class="inline-flex items-center px-5 py-2.5 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition text-sm font-medium">
+                23言語とキーワードを見る
+            </a>
+            <a href="/docs/lang/en" class="inline-flex items-center px-5 py-2.5 bg-amber-500 text-slate-900 rounded-lg hover:bg-amber-400 transition text-sm font-medium">
+                インタラクティブな例
+            </a>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        
+        
+        
+        
+        <div class="bg-white rounded-lg border border-slate-200 p-5 hover:shadow-md transition-shadow  ">
+            <div class="flex items-center mb-3">
+                <span class="inline-block mr-2 align-text-bottom"><img src="https://flagcdn.com/24x18/gb.png" srcset="https://flagcdn.com/48x36/gb.png 2x" width="24" height="18" alt="GB" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                <h3 class="text-lg font-bold text-slate-900">English</h3>
+            </div>
+            <div class="hudhud-code-block" data-lang="en" data-file="homepage/en.hudhud">
+                <pre class="text-sm"><code class="language-hudhudscript ">// English - Greeting Function
+
+function greet(name) {
+    let message = &#34;Hello, &#34; + name + &#34;!&#34;;
+    print(message);
+    return message;
+}
+
+function add(a, b) {
+    return a + b;
+}
+
+let result = greet(&#34;World&#34;);
+print(result);
+
+let sum = add(42, 58);
+print(&#34;sum: &#34; + sum);
+</code></pre>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="bg-white rounded-lg border border-slate-200 p-5 hover:shadow-md transition-shadow  ">
+            <div class="flex items-center mb-3">
+                <span class="inline-block mr-2 align-text-bottom"><img src="https://flagcdn.com/24x18/tr.png" srcset="https://flagcdn.com/48x36/tr.png 2x" width="24" height="18" alt="TR" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                <h3 class="text-lg font-bold text-slate-900">Türkçe</h3>
+            </div>
+            <div class="hudhud-code-block" data-lang="tr" data-file="homepage/tr.hudhud">
+                <pre class="text-sm"><code class="language-hudhudscript ">// Türkçe - Karşılama Fonksiyonu
+
+işlev karşıla(isim) {
+    tanım mesaj = &#34;Merhaba, &#34; + isim + &#34;!&#34;;
+    yazdır(mesaj);
+    dön mesaj;
+}
+
+işlev topla(a, b) {
+    dön a + b;
+}
+
+tanım sonuç = karşıla(&#34;Dünya&#34;);
+yazdır(sonuç);
+
+tanım toplam = topla(42, 58);
+yazdır(&#34;toplam: &#34; + toplam);
+</code></pre>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="bg-white rounded-lg border border-slate-200 p-5 hover:shadow-md transition-shadow  rtl">
+            <div class="flex items-center mb-3">
+                <span class="inline-block mr-2 align-text-bottom"><img src="https://flagcdn.com/24x18/sa.png" srcset="https://flagcdn.com/48x36/sa.png 2x" width="24" height="18" alt="SA" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                <h3 class="text-lg font-bold text-slate-900">العربية</h3>
+            </div>
+            <div class="hudhud-code-block" data-lang="ar" data-file="homepage/ar.hudhud">
+                <pre class="text-sm"><code class="language-hudhudscript ">// العربية - دالة الترحيب
+
+دالة رحب(اسم) {
+    متغير رسالة = &#34;مرحباً, &#34; + اسم + &#34;!&#34;;
+    اطبع(رسالة);
+    ارجع رسالة;
+}
+
+دالة اجمع(أ, ب) {
+    ارجع أ + ب;
+}
+
+متغير نتيجة = رحب(&#34;العالم&#34;);
+اطبع(نتيجة);
+
+متغير مجموع = اجمع(٤٢, ٥٨);
+اطبع(&#34;مجموع: &#34; + مجموع);
+</code></pre>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="bg-white rounded-lg border border-slate-200 p-5 hover:shadow-md transition-shadow lang-bn ">
+            <div class="flex items-center mb-3">
+                <span class="inline-block mr-2 align-text-bottom"><img src="https://flagcdn.com/24x18/bd.png" srcset="https://flagcdn.com/48x36/bd.png 2x" width="24" height="18" alt="BD" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                <h3 class="text-lg font-bold text-slate-900">বাংলা</h3>
+            </div>
+            <div class="hudhud-code-block" data-lang="bn" data-file="homepage/bn.hudhud">
+                <pre class="text-sm"><code class="language-hudhudscript lang-bn">// বাংলা - অভিবাদন ফাংশন
+
+ফাংশন অভিবাদন(নাম) {
+    ধরো বার্তা = &#34;হ্যালো, &#34; + নাম + &#34;!&#34;;
+    প্রিন্ট(বার্তা);
+    ফেরত_দাও বার্তা;
+}
+
+ফাংশন যোগ(ক, খ) {
+    ফেরত_দাও ক + খ;
+}
+
+ধরো ফলাফল = অভিবাদন(&#34;বিশ্ব&#34;);
+প্রিন্ট(ফলাফল);
+
+ধরো যোগফল = যোগ(42, 58);
+প্রিন্ট(&#34;যোগফল: &#34; + যোগফল);
+</code></pre>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="bg-white rounded-lg border border-slate-200 p-5 hover:shadow-md transition-shadow  ">
+            <div class="flex items-center mb-3">
+                <span class="inline-block mr-2 align-text-bottom"><img src="https://flagcdn.com/24x18/ba.png" srcset="https://flagcdn.com/48x36/ba.png 2x" width="24" height="18" alt="BA" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                <h3 class="text-lg font-bold text-slate-900">Bosanski</h3>
+            </div>
+            <div class="hudhud-code-block" data-lang="bs" data-file="homepage/bs.hudhud">
+                <pre class="text-sm"><code class="language-hudhudscript ">// Bosanski - Funkcija pozdrava
+
+funkcija pozdravi(ime) {
+    neka poruka = &#34;Zdravo, &#34; + ime + &#34;!&#34;;
+    ispiši(poruka);
+    vrati poruka;
+}
+
+funkcija saberi(a, b) {
+    vrati a + b;
+}
+
+neka rezultat = pozdravi(&#34;Svijet&#34;);
+ispiši(rezultat);
+
+neka zbir = saberi(42, 58);
+ispiši(&#34;zbir: &#34; + zbir);
+</code></pre>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="bg-white rounded-lg border border-slate-200 p-5 hover:shadow-md transition-shadow  ">
+            <div class="flex items-center mb-3">
+                <span class="inline-block mr-2 align-text-bottom"><img src="https://flagcdn.com/24x18/de.png" srcset="https://flagcdn.com/48x36/de.png 2x" width="24" height="18" alt="DE" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                <h3 class="text-lg font-bold text-slate-900">Deutsch</h3>
+            </div>
+            <div class="hudhud-code-block" data-lang="de" data-file="homepage/de.hudhud">
+                <pre class="text-sm"><code class="language-hudhudscript ">// Deutsch - Begrüßungsfunktion
+
+funktion begrüße(name) {
+    lasse nachricht = &#34;Hallo, &#34; + name + &#34;!&#34;;
+    drucke(nachricht);
+    zurück nachricht;
+}
+
+funktion addiere(a, b) {
+    zurück a + b;
+}
+
+lasse ergebnis = begrüße(&#34;Welt&#34;);
+drucke(ergebnis);
+
+lasse summe = addiere(42, 58);
+drucke(&#34;summe: &#34; + summe);
+</code></pre>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="bg-white rounded-lg border border-slate-200 p-5 hover:shadow-md transition-shadow lang-el ">
+            <div class="flex items-center mb-3">
+                <span class="inline-block mr-2 align-text-bottom"><img src="https://flagcdn.com/24x18/gr.png" srcset="https://flagcdn.com/48x36/gr.png 2x" width="24" height="18" alt="GR" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                <h3 class="text-lg font-bold text-slate-900">Ελληνικά</h3>
+            </div>
+            <div class="hudhud-code-block" data-lang="el" data-file="homepage/el.hudhud">
+                <pre class="text-sm"><code class="language-hudhudscript lang-el">// Ελληνικά - Συνάρτηση χαιρετισμού
+
+συνάρτηση χαιρέτησε(όνομα) {
+    μεταβλητή μήνυμα = &#34;Γεια, &#34; + όνομα + &#34;!&#34;;
+    εκτύπωσε(μήνυμα);
+    επιστροφή μήνυμα;
+}
+
+συνάρτηση πρόσθεσε(α, β) {
+    επιστροφή α + β;
+}
+
+μεταβλητή αποτέλεσμα = χαιρέτησε(&#34;Κόσμε&#34;);
+εκτύπωσε(αποτέλεσμα);
+
+μεταβλητή άθροισμα = πρόσθεσε(42, 58);
+εκτύπωσε(&#34;άθροισμα: &#34; + άθροισμα);
+</code></pre>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="bg-white rounded-lg border border-slate-200 p-5 hover:shadow-md transition-shadow  ">
+            <div class="flex items-center mb-3">
+                <span class="inline-block mr-2 align-text-bottom"><img src="https://flagcdn.com/24x18/es.png" srcset="https://flagcdn.com/48x36/es.png 2x" width="24" height="18" alt="ES" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                <h3 class="text-lg font-bold text-slate-900">Español</h3>
+            </div>
+            <div class="hudhud-code-block" data-lang="es" data-file="homepage/es.hudhud">
+                <pre class="text-sm"><code class="language-hudhudscript ">// Español - Función de saludo
+
+función saluda(nombre) {
+    sea mensaje = &#34;Hola, &#34; + nombre + &#34;!&#34;;
+    imprime(mensaje);
+    retornar mensaje;
+}
+
+función suma(a, b) {
+    retornar a + b;
+}
+
+sea resultado = saluda(&#34;Mundo&#34;);
+imprime(resultado);
+
+sea total = suma(42, 58);
+imprime(&#34;suma: &#34; + total);
+</code></pre>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="bg-white rounded-lg border border-slate-200 p-5 hover:shadow-md transition-shadow lang-fa rtl">
+            <div class="flex items-center mb-3">
+                <span class="inline-block mr-2 align-text-bottom"><img src="https://flagcdn.com/24x18/ir.png" srcset="https://flagcdn.com/48x36/ir.png 2x" width="24" height="18" alt="IR" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                <h3 class="text-lg font-bold text-slate-900">فارسی</h3>
+            </div>
+            <div class="hudhud-code-block" data-lang="fa" data-file="homepage/fa.hudhud">
+                <pre class="text-sm"><code class="language-hudhudscript lang-fa">// فارسی - تابع سلام
+
+تابع سلام_کن(نام) {
+    متغیر پیام = &#34;سلام، &#34; + نام + &#34;!&#34;;
+    چاپ(پیام);
+    return پیام;
+}
+
+تابع جمع_کن(الف, ب) {
+    return الف + ب;
+}
+
+متغیر نتیجه = سلام_کن(&#34;جهان&#34;);
+چاپ(نتیجه);
+
+متغیر مجموع = جمع_کن(42, 58);
+چاپ(&#34;مجموع: &#34; + مجموع);
+</code></pre>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="bg-white rounded-lg border border-slate-200 p-5 hover:shadow-md transition-shadow  ">
+            <div class="flex items-center mb-3">
+                <span class="inline-block mr-2 align-text-bottom"><img src="https://flagcdn.com/24x18/fr.png" srcset="https://flagcdn.com/48x36/fr.png 2x" width="24" height="18" alt="FR" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                <h3 class="text-lg font-bold text-slate-900">Français</h3>
+            </div>
+            <div class="hudhud-code-block" data-lang="fr" data-file="homepage/fr.hudhud">
+                <pre class="text-sm"><code class="language-hudhudscript ">// Français - Fonction de salut
+
+fonction salue(nom) {
+    soit message = &#34;Bonjour, &#34; + nom + &#34;!&#34;;
+    affiche(message);
+    retourner message;
+}
+
+fonction additionne(a, b) {
+    retourner a + b;
+}
+
+soit résultat = salue(&#34;Monde&#34;);
+affiche(résultat);
+
+soit somme = additionne(42, 58);
+affiche(&#34;somme: &#34; + somme);
+</code></pre>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="bg-white rounded-lg border border-slate-200 p-5 hover:shadow-md transition-shadow lang-hi ">
+            <div class="flex items-center mb-3">
+                <span class="inline-block mr-2 align-text-bottom"><img src="https://flagcdn.com/24x18/in.png" srcset="https://flagcdn.com/48x36/in.png 2x" width="24" height="18" alt="IN" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                <h3 class="text-lg font-bold text-slate-900">हिन्दी</h3>
+            </div>
+            <div class="hudhud-code-block" data-lang="hi" data-file="homepage/hi.hudhud">
+                <pre class="text-sm"><code class="language-hudhudscript lang-hi">// हिन्दी - स्वागत फंक्शन
+
+फ़ंक्शन स्वागत(नाम) {
+    चर संदेश = &#34;नमस्ते, &#34; + नाम + &#34;!&#34;;
+    प्रिंट(संदेश);
+    return संदेश;
+}
+
+फ़ंक्शन जोड़(अ, ब) {
+    return अ + ब;
+}
+
+चर परिणाम = स्वागत(&#34;दुनिया&#34;);
+प्रिंट(परिणाम);
+
+चर योग = जोड़(42, 58);
+प्रिंट(&#34;योग: &#34; + योग);
+</code></pre>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="bg-white rounded-lg border border-slate-200 p-5 hover:shadow-md transition-shadow  ">
+            <div class="flex items-center mb-3">
+                <span class="inline-block mr-2 align-text-bottom"><img src="https://flagcdn.com/24x18/hr.png" srcset="https://flagcdn.com/48x36/hr.png 2x" width="24" height="18" alt="HR" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                <h3 class="text-lg font-bold text-slate-900">Hrvatski</h3>
+            </div>
+            <div class="hudhud-code-block" data-lang="hr" data-file="homepage/hr.hudhud">
+                <pre class="text-sm"><code class="language-hudhudscript ">// Hrvatski - Funkcija pozdrava
+
+funkcija pozdravi(ime) {
+    neka poruka = &#34;Zdravo, &#34; + ime + &#34;!&#34;;
+    ispiši(poruka);
+    vrati poruka;
+}
+
+funkcija saberi(a, b) {
+    vrati a + b;
+}
+
+neka rezultat = pozdravi(&#34;Svijet&#34;);
+ispiši(rezultat);
+
+neka zbir = saberi(42, 58);
+ispiši(&#34;zbir: &#34; + zbir);
+</code></pre>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="bg-white rounded-lg border border-slate-200 p-5 hover:shadow-md transition-shadow  ">
+            <div class="flex items-center mb-3">
+                <span class="inline-block mr-2 align-text-bottom"><img src="https://flagcdn.com/24x18/id.png" srcset="https://flagcdn.com/48x36/id.png 2x" width="24" height="18" alt="ID" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                <h3 class="text-lg font-bold text-slate-900">Bahasa Indonesia</h3>
+            </div>
+            <div class="hudhud-code-block" data-lang="id" data-file="homepage/id.hudhud">
+                <pre class="text-sm"><code class="language-hudhudscript ">// Indonesia - Fungsi salam
+
+fungsi sapa(nama) {
+    variabel pesan = &#34;Halo, &#34; + nama + &#34;!&#34;;
+    cetak(pesan);
+    kembali pesan;
+}
+
+fungsi tambah(a, b) {
+    kembali a + b;
+}
+
+variabel hasil = sapa(&#34;Dunia&#34;);
+cetak(hasil);
+
+variabel jumlah = tambah(42, 58);
+cetak(&#34;jumlah: &#34; + jumlah);
+</code></pre>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="bg-white rounded-lg border border-slate-200 p-5 hover:shadow-md transition-shadow  ">
+            <div class="flex items-center mb-3">
+                <span class="inline-block mr-2 align-text-bottom"><img src="https://flagcdn.com/24x18/it.png" srcset="https://flagcdn.com/48x36/it.png 2x" width="24" height="18" alt="IT" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                <h3 class="text-lg font-bold text-slate-900">Italiano</h3>
+            </div>
+            <div class="hudhud-code-block" data-lang="it" data-file="homepage/it.hudhud">
+                <pre class="text-sm"><code class="language-hudhudscript ">// Italiano - Funzione di saluto
+
+funzione saluta(nome) {
+    variabile messaggio = &#34;Ciao, &#34; + nome + &#34;!&#34;;
+    stampare(messaggio);
+    ritornare messaggio;
+}
+
+funzione somma(a, b) {
+    ritornare a + b;
+}
+
+variabile risultato = saluta(&#34;Mondo&#34;);
+stampare(risultato);
+
+variabile totale = somma(42, 58);
+stampare(&#34;totale: &#34; + totale);
+</code></pre>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="bg-white rounded-lg border border-slate-200 p-5 hover:shadow-md transition-shadow lang-ja ">
+            <div class="flex items-center mb-3">
+                <span class="inline-block mr-2 align-text-bottom"><img src="https://flagcdn.com/24x18/jp.png" srcset="https://flagcdn.com/48x36/jp.png 2x" width="24" height="18" alt="JP" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                <h3 class="text-lg font-bold text-slate-900">日本語</h3>
+            </div>
+            <div class="hudhud-code-block" data-lang="ja" data-file="homepage/ja.hudhud">
+                <pre class="text-sm"><code class="language-hudhudscript lang-ja">// 日本語 - 挨拶関数
+
+関数 挨拶する(名前) {
+    変数 メッセージ = &#34;こんにちは, &#34; + 名前 + &#34;!&#34;;
+    表示(メッセージ);
+    戻る メッセージ;
+}
+
+関数 足す(甲, 乙) {
+    戻る 甲 + 乙;
+}
+
+変数 結果 = 挨拶する(&#34;世界&#34;);
+表示(結果);
+
+変数 合計 = 足す(42, 58);
+表示(&#34;合計: &#34; + 合計);
+</code></pre>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="bg-white rounded-lg border border-slate-200 p-5 hover:shadow-md transition-shadow  ">
+            <div class="flex items-center mb-3">
+                <span class="inline-block mr-2 align-text-bottom">🌍</span>
+                <h3 class="text-lg font-bold text-slate-900">Kurdî</h3>
+            </div>
+            <div class="hudhud-code-block" data-lang="ku" data-file="homepage/ku.hudhud">
+                <pre class="text-sm"><code class="language-hudhudscript ">// Kurdî - Fonksiyona silavê
+
+fonksiyon silav(nav) {
+    guherbar peyam = &#34;Silav, &#34; + nav + &#34;!&#34;;
+    çap_bike(peyam);
+    return peyam;
+}
+
+fonksiyon kom(a, b) {
+    return a + b;
+}
+
+guherbar encam = silav(&#34;Cîhan&#34;);
+çap_bike(encam);
+
+guherbar tevahî = kom(42, 58);
+çap_bike(&#34;tevahî: &#34; + tevahî);
+</code></pre>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="bg-white rounded-lg border border-slate-200 p-5 hover:shadow-md transition-shadow  ">
+            <div class="flex items-center mb-3">
+                <span class="inline-block mr-2 align-text-bottom"><img src="https://flagcdn.com/24x18/pl.png" srcset="https://flagcdn.com/48x36/pl.png 2x" width="24" height="18" alt="PL" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                <h3 class="text-lg font-bold text-slate-900">Polski</h3>
+            </div>
+            <div class="hudhud-code-block" data-lang="pl" data-file="homepage/pl.hudhud">
+                <pre class="text-sm"><code class="language-hudhudscript ">// Polski - Funkcja powitania
+
+funkcja powitaj(imię) {
+    niech wiadomość = &#34;Cześć, &#34; + imię + &#34;!&#34;;
+    drukuj(wiadomość);
+    zwróć wiadomość;
+}
+
+funkcja dodaj(a, b) {
+    zwróć a + b;
+}
+
+niech wynik = powitaj(&#34;Świat&#34;);
+drukuj(wynik);
+
+niech suma = dodaj(42, 58);
+drukuj(&#34;suma: &#34; + suma);
+</code></pre>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="bg-white rounded-lg border border-slate-200 p-5 hover:shadow-md transition-shadow  ">
+            <div class="flex items-center mb-3">
+                <span class="inline-block mr-2 align-text-bottom"><img src="https://flagcdn.com/24x18/pt.png" srcset="https://flagcdn.com/48x36/pt.png 2x" width="24" height="18" alt="PT" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                <h3 class="text-lg font-bold text-slate-900">Português</h3>
+            </div>
+            <div class="hudhud-code-block" data-lang="pt" data-file="homepage/pt.hudhud">
+                <pre class="text-sm"><code class="language-hudhudscript ">// Português - Função de saudação
+
+função sauda(nome) {
+    variável mensagem = &#34;Olá, &#34; + nome + &#34;!&#34;;
+    imprimir(mensagem);
+    retornar mensagem;
+}
+
+função soma(a, b) {
+    retornar a + b;
+}
+
+variável resultado = sauda(&#34;Mundo&#34;);
+imprimir(resultado);
+
+variável total = soma(42, 58);
+imprimir(&#34;total: &#34; + total);
+</code></pre>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="bg-white rounded-lg border border-slate-200 p-5 hover:shadow-md transition-shadow  ">
+            <div class="flex items-center mb-3">
+                <span class="inline-block mr-2 align-text-bottom"><img src="https://flagcdn.com/24x18/ru.png" srcset="https://flagcdn.com/48x36/ru.png 2x" width="24" height="18" alt="RU" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                <h3 class="text-lg font-bold text-slate-900">Русский</h3>
+            </div>
+            <div class="hudhud-code-block" data-lang="ru" data-file="homepage/ru.hudhud">
+                <pre class="text-sm"><code class="language-hudhudscript ">// Русский - Функция приветствия
+
+функция приветствуй(имя) {
+    пусть сообщение = &#34;Привет, &#34; + имя + &#34;!&#34;;
+    печать(сообщение);
+    вернуть сообщение;
+}
+
+функция сложи(а, б) {
+    вернуть а + б;
+}
+
+пусть результат = приветствуй(&#34;Мир&#34;);
+печать(результат);
+
+пусть сумма = сложи(42, 58);
+печать(&#34;сумма: &#34; + сумма);
+</code></pre>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="bg-white rounded-lg border border-slate-200 p-5 hover:shadow-md transition-shadow  ">
+            <div class="flex items-center mb-3">
+                <span class="inline-block mr-2 align-text-bottom"><img src="https://flagcdn.com/24x18/rs.png" srcset="https://flagcdn.com/48x36/rs.png 2x" width="24" height="18" alt="RS" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                <h3 class="text-lg font-bold text-slate-900">Српски</h3>
+            </div>
+            <div class="hudhud-code-block" data-lang="sr" data-file="homepage/sr.hudhud">
+                <pre class="text-sm"><code class="language-hudhudscript ">// Српски - Функција поздрава
+
+funkcija поздрави(име) {
+    neka порука = &#34;Здраво, &#34; + име + &#34;!&#34;;
+    ispiši(порука);
+    vrati порука;
+}
+
+funkcija сабери(а, б) {
+    vrati а + б;
+}
+
+neka резултат = поздрави(&#34;Свет&#34;);
+ispiši(резултат);
+
+neka збир = сабери(42, 58);
+ispiši(&#34;збир: &#34; + збир);
+</code></pre>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="bg-white rounded-lg border border-slate-200 p-5 hover:shadow-md transition-shadow lang-th ">
+            <div class="flex items-center mb-3">
+                <span class="inline-block mr-2 align-text-bottom"><img src="https://flagcdn.com/24x18/th.png" srcset="https://flagcdn.com/48x36/th.png 2x" width="24" height="18" alt="TH" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                <h3 class="text-lg font-bold text-slate-900">ไทย</h3>
+            </div>
+            <div class="hudhud-code-block" data-lang="th" data-file="homepage/th.hudhud">
+                <pre class="text-sm"><code class="language-hudhudscript lang-th">// ไทย - ฟังก์ชันทักทาย
+
+ฟังก์ชัน ทักทาย(ชื่อ) {
+    ตัวแปร ข้อความ = &#34;สวัสดี, &#34; + ชื่อ + &#34;!&#34;;
+    พิมพ์(ข้อความ);
+    return ข้อความ;
+}
+
+ฟังก์ชัน บวก(ก, ข) {
+    return ก + ข;
+}
+
+ตัวแปร ผลลัพธ์ = ทักทาย(&#34;โลก&#34;);
+พิมพ์(ผลลัพธ์);
+
+ตัวแปร รวม = บวก(42, 58);
+พิมพ์(&#34;รวม: &#34; + รวม);
+</code></pre>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="bg-white rounded-lg border border-slate-200 p-5 hover:shadow-md transition-shadow  ">
+            <div class="flex items-center mb-3">
+                <span class="inline-block mr-2 align-text-bottom"><img src="https://flagcdn.com/24x18/vn.png" srcset="https://flagcdn.com/48x36/vn.png 2x" width="24" height="18" alt="VN" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                <h3 class="text-lg font-bold text-slate-900">Tiếng Việt</h3>
+            </div>
+            <div class="hudhud-code-block" data-lang="vi" data-file="homepage/vi.hudhud">
+                <pre class="text-sm"><code class="language-hudhudscript ">// Tiếng Việt - Hàm chào
+
+hàm chào(tên) {
+    biến tin_nhắn = &#34;Xin chào, &#34; + tên + &#34;!&#34;;
+    trả_về tin_nhắn;
+}
+
+hàm cộng(a, b) {
+    trả_về a + b;
+}
+
+biến kết_quả = chào(&#34;Thế giới&#34;);
+in_ra(kết_quả);
+
+biến tổng = cộng(42, 58);
+in_ra(&#34;tổng: &#34; + tổng);
+</code></pre>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="bg-white rounded-lg border border-slate-200 p-5 hover:shadow-md transition-shadow lang-zh ">
+            <div class="flex items-center mb-3">
+                <span class="inline-block mr-2 align-text-bottom"><img src="https://flagcdn.com/24x18/cn.png" srcset="https://flagcdn.com/48x36/cn.png 2x" width="24" height="18" alt="CN" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                <h3 class="text-lg font-bold text-slate-900">中文</h3>
+            </div>
+            <div class="hudhud-code-block" data-lang="zh" data-file="homepage/zh.hudhud">
+                <pre class="text-sm"><code class="language-hudhudscript lang-zh">// 中文 - 问候函数
+
+函数 问候(名字) {
+    变量 消息 = &#34;你好, &#34; + 名字 + &#34;!&#34;;
+    打印(消息);
+    返回 消息;
+}
+
+函数 加(甲, 乙) {
+    返回 甲 + 乙;
+}
+
+变量 结果 = 问候(&#34;世界&#34;);
+打印(结果);
+
+变量 总和 = 加(42, 58);
+打印(&#34;总和: &#34; + 总和);
+</code></pre>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="bg-white py-16 lg:py-20 border-t border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14">
+            <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">
+                なぜHudHudScriptか？
+            </h2>
+            <p class="text-lg text-slate-600">
+                AI時代のために独自機能で構築
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="feature-card bg-slate-50 rounded-lg p-7">
+                <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4 font-bold text-lg">23</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">多言語</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Write code in your native language. English, Turkish, Japanese, or Arabic - your choice.
+                </p>
+            </div>
+
+            <div class="feature-card bg-slate-50 rounded-lg p-7">
+                <div class="w-10 h-10 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">AIネイティブ</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    OpenAI、Anthropic、Ollamaを内蔵。数行でAIエージェントを作成。
+                </p>
+            </div>
+
+            <div class="feature-card bg-slate-50 rounded-lg p-7">
+                <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">ガバナンス</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    言語自体に組み込まれた憲法、法律、評議会、ルール。
+                </p>
+            </div>
+
+            <div class="feature-card bg-slate-50 rounded-lg p-7">
+                <div class="w-10 h-10 rounded-lg bg-rose-100 text-rose-600 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">マルチエージェント</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    複雑なタスクのために群れとコミュニティで複数のAIエージェントを調整。
+                </p>
+            </div>
+
+            <div class="feature-card bg-slate-50 rounded-lg p-7">
+                <div class="w-10 h-10 rounded-lg bg-cyan-100 text-cyan-600 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">MCP統合</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Connect to 90+ external services seamlessly with Model Context Protocol.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Stats Section -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center max-w-lg mx-auto">
+        <div>
+            <div class="text-4xl font-extrabold text-amber-500 mb-1">23</div>
+            <div class="text-sm text-slate-500 font-medium">言語</div>
+        </div>
+        <div>
+            <div class="text-4xl font-extrabold text-amber-500 mb-1">148 × 23</div>
+            <div class="text-sm text-slate-500 font-medium">キーワード × 言語</div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA Section -->
+<div class="gradient-bg text-white py-16 lg:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl lg:text-4xl font-bold mb-4">
+            始める準備は？
+        </h2>
+        <p class="text-lg mb-8 text-slate-300">
+            世界中の開発者と母国語でコーディング
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="/docs"
+               class="inline-flex items-center justify-center px-8 py-3.5 text-base font-semibold rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-900 transition">
+                ドキュメントを読む
+            </a>
+            <a href="https://github.com/HudHudMind/hudhudscript"
+               class="inline-flex items-center justify-center px-8 py-3.5 text-base font-semibold rounded-lg border-2 border-slate-400 text-white hover:bg-white/10 transition">
+                GitHubで見る
+            </a>
+        </div>
+    </div>
+</div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <img src="/static/images/logo/hudhud-96.png" alt="HudHudScript" width="48" height="48" class="rounded-lg">
+                        <span class="text-lg font-bold text-white">HudHud<span class="text-amber-400">Script</span></span>
+                    </div>
+                    <p class="text-sm leading-relaxed">
+                        ガバナンス内蔵の多言語AIエージェントプログラミング言語。
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-semibold text-slate-200 uppercase tracking-wider mb-4">リソース</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/docs" class="hover:text-white transition">ドキュメント</a></li>
+                        <li><a href="/examples" class="hover:text-white transition">例</a></li>
+                        
+                        <li><a href="/tools" class="hover:text-white transition">ツール</a></li>
+                        <li><a href="/paradigms" class="hover:text-white transition">パラダイム</a></li>
+                        <li><a href="/blog/" class="hover:text-white transition">ブログ</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-semibold text-slate-200 uppercase tracking-wider mb-4">コミュニティ</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 shrink-0 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M22.957 7.54c-.7 4.13-3.29 7.1-7.1 7.1H9.28V2.15h6.5c4.07 0 6.91 3.08 7.18 5.39zM0 2.15h3.88v19.7H0V2.15z"/></svg><a href="https://www.patreon.com/cw/hudhudscript" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Patreon</a></li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 shrink-0 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg><a href="https://github.com/HudHudMind/hudhudscript" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">GitHub</a></li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 shrink-0 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg><a href="https://discord.gg/UxEJ5MfH" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Discord</a></li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 shrink-0 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><a href="https://x.com/hudhud_script" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Twitter / X</a></li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 shrink-0 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><a href="https://www.linkedin.com/groups/27050016/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">LinkedIn</a></li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 shrink-0 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><a href="https://www.youtube.com/@HudHudScripting" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">YouTube</a></li>
+                        <li><a href="/contributors" class="hover:text-white transition">貢献者</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-semibold text-slate-200 uppercase tracking-wider mb-4">について</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/about/language" class="hover:text-white transition">言語について</a></li>
+                        <li><a href="/download" class="hover:text-white transition">ダウンロード</a></li>
+                        <li><a href="mailto:info@hudhudscript.com" class="hover:text-white transition">info@hudhudscript.com</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 mt-10 pt-6 text-center text-sm text-slate-500">
+                <p>&copy; 2026 HudHud Mind. 無断転載禁止。</p>
+                <p class="mt-1 text-slate-600">website v0.0.99 &middot; hudhud v0.8.244</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Prism.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="/static/js/prism-hudhudscript.js"></script>
+
+    <script nonce="0WIOYdgk-Wjs3IYa4CKEHJ1zRWL-qx_MZDtdSjGzk6M">
+        window.SITE_LANGUAGE = 'ja';
+        window.CSRF_TOKEN = '199f74eb80fbdfce2ec10b850ad095be7719a45de5875bf8799f3c16cdc82fd0';
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Custom language dropdown
+        document.querySelectorAll('[data-lang-selector]').forEach(function(dropdown) {
+            const btn = dropdown.querySelector('.lang-dropdown-btn');
+            const menu = dropdown.querySelector('.lang-dropdown-menu');
+            
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                menu.classList.toggle('hidden');
+            });
+            
+            menu.querySelectorAll('.lang-dropdown-item').forEach(function(item) {
+                item.addEventListener('click', function() {
+                    changeLanguage(this.dataset.lang);
+                });
+            });
+        });
+        
+        document.addEventListener('click', function() {
+            document.querySelectorAll('.lang-dropdown-menu').forEach(function(m) {
+                m.classList.add('hidden');
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('pre code:not([class*="language-"])').forEach(function(block) {
+                block.classList.add('language-hudhudscript');
+            });
+            Prism.highlightAll();
+        });
+
+        function changeLanguage(lang) {
+            // Set cookie so language persists across refreshes
+            document.cookie = 'lang=' + lang + ';path=/;max-age=31536000;SameSite=Lax';
+            if (typeof changeAllExamplesLanguage === 'function') {
+                changeAllExamplesLanguage(lang);
+            }
+            const url = new URL(window.location.href);
+            url.searchParams.set('lang', lang);
+            window.location.href = url.toString();
+        }
+    </script>
+
+    <script src="/static/js/hudhud-code-runner.js"></script>
+
+    
+<script nonce="0WIOYdgk-Wjs3IYa4CKEHJ1zRWL-qx_MZDtdSjGzk6M">
+// Hero language samples cache
+const heroSamples = {"ar": "// \u0627\u0644\u0639\u0631\u0628\u064a\u0629 - Demo\n\u062f\u0627\u0644\u0629 \u0631\u062d\u0628(\u0627\u0633\u0645) {\n    \u0627\u0631\u062c\u0639 \"\u0645\u0631\u062d\u0628\u0627\u064b\u060c \" + \u0627\u0633\u0645 + \"!\";\n}\n\n\u062f\u0627\u0644\u0629 \u0627\u062c\u0645\u0639(\u0623, \u0628) {\n    \u0627\u0631\u062c\u0639 \u0623 + \u0628;\n}\n\n\u0645\u062a\u063a\u064a\u0631 \u0631\u0633\u0627\u0644\u0629 = \u0631\u062d\u0628(\"\u0627\u0644\u0639\u0627\u0644\u0645\");\n\u0627\u0637\u0628\u0639(\u0631\u0633\u0627\u0644\u0629);\n\n\u0645\u062a\u063a\u064a\u0631 \u0645\u062c\u0645\u0648\u0639 = \u0660;\n\u0645\u062a\u063a\u064a\u0631 \u0639\u062f\u0627\u062f = \u0661;\n\u0628\u064a\u0646\u0645\u0627 (\u0639\u062f\u0627\u062f \u003c= \u0661\u0660) {\n    \u0645\u062c\u0645\u0648\u0639 = \u0627\u062c\u0645\u0639(\u0645\u062c\u0645\u0648\u0639, \u0639\u062f\u0627\u062f);\n    \u0639\u062f\u0627\u062f = \u0639\u062f\u0627\u062f + \u0661;\n}\n\u0627\u0637\u0628\u0639(\"\u0627\u0644\u0645\u062c\u0645\u0648\u0639 \u0661-\u0661\u0660: \" + \u0645\u062c\u0645\u0648\u0639);\n", "bn": "// \u09ac\u09be\u0982\u09b2\u09be - Demo\n\u09ab\u09be\u0982\u09b6\u09a8 \u0985\u09ad\u09bf\u09ac\u09be\u09a6\u09a8(\u09a8\u09be\u09ae) {\n    \u09ab\u09c7\u09b0\u09a4_\u09a6\u09be\u0993 \"\u09b9\u09cd\u09af\u09be\u09b2\u09cb, \" + \u09a8\u09be\u09ae + \"!\";\n}\n\n\u09ab\u09be\u0982\u09b6\u09a8 \u09af\u09cb\u0997(\u0995, \u0996) {\n    \u09ab\u09c7\u09b0\u09a4_\u09a6\u09be\u0993 \u0995 + \u0996;\n}\n\n\u09a7\u09b0\u09cb \u09ac\u09be\u09b0\u09cd\u09a4\u09be = \u0985\u09ad\u09bf\u09ac\u09be\u09a6\u09a8(\"\u09ac\u09bf\u09b6\u09cd\u09ac\");\n\u09aa\u09cd\u09b0\u09bf\u09a8\u09cd\u099f(\u09ac\u09be\u09b0\u09cd\u09a4\u09be);\n\n\u09a7\u09b0\u09cb \u09ae\u09cb\u099f = 0;\n\u09a7\u09b0\u09cb \u0997\u09a3\u09a8\u09be = 1;\n\u09af\u09a4\u0995\u09cd\u09b7\u09a3 (\u0997\u09a3\u09a8\u09be \u003c= 10) {\n    \u09ae\u09cb\u099f = \u09af\u09cb\u0997(\u09ae\u09cb\u099f, \u0997\u09a3\u09a8\u09be);\n    \u0997\u09a3\u09a8\u09be = \u0997\u09a3\u09a8\u09be + 1;\n}\n\u09aa\u09cd\u09b0\u09bf\u09a8\u09cd\u099f(\"\u09ae\u09cb\u099f 1-10: \" + \u09ae\u09cb\u099f);\n", "bs": "// Bosanski - Demo\nfunkcija pozdravi(ime) {\n    vrati \"Zdravo, \" + ime + \"!\";\n}\n\nfunkcija saberi(a, b) {\n    vrati a + b;\n}\n\nneka poruka = pozdravi(\"Svijet\");\nispis(poruka);\n\nneka zbir = 0;\nneka brojac = 1;\ndok (brojac \u003c= 10) {\n    zbir = saberi(zbir, brojac);\n    brojac = brojac + 1;\n}\nispis(\"Zbir 1-10: \" + zbir);\n", "de": "// Deutsch - Demo\nfunktion gr\u00fc\u00dfe(name) {\n    zur\u00fcck \"Hallo, \" + name + \"!\";\n}\n\nfunktion addiere(a, b) {\n    zur\u00fcck a + b;\n}\n\nlasse nachricht = gr\u00fc\u00dfe(\"Welt\");\ndrucke(nachricht);\n\nlasse summe = 0;\nlasse z\u00e4hler = 1;\nw\u00e4hrend (z\u00e4hler \u003c= 10) {\n    summe = addiere(summe, z\u00e4hler);\n    z\u00e4hler = z\u00e4hler + 1;\n}\ndrucke(\"Summe 1-10: \" + summe);\n", "el": "// \u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac - Demo\n\u03c3\u03c5\u03bd\u03ac\u03c1\u03c4\u03b7\u03c3\u03b7 \u03c7\u03b1\u03b9\u03c1\u03ad\u03c4\u03b9\u03c3\u03b5(\u03cc\u03bd\u03bf\u03bc\u03b1) {\n    \u03b5\u03c0\u03b9\u03c3\u03c4\u03c1\u03bf\u03c6\u03ae \"\u0393\u03b5\u03b9\u03b1, \" + \u03cc\u03bd\u03bf\u03bc\u03b1 + \"!\";\n}\n\n\u03c3\u03c5\u03bd\u03ac\u03c1\u03c4\u03b7\u03c3\u03b7 \u03c0\u03c1\u03cc\u03c3\u03b8\u03b5\u03c3\u03b5(\u03b1, \u03b2) {\n    \u03b5\u03c0\u03b9\u03c3\u03c4\u03c1\u03bf\u03c6\u03ae \u03b1 + \u03b2;\n}\n\n\u03b1\u03c2 \u03bc\u03ae\u03bd\u03c5\u03bc\u03b1 = \u03c7\u03b1\u03b9\u03c1\u03ad\u03c4\u03b9\u03c3\u03b5(\"\u039a\u03cc\u03c3\u03bc\u03b5\");\n\u03b5\u03ba\u03c4\u03cd\u03c0\u03c9\u03c3\u03b5(\u03bc\u03ae\u03bd\u03c5\u03bc\u03b1);\n\n\u03b1\u03c2 \u03c3\u03cd\u03bd\u03bf\u03bb\u03bf = 0;\n\u03b1\u03c2 \u03bc\u03b5\u03c4\u03c1\u03b7\u03c4\u03ae\u03c2 = 1;\n\u03b5\u03bd\u03ce (\u03bc\u03b5\u03c4\u03c1\u03b7\u03c4\u03ae\u03c2 \u003c= 10) {\n    \u03c3\u03cd\u03bd\u03bf\u03bb\u03bf = \u03c0\u03c1\u03cc\u03c3\u03b8\u03b5\u03c3\u03b5(\u03c3\u03cd\u03bd\u03bf\u03bb\u03bf, \u03bc\u03b5\u03c4\u03c1\u03b7\u03c4\u03ae\u03c2);\n    \u03bc\u03b5\u03c4\u03c1\u03b7\u03c4\u03ae\u03c2 = \u03bc\u03b5\u03c4\u03c1\u03b7\u03c4\u03ae\u03c2 + 1;\n}\n\u03b5\u03ba\u03c4\u03cd\u03c0\u03c9\u03c3\u03b5(\"\u03a3\u03cd\u03bd\u03bf\u03bb\u03bf 1-10: \" + \u03c3\u03cd\u03bd\u03bf\u03bb\u03bf);\n", "en": "// English - Demo\nfunction greet(name) {\n    return \"Hello, \" + name + \"!\";\n}\n\nfunction add(a, b) {\n    return a + b;\n}\n\nlet message = greet(\"World\");\nprint(message);\n\nlet sum = 0;\nlet i = 1;\nwhile (i \u003c= 10) {\n    sum = add(sum, i);\n    i = i + 1;\n}\nprint(\"Sum 1-10: \" + sum);\n", "es": "// Espa\u00f1ol - Demo\nfunci\u00f3n saludar(nombre) {\n    retornar \"Hola, \" + nombre + \"!\";\n}\n\nfunci\u00f3n sumar(a, b) {\n    retornar a + b;\n}\n\ndefinir mensaje = saludar(\"Mundo\");\nimprimir(mensaje);\n\ndefinir suma = 0;\ndefinir contador = 1;\nmientras (contador \u003c= 10) {\n    suma = sumar(suma, contador);\n    contador = contador + 1;\n}\nimprimir(\"Suma 1-10: \" + suma);\n", "fa": "// \u0641\u0627\u0631\u0633\u06cc - Demo\n\u062a\u0627\u0628\u0639 \u0633\u0644\u0627\u0645(\u0646\u0627\u0645) {\n    \u0628\u0631\u06af\u0631\u062f\u0627\u0646 \"\u0633\u0644\u0627\u0645\u060c \" + \u0646\u0627\u0645 + \"!\";\n}\n\n\u062a\u0627\u0628\u0639 \u062c\u0645\u0639(\u0627\u0644\u0641, \u0628) {\n    \u0628\u0631\u06af\u0631\u062f\u0627\u0646 \u0627\u0644\u0641 + \u0628;\n}\n\n\u0645\u062a\u063a\u06cc\u0631 \u067e\u06cc\u0627\u0645 = \u0633\u0644\u0627\u0645(\"\u062f\u0646\u06cc\u0627\");\n\u0686\u0627\u067e(\u067e\u06cc\u0627\u0645);\n\n\u0645\u062a\u063a\u06cc\u0631 \u0645\u062c\u0645\u0648\u0639 = 0;\n\u0645\u062a\u063a\u06cc\u0631 \u0634\u0645\u0627\u0631\u0646\u062f\u0647 = 1;\n\u062a\u0627_\u0648\u0642\u062a\u06cc (\u0634\u0645\u0627\u0631\u0646\u062f\u0647 \u003c= 10) {\n    \u0645\u062c\u0645\u0648\u0639 = \u062c\u0645\u0639(\u0645\u062c\u0645\u0648\u0639, \u0634\u0645\u0627\u0631\u0646\u062f\u0647);\n    \u0634\u0645\u0627\u0631\u0646\u062f\u0647 = \u0634\u0645\u0627\u0631\u0646\u062f\u0647 + 1;\n}\n\u0686\u0627\u067e(\"\u0645\u062c\u0645\u0648\u0639 1-10: \" + \u0645\u062c\u0645\u0648\u0639);\n", "fr": "// Fran\u00e7ais - Demo\nfonction saluer(nom) {\n    retourner \"Bonjour, \" + nom + \"!\";\n}\n\nfonction ajouter(a, b) {\n    retourner a + b;\n}\n\nsoit message = saluer(\"Monde\");\naffiche(message);\n\nsoit somme = 0;\nsoit compteur = 1;\npendant (compteur \u003c= 10) {\n    somme = ajouter(somme, compteur);\n    compteur = compteur + 1;\n}\naffiche(\"Somme 1-10: \" + somme);\n", "hi": "// \u0939\u093f\u0928\u094d\u0926\u0940 - Demo\n\u091a\u0930 \u0938\u0902\u0926\u0947\u0936 = \"\u0928\u092e\u0938\u094d\u0924\u0947, \u0926\u0941\u0928\u093f\u092f\u093e!\";\n\u092a\u094d\u0930\u093f\u0902\u091f(\u0938\u0902\u0926\u0947\u0936);\n\n\u091a\u0930 \u092f\u094b\u0917 = 0;\n\u091a\u0930 \u0917\u0923\u0928\u093e = 1;\n\u091c\u092c_\u0924\u0915 (\u0917\u0923\u0928\u093e \u003c= 10) {\n    \u092f\u094b\u0917 = \u092f\u094b\u0917 + \u0917\u0923\u0928\u093e;\n    \u0917\u0923\u0928\u093e = \u0917\u0923\u0928\u093e + 1;\n}\n\u092a\u094d\u0930\u093f\u0902\u091f(\"\u092f\u094b\u0917 1-10: \" + \u092f\u094b\u0917);\n", "hr": "// Hrvatski - Demo\nfunction pozdravi(ime) {\n    return \"Zdravo, \" + ime + \"!\";\n}\n\nfunction zbroji(a, b) {\n    return a + b;\n}\n\nlet poruka = pozdravi(\"Svijet\");\nprint(poruka);\n\nlet zbir = 0;\nlet brojac = 1;\nwhile (brojac \u003c= 10) {\n    zbir = zbroji(zbir, brojac);\n    brojac = brojac + 1;\n}\nprint(\"Zbir 1-10: \" + zbir);\n", "id": "// Indonesia - Demo\nfungsi sapa(nama) {\n    kembali \"Halo, \" + nama + \"!\";\n}\n\nfungsi tambah(a, b) {\n    kembali a + b;\n}\n\nbiarkan pesan = sapa(\"Dunia\");\ncetak(pesan);\n\nbiarkan jumlah = 0;\nbiarkan penghitung = 1;\nselama (penghitung \u003c= 10) {\n    jumlah = tambah(jumlah, penghitung);\n    penghitung = penghitung + 1;\n}\ncetak(\"Jumlah 1-10: \" + jumlah);\n", "it": "// Italiano - Demo\nfunzione saluta(nome) {\n    ritornare \"Ciao, \" + nome + \"!\";\n}\n\nfunzione somma(a, b) {\n    ritornare a + b;\n}\n\nvariabile messaggio = saluta(\"Mondo\");\nstampa(messaggio);\n\nvariabile totale = 0;\nvariabile contatore = 1;\nmentre (contatore \u003c= 10) {\n    totale = somma(totale, contatore);\n    contatore = contatore + 1;\n}\nstampa(\"Somma 1-10: \" + totale);\n", "ja": "// \u65e5\u672c\u8a9e - Demo\n\u95a2\u6570 \u6328\u62f6(\u540d\u524d) {\n    \u623b\u308b \"\u3053\u3093\u306b\u3061\u306f\u3001\" + \u540d\u524d + \"!\";\n}\n\n\u95a2\u6570 \u8db3\u3059(\u7532, \u4e59) {\n    \u623b\u308b \u7532 + \u4e59;\n}\n\n\u5909\u6570 \u30e1\u30c3\u30bb\u30fc\u30b8 = \u6328\u62f6(\"\u4e16\u754c\");\n\u8868\u793a(\u30e1\u30c3\u30bb\u30fc\u30b8);\n\n\u5909\u6570 \u5408\u8a08 = 0;\n\u5909\u6570 \u6570 = 1;\n\u9593 (\u6570 \u003c= 10) {\n    \u5408\u8a08 = \u8db3\u3059(\u5408\u8a08, \u6570);\n    \u6570 = \u6570 + 1;\n}\n\u8868\u793a(\"\u5408\u8a08 1-10: \" + \u5408\u8a08);\n", "ku": "// Kurdi - Demo\nfonksiyon silav(nav) {\n    vegere \"Silav, \" + nav + \"!\";\n}\n\nfonksiyon le_zede_bike(a, b) {\n    vegere a + b;\n}\n\nguherbar peyam = silav(\"Cihan\");\n\u00e7ap_bike(peyam);\n\nguherbar berhev = 0;\nguherbar hejmar = 1;\ndema_ku (hejmar \u003c= 10) {\n    berhev = le_zede_bike(berhev, hejmar);\n    hejmar = hejmar + 1;\n}\n\u00e7ap_bike(\"Berhev 1-10: \" + berhev);\n", "pl": "// Polski - Demo\nfunkcja powitaj(imi\u0119) {\n    zwr\u00f3\u0107 \"Cze\u015b\u0107, \" + imi\u0119 + \"!\";\n}\n\nfunkcja dodaj(a, b) {\n    zwr\u00f3\u0107 a + b;\n}\n\nniech wiadomo\u015b\u0107 = powitaj(\"\u015awiat\");\ndrukuj(wiadomo\u015b\u0107);\n\nniech suma = 0;\nniech licznik = 1;\npodczas (licznik \u003c= 10) {\n    suma = dodaj(suma, licznik);\n    licznik = licznik + 1;\n}\ndrukuj(\"Suma 1-10: \" + suma);\n", "pt": "// Portugu\u00eas - Demo\nfun\u00e7\u00e3o saudar(nome) {\n    retornar \"Ol\u00e1, \" + nome + \"!\";\n}\n\nfun\u00e7\u00e3o somar(a, b) {\n    retornar a + b;\n}\n\nvari\u00e1vel mensagem = saudar(\"Mundo\");\nimprima(mensagem);\n\nvari\u00e1vel soma = 0;\nvari\u00e1vel contador = 1;\nenquanto (contador \u003c= 10) {\n    soma = somar(soma, contador);\n    contador = contador + 1;\n}\nimprima(\"Soma 1-10: \" + soma);\n", "ru": "// \u0420\u0443\u0441\u0441\u043a\u0438\u0439 - Demo\n\u0444\u0443\u043d\u043a\u0446\u0438\u044f \u043f\u0440\u0438\u0432\u0435\u0442\u0441\u0442\u0432\u043e\u0432\u0430\u0442\u044c(\u0438\u043c\u044f) {\n    \u0432\u0435\u0440\u043d\u0443\u0442\u044c \"\u041f\u0440\u0438\u0432\u0435\u0442, \" + \u0438\u043c\u044f + \"!\";\n}\n\n\u0444\u0443\u043d\u043a\u0446\u0438\u044f \u0441\u043b\u043e\u0436\u0438\u0442\u044c(\u0430, \u0431) {\n    \u0432\u0435\u0440\u043d\u0443\u0442\u044c \u0430 + \u0431;\n}\n\n\u043f\u0435\u0440\u0435\u043c\u0435\u043d\u043d\u0430\u044f \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0435 = \u043f\u0440\u0438\u0432\u0435\u0442\u0441\u0442\u0432\u043e\u0432\u0430\u0442\u044c(\"\u041c\u0438\u0440\");\n\u043f\u0435\u0447\u0430\u0442\u044c(\u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0435);\n\n\u043f\u0435\u0440\u0435\u043c\u0435\u043d\u043d\u0430\u044f \u0441\u0443\u043c\u043c\u0430 = 0;\n\u043f\u0435\u0440\u0435\u043c\u0435\u043d\u043d\u0430\u044f \u0441\u0447\u0451\u0442\u0447\u0438\u043a = 1;\n\u043f\u043e\u043a\u0430 (\u0441\u0447\u0451\u0442\u0447\u0438\u043a \u003c= 10) {\n    \u0441\u0443\u043c\u043c\u0430 = \u0441\u043b\u043e\u0436\u0438\u0442\u044c(\u0441\u0443\u043c\u043c\u0430, \u0441\u0447\u0451\u0442\u0447\u0438\u043a);\n    \u0441\u0447\u0451\u0442\u0447\u0438\u043a = \u0441\u0447\u0451\u0442\u0447\u0438\u043a + 1;\n}\n\u043f\u0435\u0447\u0430\u0442\u044c(\"\u0421\u0443\u043c\u043c\u0430 1-10: \" + \u0441\u0443\u043c\u043c\u0430);\n", "sr": "// \u0421\u0440\u043f\u0441\u043a\u0438 - Demo\n\u0444\u0443\u043d\u043a\u0446\u0438\u0458\u0430 \u043f\u043e\u0437\u0434\u0440\u0430\u0432\u0438(\u0438\u043c\u0435) {\n    \u0432\u0440\u0430\u0442\u0438 \"\u0417\u0434\u0440\u0430\u0432\u043e, \" + \u0438\u043c\u0435 + \"!\";\n}\n\n\u0444\u0443\u043d\u043a\u0446\u0438\u0458\u0430 \u0441\u0430\u0431\u0435\u0440\u0438(\u0430, \u0431) {\n    \u0432\u0440\u0430\u0442\u0438 \u0430 + \u0431;\n}\n\n\u043d\u0435\u043a\u0430 \u043f\u043e\u0440\u0443\u043a\u0430 = \u043f\u043e\u0437\u0434\u0440\u0430\u0432\u0438(\"\u0421\u0432\u0435\u0442\");\n\u0438\u0441\u043f\u0438\u0441(\u043f\u043e\u0440\u0443\u043a\u0430);\n\n\u043d\u0435\u043a\u0430 \u0437\u0431\u0438\u0440 = 0;\n\u043d\u0435\u043a\u0430 \u0431\u0440\u043e\u0458\u0430\u0447 = 1;\n\u0434\u043e\u043a (\u0431\u0440\u043e\u0458\u0430\u0447 \u003c= 10) {\n    \u0437\u0431\u0438\u0440 = \u0441\u0430\u0431\u0435\u0440\u0438(\u0437\u0431\u0438\u0440, \u0431\u0440\u043e\u0458\u0430\u0447);\n    \u0431\u0440\u043e\u0458\u0430\u0447 = \u0431\u0440\u043e\u0458\u0430\u0447 + 1;\n}\n\u0438\u0441\u043f\u0438\u0441(\"\u0417\u0431\u0438\u0440 1-10: \" + \u0437\u0431\u0438\u0440);\n", "th": "// \u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22 - Demo\n\u0e1f\u0e31\u0e07\u0e01\u0e4c\u0e0a\u0e31\u0e19 \u0e17\u0e31\u0e01\u0e17\u0e32\u0e22(\u0e0a\u0e37\u0e48\u0e2d) {\n    \u0e04\u0e37\u0e19\u0e04\u0e48\u0e32 \"\u0e2a\u0e27\u0e31\u0e2a\u0e14\u0e35, \" + \u0e0a\u0e37\u0e48\u0e2d + \"!\";\n}\n\n\u0e1f\u0e31\u0e07\u0e01\u0e4c\u0e0a\u0e31\u0e19 \u0e1a\u0e27\u0e01(\u0e01, \u0e02) {\n    \u0e04\u0e37\u0e19\u0e04\u0e48\u0e32 \u0e01 + \u0e02;\n}\n\n\u0e43\u0e2b\u0e49 \u0e02\u0e49\u0e2d\u0e04\u0e27\u0e32\u0e21 = \u0e17\u0e31\u0e01\u0e17\u0e32\u0e22(\"\u0e42\u0e25\u0e01\");\n\u0e1e\u0e34\u0e21\u0e1e\u0e4c(\u0e02\u0e49\u0e2d\u0e04\u0e27\u0e32\u0e21);\n\n\u0e43\u0e2b\u0e49 \u0e1c\u0e25\u0e23\u0e27\u0e21 = 0;\n\u0e43\u0e2b\u0e49 \u0e15\u0e31\u0e27\u0e19\u0e31\u0e1a = 1;\n\u0e02\u0e13\u0e30\u0e17\u0e35\u0e48 (\u0e15\u0e31\u0e27\u0e19\u0e31\u0e1a \u003c= 10) {\n    \u0e1c\u0e25\u0e23\u0e27\u0e21 = \u0e1a\u0e27\u0e01(\u0e1c\u0e25\u0e23\u0e27\u0e21, \u0e15\u0e31\u0e27\u0e19\u0e31\u0e1a);\n    \u0e15\u0e31\u0e27\u0e19\u0e31\u0e1a = \u0e15\u0e31\u0e27\u0e19\u0e31\u0e1a + 1;\n}\n\u0e1e\u0e34\u0e21\u0e1e\u0e4c(\"\u0e1c\u0e25\u0e23\u0e27\u0e21 1-10: \" + \u0e1c\u0e25\u0e23\u0e27\u0e21);\n", "tr": "// T\u00fcrk\u00e7e - Demo\ni\u015flev selamla(isim) {\n    d\u00f6n \"Merhaba, \" + isim + \"!\";\n}\n\ni\u015flev topla(a, b) {\n    d\u00f6n a + b;\n}\n\nde\u011fi\u015fken mesaj = selamla(\"D\u00fcnya\");\nyazd\u0131r(mesaj);\n\nde\u011fi\u015fken toplam = 0;\nde\u011fi\u015fken saya\u00e7 = 1;\n(saya\u00e7 \u003c= 10) iken {\n    toplam = topla(toplam, saya\u00e7);\n    \n\t(saya\u00e7%2==0) ise {\n\t\tyaz(\"\u00c7ift say\u0131:\" + saya\u00e7);\n\t} de\u011filse {\n\t\tyaz(\"Tek say\u0131:\" + saya\u00e7);\n\t}\t    \n\n    saya\u00e7 = saya\u00e7 + 1;\n}\nyazd\u0131r(\"Toplam 1-10: \" + toplam);\n", "vi": "// Ti\u1ebfng Vi\u1ec7t - Demo\nh\u00e0m ch\u00e0o(t\u00ean) {\n    tr\u1ea3_v\u1ec1 \"Xin ch\u00e0o, \" + t\u00ean + \"!\";\n}\n\nh\u00e0m c\u1ed9ng(a, b) {\n    tr\u1ea3_v\u1ec1 a + b;\n}\n\ncho tin_nh\u1eafn = ch\u00e0o(\"Th\u1ebf gi\u1edbi\");\nin_ra(tin_nh\u1eafn);\n\ncho t\u1ed5ng = 0;\ncho \u0111\u1ebfm = 1;\ntrong_khi (\u0111\u1ebfm \u003c= 10) {\n    t\u1ed5ng = c\u1ed9ng(t\u1ed5ng, \u0111\u1ebfm);\n    \u0111\u1ebfm = \u0111\u1ebfm + 1;\n}\nin_ra(\"T\u1ed5ng 1-10: \" + t\u1ed5ng);\n", "zh": "// \u4e2d\u6587 - Demo\n\u51fd\u6570 \u95ee\u5019(\u540d\u5b57) {\n    \u8fd4\u56de \"\u4f60\u597d\uff0c\" + \u540d\u5b57 + \"!\";\n}\n\n\u51fd\u6570 \u52a0(\u7532, \u4e59) {\n    \u8fd4\u56de \u7532 + \u4e59;\n}\n\n\u53d8\u91cf \u6d88\u606f = \u95ee\u5019(\"\u4e16\u754c\");\n\u6253\u5370(\u6d88\u606f);\n\n\u53d8\u91cf \u603b\u548c = 0;\n\u53d8\u91cf \u8ba1\u6570 = 1;\n\u5f53 (\u8ba1\u6570 \u003c= 10) {\n    \u603b\u548c = \u52a0(\u603b\u548c, \u8ba1\u6570);\n    \u8ba1\u6570 = \u8ba1\u6570 + 1;\n}\n\u6253\u5370(\"\u603b\u548c 1-10: \" + \u603b\u548c);\n"};
+const providerSamples = {"ar": "// \u0627\u0644\u0639\u0631\u0628\u064a\u0629 - providers.hudhud\n\n\u0645\u0632\u0648\u062f DeepSeekProvider {\n    apiKey: env(\"DEEPSEEK_API_KEY\"),\n    type: \"deepseek\",\n    \u0627\u0633\u0645: \"DeepSeek API\",\n    baseUrl: env(\"DEEPSEEK_BASE_URL\"),\n    \u062d\u0631\u0627\u0631\u0629: \u0660.\u0668\n}\n\n\u0645\u0632\u0648\u062f AnthropicProvider {\n    apiKey: env(\"ANTHROPIC_API_KEY\"),\n    type: \"anthropic\",\n    \u0627\u0633\u0645: \"Anthropic Claude\",\n    model: \"claude-opus-4.6\",\n    \u062d\u0631\u0627\u0631\u0629: \u0660.\u0669\n}\n\n\u0645\u0632\u0648\u062f OpenAIProvider {\n    apiKey: env(\"OPENAI_API_KEY\"),\n    type: \"openai\",\n    \u0627\u0633\u0645: \"OpenAI GPT\",\n    \u062d\u0631\u0627\u0631\u0629: \u0660.\u0666\n}\n", "bn": "// \u09ac\u09be\u0982\u09b2\u09be - providers.hudhud\n\n\u09aa\u09cd\u09b0\u09a6\u09be\u09a8\u0995\u09be\u09b0\u09c0 DeepSeekProvider {\n    apiKey: env(\"DEEPSEEK_API_KEY\"),\n    type: \"deepseek\",\n    \u09a8\u09be\u09ae: \"DeepSeek API\",\n    baseUrl: env(\"DEEPSEEK_BASE_URL\"),\n    \u09a4\u09be\u09aa\u09ae\u09be\u09a4\u09cd\u09b0\u09be: 0.8\n}\n\n\u09aa\u09cd\u09b0\u09a6\u09be\u09a8\u0995\u09be\u09b0\u09c0 AnthropicProvider {\n    apiKey: env(\"ANTHROPIC_API_KEY\"),\n    type: \"anthropic\",\n    \u09a8\u09be\u09ae: \"Anthropic Claude\",\n    model: \"claude-opus-4.6\",\n    \u09a4\u09be\u09aa\u09ae\u09be\u09a4\u09cd\u09b0\u09be: 0.9\n}\n\n\u09aa\u09cd\u09b0\u09a6\u09be\u09a8\u0995\u09be\u09b0\u09c0 OpenAIProvider {\n    apiKey: env(\"OPENAI_API_KEY\"),\n    type: \"openai\",\n    \u09a8\u09be\u09ae: \"OpenAI GPT\",\n    \u09a4\u09be\u09aa\u09ae\u09be\u09a4\u09cd\u09b0\u09be: 0.6\n}\n", "bs": "// Bosanski - providers.hudhud\n\npru\u017ealac DeepSeekProvider {\n    apiKey: env(\"DEEPSEEK_API_KEY\"),\n    type: \"deepseek\",\n    ime: \"DeepSeek API\",\n    baseUrl: env(\"DEEPSEEK_BASE_URL\"),\n    temperatura: 0.8\n}\n\npru\u017ealac AnthropicProvider {\n    apiKey: env(\"ANTHROPIC_API_KEY\"),\n    type: \"anthropic\",\n    ime: \"Anthropic Claude\",\n    model: \"claude-opus-4.6\",\n    temperatura: 0.9\n}\n\npru\u017ealac OpenAIProvider {\n    apiKey: env(\"OPENAI_API_KEY\"),\n    type: \"openai\",\n    ime: \"OpenAI GPT\",\n    temperatura: 0.6\n}\n", "de": "// Deutsch - providers.hudhud\n\nanbieter DeepSeekProvider {\n    apiKey: env(\"DEEPSEEK_API_KEY\"),\n    type: \"deepseek\",\n    name: \"DeepSeek API\",\n    baseUrl: env(\"DEEPSEEK_BASE_URL\"),\n    temperatur: 0.8\n}\n\nanbieter AnthropicProvider {\n    apiKey: env(\"ANTHROPIC_API_KEY\"),\n    type: \"anthropic\",\n    name: \"Anthropic Claude\",\n    model: \"claude-opus-4.6\",\n    temperatur: 0.9\n}\n\nanbieter OpenAIProvider {\n    apiKey: env(\"OPENAI_API_KEY\"),\n    type: \"openai\",\n    name: \"OpenAI GPT\",\n    temperatur: 0.6\n}\n", "el": "// \u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac - providers.hudhud\n\n\u03c0\u03ac\u03c1\u03bf\u03c7\u03bf\u03c2 DeepSeekProvider {\n    apiKey: env(\"DEEPSEEK_API_KEY\"),\n    type: \"deepseek\",\n    \u03cc\u03bd\u03bf\u03bc\u03b1: \"DeepSeek API\",\n    baseUrl: env(\"DEEPSEEK_BASE_URL\"),\n    \u03b8\u03b5\u03c1\u03bc\u03bf\u03ba\u03c1\u03b1\u03c3\u03af\u03b1: 0.8\n}\n\n\u03c0\u03ac\u03c1\u03bf\u03c7\u03bf\u03c2 AnthropicProvider {\n    apiKey: env(\"ANTHROPIC_API_KEY\"),\n    type: \"anthropic\",\n    \u03cc\u03bd\u03bf\u03bc\u03b1: \"Anthropic Claude\",\n    model: \"claude-opus-4.6\",\n    \u03b8\u03b5\u03c1\u03bc\u03bf\u03ba\u03c1\u03b1\u03c3\u03af\u03b1: 0.9\n}\n\n\u03c0\u03ac\u03c1\u03bf\u03c7\u03bf\u03c2 OpenAIProvider {\n    apiKey: env(\"OPENAI_API_KEY\"),\n    type: \"openai\",\n    \u03cc\u03bd\u03bf\u03bc\u03b1: \"OpenAI GPT\",\n    \u03b8\u03b5\u03c1\u03bc\u03bf\u03ba\u03c1\u03b1\u03c3\u03af\u03b1: 0.6\n}\n", "en": "// English - providers.hudhud\n\nprovider DeepSeekProvider {\n    apiKey: env(\"DEEPSEEK_API_KEY\"),\n    type: \"deepseek\",\n    name: \"DeepSeek API\",\n    baseUrl: env(\"DEEPSEEK_BASE_URL\"),\n    temperature: 0.8\n}\n\nprovider AnthropicProvider {\n    apiKey: env(\"ANTHROPIC_API_KEY\"),\n    type: \"anthropic\",\n    name: \"Anthropic Claude\",\n    model: \"claude-opus-4.6\",\n    temperature: 0.9\n}\n\nprovider OpenAIProvider {\n    apiKey: env(\"OPENAI_API_KEY\"),\n    type: \"openai\",\n    name: \"OpenAI GPT\",\n    temperature: 0.6\n}\n", "es": "// Espa\u00f1ol - providers.hudhud\n\nproveedor DeepSeekProvider {\n    apiKey: env(\"DEEPSEEK_API_KEY\"),\n    type: \"deepseek\",\n    nombre: \"DeepSeek API\",\n    baseUrl: env(\"DEEPSEEK_BASE_URL\"),\n    temperatura: 0.8\n}\n\nproveedor AnthropicProvider {\n    apiKey: env(\"ANTHROPIC_API_KEY\"),\n    type: \"anthropic\",\n    nombre: \"Anthropic Claude\",\n    model: \"claude-opus-4.6\",\n    temperatura: 0.9\n}\n\nproveedor OpenAIProvider {\n    apiKey: env(\"OPENAI_API_KEY\"),\n    type: \"openai\",\n    nombre: \"OpenAI GPT\",\n    temperatura: 0.6\n}\n", "fa": "// \u0641\u0627\u0631\u0633\u06cc - providers.hudhud\n\n\u0627\u0631\u0627\u0626\u0647\u200c\u062f\u0647\u0646\u062f\u0647 DeepSeekProvider {\n    apiKey: env(\"DEEPSEEK_API_KEY\"),\n    type: \"deepseek\",\n    \u0646\u0627\u0645: \"DeepSeek API\",\n    baseUrl: env(\"DEEPSEEK_BASE_URL\"),\n    \u062f\u0645\u0627: 0.8\n}\n\n\u0627\u0631\u0627\u0626\u0647\u200c\u062f\u0647\u0646\u062f\u0647 AnthropicProvider {\n    apiKey: env(\"ANTHROPIC_API_KEY\"),\n    type: \"anthropic\",\n    \u0646\u0627\u0645: \"Anthropic Claude\",\n    model: \"claude-opus-4.6\",\n    \u062f\u0645\u0627: 0.9\n}\n\n\u0627\u0631\u0627\u0626\u0647\u200c\u062f\u0647\u0646\u062f\u0647 OpenAIProvider {\n    apiKey: env(\"OPENAI_API_KEY\"),\n    type: \"openai\",\n    \u0646\u0627\u0645: \"OpenAI GPT\",\n    \u062f\u0645\u0627: 0.6\n}\n", "fr": "// Fran\u00e7ais - providers.hudhud\n\nfournisseur DeepSeekProvider {\n    apiKey: env(\"DEEPSEEK_API_KEY\"),\n    type: \"deepseek\",\n    nom: \"DeepSeek API\",\n    baseUrl: env(\"DEEPSEEK_BASE_URL\"),\n    temp\u00e9rature: 0.8\n}\n\nfournisseur AnthropicProvider {\n    apiKey: env(\"ANTHROPIC_API_KEY\"),\n    type: \"anthropic\",\n    nom: \"Anthropic Claude\",\n    model: \"claude-opus-4.6\",\n    temp\u00e9rature: 0.9\n}\n\nfournisseur OpenAIProvider {\n    apiKey: env(\"OPENAI_API_KEY\"),\n    type: \"openai\",\n    nom: \"OpenAI GPT\",\n    temp\u00e9rature: 0.6\n}\n", "hi": "// \u0939\u093f\u0928\u094d\u0926\u0940 - providers.hudhud\n\n\u092a\u094d\u0930\u0926\u093e\u0924\u093e DeepSeekProvider {\n    apiKey: env(\"DEEPSEEK_API_KEY\"),\n    type: \"deepseek\",\n    \u0928\u093e\u092e: \"DeepSeek API\",\n    baseUrl: env(\"DEEPSEEK_BASE_URL\"),\n    \u0924\u093e\u092a\u092e\u093e\u0928: 0.8\n}\n\n\u092a\u094d\u0930\u0926\u093e\u0924\u093e AnthropicProvider {\n    apiKey: env(\"ANTHROPIC_API_KEY\"),\n    type: \"anthropic\",\n    \u0928\u093e\u092e: \"Anthropic Claude\",\n    model: \"claude-opus-4.6\",\n    \u0924\u093e\u092a\u092e\u093e\u0928: 0.9\n}\n\n\u092a\u094d\u0930\u0926\u093e\u0924\u093e OpenAIProvider {\n    apiKey: env(\"OPENAI_API_KEY\"),\n    type: \"openai\",\n    \u0928\u093e\u092e: \"OpenAI GPT\",\n    \u0924\u093e\u092a\u092e\u093e\u0928: 0.6\n}\n", "hr": "// Hrvatski - providers.hudhud\n\npru\u017eatelj DeepSeekProvider {\n    apiKey: env(\"DEEPSEEK_API_KEY\"),\n    type: \"deepseek\",\n    ime: \"DeepSeek API\",\n    baseUrl: env(\"DEEPSEEK_BASE_URL\"),\n    temperatura: 0.8\n}\n\npru\u017eatelj AnthropicProvider {\n    apiKey: env(\"ANTHROPIC_API_KEY\"),\n    type: \"anthropic\",\n    ime: \"Anthropic Claude\",\n    model: \"claude-opus-4.6\",\n    temperatura: 0.9\n}\n\npru\u017eatelj OpenAIProvider {\n    apiKey: env(\"OPENAI_API_KEY\"),\n    type: \"openai\",\n    ime: \"OpenAI GPT\",\n    temperatura: 0.6\n}\n", "id": "// Indonesia - providers.hudhud\n\npenyedia DeepSeekProvider {\n    apiKey: env(\"DEEPSEEK_API_KEY\"),\n    type: \"deepseek\",\n    nama: \"DeepSeek API\",\n    baseUrl: env(\"DEEPSEEK_BASE_URL\"),\n    suhu: 0.8\n}\n\npenyedia AnthropicProvider {\n    apiKey: env(\"ANTHROPIC_API_KEY\"),\n    type: \"anthropic\",\n    nama: \"Anthropic Claude\",\n    model: \"claude-opus-4.6\",\n    suhu: 0.9\n}\n\npenyedia OpenAIProvider {\n    apiKey: env(\"OPENAI_API_KEY\"),\n    type: \"openai\",\n    nama: \"OpenAI GPT\",\n    suhu: 0.6\n}\n", "it": "// Italiano - providers.hudhud\n\nfornitore DeepSeekProvider {\n    apiKey: env(\"DEEPSEEK_API_KEY\"),\n    type: \"deepseek\",\n    nome: \"DeepSeek API\",\n    baseUrl: env(\"DEEPSEEK_BASE_URL\"),\n    temperatura: 0.8\n}\n\nfornitore AnthropicProvider {\n    apiKey: env(\"ANTHROPIC_API_KEY\"),\n    type: \"anthropic\",\n    nome: \"Anthropic Claude\",\n    model: \"claude-opus-4.6\",\n    temperatura: 0.9\n}\n\nfornitore OpenAIProvider {\n    apiKey: env(\"OPENAI_API_KEY\"),\n    type: \"openai\",\n    nome: \"OpenAI GPT\",\n    temperatura: 0.6\n}\n", "ja": "// \u65e5\u672c\u8a9e - providers.hudhud\n\n\u30d7\u30ed\u30d0\u30a4\u30c0\u30fc DeepSeekProvider {\n    apiKey: env(\"DEEPSEEK_API_KEY\"),\n    type: \"deepseek\",\n    \u540d\u524d: \"DeepSeek API\",\n    baseUrl: env(\"DEEPSEEK_BASE_URL\"),\n    \u6e29\u5ea6: 0.8\n}\n\n\u30d7\u30ed\u30d0\u30a4\u30c0\u30fc AnthropicProvider {\n    apiKey: env(\"ANTHROPIC_API_KEY\"),\n    type: \"anthropic\",\n    \u540d\u524d: \"Anthropic Claude\",\n    model: \"claude-opus-4.6\",\n    \u6e29\u5ea6: 0.9\n}\n\n\u30d7\u30ed\u30d0\u30a4\u30c0\u30fc OpenAIProvider {\n    apiKey: env(\"OPENAI_API_KEY\"),\n    type: \"openai\",\n    \u540d\u524d: \"OpenAI GPT\",\n    \u6e29\u5ea6: 0.6\n}\n", "ku": "// Kurdi - providers.hudhud\n\ndabinker DeepSeekProvider {\n    apiKey: env(\"DEEPSEEK_API_KEY\"),\n    type: \"deepseek\",\n    nav: \"DeepSeek API\",\n    baseUrl: env(\"DEEPSEEK_BASE_URL\"),\n    germahi: 0.8\n}\n\ndabinker AnthropicProvider {\n    apiKey: env(\"ANTHROPIC_API_KEY\"),\n    type: \"anthropic\",\n    nav: \"Anthropic Claude\",\n    model: \"claude-opus-4.6\",\n    germahi: 0.9\n}\n\ndabinker OpenAIProvider {\n    apiKey: env(\"OPENAI_API_KEY\"),\n    type: \"openai\",\n    nav: \"OpenAI GPT\",\n    germahi: 0.6\n}\n", "pl": "// Polski - providers.hudhud\n\ndostawca DeepSeekProvider {\n    apiKey: env(\"DEEPSEEK_API_KEY\"),\n    type: \"deepseek\",\n    nazwa: \"DeepSeek API\",\n    baseUrl: env(\"DEEPSEEK_BASE_URL\"),\n    temperatura: 0.8\n}\n\ndostawca AnthropicProvider {\n    apiKey: env(\"ANTHROPIC_API_KEY\"),\n    type: \"anthropic\",\n    nazwa: \"Anthropic Claude\",\n    model: \"claude-opus-4.6\",\n    temperatura: 0.9\n}\n\ndostawca OpenAIProvider {\n    apiKey: env(\"OPENAI_API_KEY\"),\n    type: \"openai\",\n    nazwa: \"OpenAI GPT\",\n    temperatura: 0.6\n}\n", "pt": "// Portugu\u00eas - providers.hudhud\n\nprovedor DeepSeekProvider {\n    apiKey: env(\"DEEPSEEK_API_KEY\"),\n    type: \"deepseek\",\n    nome: \"DeepSeek API\",\n    baseUrl: env(\"DEEPSEEK_BASE_URL\"),\n    temperatura: 0.8\n}\n\nprovedor AnthropicProvider {\n    apiKey: env(\"ANTHROPIC_API_KEY\"),\n    type: \"anthropic\",\n    nome: \"Anthropic Claude\",\n    model: \"claude-opus-4.6\",\n    temperatura: 0.9\n}\n\nprovedor OpenAIProvider {\n    apiKey: env(\"OPENAI_API_KEY\"),\n    type: \"openai\",\n    nome: \"OpenAI GPT\",\n    temperatura: 0.6\n}\n", "ru": "// \u0420\u0443\u0441\u0441\u043a\u0438\u0439 - providers.hudhud\n\n\u043f\u0440\u043e\u0432\u0430\u0439\u0434\u0435\u0440 DeepSeekProvider {\n    apiKey: env(\"DEEPSEEK_API_KEY\"),\n    type: \"deepseek\",\n    \u0438\u043c\u044f: \"DeepSeek API\",\n    baseUrl: env(\"DEEPSEEK_BASE_URL\"),\n    \u0442\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440\u0430: 0.8\n}\n\n\u043f\u0440\u043e\u0432\u0430\u0439\u0434\u0435\u0440 AnthropicProvider {\n    apiKey: env(\"ANTHROPIC_API_KEY\"),\n    type: \"anthropic\",\n    \u0438\u043c\u044f: \"Anthropic Claude\",\n    model: \"claude-opus-4.6\",\n    \u0442\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440\u0430: 0.9\n}\n\n\u043f\u0440\u043e\u0432\u0430\u0439\u0434\u0435\u0440 OpenAIProvider {\n    apiKey: env(\"OPENAI_API_KEY\"),\n    type: \"openai\",\n    \u0438\u043c\u044f: \"OpenAI GPT\",\n    \u0442\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440\u0430: 0.6\n}\n", "sr": "// \u0421\u0440\u043f\u0441\u043a\u0438 - providers.hudhud\n\n\u043f\u0440\u0443\u0436\u0430\u043b\u0430\u0446 DeepSeekProvider {\n    apiKey: env(\"DEEPSEEK_API_KEY\"),\n    type: \"deepseek\",\n    \u0438\u043c\u0435: \"DeepSeek API\",\n    baseUrl: env(\"DEEPSEEK_BASE_URL\"),\n    \u0442\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440\u0430: 0.8\n}\n\n\u043f\u0440\u0443\u0436\u0430\u043b\u0430\u0446 AnthropicProvider {\n    apiKey: env(\"ANTHROPIC_API_KEY\"),\n    type: \"anthropic\",\n    \u0438\u043c\u0435: \"Anthropic Claude\",\n    model: \"claude-opus-4.6\",\n    \u0442\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440\u0430: 0.9\n}\n\n\u043f\u0440\u0443\u0436\u0430\u043b\u0430\u0446 OpenAIProvider {\n    apiKey: env(\"OPENAI_API_KEY\"),\n    type: \"openai\",\n    \u0438\u043c\u0435: \"OpenAI GPT\",\n    \u0442\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440\u0430: 0.6\n}\n", "th": "// \u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22 - providers.hudhud\n\n\u0e1c\u0e39\u0e49\u0e43\u0e2b\u0e49\u0e1a\u0e23\u0e34\u0e01\u0e32\u0e23 DeepSeekProvider {\n    apiKey: env(\"DEEPSEEK_API_KEY\"),\n    type: \"deepseek\",\n    \u0e0a\u0e37\u0e48\u0e2d: \"DeepSeek API\",\n    baseUrl: env(\"DEEPSEEK_BASE_URL\"),\n    \u0e2d\u0e38\u0e13\u0e2b\u0e20\u0e39\u0e21\u0e34: 0.8\n}\n\n\u0e1c\u0e39\u0e49\u0e43\u0e2b\u0e49\u0e1a\u0e23\u0e34\u0e01\u0e32\u0e23 AnthropicProvider {\n    apiKey: env(\"ANTHROPIC_API_KEY\"),\n    type: \"anthropic\",\n    \u0e0a\u0e37\u0e48\u0e2d: \"Anthropic Claude\",\n    model: \"claude-opus-4.6\",\n    \u0e2d\u0e38\u0e13\u0e2b\u0e20\u0e39\u0e21\u0e34: 0.9\n}\n\n\u0e1c\u0e39\u0e49\u0e43\u0e2b\u0e49\u0e1a\u0e23\u0e34\u0e01\u0e32\u0e23 OpenAIProvider {\n    apiKey: env(\"OPENAI_API_KEY\"),\n    type: \"openai\",\n    \u0e0a\u0e37\u0e48\u0e2d: \"OpenAI GPT\",\n    \u0e2d\u0e38\u0e13\u0e2b\u0e20\u0e39\u0e21\u0e34: 0.6\n}\n", "tr": "// T\u00fcrk\u00e7e - providers.hudhud\n\nsa\u011flay\u0131c\u0131 DeepSeekProvider {\n    apiKey: env(\"DEEPSEEK_API_KEY\"),\n    type: \"deepseek\",\n    isim: \"DeepSeek API\",\n    baseUrl: env(\"DEEPSEEK_BASE_URL\"),\n    s\u0131cakl\u0131k: 0.8\n}\n\nsa\u011flay\u0131c\u0131 AnthropicProvider {\n    apiKey: env(\"ANTHROPIC_API_KEY\"),\n    type: \"anthropic\",\n    isim: \"Anthropic Claude\",\n    model: \"claude-opus-4.6\",\n    s\u0131cakl\u0131k: 0.9\n}\n\nsa\u011flay\u0131c\u0131 OpenAIProvider {\n    apiKey: env(\"OPENAI_API_KEY\"),\n    type: \"openai\",\n    isim: \"OpenAI GPT\",\n    s\u0131cakl\u0131k: 0.6\n}\n", "vi": "// Ti\u1ebfng Vi\u1ec7t - providers.hudhud\n\nnh\u00e0_cung_c\u1ea5p DeepSeekProvider {\n    apiKey: env(\"DEEPSEEK_API_KEY\"),\n    type: \"deepseek\",\n    t\u00ean: \"DeepSeek API\",\n    baseUrl: env(\"DEEPSEEK_BASE_URL\"),\n    nhi\u1ec7t_\u0111\u1ed9: 0.8\n}\n\nnh\u00e0_cung_c\u1ea5p AnthropicProvider {\n    apiKey: env(\"ANTHROPIC_API_KEY\"),\n    type: \"anthropic\",\n    t\u00ean: \"Anthropic Claude\",\n    model: \"claude-opus-4.6\",\n    nhi\u1ec7t_\u0111\u1ed9: 0.9\n}\n\nnh\u00e0_cung_c\u1ea5p OpenAIProvider {\n    apiKey: env(\"OPENAI_API_KEY\"),\n    type: \"openai\",\n    t\u00ean: \"OpenAI GPT\",\n    nhi\u1ec7t_\u0111\u1ed9: 0.6\n}\n", "zh": "// \u4e2d\u6587 - providers.hudhud\n\n\u63d0\u4f9b\u8005 DeepSeekProvider {\n    apiKey: env(\"DEEPSEEK_API_KEY\"),\n    type: \"deepseek\",\n    \u540d\u79f0: \"DeepSeek API\",\n    baseUrl: env(\"DEEPSEEK_BASE_URL\"),\n    \u6e29\u5ea6: 0.8\n}\n\n\u63d0\u4f9b\u8005 AnthropicProvider {\n    apiKey: env(\"ANTHROPIC_API_KEY\"),\n    type: \"anthropic\",\n    \u540d\u79f0: \"Anthropic Claude\",\n    model: \"claude-opus-4.6\",\n    \u6e29\u5ea6: 0.9\n}\n\n\u63d0\u4f9b\u8005 OpenAIProvider {\n    apiKey: env(\"OPENAI_API_KEY\"),\n    type: \"openai\",\n    \u540d\u79f0: \"OpenAI GPT\",\n    \u6e29\u5ea6: 0.6\n}\n"};
+// Languages with full agent runtime support
+const agentRunnableLangs = new Set(['en', 'tr', 'ru']);
+let currentHeroLang = window.SITE_LANGUAGE || 'en';
+
+// Initialize hero to match site language
+(function initHero() {
+    const lang = currentHeroLang;
+    if (!heroSamples[lang]) return;
+    _highlightHeroFlag(lang);
+    const codeEl = document.getElementById('hero-code');
+    if (codeEl) { codeEl.textContent = heroSamples[lang]; if (window.Prism) Prism.highlightElement(codeEl); }
+    const fnEl = document.getElementById('hero-filename');
+    if (fnEl) fnEl.textContent = lang + '/demo.hudhud';
+    const container = document.getElementById('hero-code-container');
+    if (container) { container.setAttribute('data-lang', lang); container.setAttribute('data-file', 'samples/hero/' + lang + '/demo.hudhud'); }
+    const pCode = document.getElementById('provider-code');
+    if (pCode && providerSamples[lang]) { pCode.textContent = providerSamples[lang]; if (window.Prism) Prism.highlightElement(pCode); }
+    const pFn = document.getElementById('provider-filename');
+    if (pFn) pFn.textContent = lang + '/providers.hudhud';
+})();
+
+function _highlightHeroFlag(lang) {
+    document.querySelectorAll('.hero-flag-btn').forEach(btn => {
+        btn.classList.remove('bg-white/20', 'ring-1', 'ring-amber-400');
+    });
+    const activeBtn = document.getElementById('hero-flag-' + lang);
+    if (activeBtn) {
+        activeBtn.classList.add('bg-white/20', 'ring-1', 'ring-amber-400');
+    }
+}
+
+function switchHeroLang(lang) {
+    if (lang === currentHeroLang) return;
+    currentHeroLang = lang;
+
+    _highlightHeroFlag(lang);
+
+    // Update code
+    const codeEl = document.getElementById('hero-code');
+    if (codeEl && heroSamples[lang]) {
+        codeEl.textContent = heroSamples[lang];
+        if (window.Prism) Prism.highlightElement(codeEl);
+    }
+
+    // Update filename
+    const fnEl = document.getElementById('hero-filename');
+    if (fnEl) fnEl.textContent = lang + '/demo.hudhud';
+
+    // Update data-lang and toggle run button visibility
+    const container = document.getElementById('hero-code-container');
+    if (container) {
+        container.setAttribute('data-lang', lang);
+        container.setAttribute('data-file', 'samples/hero/' + lang + '/demo.hudhud');
+    }
+
+    // Update provider panel
+    const providerCode = document.getElementById('provider-code');
+    if (providerCode && providerSamples[lang]) {
+        providerCode.textContent = providerSamples[lang];
+        if (window.Prism) Prism.highlightElement(providerCode);
+    }
+    const providerFn = document.getElementById('provider-filename');
+    if (providerFn) providerFn.textContent = lang + '/providers.hudhud';
+}
+
+// Add event delegation for hero flag buttons
+document.addEventListener('click', function(e) {
+    const btn = e.target.closest('[data-action="switch-hero"]');
+    if (btn) {
+        switchHeroLang(btn.dataset.lang);
+    }
+});
+
+// ── Rotating subtitle: shows what you can build with HudHudScript ─────────
+(function() {
+    const phrases = [
+        '母国語でカスタマーサービスAIエージェントを作成',
+        'Build multi-agent swarms that collaborate',
+        'Create governance systems with constitutions and laws',
+        'Code in Turkish, Japanese, Arabic, or 20+ languages',
+        'Connect AI agents to databases and REST APIs',
+        'Design subject-oriented programs with relations',
+        'Build RAG pipelines with vector stores',
+        'Create visual node graphs like Blueprints',
+        'Run AI tasks with providers like OpenAI and Anthropic',
+        'Define laws and councils for AI governance',
+        'Use object-oriented classes with inheritance',
+        'Chain data pipelines with the pipe operator',
+        'Break and make vectors for math operations',
+        'Loop, branch, and orchestrate complex workflows',
+        'Store and recall knowledge with semantic search',
+    ];
+    var el = document.getElementById('rotating-subtitle');
+    if (!el) return;
+    var i = 0;
+    function rotate() {
+        el.style.opacity = '0';
+        el.style.transition = 'opacity 0.3s ease';
+        setTimeout(function() {
+            i = (i + 1) % phrases.length;
+            el.textContent = phrases[i];
+            el.style.opacity = '1';
+        }, 300);
+    }
+    setInterval(rotate, 3500);
+})();
+</script>
+
+
+    <!-- Static Site Enhancements -->
+    <style>
+        /* Check, Run, Compile butonlarını ve çıktı kutularını tamamen gizle */
+        .hudhud-btn-check,
+        .hudhud-btn-compile,
+        .hudhud-btn-run,
+        .hudhud-btn-run_compiled,
+        .hudhud-output,
+        button[data-action="execute"],
+        button[data-mode="check"],
+        button[data-mode="run"],
+        button[data-mode="compile"],
+        button[data-action="clear-output"],
+        button[data-action="test-requirements"],
+        button[data-action="start-interactive"],
+        button[data-action="test-samples"],
+        button[data-action="view-saved-results"],
+        #editor-output,
+        a[href*="/playground"],
+        a[href*="/visual-editor"],
+        a[href*="/admin"],
+        .code-run-button,
+        [data-action="run-code"],
+        .hudhud-run-btn,
+        .code-actions {
+            display: none !important;
+        }
+
+        /* Action Bar ve Copy butonunu koru ve şık hizala */
+        .hudhud-action-bar {
+            display: flex !important;
+            justify-content: flex-end !important;
+            padding: 0.375rem 0.5rem !important;
+            background: #f3f4f6 !important;
+            border-top: 1px solid #e5e7eb !important;
+        }
+
+        .hudhud-btn-copy {
+            display: inline-flex !important;
+            align-items: center !important;
+            background: #4b5563 !important;
+            color: #ffffff !important;
+            padding: 0.25rem 0.75rem !important;
+            border-radius: 0.375rem !important;
+            font-size: 0.75rem !important;
+            font-weight: 600 !important;
+            cursor: pointer !important;
+            transition: background 0.15s ease !important;
+        }
+        .hudhud-btn-copy:hover {
+            background: #374151 !important;
+        }
+
+        /* HudHud Orange Download Buttons */
+        .btn-hudhud-orange,
+        .bg-orange-500 {
+            background-color: #f97316 !important;
+            color: #ffffff !important;
+        }
+        .btn-hudhud-orange:hover,
+        .hover\:bg-orange-600:hover {
+            background-color: #ea580c !important;
+            color: #ffffff !important;
+        }
+        .text-orange-600 {
+            color: #ea580c !important;
+        }
+        .text-orange-700 {
+            color: #c2410c !important;
+        }
+        .bg-orange-50 {
+            background-color: #fff7ed !important;
+        }
+        .bg-orange-100 {
+            background-color: #ffedd5 !important;
+        }
+    </style>
+    <script src="/static/js/static-cache.js"></script>
+    <script>
+    (function() {
+        var currentLang = 'ja';
+        var enabledLangs = ['ar', 'ja', 'zh', 'hi', 'bn', 'bs', 'de', 'el', 'en', 'es', 'fa', 'fr', 'hr', 'id', 'it', 'ku', 'pl', 'pt', 'ru', 'sr', 'th', 'tr', 'vi'];
+
+        // MultiLangCodeViewer'ın statik önbellekten doğrudan kod çekmesini sağla
+        function patchMultiLangCodeViewer() {
+            if (window.MultiLangCodeViewer) {
+                var origLoad = window.MultiLangCodeViewer.prototype.loadCode;
+                window.MultiLangCodeViewer.prototype.loadCode = async function(lang) {
+                    var localized = typeof getLocalizedSampleName === 'function' ? getLocalizedSampleName(this.sampleName, lang) : this.sampleName;
+                    if (window.STATIC_SAMPLES_CACHE && window.STATIC_SAMPLES_CACHE[lang]) {
+                        var code = window.STATIC_SAMPLES_CACHE[lang][localized] || window.STATIC_SAMPLES_CACHE[lang][this.sampleName];
+                        if (code) {
+                            this.codeCache[lang] = code;
+                            this.displayCode(code);
+                            return;
+                        }
+                    }
+                    return origLoad.call(this, lang);
+                };
+            }
+        }
+
+        // Code Organization dosya gezginini statik bağla
+        function initStaticProjectFiles() {
+            if (!window.STATIC_PROJECT_FILES) return;
+            var activeLang = currentLang;
+            var dropdown = document.querySelector('[data-examples-lang-selector]');
+            if (dropdown && dropdown.dataset.current) {
+                activeLang = dropdown.dataset.current;
+            } else if (!window.STATIC_PROJECT_FILES[activeLang]) {
+                activeLang = 'tr';
+            }
+
+            if (window.STATIC_PROJECT_FILES && window.STATIC_PROJECT_FILES[activeLang]) {
+                window.FILE_CONTENTS = window.STATIC_PROJECT_FILES[activeLang];
+                window.CURRENT_PROJECT_LANG = activeLang;
+
+                if (typeof window.openFileInEditor === 'function') {
+                    window.openFileInEditor('main.hudhud');
+                }
+            }
+
+            window.loadProjectFiles = async function(l) {
+                var targetLang = l || activeLang;
+                if (window.STATIC_PROJECT_FILES && window.STATIC_PROJECT_FILES[targetLang]) {
+                    window.FILE_CONTENTS = window.STATIC_PROJECT_FILES[targetLang];
+                    window.CURRENT_PROJECT_LANG = targetLang;
+                    var curFile = window.currentEditorFile || 'main.hudhud';
+                    if (typeof window.openFileInEditor === 'function') {
+                        if (window.FILE_CONTENTS[curFile]) {
+                            window.openFileInEditor(curFile);
+                        } else if (window.FILE_CONTENTS['main.hudhud']) {
+                            window.openFileInEditor('main.hudhud');
+                        }
+                    }
+                    return;
+                }
+            };
+        }
+
+        patchMultiLangCodeViewer();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            patchMultiLangCodeViewer();
+            initStaticProjectFiles();
+
+            // Genel dil değiştirici yönlendirmesi
+            document.querySelectorAll('.lang-dropdown-item').forEach(function(item) {
+                item.onclick = function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    var targetLang = this.getAttribute('data-lang');
+                    if (!targetLang || targetLang === currentLang) return;
+                    
+                    var path = window.location.pathname;
+                    for (var i = 0; i < enabledLangs.length; i++) {
+                        var l = enabledLangs[i];
+                        if (l !== 'en' && path.startsWith('/' + l + '/')) {
+                            path = path.substring(l.length + 1);
+                            break;
+                        } else if (l !== 'en' && path === '/' + l) {
+                            path = '/';
+                            break;
+                        }
+                    }
+                    
+                    var newUrl = targetLang === 'en' ? path : ('/' + targetLang + (path.startsWith('/') ? path : '/' + path));
+                    window.location.href = newUrl;
+                };
+            });
+        });
+    })();
+    </script>
+    
+</body>
+</html>

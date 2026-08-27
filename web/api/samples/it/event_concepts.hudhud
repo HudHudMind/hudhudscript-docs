@@ -1,0 +1,36 @@
+// Italiano - Event Concepts
+
+evento UserLogin {
+    stampa("User logged in");
+}
+
+evento DataReceived {
+    stampa("Data received");
+}
+
+evento ErrorOccurred {
+    stampa("Error occurred");
+}
+
+funzione on_login(username) {
+    stampa("Login: " + username);
+    ritorna "Welcome, " + username;
+}
+
+funzione on_data(source) {
+    stampa("Data from: " + source);
+    ritorna "Processed: " + source;
+}
+
+funzione on_error(message) {
+    stampa("Error: " + message);
+    ritorna "Handled: " + message;
+}
+
+stampa("=== Event System ===");
+sia r1 = on_login("admin");
+stampa(r1);
+sia r2 = on_data("sensor_1");
+stampa(r2);
+sia r3 = on_error("timeout");
+stampa(r3);

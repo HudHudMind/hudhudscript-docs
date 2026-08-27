@@ -1,0 +1,26 @@
+// FR - Chemistry Module
+
+// Molar Mass
+fonction molarMass(atoms, atomicWeight) {
+    retourner atoms * atomicWeight;
+}
+
+// Concentration = Moles / Volume
+fonction concentration(moles, volume) {
+    retourner moles / volume;
+}
+
+// pH calculation
+fonction pH(hydrogenConcentration) {
+    retourner 14 - hydrogenConcentration;
+}
+
+// Density = Mass / Volume
+fonction density(mass, volume) {
+    retourner mass / volume;
+}
+
+// Dilution: C1*V1 = C2*V2
+fonction dilution(c1, v1, v2) {
+    retourner (c1 * v1) / v2;
+}

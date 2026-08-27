@@ -1,0 +1,42 @@
+// বাংলা - Modules & Code Organization
+// Demonstrates module system: ব্যবহার_করো/আমদানি like Rust, Java, C++, Python
+
+// Import math module
+"math.hudhud" kullan;
+
+// Example syntax variations:
+// "math.hudhud" ব্যবহার_করো;
+// "math.hudhud" থেকে { add, subtract } ব্যবহার_করো;
+// "math.hudhud" math হিসেবে ব্যবহার_করো;
+
+// Using functions থেকে math module
+ধরো sum = add(10, 5);
+ছাপাও(sum);
+
+ধরো diff = subtract(20, 8);
+ছাপাও(diff);
+
+ধরো product = multiply(4, 7);
+ছাপাও(product);
+
+ধরো quotient = divide(15, 3);
+ছাপাও(quotient);
+
+ধরো squared = square(5);
+ছাপাও(squared);
+
+ধরো cubed = cube(3);
+ছাপাও(cubed);
+
+ধরো absolute = abs(-42);
+ছাপাও(absolute);
+
+ধরো maximum = max(100, 50);
+ছাপাও(maximum);
+
+ধরো minimum = min(100, 50);
+ছাপাও(minimum);
+
+// Complex calculation using multiple functions
+ধরো result = add(multiply(5, 3), divide(20, 4));
+ছাপাও(result);

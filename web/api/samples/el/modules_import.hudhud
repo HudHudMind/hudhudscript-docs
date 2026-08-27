@@ -1,0 +1,31 @@
+// EL - Modules Import Example
+
+// Import math module (direct access)
+χρήση "math.hudhud";
+
+// Import physics with alias (access via fizik.functionName)
+χρήση "physics.hudhud" ως fizik;
+
+// Import chemistry (direct access)
+χρήση "chemistry.hudhud";
+
+// Using math functions (direct)
+ας sum = add(10, 5);
+εκτύπωση(sum);
+
+ας product = multiply(4, 7);
+εκτύπωση(product);
+
+// Using physics functions (via alias: fizik.functionName)
+ας f = fizik.force(10, 9.8);
+εκτύπωση(f);
+
+ας ke = fizik.kineticEnergy(5, 10);
+εκτύπωση(ke);
+
+// Using chemistry functions (direct)
+ας d = density(100, 50);
+εκτύπωση(d);
+
+ας c = concentration(2, 5);
+εκτύπωση(c);

@@ -1,0 +1,49 @@
+// Português - Funções
+// Exemplos de definição e uso de funções
+
+// Função simples
+função saudar() {
+    imprima("Olá Mundo!");
+}
+
+// Função com parâmetros
+função somar(a, b) {
+    retorna a + b;
+}
+
+// Função com vários parâmetros
+função calcular(num1, num2, operação) {
+    se (operação == "somar") {
+        retorna num1 + num2;
+    } senão {
+        retorna 0;
+    }
+}
+
+// Funções matemáticas
+função quadrado(x) {
+    retorna x * x;
+}
+
+função cubo(x) {
+    retorna x * x * x;
+}
+
+// Uso de funções
+saudar();
+
+seja resultado1 = somar(5, 3);
+imprima(resultado1);
+
+seja resultado2 = calcular(10, 5, "somar");
+imprima(resultado2);
+
+seja resultado_quadrado = quadrado(4);
+imprima(resultado_quadrado);
+
+seja resultado_cubo = cubo(3);
+imprima(resultado_cubo);
+
+// Composição de funções
+seja total = somar(quadrado(3), cubo(2));
+imprima(total);

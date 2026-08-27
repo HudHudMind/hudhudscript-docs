@@ -1,0 +1,9 @@
+// State Machine Example
+بگذار state = "initial";
+
+اگر (state == "initial") {
+    چاپ("Starting");
+    state = "running";
+}
+
+چاپ(state);

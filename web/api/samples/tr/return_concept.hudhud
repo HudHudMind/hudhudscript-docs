@@ -1,0 +1,44 @@
+// Türkçe - Dönüş Kavramı
+// return
+
+işlev kare(x) {
+    dön x * x;
+}
+
+işlev küp(x) {
+    dön x * x * x;
+}
+
+yazdır("=== Math Functions ===");
+yazdır("kare(5): " + kare(5));
+yazdır("küp(3): " + küp(3));
+
+işlev mutlak(x) {
+    eğer (x < 0) {
+        dön -x;
+    }
+    dön x;
+}
+
+yazdır("\n=== Absolute ===");
+yazdır("mutlak(-7): " + mutlak(-7));
+yazdır("mutlak(3): " + mutlak(3));
+
+işlev nokta_oluştur(x, y) {
+    dön { x: x, y: y };
+}
+
+değişken p = nokta_oluştur(10, 20);
+yazdır("\n=== Point ===");
+yazdır("Point: (" + p.x + ", " + p.y + ")");
+
+işlev faktöriyel(n) {
+    eğer (n <= 1) {
+        dön 1;
+    }
+    dön n * faktöriyel(n - 1);
+}
+
+yazdır("\n=== Factorial ===");
+yazdır("5! = " + faktöriyel(5));
+yazdır("10! = " + faktöriyel(10));

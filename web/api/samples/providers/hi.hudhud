@@ -1,0 +1,24 @@
+// हिन्दी - providers.hudhud
+
+प्रदाता DeepSeekProvider {
+    apiKey: env("DEEPSEEK_API_KEY"),
+    type: "deepseek",
+    नाम: "DeepSeek API",
+    baseUrl: env("DEEPSEEK_BASE_URL"),
+    तापमान: 0.8
+}
+
+प्रदाता AnthropicProvider {
+    apiKey: env("ANTHROPIC_API_KEY"),
+    type: "anthropic",
+    नाम: "Anthropic Claude",
+    model: "claude-opus-4.6",
+    तापमान: 0.9
+}
+
+प्रदाता OpenAIProvider {
+    apiKey: env("OPENAI_API_KEY"),
+    type: "openai",
+    नाम: "OpenAI GPT",
+    तापमान: 0.6
+}

@@ -1,0 +1,17 @@
+// Türkçe - Karşılama Fonksiyonu
+
+işlev karşıla(isim) {
+    tanım mesaj = "Merhaba, " + isim + "!";
+    yazdır(mesaj);
+    dön mesaj;
+}
+
+işlev topla(a, b) {
+    dön a + b;
+}
+
+tanım sonuç = karşıla("Dünya");
+yazdır(sonuç);
+
+tanım toplam = topla(42, 58);
+yazdır("toplam: " + toplam);

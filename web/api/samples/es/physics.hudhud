@@ -1,0 +1,26 @@
+// ES - Physics Module
+
+// Speed = Distance / Time
+función speed(distance, time) {
+    retornar distance / time;
+}
+
+// Force = Mass * Acceleration
+función force(mass, acceleration) {
+    retornar mass * acceleration;
+}
+
+// Kinetic Energy = 0.5 * Mass * Velocity^2
+función kineticEnergy(mass, velocity) {
+    retornar 0.5 * mass * velocity * velocity;
+}
+
+// Potential Energy = Mass * Gravity * Height
+función potentialEnergy(mass, gravity, height) {
+    retornar mass * gravity * height;
+}
+
+// Momentum = Mass * Velocity
+función momentum(mass, velocity) {
+    retornar mass * velocity;
+}

@@ -1,0 +1,6 @@
+// Bosanski - Basic Example with NATIVE keywords
+varijabla a = 10;
+varijabla b = 20;
+varijabla suma = a + b;
+
+štampaj(suma);

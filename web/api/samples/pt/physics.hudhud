@@ -1,0 +1,21 @@
+// PT - Physics Module
+
+função speed(distance, time) {
+    retornar distance / time;
+}
+
+função force(mass, acceleration) {
+    retornar mass * acceleration;
+}
+
+função kineticEnergy(mass, velocity) {
+    retornar 0.5 * mass * velocity * velocity;
+}
+
+função potentialEnergy(mass, gravity, height) {
+    retornar mass * gravity * height;
+}
+
+função momentum(mass, velocity) {
+    retornar mass * velocity;
+}

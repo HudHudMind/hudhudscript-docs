@@ -1,0 +1,6 @@
+// Français - Basic Example with NATIVE keywords
+variable a = 10;
+variable b = 20;
+variable somme = a + b;
+
+imprimer(somme);

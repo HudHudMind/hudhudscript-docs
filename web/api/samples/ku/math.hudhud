@@ -1,0 +1,54 @@
+// Kurdi - Modula Matematike
+
+fonksiyon zede_bike(a, b) {
+    vegerine a + b;
+}
+
+fonksiyon je_bike(a, b) {
+    vegerine a - b;
+}
+
+fonksiyon zede_bike_car(a, b) {
+    vegerine a * b;
+}
+
+fonksiyon dabeş_bike(a, b) {
+    eger (b == 0) {
+        çap_bike("Çewti: Dabeşkirina bi sifire!");
+        vegerine 0;
+    } wella {
+        vegerine a / b;
+    }
+}
+
+fonksiyon çargoşe(x) {
+    vegerine x * x;
+}
+
+fonksiyon kup(x) {
+    vegerine x * x * x;
+}
+
+fonksiyon nirxa_mutleq(x) {
+    eger (x < 0) {
+        vegerine -x;
+    } wella {
+        vegerine x;
+    }
+}
+
+fonksiyon heri_mezin(a, b) {
+    eger (a > b) {
+        vegerine a;
+    } wella {
+        vegerine b;
+    }
+}
+
+fonksiyon heri_piçuk(a, b) {
+    eger (a < b) {
+        vegerine a;
+    } wella {
+        vegerine b;
+    }
+}

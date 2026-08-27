@@ -1,0 +1,44 @@
+// Polski - Koncepcja Zwracania
+// return
+
+funkcja kwadrat(x) {
+    zwróć x * x;
+}
+
+funkcja sześcian(x) {
+    zwróć x * x * x;
+}
+
+drukuj("=== Math Functions ===");
+drukuj("kwadrat(5): " + kwadrat(5));
+drukuj("sześcian(3): " + sześcian(3));
+
+funkcja bezwzględna(x) {
+    jeśli (x < 0) {
+        zwróć -x;
+    }
+    zwróć x;
+}
+
+drukuj("\n=== Absolute ===");
+drukuj("bezwzględna(-7): " + bezwzględna(-7));
+drukuj("bezwzględna(3): " + bezwzględna(3));
+
+funkcja utwórz_punkt(x, y) {
+    zwróć { x: x, y: y };
+}
+
+niech p = utwórz_punkt(10, 20);
+drukuj("\n=== Point ===");
+drukuj("Point: (" + p.x + ", " + p.y + ")");
+
+funkcja silnia(n) {
+    jeśli (n <= 1) {
+        zwróć 1;
+    }
+    zwróć n * silnia(n - 1);
+}
+
+drukuj("\n=== Factorial ===");
+drukuj("5! = " + silnia(5));
+drukuj("10! = " + silnia(10));

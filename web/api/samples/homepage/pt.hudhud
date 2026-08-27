@@ -1,0 +1,17 @@
+// Português - Função de saudação
+
+função sauda(nome) {
+    variável mensagem = "Olá, " + nome + "!";
+    imprimir(mensagem);
+    retornar mensagem;
+}
+
+função soma(a, b) {
+    retornar a + b;
+}
+
+variável resultado = sauda("Mundo");
+imprimir(resultado);
+
+variável total = soma(42, 58);
+imprimir("total: " + total);

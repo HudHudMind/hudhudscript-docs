@@ -1,0 +1,6 @@
+// 中文 - Basic Example with NATIVE keywords
+变量 变量1 = 10;
+变量 变量2 = 20;
+变量 总和 = 变量1 + 变量2;
+
+打印(总和);

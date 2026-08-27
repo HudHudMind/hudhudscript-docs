@@ -1,0 +1,26 @@
+// JA - Chemistry Module
+
+// Molar Mass
+関数 molarMass(atoms, atomicWeight) {
+    戻る atoms * atomicWeight;
+}
+
+// Concentration = Moles / Volume
+関数 concentration(moles, volume) {
+    戻る moles / volume;
+}
+
+// pH calculation
+関数 pH(hydrogenConcentration) {
+    戻る 14 - hydrogenConcentration;
+}
+
+// Density = Mass / Volume
+関数 density(mass, volume) {
+    戻る mass / volume;
+}
+
+// Dilution: C1*V1 = C2*V2
+関数 dilution(c1, v1, v2) {
+    戻る (c1 * v1) / v2;
+}

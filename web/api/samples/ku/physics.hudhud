@@ -1,0 +1,21 @@
+// Kurdi - Modula Fizike
+
+fonksiyon lez(mesafe, dem) {
+    vegerine mesafe / dem;
+}
+
+fonksiyon hez(giran, bilezi) {
+    vegerine giran * bilezi;
+}
+
+fonksiyon enerjiya_kinetik(giran, lez) {
+    vegerine 0.5 * giran * lez * lez;
+}
+
+fonksiyon enerjiya_potansiyel(giran, gravite, bilindahi) {
+    vegerine giran * gravite * bilindahi;
+}
+
+fonksiyon moment(giran, lez) {
+    vegerine giran * lez;
+}

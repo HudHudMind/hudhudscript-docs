@@ -1,0 +1,21 @@
+// Deutsch - Chemistry Module
+
+funktion molareMasse(atoms, atomicWeight) {
+    zurück atoms * atomicWeight;
+}
+
+funktion konzentration(moles, volume) {
+    zurück moles / volume;
+}
+
+funktion pH(hydrogenConcentration) {
+    zurück 14 - hydrogenConcentration;
+}
+
+funktion dichte(mass, volume) {
+    zurück mass / volume;
+}
+
+funktion verdünnung(c1, v1, v2) {
+    zurück (c1 * v1) / v2;
+}

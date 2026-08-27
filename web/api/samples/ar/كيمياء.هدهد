@@ -1,0 +1,21 @@
+// العربية - Chemistry Module
+
+دالة كتلةمولية(atoms, atomicWeight) {
+    ارجع atoms * atomicWeight;
+}
+
+دالة تركيز(moles, volume) {
+    ارجع moles / volume;
+}
+
+دالة pH(hydrogenConcentration) {
+    ارجع 14 - hydrogenConcentration;
+}
+
+دالة كثافة(mass, volume) {
+    ارجع mass / volume;
+}
+
+دالة تخفيف(c1, v1, v2) {
+    ارجع (c1 * v1) / v2;
+}

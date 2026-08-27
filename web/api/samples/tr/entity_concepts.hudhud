@@ -1,0 +1,38 @@
+// Türkçe - Varlık Kavramları
+
+değişken kullanıcı = {
+    kimlik: 1,
+    isim: "Ayşe",
+    eposta: "ayse@ornek.com",
+    rol: "geliştirici"
+};
+
+değişken ürün = {
+    kimlik: 101,
+    isim: "HudHudScript IDE",
+    sürüm: "2.0",
+    fiyat: 49
+};
+
+değişken sipariş = {
+    kimlik: 1001,
+    kullanıcı_kimlik: 1,
+    ürün_kimlik: 101,
+    miktar: 2,
+    durum: "onaylandı"
+};
+
+işlev varlık_bilgisi(varlık) {
+    dön "Varlık #" + varlık.kimlik + ": " + varlık.isim;
+}
+
+işlev toplam_hesapla(sipariş, fiyat) {
+    dön sipariş.miktar * fiyat;
+}
+
+yazdır("=== Varlık Sistemi ===");
+yazdır(varlık_bilgisi(kullanıcı));
+yazdır(varlık_bilgisi(ürün));
+değişken toplam = toplam_hesapla(sipariş, ürün.fiyat);
+yazdır("Sipariş #" + sipariş.kimlik + " toplam: " + toplam);
+yazdır("Durum: " + sipariş.durum);

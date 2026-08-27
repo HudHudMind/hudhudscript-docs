@@ -1,0 +1,54 @@
+// Türkçe - Math Module
+
+işlev topla(a, b) {
+    dön a + b;
+}
+
+işlev cikar(a, b) {
+    dön a - b;
+}
+
+işlev carp(a, b) {
+    dön a * b;
+}
+
+işlev bol(a, b) {
+    eğer (b == 0) {
+        yaz("Error: Division by zero!");
+        dön 0;
+    } değilse {
+        dön a / b;
+    }
+}
+
+işlev kare(x) {
+    dön x * x;
+}
+
+işlev kup(x) {
+    dön x * x * x;
+}
+
+işlev mutlak(x) {
+    eğer (x < 0) {
+        dön -x;
+    } değilse {
+        dön x;
+    }
+}
+
+işlev maksimum(a, b) {
+    eğer (a > b) {
+        dön a;
+    } değilse {
+        dön b;
+    }
+}
+
+işlev minimum(a, b) {
+    eğer (a < b) {
+        dön a;
+    } değilse {
+        dön b;
+    }
+}

@@ -1,0 +1,16 @@
+// Indonesia - Objek
+// Objek dengan kata kunci asli
+
+// Buat objek
+biar orang = {
+    nama: "Ani",
+    umur: 30,
+    kota: "Jakarta"
+};
+
+// Akses properti
+biar nama = orang.nama;
+biar umur = orang.umur;
+
+// Hasil
+nama;

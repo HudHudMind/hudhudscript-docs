@@ -1,0 +1,17 @@
+// Kurdî - Fonksiyona silavê
+
+fonksiyon silav(nav) {
+    guherbar peyam = "Silav, " + nav + "!";
+    çap_bike(peyam);
+    return peyam;
+}
+
+fonksiyon kom(a, b) {
+    return a + b;
+}
+
+guherbar encam = silav("Cîhan");
+çap_bike(encam);
+
+guherbar tevahî = kom(42, 58);
+çap_bike("tevahî: " + tevahî);

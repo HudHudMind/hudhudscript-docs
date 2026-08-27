@@ -1,0 +1,21 @@
+// Русский - Chemistry Module
+
+функция молярнаяМасса(atoms, atomicWeight) {
+    вернуть atoms * atomicWeight;
+}
+
+функция концентрация(moles, volume) {
+    вернуть moles / volume;
+}
+
+функция pH(hydrogenConcentration) {
+    вернуть 14 - hydrogenConcentration;
+}
+
+функция плотность(mass, volume) {
+    вернуть mass / volume;
+}
+
+функция разбавление(c1, v1, v2) {
+    вернуть (c1 * v1) / v2;
+}

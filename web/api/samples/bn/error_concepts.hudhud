@@ -1,0 +1,43 @@
+// বাংলা - Error Concepts
+
+ফাংশন validate_age(age) {
+    যদি (age < 0) {
+        ছুঁড়ো "Invalid age: negative";
+    }
+    যদি (age > 150) {
+        ছুঁড়ো "Invalid age: too large";
+    }
+    ফেরত age;
+}
+
+ফাংশন validate_email(email) {
+    যদি (email == "") {
+        ছুঁড়ো "Empty email";
+    }
+    প্রিন্ট("Email valid: " + email);
+    ফেরত email;
+}
+
+প্রিন্ট("=== Validation ===");
+
+চেষ্টা {
+    validate_age(25);
+    প্রিন্ট("Age 25: valid");
+} ধরো (error) {
+    প্রিন্ট("Error: " + error);
+}
+
+চেষ্টা {
+    validate_age(-5);
+} ধরো (error) {
+    প্রিন্ট("Error: " + error);
+}
+
+চেষ্টা {
+    validate_email("user@example.com");
+    validate_email("");
+} ধরো (error) {
+    প্রিন্ট("Email error: " + error);
+} সবশেষে {
+    প্রিন্ট("Validation complete");
+}

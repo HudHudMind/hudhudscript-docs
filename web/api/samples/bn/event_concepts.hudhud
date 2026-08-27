@@ -1,0 +1,36 @@
+// বাংলা - Event Concepts
+
+ইভেন্ট UserLogin {
+    প্রিন্ট("User logged in");
+}
+
+ইভেন্ট DataReceived {
+    প্রিন্ট("Data received");
+}
+
+ইভেন্ট ErrorOccurred {
+    প্রিন্ট("Error occurred");
+}
+
+ফাংশন on_login(username) {
+    প্রিন্ট("Login: " + username);
+    ফেরত "Welcome, " + username;
+}
+
+ফাংশন on_data(source) {
+    প্রিন্ট("Data from: " + source);
+    ফেরত "Processed: " + source;
+}
+
+ফাংশন on_error(message) {
+    প্রিন্ট("Error: " + message);
+    ফেরত "Handled: " + message;
+}
+
+প্রিন্ট("=== Event System ===");
+ধরি r1 = on_login("admin");
+প্রিন্ট(r1);
+ধরি r2 = on_data("sensor_1");
+প্রিন্ট(r2);
+ধরি r3 = on_error("timeout");
+প্রিন্ট(r3);

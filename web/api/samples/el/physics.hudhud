@@ -1,0 +1,21 @@
+// EL - Physics Module
+
+συνάρτηση speed(distance, time) {
+    επιστροφή distance / time;
+}
+
+συνάρτηση force(mass, acceleration) {
+    επιστροφή mass * acceleration;
+}
+
+συνάρτηση kineticEnergy(mass, velocity) {
+    επιστροφή 0.5 * mass * velocity * velocity;
+}
+
+συνάρτηση potentialEnergy(mass, gravity, height) {
+    επιστροφή mass * gravity * height;
+}
+
+συνάρτηση momentum(mass, velocity) {
+    επιστροφή mass * velocity;
+}

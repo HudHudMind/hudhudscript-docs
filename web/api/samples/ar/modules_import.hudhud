@@ -1,0 +1,31 @@
+// AR - Modules Import Example
+
+// Import math module (direct access)
+use "math.hudhud";
+
+// Import physics with alias (access via fizik.functionName)
+use "physics.hudhud" as fizik;
+
+// Import chemistry (direct access)
+use "chemistry.hudhud";
+
+// Using math functions (direct)
+متغير sum = add(10, 5);
+اطبع(sum);
+
+متغير product = multiply(4, 7);
+اطبع(product);
+
+// Using physics functions (via alias: fizik.functionName)
+متغير f = fizik.force(10, 9.8);
+اطبع(f);
+
+متغير ke = fizik.kineticEnergy(5, 10);
+اطبع(ke);
+
+// Using chemistry functions (direct)
+متغير d = density(100, 50);
+اطبع(d);
+
+متغير c = concentration(2, 5);
+اطبع(c);

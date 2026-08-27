@@ -1,0 +1,38 @@
+// Bahasa Indonesia - Konsep Entitas
+
+biar pengguna = {
+    id: 1,
+    nama: "Ani",
+    email: "ani@contoh.com",
+    peran: "pengembang"
+};
+
+biar produk = {
+    id: 101,
+    nama: "HudHudScript IDE",
+    versi: "2.0",
+    harga: 49
+};
+
+biar pesanan = {
+    id: 1001,
+    id_pengguna: 1,
+    id_produk: 101,
+    jumlah: 2,
+    status: "dikonfirmasi"
+};
+
+fungsi info_entitas(entitas) {
+    kembalikan "Entitas #" + entitas.id + ": " + entitas.nama;
+}
+
+fungsi hitung_total(pesanan, harga) {
+    kembalikan pesanan.jumlah * harga;
+}
+
+cetak("=== Sistem Entitas ===");
+cetak(info_entitas(pengguna));
+cetak(info_entitas(produk));
+biar total = hitung_total(pesanan, produk.harga);
+cetak("Pesanan #" + pesanan.id + " total: " + total);
+cetak("Status: " + pesanan.status);

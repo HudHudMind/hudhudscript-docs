@@ -1,0 +1,53 @@
+// English - Error Concepts
+// Simple validation functions
+
+function validate_age(age) {
+    if (age < 0) {
+        return { valid: false, error: "Invalid age: negative" };
+    }
+    if (age > 150) {
+        return { valid: false, error: "Invalid age: too large" };
+    }
+    return { valid: true, age: age };
+}
+
+function validate_email(email) {
+    if (email == "") {
+        return { valid: false, error: "Empty email" };
+    }
+    return { valid: true, email: email };
+}
+
+print("=== Validation ===");
+
+// Age validation
+let age_result1 = validate_age(25);
+if (age_result1.valid) {
+    print("Age 25 is valid");
+} else {
+    print("Error: " + age_result1.error);
+}
+
+let age_result2 = validate_age(-5);
+if (age_result2.valid) {
+    print("Age is valid");
+} else {
+    print("Error: " + age_result2.error);
+}
+
+// Email validation
+let email_result1 = validate_email("user@example.com");
+if (email_result1.valid) {
+    print("Email valid: " + email_result1.email);
+} else {
+    print("Email error: " + email_result1.error);
+}
+
+let email_result2 = validate_email("");
+if (email_result2.valid) {
+    print("Email valid");
+} else {
+    print("Email error: " + email_result2.error);
+}
+
+print("Validation complete");

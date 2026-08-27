@@ -1,0 +1,19 @@
+// Bosanski - Demo
+funkcija pozdravi(ime) {
+    vrati "Zdravo, " + ime + "!";
+}
+
+funkcija saberi(a, b) {
+    vrati a + b;
+}
+
+neka poruka = pozdravi("Svijet");
+ispis(poruka);
+
+neka zbir = 0;
+neka brojac = 1;
+dok (brojac <= 10) {
+    zbir = saberi(zbir, brojac);
+    brojac = brojac + 1;
+}
+ispis("Zbir 1-10: " + zbir);

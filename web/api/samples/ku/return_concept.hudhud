@@ -1,0 +1,44 @@
+// Kurdi - Tegeha Vegerine
+// return
+
+fonksiyon çargoşe(x) {
+    vegerine x * x;
+}
+
+fonksiyon kub(x) {
+    vegerine x * x * x;
+}
+
+çap_bike("=== Math Functions ===");
+çap_bike("çargoşe(5): " + çargoşe(5));
+çap_bike("kub(3): " + kub(3));
+
+fonksiyon mutleq(x) {
+    eger (x < 0) {
+        vegerine -x;
+    }
+    vegerine x;
+}
+
+çap_bike("\n=== Absolute ===");
+çap_bike("mutleq(-7): " + mutleq(-7));
+çap_bike("mutleq(3): " + mutleq(3));
+
+fonksiyon xal_biafirine(x, y) {
+    vegerine { x: x, y: y };
+}
+
+bila p = xal_biafirine(10, 20);
+çap_bike("\n=== Point ===");
+çap_bike("Point: (" + p.x + ", " + p.y + ")");
+
+fonksiyon faktoriyel(n) {
+    eger (n <= 1) {
+        vegerine 1;
+    }
+    vegerine n * faktoriyel(n - 1);
+}
+
+çap_bike("\n=== Factorial ===");
+çap_bike("5! = " + faktoriyel(5));
+çap_bike("10! = " + faktoriyel(10));

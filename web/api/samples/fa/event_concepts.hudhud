@@ -1,0 +1,36 @@
+// فارسی - Event Concepts
+
+رویداد UserLogin {
+    چاپ("User logged in");
+}
+
+رویداد DataReceived {
+    چاپ("Data received");
+}
+
+رویداد ErrorOccurred {
+    چاپ("Error occurred");
+}
+
+تابع on_login(username) {
+    چاپ("Login: " + username);
+    برگردان "Welcome, " + username;
+}
+
+تابع on_data(source) {
+    چاپ("Data from: " + source);
+    برگردان "Processed: " + source;
+}
+
+تابع on_error(message) {
+    چاپ("Error: " + message);
+    برگردان "Handled: " + message;
+}
+
+چاپ("=== Event System ===");
+بگذار r1 = on_login("admin");
+چاپ(r1);
+بگذار r2 = on_data("sensor_1");
+چاپ(r2);
+بگذار r3 = on_error("timeout");
+چاپ(r3);

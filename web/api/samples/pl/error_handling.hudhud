@@ -1,0 +1,56 @@
+// Polski - Obsługa błędów
+// try/catch/finally, throw
+
+// Basic try/catch
+funkcja podziel(a, b) {
+    jeśli (b == 0) {
+        rzuć "Błąd dzielenia przez zero";
+    }
+    zwróć a / b;
+}
+
+spróbuj {
+    niech result = podziel(10, 2);
+    drukuj("10 / 2 = " + result);
+} złap (error) {
+    drukuj("Błąd: " + error);
+}
+
+// Try/catch/finally
+drukuj("
+=== Przetwarzanie pliku ===");
+
+funkcja przetwórz_plik(filename) {
+    jeśli (filename == "") {
+        rzuć "Błąd pustej nazwy pliku";
+    }
+    drukuj("Przetwarzanie: " + filename);
+    zwróć "Dane z " + filename;
+}
+
+spróbuj {
+    niech data = przetwórz_plik("report.txt");
+    drukuj("Wynik: " + data);
+} złap (error) {
+    drukuj("Błąd: " + error);
+} na_końcu {
+    drukuj("Czyszczenie zakończone");
+}
+
+// Nested error handling
+drukuj("
+=== Zagnieżdżona obsługa błędów ===");
+
+spróbuj {
+    drukuj("Zewnętrzny blok spróbuj");
+    spróbuj {
+        rzuć "Błąd wewnętrzny";
+    } złap (inner_err) {
+        drukuj("Złapano wewnętrzny: " + inner_err);
+        rzuć "Ponownie rzucony błąd";
+    }
+} złap (outer_err) {
+    drukuj("Złapano zewnętrzny: " + outer_err);
+} na_końcu {
+    drukuj("Wszystko gotowe");
+}

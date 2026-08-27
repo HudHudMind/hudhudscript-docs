@@ -1,0 +1,56 @@
+// AGENTIC DEVELOPMENT
+// Real files and tool evidence. No loop or chain is used.
+
+agent Architect {
+    role: "architect";
+    intent: "Define the smallest testable change";
+}
+
+agent Developer {
+    role: "developer";
+    intent: "Apply an exact atomic patch";
+}
+
+agent Reviewer {
+    role: "reviewer";
+    intent: "Inspect the real source diff and final file";
+}
+
+let allowed_tools = [
+    "file.write",
+    "file.read",
+    "fs.patch_apply",
+    "exec.output"
+];
+let workspace_record = Temp.dir("hudhud-agentic-dev-");
+let workspace = workspace_record.path;
+let source_file = workspace + "/calculator.hud";
+let baseline_source = "fn add(left, right) {\n    return left - right;\n}\n";
+let expected_source = "fn add(left, right) {\n    return left + right;\n}\n";
+
+// Temp.dir supplies the path; no user-controlled string reaches exec.output.
+file.write(source_file, baseline_source);
+exec.output("git -C " + workspace + " init -q");
+exec.output("git -C " + workspace + " add calculator.hud");
+
+let patch_result = fs.patch_apply(
+    source_file,
+    "return left - right;",
+    "return left + right;"
+);
+let final_source = file.read(source_file);
+let source_diff = exec.output(
+    "git -C " + workspace + " diff --no-ext-diff -- calculator.hud"
+);
+let verified = patch_result.modified
+    && patch_result.replacements == 1
+    && final_source == expected_source
+    && source_diff.length > 0;
+
+print("Architect: " + Architect.intent);
+print("Allowlisted tools: " + allowed_tools.length);
+print("Developer replacements: " + patch_result.replacements);
+print("Reviewer verified:");
+print(verified);
+print("File: " + source_file);
+print(source_diff);

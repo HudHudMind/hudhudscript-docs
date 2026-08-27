@@ -1,0 +1,21 @@
+// Türkçe - Chemistry Module
+
+işlev molarKutle(atomlar, atomAğırlığı) {
+    dön atomlar * atomAğırlığı;
+}
+
+işlev konsantrasyon(mol, hacim) {
+    dön mol / hacim;
+}
+
+işlev pH(hydrogenConcentration) {
+    dön 14 - hydrogenConcentration;
+}
+
+işlev yogunluk(kütle, hacim) {
+    dön kütle / hacim;
+}
+
+işlev seyreltme(c1, v1, v2) {
+    dön (c1 * v1) / v2;
+}

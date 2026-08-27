@@ -1,0 +1,9 @@
+// State Machine Example
+niech state = "initial";
+
+jeśli (state == "initial") {
+    drukuj("Starting");
+    state = "running";
+}
+
+drukuj(state);

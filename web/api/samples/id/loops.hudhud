@@ -1,0 +1,13 @@
+// Indonesia - Perulangan
+// Contoh perulangan dengan kata kunci asli
+
+// Perulangan sederhana - jumlah dari 1 sampai 5
+biar jumlah = 0;
+biar penghitung = 1;
+
+selama (penghitung <= 5) {
+    jumlah = jumlah + penghitung;
+    penghitung = penghitung + 1;
+}
+
+jumlah;

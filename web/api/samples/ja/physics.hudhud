@@ -1,0 +1,26 @@
+// JA - Physics Module
+
+// Speed = Distance / Time
+関数 speed(distance, time) {
+    戻る distance / time;
+}
+
+// Force = Mass * Acceleration
+関数 force(mass, acceleration) {
+    戻る mass * acceleration;
+}
+
+// Kinetic Energy = 0.5 * Mass * Velocity^2
+関数 kineticEnergy(mass, velocity) {
+    戻る 0.5 * mass * velocity * velocity;
+}
+
+// Potential Energy = Mass * Gravity * Height
+関数 potentialEnergy(mass, gravity, height) {
+    戻る mass * gravity * height;
+}
+
+// Momentum = Mass * Velocity
+関数 momentum(mass, velocity) {
+    戻る mass * velocity;
+}

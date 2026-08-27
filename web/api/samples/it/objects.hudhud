@@ -1,0 +1,16 @@
+// Italiano - Oggetti
+// Oggetti con parole chiave native
+
+// Creare oggetto
+sia persona = {
+    nome: "Alice",
+    età: 30,
+    città: "Roma"
+};
+
+// Accedere alle proprietà
+sia nome = persona.nome;
+sia età = persona.età;
+
+// Risultato
+nome;

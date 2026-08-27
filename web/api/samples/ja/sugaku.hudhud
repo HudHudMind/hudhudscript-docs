@@ -1,0 +1,54 @@
+// 日本語 - Math Module
+
+関数 tasu(a, b) {
+    戻る a + b;
+}
+
+関数 hiku(a, b) {
+    戻る a - b;
+}
+
+関数 kakeru(a, b) {
+    戻る a * b;
+}
+
+関数 waru(a, b) {
+    もし (b == 0) {
+        insatsu("Error: Division by zero!");
+        戻る 0;
+    } それでも {
+        戻る a / b;
+    }
+}
+
+関数 jijo(x) {
+    戻る x * x;
+}
+
+関数 sanjo(x) {
+    戻る x * x * x;
+}
+
+関数 zettaichi(x) {
+    もし (x < 0) {
+        戻る -x;
+    } それでも {
+        戻る x;
+    }
+}
+
+関数 saidai(a, b) {
+    もし (a > b) {
+        戻る a;
+    } それでも {
+        戻る b;
+    }
+}
+
+関数 saisho(a, b) {
+    もし (a < b) {
+        戻る a;
+    } それでも {
+        戻る b;
+    }
+}

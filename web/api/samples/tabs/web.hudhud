@@ -1,0 +1,13 @@
+// WEB RUNTIME
+// Response builders and route matching without starting an infinite server loop.
+
+let html = Web.html("<h1>HudHudScript</h1>", 200);
+let json = Web.json({ name: "HudHud", active: true }, 200);
+
+print("HTML status: " + html.status);
+print("JSON content type: " + json.content_type);
+
+// Live mode:
+// let app = Web.serve({ host: "127.0.0.1", port: 8080, reuse_port: true });
+// let request = Web.accept(app);
+// Web.respond(request, html);

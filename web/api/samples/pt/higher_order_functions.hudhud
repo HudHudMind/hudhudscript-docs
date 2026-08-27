@@ -1,0 +1,31 @@
+// Portugues - Funcoes de Ordem Superior
+// Funcoes que trabalham com outras funcoes
+
+// Funcao que retorna uma funcao
+funcao multiplicador(fator) {
+    retorna (x) => x * fator;
+}
+
+seja dobro = multiplicador(2);
+seja triplo = multiplicador(3);
+
+imprima(dobro(5));  // 10
+imprima(triplo(5));  // 15
+
+// Funcao que recebe uma funcao
+funcao aplicar(fn, valor) {
+    retorna fn(valor);
+}
+
+imprima(aplicar(dobro, 10));  // 20
+
+// Exemplo de composicao
+funcao compor(f, g) {
+    retorna (x) => f(g(x));
+}
+
+seja somarUm = (x) => x + 1;
+seja vezesDois = (x) => x * 2;
+
+seja somarDepoisDobrar = compor(vezesDois, somarUm);
+imprima(somarDepoisDobrar(5));  // 12 (5+1=6, 6*2=12)

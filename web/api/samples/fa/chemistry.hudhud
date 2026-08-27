@@ -1,0 +1,21 @@
+// FA - Chemistry Module
+
+تابع molarMass(atoms, atomicWeight) {
+    برگردان atoms * atomicWeight;
+}
+
+تابع concentration(moles, volume) {
+    برگردان moles / volume;
+}
+
+تابع pH(hydrogenConcentration) {
+    برگردان 14 - hydrogenConcentration;
+}
+
+تابع density(mass, volume) {
+    برگردان mass / volume;
+}
+
+تابع dilution(c1, v1, v2) {
+    برگردان (c1 * v1) / v2;
+}

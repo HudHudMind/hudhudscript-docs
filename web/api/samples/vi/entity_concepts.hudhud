@@ -1,0 +1,38 @@
+// Tiếng Việt - Khái niệm thực thể
+
+đặt người_dùng = {
+    mã: 1,
+    tên: "An",
+    email: "an@vidu.com",
+    vai_trò: "lập trình viên"
+};
+
+đặt sản_phẩm = {
+    mã: 101,
+    tên: "HudHudScript IDE",
+    phiên_bản: "2.0",
+    giá: 49
+};
+
+đặt đơn_hàng = {
+    mã: 1001,
+    mã_người_dùng: 1,
+    mã_sản_phẩm: 101,
+    số_lượng: 2,
+    trạng_thái: "đã xác nhận"
+};
+
+hàm thông_tin_thực_thể(thực_thể) {
+    trả về "Thực thể #" + thực_thể.mã + ": " + thực_thể.tên;
+}
+
+hàm tính_tổng(đơn_hàng, giá) {
+    trả về đơn_hàng.số_lượng * giá;
+}
+
+in_ra("=== Hệ thống thực thể ===");
+in_ra(thông_tin_thực_thể(người_dùng));
+in_ra(thông_tin_thực_thể(sản_phẩm));
+đặt tổng = tính_tổng(đơn_hàng, sản_phẩm.giá);
+in_ra("Đơn hàng #" + đơn_hàng.mã + " tổng: " + tổng);
+in_ra("Trạng thái: " + đơn_hàng.trạng_thái);

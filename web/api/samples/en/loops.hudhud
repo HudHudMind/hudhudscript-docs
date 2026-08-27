@@ -1,0 +1,13 @@
+// English - Loops
+// Loop examples with native keywords
+
+// Simple loop - sum from 1 to 5
+let sum = 0;
+let counter = 1;
+
+while (counter <= 5) {
+    sum = sum + counter;
+    counter = counter + 1;
+}
+
+sum;

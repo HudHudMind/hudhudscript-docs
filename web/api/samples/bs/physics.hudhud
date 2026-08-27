@@ -1,0 +1,21 @@
+// BS - Physics Module
+
+funkcija speed(distance, time) {
+    vrati distance / time;
+}
+
+funkcija force(mass, acceleration) {
+    vrati mass * acceleration;
+}
+
+funkcija kineticEnergy(mass, velocity) {
+    vrati 0.5 * mass * velocity * velocity;
+}
+
+funkcija potentialEnergy(mass, gravity, height) {
+    vrati mass * gravity * height;
+}
+
+funkcija momentum(mass, velocity) {
+    vrati mass * velocity;
+}

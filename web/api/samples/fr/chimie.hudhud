@@ -1,0 +1,21 @@
+// Français - Chemistry Module
+
+fonction masseMolaire(atoms, atomicWeight) {
+    retourner atoms * atomicWeight;
+}
+
+fonction concentration(moles, volume) {
+    retourner moles / volume;
+}
+
+fonction pH(hydrogenConcentration) {
+    retourner 14 - hydrogenConcentration;
+}
+
+fonction densite(mass, volume) {
+    retourner mass / volume;
+}
+
+fonction dilution(c1, v1, v2) {
+    retourner (c1 * v1) / v2;
+}

@@ -1,0 +1,21 @@
+// Kurdi - Modula Kimyaye
+
+fonksiyon giraniya_molar(atom, giraniya_atomi) {
+    vegerine atom * giraniya_atomi;
+}
+
+fonksiyon derbazin(mol, hecm) {
+    vegerine mol / hecm;
+}
+
+fonksiyon asidi(derbazina_hidrojen) {
+    vegerine 14 - derbazina_hidrojen;
+}
+
+fonksiyon girani(giran, hecm) {
+    vegerine giran / hecm;
+}
+
+fonksiyon zelalkirin(d1, h1, h2) {
+    vegerine (d1 * h1) / h2;
+}

@@ -1,0 +1,31 @@
+// العربية - Modules Import Example
+
+// Import math module (direct access)
+استخدم "رياضيات.هدهد";
+
+// Import physics with alias (access via fizik.functionName)
+استخدم "فيزياء.هدهد" كـ fizik;
+
+// Import chemistry (direct access)
+استخدم "كيمياء.هدهد";
+
+// Using math functions (direct)
+متغير sum = اجمع(10, 5);
+اطبع(sum);
+
+متغير product = اضرب(4, 7);
+اطبع(product);
+
+// Using physics functions (via alias: fizik.functionName)
+متغير f = fizik.قوة(10, 9.8);
+اطبع(f);
+
+متغير ke = fizik.طاقةحركية(5, 10);
+اطبع(ke);
+
+// Using chemistry functions (direct)
+متغير d = كثافة(100, 50);
+اطبع(d);
+
+متغير c = تركيز(2, 5);
+اطبع(c);

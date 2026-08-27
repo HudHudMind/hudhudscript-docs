@@ -1,0 +1,19 @@
+// Indonesia - Demo
+fungsi sapa(nama) {
+    kembali "Halo, " + nama + "!";
+}
+
+fungsi tambah(a, b) {
+    kembali a + b;
+}
+
+biarkan pesan = sapa("Dunia");
+cetak(pesan);
+
+biarkan jumlah = 0;
+biarkan penghitung = 1;
+selama (penghitung <= 10) {
+    jumlah = tambah(jumlah, penghitung);
+    penghitung = penghitung + 1;
+}
+cetak("Jumlah 1-10: " + jumlah);

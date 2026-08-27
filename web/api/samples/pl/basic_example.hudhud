@@ -1,0 +1,6 @@
+// Polski - Basic Example with NATIVE keywords
+zmienna a = 10;
+zmienna b = 20;
+zmienna suma = a + b;
+
+drukuj(suma);

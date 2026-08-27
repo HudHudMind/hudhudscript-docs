@@ -1,0 +1,149 @@
+// LOOP ENGINEERING
+// Observe -> patch -> run again -> accept only measured evidence.
+
+let workspace_record = Temp.dir("hudhud-loop-eng-");
+let workspace = workspace_record.path;
+let source_file = workspace + "/calculator.js";
+let broken_source = "function add(left, right) {\n  return left - right;\n}\nconsole.log(add(2, 3));\n";
+let fixed_source = "function add(left, right) {\n  return left + right;\n}\nconsole.log(add(2, 3));\n";
+let expected_output = "5\n";
+
+file.write(source_file, broken_source);
+exec.output("git -C " + workspace + " init -q");
+exec.output("git -C " + workspace + " add calculator.js");
+
+let attempts = 0;
+let test_runs = 0;
+let failures = 1;
+let replacements = 0;
+
+loop RepairAndRetest goal(target: failures == 0) {
+    step observe_patch_verify {
+        attempts = attempts + 1;
+        test_runs = test_runs + 1;
+
+        let failing_output = exec.output("node " + source_file);
+        let patch_result = fs.patch_apply(
+            source_file,
+            "return left - right;",
+            "return left + right;"
+        );
+        replacements = replacements + patch_result.replacements;
+
+        test_runs = test_runs + 1;
+        let passing_output = exec.output("node " + source_file);
+        failures = passing_output.length - expected_output.length;
+
+        print("Before patch: " + failing_output);
+        print("After patch: " + passing_output);
+
+        gate evidence_gate {
+            when failures == 0 -> done
+            else -> fail
+        }
+    }
+}
+
+run loop RepairAndRetest;
+
+let final_source = file.read(source_file);
+let final_output = exec.output("node " + source_file);
+let source_diff = exec.output(
+    "git -C " + workspace + " diff --no-ext-diff -- calculator.js"
+);
+let verified = final_source == fixed_source
+    && final_output.length == expected_output.length
+    && source_diff.length > 0;
+
+print("Attempts: " + attempts);
+print("Test runs: " + test_runs);
+print("Patch replacements: " + replacements);
+print("Final program output: " + final_output);
+print("Verified:");
+print(verified);
+print(source_diff);
+
+chain ProductDelivery {
+    loop Scope {
+        step write_specification {
+            let stage = Temp.dir("hudhud-scope-");
+            let spec_file = stage.path + "/requirements.md";
+            let spec = "# Calculator\n\n- add(left, right)\n- output must be 5\n";
+
+            file.write(spec_file, spec);
+            result.bytes = file.read(spec_file).length;
+            print("Specification bytes: " + result.bytes);
+
+            gate scope_gate {
+                when result.bytes == spec.length -> done
+                else -> fail
+            }
+        }
+    }
+    on_done: next
+    on_fail: fail
+
+    loop Build {
+        step generate_and_execute {
+            let stage = Temp.dir("hudhud-build-");
+            let app_file = stage.path + "/app.js";
+
+            file.write(app_file, "console.log(2 + 3);\n");
+            result.output = exec.output("node " + app_file);
+            print("Build output: " + result.output);
+
+            gate build_gate {
+                when result.output.length == 2 -> done
+                else -> retry
+            }
+        }
+    }
+    on_done: next
+    on_fail: fail
+
+    loop Review {
+        step inspect_real_diff {
+            let stage = Temp.dir("hudhud-review-");
+            let app_file = stage.path + "/app.js";
+
+            file.write(app_file, "console.log(2 - 3);\n");
+            exec.output("git -C " + stage.path + " init -q");
+            exec.output("git -C " + stage.path + " add app.js");
+            let patch_result = fs.patch_apply(app_file, "2 - 3", "2 + 3");
+            result.diff = exec.output(
+                "git -C " + stage.path + " diff --no-ext-diff -- app.js"
+            );
+            print(result.diff);
+
+            gate review_gate {
+                when patch_result.replacements == 1
+                    && result.diff.length > 0 -> done
+                else -> fail
+            }
+        }
+    }
+    on_done: next
+    on_fail: fail
+
+    loop Publish {
+        step publish_artifact {
+            let release = Temp.dir("hudhud-publish-");
+            let artifact = release.path + "/calculator.js";
+
+            file.write(artifact, "console.log(2 + 3);\n");
+            result.output = exec.output("node " + artifact);
+            result.artifact = artifact;
+            print("Published: " + result.artifact);
+
+            gate publish_gate {
+                when result.output.length == 2
+                    && file.exists(result.artifact) -> done
+                else -> fail
+            }
+        }
+    }
+    on_done: done
+    on_fail: fail
+}
+
+run chain ProductDelivery;

@@ -1,0 +1,31 @@
+// HR - Modules Import Example
+
+// Import math module (direct access)
+koristi "math.hudhud";
+
+// Import physics with alias (access via fizik.functionName)
+koristi "physics.hudhud" kao fizik;
+
+// Import chemistry (direct access)
+koristi "chemistry.hudhud";
+
+// Using math functions (direct)
+neka sum = add(10, 5);
+ispiši(sum);
+
+neka product = multiply(4, 7);
+ispiši(product);
+
+// Using physics functions (via alias: fizik.functionName)
+neka f = fizik.force(10, 9.8);
+ispiši(f);
+
+neka ke = fizik.kineticEnergy(5, 10);
+ispiši(ke);
+
+// Using chemistry functions (direct)
+neka d = density(100, 50);
+ispiši(d);
+
+neka c = concentration(2, 5);
+ispiši(c);

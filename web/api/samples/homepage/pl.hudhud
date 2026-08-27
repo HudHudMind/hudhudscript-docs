@@ -1,0 +1,17 @@
+// Polski - Funkcja powitania
+
+funkcja powitaj(imię) {
+    niech wiadomość = "Cześć, " + imię + "!";
+    drukuj(wiadomość);
+    zwróć wiadomość;
+}
+
+funkcja dodaj(a, b) {
+    zwróć a + b;
+}
+
+niech wynik = powitaj("Świat");
+drukuj(wynik);
+
+niech suma = dodaj(42, 58);
+drukuj("suma: " + suma);

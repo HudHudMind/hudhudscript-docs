@@ -1,0 +1,38 @@
+// Français - Concepts d'Entité
+
+soit utilisateur = {
+    id: 1,
+    nom: "Alice",
+    courriel: "alice@exemple.com",
+    rôle: "développeur"
+};
+
+soit produit = {
+    id: 101,
+    nom: "HudHudScript IDE",
+    version: "2.0",
+    prix: 49
+};
+
+soit commande = {
+    id: 1001,
+    id_utilisateur: 1,
+    id_produit: 101,
+    quantité: 2,
+    statut: "confirmé"
+};
+
+fonction info_entité(entité) {
+    retour "Entité #" + entité.id + ": " + entité.nom;
+}
+
+fonction calculer_total(commande, prix) {
+    retour commande.quantité * prix;
+}
+
+affiche("=== Système d'Entités ===");
+affiche(info_entité(utilisateur));
+affiche(info_entité(produit));
+soit total = calculer_total(commande, produit.prix);
+affiche("Commande #" + commande.id + " total: " + total);
+affiche("Statut: " + commande.statut);

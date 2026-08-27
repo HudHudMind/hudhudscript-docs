@@ -1,0 +1,17 @@
+// Deutsch - Begrüßungsfunktion
+
+funktion begrüße(name) {
+    lasse nachricht = "Hallo, " + name + "!";
+    drucke(nachricht);
+    zurück nachricht;
+}
+
+funktion addiere(a, b) {
+    zurück a + b;
+}
+
+lasse ergebnis = begrüße("Welt");
+drucke(ergebnis);
+
+lasse summe = addiere(42, 58);
+drucke("summe: " + summe);

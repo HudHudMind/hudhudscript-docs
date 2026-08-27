@@ -1,0 +1,44 @@
+// English - Return Concept
+// return
+
+function square(x) {
+    return x * x;
+}
+
+function cube(x) {
+    return x * x * x;
+}
+
+print("=== Math Functions ===");
+print("square(5): " + square(5));
+print("cube(3): " + cube(3));
+
+function absolute(x) {
+    if (x < 0) {
+        return -x;
+    }
+    return x;
+}
+
+print("\n=== Absolute ===");
+print("absolute(-7): " + absolute(-7));
+print("absolute(3): " + absolute(3));
+
+function create_point(x, y) {
+    return { x: x, y: y };
+}
+
+let p = create_point(10, 20);
+print("\n=== Point ===");
+print("Point: (" + p.x + ", " + p.y + ")");
+
+function factorial(n) {
+    if (n <= 1) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+
+print("\n=== Factorial ===");
+print("5! = " + factorial(5));
+print("10! = " + factorial(10));

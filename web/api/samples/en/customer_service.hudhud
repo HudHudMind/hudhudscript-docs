@@ -1,0 +1,35 @@
+// English - Customer Service Agent
+
+law respect_law {
+    description: "The agent must be polite and respectful",
+    priority: 1
+}
+
+constitution service_constitution {
+    laws: [respect_law],
+    description: "Customer service framework"
+}
+
+agent service_agent {
+    model: "gpt-4"
+}
+
+function greet(customer_name) {
+    let message = "Hello " + customer_name + ", how can I help you?";
+    print(message);
+    return message;
+}
+
+function handle_request(type, details) {
+    if (type == "complaint") {
+        print("I apologize for the inconvenience. I will help resolve your issue.");
+    } else {
+        print("Thank you for reaching out. I will process your request now.");
+    }
+    return "Processed: " + type + " - " + details;
+}
+
+print("=== Customer Service Agent ===");
+greet("Alice");
+let result = handle_request("complaint", "shipping delay");
+print(result);

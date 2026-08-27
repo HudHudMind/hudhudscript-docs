@@ -1,0 +1,24 @@
+// বাংলা - providers.hudhud
+
+প্রদানকারী DeepSeekProvider {
+    apiKey: env("DEEPSEEK_API_KEY"),
+    type: "deepseek",
+    নাম: "DeepSeek API",
+    baseUrl: env("DEEPSEEK_BASE_URL"),
+    তাপমাত্রা: 0.8
+}
+
+প্রদানকারী AnthropicProvider {
+    apiKey: env("ANTHROPIC_API_KEY"),
+    type: "anthropic",
+    নাম: "Anthropic Claude",
+    model: "claude-opus-4.6",
+    তাপমাত্রা: 0.9
+}
+
+প্রদানকারী OpenAIProvider {
+    apiKey: env("OPENAI_API_KEY"),
+    type: "openai",
+    নাম: "OpenAI GPT",
+    তাপমাত্রা: 0.6
+}

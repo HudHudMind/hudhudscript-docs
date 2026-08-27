@@ -1,0 +1,42 @@
+// Polski - Modules & Code Organization
+// Demonstrates module system: użyj/importuj like Rust, Java, C++, Python
+
+// Import math module
+użyj "math.hudhud";
+
+// Example syntax variations:
+// użyj "math.hudhud";
+// użyj { add, subtract } z "math.hudhud";
+// użyj "math.hudhud" jako math;
+
+// Using functions z math module
+niech sum = add(10, 5);
+drukuj(sum);
+
+niech diff = subtract(20, 8);
+drukuj(diff);
+
+niech product = multiply(4, 7);
+drukuj(product);
+
+niech quotient = divide(15, 3);
+drukuj(quotient);
+
+niech squared = square(5);
+drukuj(squared);
+
+niech cubed = cube(3);
+drukuj(cubed);
+
+niech absolute = abs(-42);
+drukuj(absolute);
+
+niech maximum = max(100, 50);
+drukuj(maximum);
+
+niech minimum = min(100, 50);
+drukuj(minimum);
+
+// Complex calculation using multiple functions
+niech result = add(multiply(5, 3), divide(20, 4));
+drukuj(result);

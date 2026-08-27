@@ -1,0 +1,54 @@
+// VI - Math Module
+
+function add(a, b) {
+    trả_về a + b;
+}
+
+function subtract(a, b) {
+    trả_về a - b;
+}
+
+function multiply(a, b) {
+    trả_về a * b;
+}
+
+function divide(a, b) {
+    nếu (b == 0) {
+        in_ra("Error: Division by zero!");
+        trả_về 0;
+    } nếu_không {
+        trả_về a / b;
+    }
+}
+
+function square(x) {
+    trả_về x * x;
+}
+
+function cube(x) {
+    trả_về x * x * x;
+}
+
+function abs(x) {
+    nếu (x < 0) {
+        trả_về -x;
+    } nếu_không {
+        trả_về x;
+    }
+}
+
+function max(a, b) {
+    nếu (a > b) {
+        trả_về a;
+    } nếu_không {
+        trả_về b;
+    }
+}
+
+function min(a, b) {
+    nếu (a < b) {
+        trả_về a;
+    } nếu_không {
+        trả_về b;
+    }
+}

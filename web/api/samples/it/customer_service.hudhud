@@ -1,0 +1,8 @@
+// Italiano - Agente di Servizio Clienti
+// Usando parole chiave NATIVE dell'Italiano
+
+sia saluto = "Ciao, come posso aiutarti?";
+sia risposta = "Ti aiuterò con la tua richiesta.";
+
+stampa(saluto);
+stampa(risposta);

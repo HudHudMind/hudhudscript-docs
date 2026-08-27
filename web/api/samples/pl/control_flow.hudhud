@@ -1,0 +1,23 @@
+// Polski - Przepływ Sterowania
+zmienna licznik = 0;
+zmienna maksimum = 5;
+
+// Loop
+podczas (licznik < maksimum) {
+    licznik = licznik + 1;
+}
+
+// Conditional
+zmienna wynik = 85;
+
+jeśli (wynik >= 90) {
+    wynik;
+} inaczej {
+    jeśli (wynik >= 80) {
+        wynik;
+    } inaczej {
+        wynik;
+    }
+}
+
+licznik;

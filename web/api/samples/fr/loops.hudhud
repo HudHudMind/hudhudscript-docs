@@ -1,0 +1,10 @@
+// Français - Boucles
+soit compteur = 0;
+soit maximum = 5;
+
+pendant (compteur < maximum) {
+    affiche(compteur);
+    compteur = compteur + 1;
+}
+
+affiche(999);

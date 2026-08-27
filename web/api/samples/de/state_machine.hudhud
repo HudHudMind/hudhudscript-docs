@@ -1,0 +1,9 @@
+// State Machine Example
+variable state = "initial";
+
+wenn (state == "initial") {
+    drucken("Starting");
+    state = "running";
+}
+
+drucken(state);

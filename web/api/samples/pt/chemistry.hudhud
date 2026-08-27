@@ -1,0 +1,21 @@
+// PT - Chemistry Module
+
+função molarMass(atoms, atomicWeight) {
+    retornar atoms * atomicWeight;
+}
+
+função concentration(moles, volume) {
+    retornar moles / volume;
+}
+
+função pH(hydrogenConcentration) {
+    retornar 14 - hydrogenConcentration;
+}
+
+função density(mass, volume) {
+    retornar mass / volume;
+}
+
+função dilution(c1, v1, v2) {
+    retornar (c1 * v1) / v2;
+}

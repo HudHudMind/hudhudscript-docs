@@ -1,0 +1,27 @@
+// vi - Error Handling
+// Simple error control with if-else
+
+function divide(a, b) {
+    if (b == 0) {
+        return { error: true, message: "Division by zero", value: 0 };
+    }
+    return { error: false, message: "", value: a / b };
+}
+
+print("=== Error Handling ===");
+
+var result1 = divide(10, 2);
+if (result1.error) {
+    print("Error: " + result1.message);
+} else {
+    print("10 / 2 = " + result1.value);
+}
+
+var result2 = divide(10, 0);
+if (result2.error) {
+    print("Error caught: " + result2.message);
+} else {
+    print("Result: " + result2.value);
+}
+
+print("Done");

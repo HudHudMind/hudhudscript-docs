@@ -1,0 +1,11 @@
+// Español - Data Processing
+// Using NATIVE Español keywords
+
+sea datos1 = 100;
+sea datos2 = 200;
+sea datos3 = 300;
+
+sea total = datos1 + datos2 + datos3;
+sea promedio = total / 3;
+
+promedio;

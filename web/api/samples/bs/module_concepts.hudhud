@@ -1,0 +1,42 @@
+// Bosanski - Modules & Code Organization
+// Demonstrates module system: koristi/uvezi like Rust, Java, C++, Python
+
+// Import math module
+koristi "math.hudhud";
+
+// Example syntax variations:
+// koristi "math.hudhud";
+// koristi { add, subtract } od "math.hudhud";
+// koristi "math.hudhud" kao math;
+
+// Using functions iz math module
+neka sum = add(10, 5);
+štampaj(sum);
+
+neka diff = subtract(20, 8);
+štampaj(diff);
+
+neka product = multiply(4, 7);
+štampaj(product);
+
+neka quotient = divide(15, 3);
+štampaj(quotient);
+
+neka squared = square(5);
+štampaj(squared);
+
+neka cubed = cube(3);
+štampaj(cubed);
+
+neka absolute = abs(-42);
+štampaj(absolute);
+
+neka maximum = max(100, 50);
+štampaj(maximum);
+
+neka minimum = min(100, 50);
+štampaj(minimum);
+
+// Complex calculation using multiple functions
+neka result = add(multiply(5, 3), divide(20, 4));
+štampaj(result);

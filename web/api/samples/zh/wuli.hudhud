@@ -1,0 +1,21 @@
+// 中文 - Physics Module
+
+函数 速度(distance, time) {
+    返回 distance / time;
+}
+
+函数 力(mass, acceleration) {
+    返回 mass * acceleration;
+}
+
+函数 动能(mass, velocity) {
+    返回 0.5 * mass * velocity * velocity;
+}
+
+函数 势能(mass, gravity, height) {
+    返回 mass * gravity * height;
+}
+
+函数 动量(mass, velocity) {
+    返回 mass * velocity;
+}

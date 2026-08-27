@@ -1,0 +1,12 @@
+// Français - Logique conditionnelle
+soit note = 85;
+
+si (note >= 90) {
+    note;
+} sinon {
+    si (note >= 80) {
+        note;
+    } sinon {
+        note;
+    }
+}

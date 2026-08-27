@@ -1,0 +1,12 @@
+// Ελληνικά - Data Processing
+// Using NATIVE Ελληνικά keywords
+
+ας data1 = 100;
+ας data2 = 200;
+ας data3 = 300;
+
+ας total = value1+ value2+ value3;
+ας average = total / 3;
+
+ektyposi(total);
+ektyposi(average);

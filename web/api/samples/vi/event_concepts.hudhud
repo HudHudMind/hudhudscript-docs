@@ -1,0 +1,36 @@
+// Tiếng Việt - Event Concepts
+
+sự kiện UserLogin {
+    in_ra("User logged in");
+}
+
+sự kiện DataReceived {
+    in_ra("Data received");
+}
+
+sự kiện ErrorOccurred {
+    in_ra("Error occurred");
+}
+
+hàm on_login(username) {
+    in_ra("Login: " + username);
+    trả về "Welcome, " + username;
+}
+
+hàm on_data(source) {
+    in_ra("Data from: " + source);
+    trả về "Processed: " + source;
+}
+
+hàm on_error(message) {
+    in_ra("Error: " + message);
+    trả về "Handled: " + message;
+}
+
+in_ra("=== Event System ===");
+đặt r1 = on_login("admin");
+in_ra(r1);
+đặt r2 = on_data("sensor_1");
+in_ra(r2);
+đặt r3 = on_error("timeout");
+in_ra(r3);

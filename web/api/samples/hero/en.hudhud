@@ -1,0 +1,19 @@
+// English - Demo
+function greet(name) {
+    return "Hello, " + name + "!";
+}
+
+function add(a, b) {
+    return a + b;
+}
+
+let message = greet("World");
+print(message);
+
+let sum = 0;
+let i = 1;
+while (i <= 10) {
+    sum = add(sum, i);
+    i = i + 1;
+}
+print("Sum 1-10: " + sum);

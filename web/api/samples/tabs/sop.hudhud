@@ -1,0 +1,116 @@
+// SUBJECT-ORIENTED PROGRAMMING
+// Fantasy combat composed from roles, subjects, a view, effects, and relations.
+
+role Fighter { can attack, can defend }
+role Caster { can cast, can channel }
+role Bearer { can wield, can resist }
+
+subject Knight has Fighter {
+    state health: 120;
+    state power: 25;
+
+    on attack(self) {
+        let amount = PhysicalDamage(self.power);
+        self.mark_hit(amount);
+        return amount;
+    }
+
+    on defend(self) {
+        self.health = self.health + 5;
+    }
+}
+
+subject KnightLog of Knight {
+    state hits: 0;
+    state damage_dealt: 0;
+
+    on mark_hit(self, amount) {
+        self.hits = self.hits + 1;
+        self.damage_dealt = self.damage_dealt + amount;
+    }
+}
+
+subject Mage has Caster {
+    state mana: 100;
+    state power: 40;
+
+    on cast(self) {
+        self.mana = self.mana - 15;
+        return MagicalDamage(self.power + 10);
+    }
+
+    on channel(self) {
+        self.mana = self.mana + 20;
+    }
+}
+
+subject RingBearer has Bearer {
+    state health: 90;
+    state resolve: 30;
+
+    on wield(self) {
+        self.resolve = self.resolve - 5;
+        return MagicalDamage(35);
+    }
+
+    on resist(self) {
+        self.resolve = self.resolve + 10;
+    }
+}
+
+subject Wraith has Fighter {
+    state health: 150;
+    state power: 20;
+
+    on attack(self) {
+        return PhysicalDamage(self.power);
+    }
+
+    on defend(self) {
+        self.health = self.health + 5;
+    }
+}
+
+effect on PhysicalDamage(amount) {
+    return amount;
+}
+
+effect on MagicalDamage(amount) {
+    return amount;
+}
+
+compose Knight {
+    on attack: combine [KnightLog]
+}
+
+relation Knight <-> RingBearer { loyalty: 90 }
+relation RingBearer <-> Wraith { hostility: 100 }
+
+let knight = spawn Knight;
+let mage = spawn Mage;
+let bearer = spawn RingBearer;
+let wraith = spawn Wraith;
+let fellowship = get_relation(knight, bearer);
+let enemy = get_relation(bearer, wraith);
+
+knight.attack();
+mage.cast();
+bearer.wield();
+wraith.attack();
+
+let knight_damage = knight.power;
+let mage_damage = mage.power + 10;
+let bearer_damage = 35;
+let wraith_damage = wraith.power;
+
+let wraith_remaining = wraith.health - knight_damage - mage_damage - bearer_damage;
+let bearer_remaining = bearer.health - wraith_damage;
+
+print("Knight hits: " + knight.hits);
+print("Knight damage: " + knight.damage_dealt);
+print("Mage mana: " + mage.mana);
+print("Bearer health: " + bearer_remaining);
+print("Bearer resolve: " + bearer.resolve);
+print("Loyalty: " + fellowship.loyalty);
+print("Hostility: " + enemy.hostility);
+print("Wraith health: " + wraith_remaining);

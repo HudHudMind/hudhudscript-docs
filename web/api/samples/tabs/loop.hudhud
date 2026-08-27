@@ -1,0 +1,46 @@
+// LOOP PRIMITIVES
+// Repetition, convergence, retry, done, and fail gates.
+
+let builds = 0;
+
+loop RepeatBuild mode: times(3) {
+    step build_once {
+        builds = builds + 1;
+        gate build_gate {
+            when true -> continue
+            else -> fail
+        }
+    }
+}
+
+let defects = 3;
+
+loop FixUntilClean mode: until(defects == 0) {
+    step patch_once {
+        defects = defects - 1;
+        gate defect_gate {
+            when true -> continue
+            else -> fail
+        }
+    }
+}
+
+let recovery_attempts = 0;
+
+loop BoundedRecovery {
+    step connect {
+        recovery_attempts = recovery_attempts + 1;
+        gate recovery_gate {
+            when true -> done
+            else -> retry
+        }
+    }
+}
+
+run loop RepeatBuild;
+run loop FixUntilClean;
+run loop BoundedRecovery;
+
+print("Builds: " + builds);
+print("Defects: " + defects);
+print("Recovery attempts: " + recovery_attempts);

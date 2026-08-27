@@ -1,0 +1,42 @@
+// Kurdi - Modules & Code Organization
+// Demonstrates module system: bikar_bine/anin like Rust, Java, C++, Python
+
+// Import math module
+"math.hudhud" kullan;
+
+// Example syntax variations:
+// "math.hudhud" bikar_bine;
+// "math.hudhud" ji { add, subtract } bikar_bine;
+// "math.hudhud" math wek bikar_bine;
+
+// Using functions ji math module
+bila sum = add(10, 5);
+çap_bike(sum);
+
+bila diff = subtract(20, 8);
+çap_bike(diff);
+
+bila product = multiply(4, 7);
+çap_bike(product);
+
+bila quotient = divide(15, 3);
+çap_bike(quotient);
+
+bila squared = square(5);
+çap_bike(squared);
+
+bila cubed = cube(3);
+çap_bike(cubed);
+
+bila absolute = abs(-42);
+çap_bike(absolute);
+
+bila maximum = max(100, 50);
+çap_bike(maximum);
+
+bila minimum = min(100, 50);
+çap_bike(minimum);
+
+// Complex calculation using multiple functions
+bila result = add(multiply(5, 3), divide(20, 4));
+çap_bike(result);

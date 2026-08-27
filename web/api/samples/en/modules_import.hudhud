@@ -1,0 +1,31 @@
+// English - Modules Import Example
+
+// Import math module (direct access)
+use "math.hudhud";
+
+// Import physics with alias (access via fizik.functionName)
+use "physics.hudhud" as fizik;
+
+// Import chemistry (direct access)
+use "chemistry.hudhud";
+
+// Using math functions (direct)
+let sum = add(10, 5);
+print(sum);
+
+let product = multiply(4, 7);
+print(product);
+
+// Using physics functions (via alias: fizik.functionName)
+let f = fizik.force(10, 9.8);
+print(f);
+
+let ke = fizik.kineticEnergy(5, 10);
+print(ke);
+
+// Using chemistry functions (direct)
+let d = density(100, 50);
+print(d);
+
+let c = concentration(2, 5);
+print(c);

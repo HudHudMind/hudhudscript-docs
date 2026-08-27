@@ -1,0 +1,56 @@
+// Српски - Управљање грешкама
+// try/catch/finally, throw
+
+// Basic try/catch
+funkcija подели(a, b) {
+    ako (b == 0) {
+        baci "Грешка дељења нулом";
+    }
+    vrati a / b;
+}
+
+pokušaj {
+    neka result = подели(10, 2);
+    ispiši("10 / 2 = " + result);
+} uhvati (error) {
+    ispiši("Грешка: " + error);
+}
+
+// Try/catch/finally
+ispiši("
+=== Обрада датотеке ===");
+
+funkcija обради_датотеку(filename) {
+    ako (filename == "") {
+        baci "Грешка празног назива датотеке";
+    }
+    ispiši("Обрада: " + filename);
+    vrati "Подаци из " + filename;
+}
+
+pokušaj {
+    neka data = обради_датотеку("report.txt");
+    ispiši("Резултат: " + data);
+} uhvati (error) {
+    ispiši("Грешка: " + error);
+} konačno {
+    ispiši("Чишћење завршено");
+}
+
+// Nested error handling
+ispiši("
+=== Угнежђено управљање грешкама ===");
+
+pokušaj {
+    ispiši("Спољни покушај блок");
+    pokušaj {
+        baci "Унутрашња грешка";
+    } uhvati (inner_err) {
+        ispiši("Ухваћена унутрашња: " + inner_err);
+        baci "Поново бачена грешка";
+    }
+} uhvati (outer_err) {
+    ispiši("Ухваћена спољашња: " + outer_err);
+} konačno {
+    ispiši("Све готово");
+}

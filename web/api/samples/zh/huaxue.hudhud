@@ -1,0 +1,21 @@
+// 中文 - Chemistry Module
+
+函数 摩尔质量(atoms, atomicWeight) {
+    返回 atoms * atomicWeight;
+}
+
+函数 浓度(moles, volume) {
+    返回 moles / volume;
+}
+
+函数 pH(hydrogenConcentration) {
+    返回 14 - hydrogenConcentration;
+}
+
+函数 密度(mass, volume) {
+    返回 mass / volume;
+}
+
+函数 稀释(c1, v1, v2) {
+    返回 (c1 * v1) / v2;
+}

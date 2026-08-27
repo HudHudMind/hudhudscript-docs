@@ -1,0 +1,14 @@
+// Tiếng Việt - Logic điều kiện
+đặt điểm = 85;
+
+nếu (điểm >= 90) {
+    in_ra(1000);
+} không thì {
+    nếu (điểm >= 80) {
+        in_ra(2000);
+    } không thì {
+        in_ra(3000);
+    }
+}
+
+in_ra(999);

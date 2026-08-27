@@ -1,0 +1,31 @@
+// KU - Modules Import Example
+
+// Import math module (direct access)
+bikar_bine "math.hudhud";
+
+// Import physics with alias (access via fizik.functionName)
+bikar_bine "physics.hudhud" wek fizik;
+
+// Import chemistry (direct access)
+bikar_bine "chemistry.hudhud";
+
+// Using math functions (direct)
+bila sum = add(10, 5);
+çap_bike(sum);
+
+bila product = multiply(4, 7);
+çap_bike(product);
+
+// Using physics functions (via alias: fizik.functionName)
+bila f = fizik.force(10, 9.8);
+çap_bike(f);
+
+bila ke = fizik.kineticEnergy(5, 10);
+çap_bike(ke);
+
+// Using chemistry functions (direct)
+bila d = density(100, 50);
+çap_bike(d);
+
+bila c = concentration(2, 5);
+çap_bike(c);

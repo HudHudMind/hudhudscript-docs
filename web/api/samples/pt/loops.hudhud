@@ -1,0 +1,10 @@
+// Português - Laços
+seja contador = 0;
+seja máximo = 5;
+
+enquanto (contador < máximo) {
+    imprima(contador);
+    contador = contador + 1;
+}
+
+imprima(999);

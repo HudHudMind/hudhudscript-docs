@@ -1,0 +1,9 @@
+// State Machine Example
+ধরো state = "initial";
+
+যদি (state == "initial") {
+    প্রদর্শন("Starting");
+    state = "running";
+}
+
+প্রদর্শন(state);

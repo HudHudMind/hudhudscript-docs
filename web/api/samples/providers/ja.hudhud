@@ -1,0 +1,24 @@
+// 日本語 - providers.hudhud
+
+プロバイダー DeepSeekProvider {
+    apiKey: env("DEEPSEEK_API_KEY"),
+    type: "deepseek",
+    名前: "DeepSeek API",
+    baseUrl: env("DEEPSEEK_BASE_URL"),
+    温度: 0.8
+}
+
+プロバイダー AnthropicProvider {
+    apiKey: env("ANTHROPIC_API_KEY"),
+    type: "anthropic",
+    名前: "Anthropic Claude",
+    model: "claude-opus-4.6",
+    温度: 0.9
+}
+
+プロバイダー OpenAIProvider {
+    apiKey: env("OPENAI_API_KEY"),
+    type: "openai",
+    名前: "OpenAI GPT",
+    温度: 0.6
+}

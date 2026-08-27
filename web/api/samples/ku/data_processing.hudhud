@@ -1,0 +1,12 @@
+// Kurdi - Data Processing
+// Using NATIVE Kurdi keywords
+
+bila value1 = 100;
+bila value2 = 200;
+bila value3 = 300;
+
+bila total = value1+ value2+ value3;
+bila average = total / 3;
+
+çap_bike(total);
+çap_bike(average);

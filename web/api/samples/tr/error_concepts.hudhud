@@ -1,0 +1,53 @@
+// Türkçe - Error Concepts
+// Basit doğrulama işlevleri
+
+işlev validate_age(age) {
+    eğer (age < 0) {
+        dön { geçerli: yanlış, hata: "Geçersiz yaş: negatif" };
+    }
+    eğer (age > 150) {
+        dön { geçerli: yanlış, hata: "Geçersiz yaş: çok büyük" };
+    }
+    dön { geçerli: doğru, yaş: age };
+}
+
+işlev validate_email(email) {
+    eğer (email == "") {
+        dön { geçerli: yanlış, hata: "Boş email" };
+    }
+    dön { geçerli: doğru, email: email };
+}
+
+yazdır("=== Doğrulama ===");
+
+// Yaş doğrulama
+değişken yaş_sonuç1 = validate_age(25);
+eğer (yaş_sonuç1.geçerli) {
+    yazdır("Yaş 25 geçerli");
+} değilse {
+    yazdır("Hata: " + yaş_sonuç1.hata);
+}
+
+değişken yaş_sonuç2 = validate_age(-5);
+eğer (yaş_sonuç2.geçerli) {
+    yazdır("Yaş geçerli");
+} değilse {
+    yazdır("Hata: " + yaş_sonuç2.hata);
+}
+
+// Email doğrulama
+değişken email_sonuç1 = validate_email("user@example.com");
+eğer (email_sonuç1.geçerli) {
+    yazdır("Email geçerli: " + email_sonuç1.email);
+} değilse {
+    yazdır("Email hatası: " + email_sonuç1.hata);
+}
+
+değişken email_sonuç2 = validate_email("");
+eğer (email_sonuç2.geçerli) {
+    yazdır("Email geçerli");
+} değilse {
+    yazdır("Email hatası: " + email_sonuç2.hata);
+}
+
+yazdır("Doğrulama tamamlandı");

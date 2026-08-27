@@ -1,0 +1,24 @@
+// Türkçe - Temel Örnek
+// Türkçe - Yerel anahtar kelimelerle temel örnek
+
+değişken a = 10;
+değişken b = 20;
+değişken toplam = a + b;
+
+yaz("Birinci Toplam : " + toplam);
+
+değişken d1 = 79;
+değişken d2 = 21;
+değişken toplam = d1 + d2;
+
+yaz("İkinci Toplam : " + toplam);
+
+değişken test1 = 770;
+değişken test2 = 230;
+toplam = test1 + test2;
+
+yaz("Üçüncü Toplam : " + toplam);
+
+
+
+

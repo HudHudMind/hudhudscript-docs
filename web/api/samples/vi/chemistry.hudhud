@@ -1,0 +1,21 @@
+// VI - Chemistry Module
+
+hàm molarMass(atoms, atomicWeight) {
+    trả_về atoms * atomicWeight;
+}
+
+hàm concentration(moles, volume) {
+    trả_về moles / volume;
+}
+
+hàm pH(hydrogenConcentration) {
+    trả_về 14 - hydrogenConcentration;
+}
+
+hàm density(mass, volume) {
+    trả_về mass / volume;
+}
+
+hàm dilution(c1, v1, v2) {
+    trả_về (c1 * v1) / v2;
+}

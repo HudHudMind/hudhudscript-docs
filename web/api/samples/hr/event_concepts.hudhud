@@ -1,0 +1,36 @@
+// Hrvatski - Event Concepts
+
+događaj UserLogin {
+    ispiši("User logged in");
+}
+
+događaj DataReceived {
+    ispiši("Data received");
+}
+
+događaj ErrorOccurred {
+    ispiši("Error occurred");
+}
+
+funkcija on_login(username) {
+    ispiši("Login: " + username);
+    vrati "Welcome, " + username;
+}
+
+funkcija on_data(source) {
+    ispiši("Data from: " + source);
+    vrati "Processed: " + source;
+}
+
+funkcija on_error(message) {
+    ispiši("Error: " + message);
+    vrati "Handled: " + message;
+}
+
+ispiši("=== Event System ===");
+neka r1 = on_login("admin");
+ispiši(r1);
+neka r2 = on_data("sensor_1");
+ispiši(r2);
+neka r3 = on_error("timeout");
+ispiši(r3);

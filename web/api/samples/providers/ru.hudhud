@@ -1,0 +1,24 @@
+// Русский - providers.hudhud
+
+провайдер DeepSeekProvider {
+    apiKey: env("DEEPSEEK_API_KEY"),
+    type: "deepseek",
+    имя: "DeepSeek API",
+    baseUrl: env("DEEPSEEK_BASE_URL"),
+    температура: 0.8
+}
+
+провайдер AnthropicProvider {
+    apiKey: env("ANTHROPIC_API_KEY"),
+    type: "anthropic",
+    имя: "Anthropic Claude",
+    model: "claude-opus-4.6",
+    температура: 0.9
+}
+
+провайдер OpenAIProvider {
+    apiKey: env("OPENAI_API_KEY"),
+    type: "openai",
+    имя: "OpenAI GPT",
+    температура: 0.6
+}

@@ -1,0 +1,54 @@
+// TH - Math Module
+
+function add(a, b) {
+    คืนค่า a + b;
+}
+
+function subtract(a, b) {
+    คืนค่า a - b;
+}
+
+function multiply(a, b) {
+    คืนค่า a * b;
+}
+
+function divide(a, b) {
+    ถ้า (b == 0) {
+        พิมพ์("Error: Division by zero!");
+        คืนค่า 0;
+    } มิฉะนั้น {
+        คืนค่า a / b;
+    }
+}
+
+function square(x) {
+    คืนค่า x * x;
+}
+
+function cube(x) {
+    คืนค่า x * x * x;
+}
+
+function abs(x) {
+    ถ้า (x < 0) {
+        คืนค่า -x;
+    } มิฉะนั้น {
+        คืนค่า x;
+    }
+}
+
+function max(a, b) {
+    ถ้า (a > b) {
+        คืนค่า a;
+    } มิฉะนั้น {
+        คืนค่า b;
+    }
+}
+
+function min(a, b) {
+    ถ้า (a < b) {
+        คืนค่า a;
+    } มิฉะนั้น {
+        คืนค่า b;
+    }
+}

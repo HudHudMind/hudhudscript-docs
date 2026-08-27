@@ -1,0 +1,45 @@
+// Kurdi - Fonksiyonan
+// Minaken penasekirina u bikaranina fonksiyonan
+
+// Fonksiyona hesan
+fonksiyon silav_bide() {
+    çap_bike("Silav Cihan!");
+}
+
+// Fonksiyon bi parametreyan
+fonksiyon le_zede_bike(a, b) {
+    vegerine a + b;
+}
+
+// Fonksiyon bi jekirine
+fonksiyon je_bike(a, b) {
+    vegerine a - b;
+}
+
+// Fonksiyonen matematiki
+fonksiyon çargoşe(x) {
+    vegerine x * x;
+}
+
+fonksiyon kup(x) {
+    vegerine x * x * x;
+}
+
+// Bikaranina fonksiyonan
+silav_bide();
+
+bila encam1 = le_zede_bike(5, 3);
+çap_bike(encam1);
+
+bila encam2 = je_bike(10, 5);
+çap_bike(encam2);
+
+bila encam_çargoşe = çargoşe(4);
+çap_bike(encam_çargoşe);
+
+bila encam_kup = kup(3);
+çap_bike(encam_kup);
+
+// Hevgirtina fonksiyonan
+bila tevahi = le_zede_bike(çargoşe(3), kup(2));
+çap_bike(tevahi);

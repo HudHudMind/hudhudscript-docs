@@ -1,0 +1,21 @@
+// ID - Physics Module
+
+fungsi speed(distance, time) {
+    kembali distance / time;
+}
+
+fungsi force(mass, acceleration) {
+    kembali mass * acceleration;
+}
+
+fungsi kineticEnergy(mass, velocity) {
+    kembali 0.5 * mass * velocity * velocity;
+}
+
+fungsi potentialEnergy(mass, gravity, height) {
+    kembali mass * gravity * height;
+}
+
+fungsi momentum(mass, velocity) {
+    kembali mass * velocity;
+}

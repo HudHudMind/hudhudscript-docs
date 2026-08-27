@@ -1,0 +1,63 @@
+// JA - Math Module
+
+// Addition
+関数 add(a, b) {
+    戻る a + b;
+}
+
+// Subtraction
+関数 subtract(a, b) {
+    戻る a - b;
+}
+
+// Multiplication
+関数 multiply(a, b) {
+    戻る a * b;
+}
+
+// Division
+関数 divide(a, b) {
+    もし (b == 0) {
+        表示("Error: Division by zero!");
+        戻る 0;
+    } それでも {
+        戻る a / b;
+    }
+}
+
+// Square
+関数 square(x) {
+    戻る x * x;
+}
+
+// Cube
+関数 cube(x) {
+    戻る x * x * x;
+}
+
+// Absolute value
+関数 abs(x) {
+    もし (x < 0) {
+        戻る -x;
+    } それでも {
+        戻る x;
+    }
+}
+
+// Maximum
+関数 max(a, b) {
+    もし (a > b) {
+        戻る a;
+    } それでも {
+        戻る b;
+    }
+}
+
+// Minimum
+関数 min(a, b) {
+    もし (a < b) {
+        戻る a;
+    } それでも {
+        戻る b;
+    }
+}

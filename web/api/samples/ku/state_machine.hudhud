@@ -1,0 +1,9 @@
+// State Machine Example
+bila state = "initial";
+
+eger (state == "initial") {
+    çap_bike("Starting");
+    state = "running";
+}
+
+çap_bike(state);

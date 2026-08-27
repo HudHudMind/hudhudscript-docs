@@ -1,0 +1,42 @@
+// Bahasa Indonesia - Modules & Code Organization
+// Demonstrates module system: gunakan/impor like Rust, Java, C++, Python
+
+// Import math module
+gunakan "math.hudhud";
+
+// Example syntax variations:
+// gunakan "math.hudhud";
+// gunakan { add, subtract } dari "math.hudhud";
+// gunakan "math.hudhud" sebagai math;
+
+// Using functions dari math module
+biarkan sum = add(10, 5);
+cetak(sum);
+
+biarkan diff = subtract(20, 8);
+cetak(diff);
+
+biarkan product = multiply(4, 7);
+cetak(product);
+
+biarkan quotient = divide(15, 3);
+cetak(quotient);
+
+biarkan squared = square(5);
+cetak(squared);
+
+biarkan cubed = cube(3);
+cetak(cubed);
+
+biarkan absolute = abs(-42);
+cetak(absolute);
+
+biarkan maximum = max(100, 50);
+cetak(maximum);
+
+biarkan minimum = min(100, 50);
+cetak(minimum);
+
+// Complex calculation using multiple functions
+biarkan result = add(multiply(5, 3), divide(20, 4));
+cetak(result);

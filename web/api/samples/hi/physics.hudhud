@@ -1,0 +1,21 @@
+// HI - Physics Module
+
+फ़ंक्शन speed(distance, time) {
+    वापस_करो distance / time;
+}
+
+फ़ंक्शन force(mass, acceleration) {
+    वापस_करो mass * acceleration;
+}
+
+फ़ंक्शन kineticEnergy(mass, velocity) {
+    वापस_करो 0.5 * mass * velocity * velocity;
+}
+
+फ़ंक्शन potentialEnergy(mass, gravity, height) {
+    वापस_करो mass * gravity * height;
+}
+
+फ़ंक्शन momentum(mass, velocity) {
+    वापस_करो mass * velocity;
+}

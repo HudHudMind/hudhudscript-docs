@@ -1,0 +1,21 @@
+// English - Physics Module
+
+function speed(distance, time) {
+    return distance / time;
+}
+
+function force(mass, acceleration) {
+    return mass * acceleration;
+}
+
+function kineticEnergy(mass, velocity) {
+    return 0.5 * mass * velocity * velocity;
+}
+
+function potentialEnergy(mass, gravity, height) {
+    return mass * gravity * height;
+}
+
+function momentum(mass, velocity) {
+    return mass * velocity;
+}

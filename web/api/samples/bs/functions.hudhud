@@ -1,0 +1,49 @@
+// Bosanski - Funkcije
+// Primjeri definisanja i korištenja funkcija
+
+// Jednostavna funkcija
+funkcija pozdravi() {
+    ispiši("Zdravo Svijete!");
+}
+
+// Funkcija sa parametrima
+funkcija saberi(a, b) {
+    vrati a + b;
+}
+
+// Višeparametarska funkcija
+funkcija izračunaj(broj1, broj2, operacija) {
+    ako (operacija == "saberi") {
+        vrati broj1 + broj2;
+    } inače {
+        vrati 0;
+    }
+}
+
+// Matematičke funkcije
+funkcija kvadrat(x) {
+    vrati x * x;
+}
+
+funkcija kub(x) {
+    vrati x * x * x;
+}
+
+// Korištenje funkcija
+pozdravi();
+
+neka rezultat1 = saberi(5, 3);
+ispiši(rezultat1);
+
+neka rezultat2 = izračunaj(10, 5, "saberi");
+ispiši(rezultat2);
+
+neka rezultat_kvadrat = kvadrat(4);
+ispiši(rezultat_kvadrat);
+
+neka rezultat_kub = kub(3);
+ispiši(rezultat_kub);
+
+// Kompozicija funkcija
+neka ukupno = saberi(kvadrat(3), kub(2));
+ispiši(ukupno);

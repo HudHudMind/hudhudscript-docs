@@ -1,0 +1,5 @@
+// Español - Basic Example with NATIVE keywords
+sea equis = 10;
+sea ye = 20;
+sea suma = equis + ye;
+imprimir(suma);

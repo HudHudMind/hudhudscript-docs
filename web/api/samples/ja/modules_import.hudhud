@@ -1,0 +1,25 @@
+// 日本語 - Modules Import Example
+
+// Import math module (direct access)
+use "sugaku.hudhud";
+
+// Import physics with alias (access via fizik.functionName)
+use "butsuri.hudhud";
+
+// Import chemistry (direct access)
+use "kagaku.hudhud";
+
+// Using math functions (direct)
+変数 sum = tasu(10, 5);
+
+変数 product = kakeru(4, 7);
+
+// Using physics functions (via alias: fizik.functionName)
+変数 f = fizik.chikara(10, 9.8);
+
+変数 ke = fizik.undoEnergi(5, 10);
+
+// Using chemistry functions (direct)
+変数 d = mitsudo(100, 50);
+
+変数 c = nodo(2, 5);

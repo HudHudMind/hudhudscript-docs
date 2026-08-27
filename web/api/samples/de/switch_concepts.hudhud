@@ -1,0 +1,42 @@
+// Deutsch - Switch/Case Konzepte
+// Mit if-else für mehrere Bedingungen
+
+funktion tag_typ(tag) {
+    wenn (tag == "Montag") { zurück "Wochentag"; }
+    wenn (tag == "Dienstag") { zurück "Wochentag"; }
+    wenn (tag == "Mittwoch") { zurück "Wochentag"; }
+    wenn (tag == "Donnerstag") { zurück "Wochentag"; }
+    wenn (tag == "Freitag") { zurück "Wochentag"; }
+    wenn (tag == "Samstag") { zurück "Wochenende"; }
+    wenn (tag == "Sonntag") { zurück "Wochenende"; }
+    zurück "Unbekannt";
+}
+
+drucke("=== Tag Typen ===");
+drucke("Montag: " + tag_typ("Montag"));
+drucke("Samstag: " + tag_typ("Samstag"));
+drucke("Feiertag: " + tag_typ("Feiertag"));
+
+funktion noten_buchstabe(punkte) {
+    wenn (punkte == 90) { zurück "A"; }
+    wenn (punkte == 80) { zurück "B"; }
+    wenn (punkte == 70) { zurück "C"; }
+    wenn (punkte == 60) { zurück "D"; }
+    zurück "F";
+}
+
+drucke("=== Noten ===");
+drucke("90: " + noten_buchstabe(90));
+drucke("70: " + noten_buchstabe(70));
+drucke("50: " + noten_buchstabe(50));
+
+funktion status_nachricht(code) {
+    wenn (code == 200) { zurück "OK"; }
+    wenn (code == 404) { zurück "Nicht gefunden"; }
+    wenn (code == 500) { zurück "Server Fehler"; }
+    zurück "Unbekannter Status";
+}
+
+drucke("=== HTTP Status ===");
+drucke("200: " + status_nachricht(200));
+drucke("404: " + status_nachricht(404));

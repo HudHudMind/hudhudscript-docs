@@ -1,0 +1,43 @@
+// Polski - Error Concepts
+
+funkcja validate_age(age) {
+    jeśli (age < 0) {
+        rzuć "Invalid age: negative";
+    }
+    jeśli (age > 150) {
+        rzuć "Invalid age: too large";
+    }
+    zwróć age;
+}
+
+funkcja validate_email(email) {
+    jeśli (email == "") {
+        rzuć "Empty email";
+    }
+    drukuj("Email valid: " + email);
+    zwróć email;
+}
+
+drukuj("=== Validation ===");
+
+spróbuj {
+    validate_age(25);
+    drukuj("Age 25: valid");
+} złap (error) {
+    drukuj("Error: " + error);
+}
+
+spróbuj {
+    validate_age(-5);
+} złap (error) {
+    drukuj("Error: " + error);
+}
+
+spróbuj {
+    validate_email("user@example.com");
+    validate_email("");
+} złap (error) {
+    drukuj("Email error: " + error);
+} na_końcu {
+    drukuj("Validation complete");
+}

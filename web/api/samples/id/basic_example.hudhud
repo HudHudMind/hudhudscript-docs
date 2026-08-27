@@ -1,0 +1,6 @@
+// Indonesia - Basic Example with NATIVE keywords
+variabel a = 10;
+variabel b = 20;
+variabel jumlah = a + b;
+
+cetak(jumlah);

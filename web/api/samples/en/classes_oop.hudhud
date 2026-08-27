@@ -1,0 +1,167 @@
+// English - Classes and Object-Oriented Programming (OOP)
+// Class-based programming in HudHudScript
+
+// ============================================
+// 1. Basic Class Definition
+// ============================================
+
+// Access modifiers: public, private, protected
+class Animal {
+    public var name = "Unknown";
+    public var species = "Unknown";
+    public var age = 0;
+    public var alive = true;
+    private var id = "A-001";
+}
+
+print("=== Basic Class ===");
+print("Class defined: Animal");
+
+// ============================================
+// 2. Inheritance — <- operator
+// ============================================
+
+// Base Vehicle class
+class Vehicle {
+    public var brand = "Unknown";
+    public var model = "Unknown";
+    public var year = 2024;
+    private var engine_no = "ENG-0000";
+    protected var production_cost = 50000;
+}
+
+// Car <- Vehicle (Car inherits from Vehicle)
+class Car <- Vehicle {
+    public var color = "white";
+    public var door_count = 4;
+    private var mileage = 0;
+}
+
+// Sedan <- Car <- Vehicle (multi-level inheritance)
+class Sedan <- Car {
+    public var trunk_volume = 500;
+    public var type = "sedan";
+}
+
+// SUV <- Car <- Vehicle
+class SUV <- Car {
+    public var four_wheel_drive = true;
+    public var height = 180;
+    public var off_road_mode = "off";
+}
+
+print("\n=== Inheritance Hierarchy ===");
+print("Vehicle -> Car -> Sedan");
+print("Vehicle -> Car -> SUV");
+
+// ============================================
+// 3. Static Fields
+// ============================================
+
+class CarFactory {
+    static public var total_production = 0;
+    static private var factory_code = "FAC-2024";
+    static public var founded = 2020;
+    static public var location = "Istanbul";
+}
+
+print("\n=== Static Fields ===");
+print("Factory: " + CarFactory.location);
+print("Founded: " + CarFactory.founded);
+
+// ============================================
+// 4. Access Modifiers
+// ============================================
+
+class BankAccount {
+    public var holder = "Alice Johnson";
+    public var account_type = "Checking";
+    protected var balance = 10000;
+    private var password = "secret123";
+    private var security_code = "XYZ";
+    public var currency = "USD";
+}
+
+print("\n=== Access Modifiers ===");
+print("public    -> Everyone: holder, account_type");
+print("protected -> Class and subclasses: balance");
+print("private   -> Class only: password, security_code");
+
+// ============================================
+// 5. Class Hierarchy — Living Entities
+// ============================================
+
+class LivingEntity {
+    public var name = "Unknown";
+    public var age = 0;
+    protected var energy = 100;
+    private var dna = "ACGT";
+}
+
+class Mammal <- LivingEntity {
+    public var blood_temp = "warm";
+    public var has_fur = true;
+}
+
+class Bird <- LivingEntity {
+    public var wingspan = 0;
+    public var can_fly = true;
+}
+
+class Cat <- Mammal {
+    public var breed = "Tabby";
+    public var indoor = true;
+    public var color = "orange";
+}
+
+class Dog <- Mammal {
+    public var breed = "Golden";
+    public var trained = false;
+    public var size = "large";
+}
+
+class Parrot <- Bird {
+    public var can_talk = true;
+    public var color = "green";
+    public var vocabulary = 50;
+}
+
+print("\n=== Living Entity Hierarchy ===");
+print("LivingEntity");
+print("  +-- Mammal");
+print("  |   +-- Cat (breed: " + Cat.breed + ", color: " + Cat.color + ")");
+print("  |   +-- Dog (breed: " + Dog.breed + ", size: " + Dog.size + ")");
+print("  +-- Bird");
+print("      +-- Parrot (can_talk: " + Parrot.can_talk + ", vocab: " + Parrot.vocabulary + ")");
+
+// ============================================
+// 6. Business Domain Classes
+// ============================================
+
+class Company {
+    public var name = "HudHud Technology";
+    public var sector = "Software";
+    public var founded = 2023;
+    public var employees = 45;
+    private var tax_id = "US-12345678";
+}
+
+class Department {
+    public var name = "Engineering";
+    public var manager = "Bob Smith";
+    public var headcount = 12;
+    public var budget = 500000;
+}
+
+class Employee {
+    public var name = "Alice Chen";
+    public var title = "Senior Developer";
+    public var department = "Engineering";
+    protected var salary = 95000;
+    private var ssn = "123-45-6789";
+}
+
+print("\n=== Business Domain ===");
+print(Company.name + " - " + Company.sector);
+print("Department: " + Department.name + " (" + Department.headcount + " people)");
+print("Employee: " + Employee.name + " - " + Employee.title);

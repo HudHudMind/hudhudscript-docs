@@ -1,0 +1,14 @@
+// Deutsch - Bedingte Logik
+sei punktzahl = 85;
+
+wenn (punktzahl >= 90) {
+    drucke(1000);
+} sonst {
+    wenn (punktzahl >= 80) {
+        drucke(2000);
+    } sonst {
+        drucke(3000);
+    }
+}
+
+drucke(999);

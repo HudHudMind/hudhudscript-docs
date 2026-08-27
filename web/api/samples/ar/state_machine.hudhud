@@ -1,0 +1,9 @@
+// State Machine Example
+متغير state = "initial";
+
+إذا (state == "initial") {
+    اطبع("Starting");
+    state = "running";
+}
+
+اطبع(state);

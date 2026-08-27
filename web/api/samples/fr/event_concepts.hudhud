@@ -1,0 +1,36 @@
+// Français - Event Concepts
+
+événement UserLogin {
+    affiche("User logged in");
+}
+
+événement DataReceived {
+    affiche("Data received");
+}
+
+événement ErrorOccurred {
+    affiche("Error occurred");
+}
+
+fonction on_login(username) {
+    affiche("Login: " + username);
+    retour "Welcome, " + username;
+}
+
+fonction on_data(source) {
+    affiche("Data from: " + source);
+    retour "Processed: " + source;
+}
+
+fonction on_error(message) {
+    affiche("Error: " + message);
+    retour "Handled: " + message;
+}
+
+affiche("=== Event System ===");
+soit r1 = on_login("admin");
+affiche(r1);
+soit r2 = on_data("sensor_1");
+affiche(r2);
+soit r3 = on_error("timeout");
+affiche(r3);

@@ -1,0 +1,21 @@
+// Español - Physics Module
+
+función velocidad(distance, time) {
+    retornar distance / time;
+}
+
+función fuerza(mass, acceleration) {
+    retornar mass * acceleration;
+}
+
+función energiaCinetica(mass, velocity) {
+    retornar 0.5 * mass * velocity * velocity;
+}
+
+función energiaPotencial(mass, gravity, height) {
+    retornar mass * gravity * height;
+}
+
+función momento(mass, velocity) {
+    retornar mass * velocity;
+}

@@ -1,0 +1,36 @@
+// Bahasa Indonesia - Event Concepts
+
+acara UserLogin {
+    cetak("User logged in");
+}
+
+acara DataReceived {
+    cetak("Data received");
+}
+
+acara ErrorOccurred {
+    cetak("Error occurred");
+}
+
+fungsi on_login(username) {
+    cetak("Login: " + username);
+    kembalikan "Welcome, " + username;
+}
+
+fungsi on_data(source) {
+    cetak("Data from: " + source);
+    kembalikan "Processed: " + source;
+}
+
+fungsi on_error(message) {
+    cetak("Error: " + message);
+    kembalikan "Handled: " + message;
+}
+
+cetak("=== Event System ===");
+biar r1 = on_login("admin");
+cetak(r1);
+biar r2 = on_data("sensor_1");
+cetak(r2);
+biar r3 = on_error("timeout");
+cetak(r3);

@@ -1,0 +1,8 @@
+// Bosanski - Agent za korisničku podršku
+// Koristi DOMAĆE bosanske ključne riječi
+
+neka pozdrav = "Zdravo, kako vam mogu pomoći?";
+neka odgovor = "Pomoći ću vam s vašim zahtjevom.";
+
+ispiši(pozdrav);
+ispiši(odgovor);

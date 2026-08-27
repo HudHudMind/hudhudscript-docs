@@ -1,0 +1,36 @@
+// Deutsch - Event Concepts
+
+ereignis UserLogin {
+    drucke("User logged in");
+}
+
+ereignis DataReceived {
+    drucke("Data received");
+}
+
+ereignis ErrorOccurred {
+    drucke("Error occurred");
+}
+
+funktion on_login(username) {
+    drucke("Login: " + username);
+    zurück "Welcome, " + username;
+}
+
+funktion on_data(source) {
+    drucke("Data from: " + source);
+    zurück "Processed: " + source;
+}
+
+funktion on_error(message) {
+    drucke("Error: " + message);
+    zurück "Handled: " + message;
+}
+
+drucke("=== Event System ===");
+sei r1 = on_login("admin");
+drucke(r1);
+sei r2 = on_data("sensor_1");
+drucke(r2);
+sei r3 = on_error("timeout");
+drucke(r3);

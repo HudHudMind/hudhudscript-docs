@@ -1,0 +1,60 @@
+// Bosanski - Switch/Case koncepti
+// switch/case/default
+
+funkcija tip_dana(day) {
+    odaberi (day) {
+        slučaj "Monday":
+        slučaj "Tuesday":
+        slučaj "Wednesday":
+        slučaj "Thursday":
+        slučaj "Friday":
+            vrati "Radni dan";
+        slučaj "Saturday":
+        slučaj "Sunday":
+            vrati "Vikend";
+        podrazumijevano:
+            vrati "Nepoznato";
+    }
+}
+
+ispiši("=== Day Types ===");
+ispiši("Monday: " + tip_dana("Monday"));
+ispiši("Saturday: " + tip_dana("Saturday"));
+ispiši("Holiday: " + tip_dana("Holiday"));
+
+funkcija ocjena_slovo(score) {
+    odaberi (score) {
+        slučaj 90:
+            vrati "A";
+        slučaj 80:
+            vrati "B";
+        slučaj 70:
+            vrati "C";
+        slučaj 60:
+            vrati "D";
+        podrazumijevano:
+            vrati "F";
+    }
+}
+
+ispiši("\n=== Grades ===");
+ispiši("90: " + ocjena_slovo(90));
+ispiši("70: " + ocjena_slovo(70));
+ispiši("50: " + ocjena_slovo(50));
+
+funkcija poruka_statusa(code) {
+    odaberi (code) {
+        slučaj 200:
+            vrati "OK";
+        slučaj 404:
+            vrati "Not Found";
+        slučaj 500:
+            vrati "Server Error";
+        podrazumijevano:
+            vrati "Nepoznato Status";
+    }
+}
+
+ispiši("\n=== HTTP Status ===");
+ispiši("200: " + poruka_statusa(200));
+ispiši("404: " + poruka_statusa(404));

@@ -1,0 +1,23 @@
+// Italiano - Flusso di Controllo
+variabile contatore = 0;
+variabile massimo = 5;
+
+// Loop
+mentre (contatore < massimo) {
+    contatore = contatore + 1;
+}
+
+// Conditional
+variabile punteggio = 85;
+
+se (punteggio >= 90) {
+    punteggio;
+} altrimenti {
+    se (punteggio >= 80) {
+        punteggio;
+    } altrimenti {
+        punteggio;
+    }
+}
+
+contatore;

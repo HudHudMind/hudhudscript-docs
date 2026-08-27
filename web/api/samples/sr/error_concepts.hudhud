@@ -1,0 +1,43 @@
+// Српски - Error Concepts
+
+funkcija validate_age(age) {
+    ako (age < 0) {
+        baci "Invalid age: negative";
+    }
+    ako (age > 150) {
+        baci "Invalid age: too large";
+    }
+    vrati age;
+}
+
+funkcija validate_email(email) {
+    ako (email == "") {
+        baci "Empty email";
+    }
+    ispiši("Email valid: " + email);
+    vrati email;
+}
+
+ispiši("=== Validation ===");
+
+pokušaj {
+    validate_age(25);
+    ispiši("Age 25: valid");
+} uhvati (error) {
+    ispiši("Error: " + error);
+}
+
+pokušaj {
+    validate_age(-5);
+} uhvati (error) {
+    ispiši("Error: " + error);
+}
+
+pokušaj {
+    validate_email("user@example.com");
+    validate_email("");
+} uhvati (error) {
+    ispiši("Email error: " + error);
+} konačno {
+    ispiši("Validation complete");
+}

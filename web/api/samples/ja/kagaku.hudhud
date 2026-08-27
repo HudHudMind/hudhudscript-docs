@@ -1,0 +1,21 @@
+// 日本語 - Chemistry Module
+
+関数 moruShitsuryou(atoms, atomicWeight) {
+    戻る atoms * atomicWeight;
+}
+
+関数 nodo(moles, volume) {
+    戻る moles / volume;
+}
+
+関数 pH(hydrogenConcentration) {
+    戻る 14 - hydrogenConcentration;
+}
+
+関数 mitsudo(mass, volume) {
+    戻る mass / volume;
+}
+
+関数 kishaku(c1, v1, v2) {
+    戻る (c1 * v1) / v2;
+}

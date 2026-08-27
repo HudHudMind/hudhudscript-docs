@@ -1,0 +1,13 @@
+// Hrvatski - Nizovi
+// Nizovi s domaćim ključnim riječima
+
+// Kreiraj nizove
+neka brojevi = [1, 2, 3, 4, 5];
+neka imena = ["Ana", "Ivan", "Maja"];
+
+// Pristupi elementima
+neka prvi = brojevi[0];
+neka drugi = brojevi[1];
+
+// Rezultat
+prvi;

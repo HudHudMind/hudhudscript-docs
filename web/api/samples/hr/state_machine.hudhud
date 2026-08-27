@@ -1,0 +1,9 @@
+// State Machine Example
+neka state = "initial";
+
+ako (state == "initial") {
+    ispiši("Starting");
+    state = "running";
+}
+
+ispiši(state);

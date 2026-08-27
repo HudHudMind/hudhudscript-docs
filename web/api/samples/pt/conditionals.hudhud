@@ -1,0 +1,14 @@
+// Português - Lógica condicional
+seja pontuação = 85;
+
+se (pontuação >= 90) {
+    imprima(1000);
+} senão {
+    se (pontuação >= 80) {
+        imprima(2000);
+    } senão {
+        imprima(3000);
+    }
+}
+
+imprima(999);

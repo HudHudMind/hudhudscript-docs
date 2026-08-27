@@ -1,0 +1,169 @@
+// Package Kullanımı - HudHudScript Paket Sistemi
+// Paket yönetim sistemi: oluşturma, kurma, yayınlama ve kullanma
+
+// ============================================================
+// 1. PAKET KULLANIMI (Using Packages)
+// ============================================================
+
+// Harici paquete kullanımı
+usar "cebir";
+usar "fizik" como paquete;
+
+// Paket içinden belirli modülleri içe aktarma
+usar "cebir/matris";
+usar "cebir/vektor";
+usar "fizik/hareket";
+
+escribe("============================================================");
+escribe("HudHudScript Paket Sistemi Demo");
+escribe("============================================================\n");
+
+// ============================================================
+// 2. PAKET FONKSİYONLARINI KULLANMA
+// ============================================================
+
+escribe("📦 Cebir Paketi Kullanımı:");
+escribe("─────────────────────────────────────────────────────────\n");
+
+// Matris oluşturma
+variable matris1 = Matris([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]);
+
+variable matris2 = Matris([
+    [9, 8, 7],
+    [6, 5, 4],
+    [3, 2, 1]
+]);
+
+escribe("Matris 1:");
+matris1.goster();
+
+escribe("\nMatris 2:");
+matris2.goster();
+
+// Matris toplama
+variable toplam = matris1.topla(matris2);
+escribe("\nMatris Toplama:");
+toplam.goster();
+
+// Vektör işlemleri
+variable vektor1 = Vektor([1, 2, 3]);
+variable vektor2 = Vektor([4, 5, 6]);
+
+escribe("\n\n📐 Vektör İşlemleri:");
+escribe("─────────────────────────────────────────────────────────\n");
+
+escribe("Vektör 1: " + vektor1.toString());
+escribe("Vektör 2: " + vektor2.toString());
+
+variable noktaSal = vektor1.noktaSal(vektor2);
+escribe("Nokta Çarpım: " + noktaSal);
+
+variable caprazCarpim = vektor1.caprazCarpim(vektor2);
+escribe("Çapraz Çarpım: " + caprazCarpim.toString());
+
+// ============================================================
+// 3. FİZİK PAKETİ KULLANIMI
+// ============================================================
+
+escribe("\n\n⚡ Fizik Paketi Kullanımı:");
+escribe("─────────────────────────────────────────────────────────\n");
+
+// Hareket hesaplamaları
+variable baslangicHizi = 0;      // m/s
+variable ivme = 9.8;              // m/s² (yerçekimi)
+variable zaman = 5;               // saniye
+
+variable sonHiz = Hareket.hizHesapla(baslangicHizi, ivme, zaman);
+variable mesafe = Hareket.mesafeHesapla(baslangicHizi, ivme, zaman);
+
+escribe("Başlangıç Hızı: " + baslangicHizi + " m/s");
+escribe("İvme: " + ivme + " m/s²");
+escribe("Zaman: " + zaman + " s");
+escribe("─────────────────────────────────────────────────────────");
+escribe("Son Hız: " + sonHiz + " m/s");
+escribe("Alınan Mesafe: " + mesafe + " m");
+
+// ============================================================
+// 4. PAKET OLUŞTURMA (Package Creation)
+// ============================================================
+
+escribe("\n\n📝 Paket Oluşturma:");
+escribe("─────────────────────────────────────────────────────────\n");
+
+escribe("1. hudhud.toml dosyası oluşturun:");
+escribe("   [package]");
+escribe("   name = 'matematik-utils'");
+escribe("   version = '1.0.0'");
+escribe("   description = 'Matematik yardımcı fonksiyonları'");
+
+escribe("\n2. Bağımlılıklar ekleyin:");
+escribe("   [dependencies]");
+escribe("   cebir = '^2.0.0'");
+escribe("   fizik = '^1.5.0'");
+
+// ============================================================
+// 5. PAKET YÖNETİMİ KOMUTLARI
+// ============================================================
+
+escribe("\n\n🔧 Paket Yönetimi Komutları:");
+escribe("─────────────────────────────────────────────────────────\n");
+
+escribe("Paket kurma:");
+escribe("  hudhudscript install cebir");
+escribe("  hudhudscript install fizik@1.5.0");
+
+escribe("\nPaket güncelleme:");
+escribe("  hudhudscript update cebir");
+escribe("  hudhudscript update --all");
+
+escribe("\nPaket kaldırma:");
+escribe("  hudhudscript remove cebir");
+
+escribe("\nKurulu paketleri listeleme:");
+escribe("  hudhudscript list");
+
+escribe("\nPaket arama:");
+escribe("  hudhudscript search matematik");
+
+escribe("\nPaket bilgisi:");
+escribe("  hudhudscript info cebir");
+
+// ============================================================
+// 6. PAKET BAĞIMLILIKLARI
+// ============================================================
+
+escribe("\n\n🔗 Paket Bağımlılıkları:");
+escribe("─────────────────────────────────────────────────────────\n");
+
+escribe("Versiyon belirtme:");
+escribe("  'cebir' = '^2.0.0'    # 2.x.x");
+escribe("  'fizik' = '~1.5.0'    # 1.5.x");
+escribe("  'kimya' = '1.2.3'     # Tam versiyon");
+
+escribe("\nGit deposundan:");
+escribe("  'my-lib' = { git = 'https://github.com/user/my-lib' }");
+
+escribe("\nYerel yoldan:");
+escribe("  'local-lib' = { path = '../local-lib' }");
+
+// ============================================================
+// 7. PAKET GÜVENLİĞİ
+// ============================================================
+
+escribe("\n\n🔒 Paket Güvenliği:");
+escribe("─────────────────────────────────────────────────────────\n");
+
+escribe("Güvenlik kontrolü:");
+escribe("  hudhudscript audit");
+
+escribe("\nChecksum doğrulama:");
+escribe("  hudhudscript verify cebir");
+
+escribe("\n============================================================");
+escribe("✓ Paket sistemi demo tamamlandı!");
+escribe("✓ HudHudScript ile modüler ve yeniden kullanılabilir kod yazın");
+escribe("============================================================");

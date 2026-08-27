@@ -1,0 +1,13 @@
+// Indonesia - Larik
+// Larik dengan kata kunci asli
+
+// Buat larik
+biar angka = [1, 2, 3, 4, 5];
+biar nama = ["Ani", "Budi", "Citra"];
+
+// Akses elemen
+biar pertama = angka[0];
+biar kedua = angka[1];
+
+// Hasil
+pertama;

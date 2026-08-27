@@ -1,0 +1,54 @@
+// Indonesia - Modul Matematika
+
+fungsi tambah(a, b) {
+    kembalikan a + b;
+}
+
+fungsi kurang(a, b) {
+    kembalikan a - b;
+}
+
+fungsi kali(a, b) {
+    kembalikan a * b;
+}
+
+fungsi bagi(a, b) {
+    jika (b == 0) {
+        cetak("Kesalahan: Pembagian dengan nol!");
+        kembalikan 0;
+    } kalau {
+        kembalikan a / b;
+    }
+}
+
+fungsi kuadrat(x) {
+    kembalikan x * x;
+}
+
+fungsi pangkat_tiga(x) {
+    kembalikan x * x * x;
+}
+
+fungsi nilai_mutlak(x) {
+    jika (x < 0) {
+        kembalikan -x;
+    } kalau {
+        kembalikan x;
+    }
+}
+
+fungsi terbesar(a, b) {
+    jika (a > b) {
+        kembalikan a;
+    } kalau {
+        kembalikan b;
+    }
+}
+
+fungsi terkecil(a, b) {
+    jika (a < b) {
+        kembalikan a;
+    } kalau {
+        kembalikan b;
+    }
+}

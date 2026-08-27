@@ -1,0 +1,52 @@
+// Türkçe - Matematik Fonksiyonları
+
+// Temel matematik sabitleri
+yaz(Matematik.PI);
+yaz(Matematik.E);
+
+// Mutlak değer
+yaz(Matematik.mutlak(-42));  // 42
+
+// Karekök
+yaz(Matematik.karekök(16));  // 4
+yaz(Matematik.karekök(2));   // 1.414...
+
+// Küpkök
+yaz(Matematik.küpkök(27));   // 3
+yaz(Matematik.küpkök(8));    // 2
+
+// Üs alma (power)
+yaz(Matematik.üs(2, 3));     // 8 (2^3)
+yaz(Matematik.üs(3, 2));     // 9 (3^2)
+yaz(Matematik.üs(10, 3));    // 1000
+
+// Faktöriyel
+yaz(Matematik.faktöriyel(5));  // 120
+yaz(Matematik.faktöriyel(3));  // 6
+yaz(Matematik.faktöriyel(10)); // 3628800
+
+// Yuvarlama
+yaz(Matematik.yuvarla(3.7)); // 4
+yaz(Matematik.yukarı(3.2));  // 4
+yaz(Matematik.aşağı(3.9));   // 3
+
+// Min ve Max
+yaz(Matematik.min(5, 10));   // 5
+yaz(Matematik.maks(5, 10));  // 10
+
+// Trigonometri
+yaz(Matematik.sin(Matematik.PI / 2));  // 1
+yaz(Matematik.cos(0));                  // 1
+yaz(Matematik.tan(Matematik.PI / 4));  // 1
+
+// Logaritma
+yaz(Matematik.log(10));      // 2.302...
+yaz(Matematik.log10(100));   // 2
+
+// Rastgele sayı
+yaz(Matematik.rastgele());   // 0 ile 1 arası
+
+// Kısaltma: Mat.
+yaz(Mat.karekök(25));        // 5
+yaz(Mat.üs(2, 10));          // 1024
+yaz(Mat.faktöriyel(7));      // 5040

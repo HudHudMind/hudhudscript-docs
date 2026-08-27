@@ -1,0 +1,43 @@
+// ภาษาไทย - Error Concepts
+
+ฟังก์ชัน validate_age(age) {
+    ถ้า (age < 0) {
+        โยน "Invalid age: negative";
+    }
+    ถ้า (age > 150) {
+        โยน "Invalid age: too large";
+    }
+    คืน age;
+}
+
+ฟังก์ชัน validate_email(email) {
+    ถ้า (email == "") {
+        โยน "Empty email";
+    }
+    พิมพ์("Email valid: " + email);
+    คืน email;
+}
+
+พิมพ์("=== Validation ===");
+
+ลอง {
+    validate_age(25);
+    พิมพ์("Age 25: valid");
+} จับ (error) {
+    พิมพ์("Error: " + error);
+}
+
+ลอง {
+    validate_age(-5);
+} จับ (error) {
+    พิมพ์("Error: " + error);
+}
+
+ลอง {
+    validate_email("user@example.com");
+    validate_email("");
+} จับ (error) {
+    พิมพ์("Email error: " + error);
+} ในที่สุด {
+    พิมพ์("Validation complete");
+}

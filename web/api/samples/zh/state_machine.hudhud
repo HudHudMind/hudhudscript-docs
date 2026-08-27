@@ -1,0 +1,9 @@
+// State Machine Example
+变量 state = "initial";
+
+如果 (state == "initial") {
+    打印("Starting");
+    state = "running";
+}
+
+打印(state);

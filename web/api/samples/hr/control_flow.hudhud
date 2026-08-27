@@ -1,0 +1,23 @@
+// Hrvatski - Kontrola Toka
+varijabla brojač = 0;
+varijabla maksimum = 5;
+
+// Loop
+dok (brojač < maksimum) {
+    brojač = brojač + 1;
+}
+
+// Conditional
+varijabla rezultat = 85;
+
+ako (rezultat >= 90) {
+    rezultat;
+} inače {
+    ako (rezultat >= 80) {
+        rezultat;
+    } inače {
+        rezultat;
+    }
+}
+
+brojač;

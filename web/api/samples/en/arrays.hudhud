@@ -1,0 +1,13 @@
+// English - Arrays
+// Arrays with native keywords
+
+// Create arrays
+let numbers = [1, 2, 3, 4, 5];
+let names = ["Alice", "Bob", "Charlie"];
+
+// Access elements
+let first = numbers[0];
+let second = numbers[1];
+
+// Empty array
+let list = [];

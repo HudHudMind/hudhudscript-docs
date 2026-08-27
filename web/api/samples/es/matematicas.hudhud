@@ -1,0 +1,54 @@
+// Español - Math Module
+
+función sumar(a, b) {
+    retornar a + b;
+}
+
+función restar(a, b) {
+    retornar a - b;
+}
+
+función multiplicar(a, b) {
+    retornar a * b;
+}
+
+función dividir(a, b) {
+    si (b == 0) {
+        imprimir("Error: Division by zero!");
+        retornar 0;
+    } sino {
+        retornar a / b;
+    }
+}
+
+función cuadrado(x) {
+    retornar x * x;
+}
+
+función cubo(x) {
+    retornar x * x * x;
+}
+
+función absoluto(x) {
+    si (x < 0) {
+        retornar -x;
+    } sino {
+        retornar x;
+    }
+}
+
+función maximo(a, b) {
+    si (a > b) {
+        retornar a;
+    } sino {
+        retornar b;
+    }
+}
+
+función minimo(a, b) {
+    si (a < b) {
+        retornar a;
+    } sino {
+        retornar b;
+    }
+}

@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VI - HudHudScript Documentation</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/logo/hudhud-32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/logo/hudhud-96.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="/static/images/logo/hudhud-256.png">
+
+    
+
+    <!-- Tailwind CSS -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+Arabic:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Noto+Sans+Bengali:wght@400;700&family=Noto+Sans+Thai:wght@400;700&family=Noto+Sans+Devanagari:wght@400;700&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Prism.js for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+    <!-- Tailwind CSS (Compiled) -->
+    <link rel="stylesheet" href="/static/css/tailwind-output.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/custom.css?v=0.0.99">
+
+    <!-- HudHudScript Code Runner (global) -->
+    <link rel="stylesheet" href="/static/css/hudhud-code-runner.css">
+
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+<style nonce="0Hrbvn_ZG9uXY0DX7t4WjS90ArekbYxvh3DzbQG_dyM">
+    .sample-card {
+        background: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+        overflow: hidden;
+    }
+    .sample-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 1.5rem;
+    }
+    .sample-code {
+        background: #2d2d2d;
+        color: #ccc;
+        padding: 1.5rem;
+        overflow-x: auto;
+        font-family: 'Courier New', monospace;
+        font-size: 0.875rem;
+        line-height: 1.5;
+    }
+    .sample-actions {
+        padding: 1rem 1.5rem;
+        background: #f7fafc;
+        border-top: 1px solid #e2e8f0;
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+    }
+    .btn-action {
+        padding: 0.5rem 1.5rem;
+        border-radius: 0.375rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s;
+        border: none;
+        font-size: 0.875rem;
+    }
+    .btn-check {
+        background: #3b82f6;
+        color: white;
+    }
+    .btn-check:hover {
+        background: #2563eb;
+    }
+    .btn-compile {
+        background: #10b981;
+        color: white;
+    }
+    .btn-compile:hover {
+        background: #059669;
+    }
+    .btn-run {
+        background: #8b5cf6;
+        color: white;
+    }
+    .btn-run:hover {
+        background: #7c3aed;
+    }
+    .btn-action:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+    .output-area {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: #1a1a1a;
+        color: #00ff00;
+        border-radius: 0.375rem;
+        font-family: 'Courier New', monospace;
+        font-size: 0.875rem;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        max-height: 300px;
+        overflow-y: auto;
+        display: none;
+    }
+    .output-area.show {
+        display: block;
+    }
+    .output-area.error {
+        color: #ff6b6b;
+    }
+    .output-area.success {
+        color: #51cf66;
+    }
+    .loading {
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        border: 2px solid #ffffff;
+        border-radius: 50%;
+        border-top-color: transparent;
+        animation: spin 0.6s linear infinite;
+    }
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+    .lang-badge {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 0.25rem 0.75rem;
+        border-radius: 0.25rem;
+        font-size: 0.875rem;
+        margin-left: 0.5rem;
+    }
+</style>
+
+</head>
+<body class="bg-slate-50 text-slate-900">
+    <!-- Environment Badge -->
+    
+
+    <!-- Navigation -->
+    <nav class="bg-slate-900 border-b border-slate-700/50 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-14">
+                <!-- Logo -->
+                <a href="/" class="flex items-center gap-2 flex-shrink-0">
+                    <img src="/static/images/logo/hudhud-48.png" alt="HudHudScript" width="32" height="32" class="rounded">
+                    <span class="text-xl font-bold text-white tracking-tight">HudHud<span class="text-amber-400">Script</span></span>
+                </a>
+
+                <!-- Center nav (desktop) -->
+                <div class="hidden lg:flex items-center space-x-1">
+                    <a href="/" class="nav-link text-slate-300 hover:text-white px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800">
+                        Trang Chủ
+                    </a>
+                    <a href="/multilingual" class="nav-link text-slate-300 hover:text-white px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800">
+                        🌐 Đa ngôn ngữ
+                    </a>
+                    <!-- Belgeler -->
+                    <div class="nav-dropdown relative">
+                        <button class="nav-dropdown-btn text-slate-300 hover:text-white px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800 flex items-center gap-1 whitespace-nowrap">
+                            Tài liệu <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="nav-dropdown-menu absolute top-full left-0 pt-1 hidden">
+                            <div class="bg-slate-800 border border-slate-700 rounded-lg shadow-xl py-1 w-40">
+                                <a href="/docs" class="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-700">Tài Liệu</a>
+                                <a href="/examples" class="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-700">Ví Dụ</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tools -->
+                    <div class="nav-dropdown relative">
+                        <button class="nav-dropdown-btn text-slate-300 hover:text-white px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800 flex items-center gap-1 whitespace-nowrap">
+                            Công Cụ <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="nav-dropdown-menu absolute top-full left-0 pt-1 hidden">
+                            <div class="bg-slate-800 border border-slate-700 rounded-lg shadow-xl py-1 w-40">
+                                <a href="/tools" class="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-700">Công Cụ</a>
+                                <a href="/paradigms" class="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-700">Mô Hình</a>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Downloads -->
+                    <div class="nav-dropdown relative">
+                        <button class="nav-dropdown-btn text-slate-300 hover:text-white px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800 flex items-center gap-1 whitespace-nowrap">
+                            Tải Xuống <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="nav-dropdown-menu absolute top-full left-0 pt-1 hidden">
+                            <div class="bg-slate-800 border border-slate-700 rounded-lg shadow-xl py-1 w-56">
+                                <a href="/download/hudhud-script" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-slate-700">
+                                    <div class="font-medium">HudHudScript</div>
+                                    <div class="text-xs text-slate-500 mt-0.5">Multi-lingual agentic programming language ,  SOP, governance</div>
+                                </a>
+                                <a href="/download/hudhud-aide" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-slate-700">
+                                    <div class="font-medium">HudHud AIDE</div>
+                                    <div class="text-xs text-slate-500 mt-0.5">Official IDE ,  syntax highlighting, autocomplete, AI assistance for 23 languages</div>
+                                </a>
+                                <a href="/download/hudhud-linux" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-slate-700">
+                                    <div class="font-medium text-slate-500">HudHud Linux</div>
+                                    <div class="text-xs text-slate-600 mt-0.5">Modern Linux distro powered by HudHudScript</div>
+                                    <span class="text-xs text-amber-500 font-medium">Sắp ra mắt</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- About -->
+                    <div class="nav-dropdown relative">
+                        <button class="nav-dropdown-btn text-slate-300 hover:text-white px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800 flex items-center gap-1 whitespace-nowrap">
+                            Giới Thiệu <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="nav-dropdown-menu absolute top-full left-0 pt-1 hidden">
+                            <div class="bg-slate-800 border border-slate-700 rounded-lg shadow-xl py-1 w-44">
+                                <a href="/about/language" class="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-700">Về ngôn ngữ</a>
+                                <a href="/blog/" class="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-700">Blog</a>
+                                <a href="/contributors" class="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-700">Người Đóng Góp</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right side -->
+                <div class="flex items-center gap-3 flex-shrink-0">
+                    <div class="lang-dropdown-wrapper relative" data-lang-selector data-current="vi">
+                        <button type="button" class="lang-dropdown-btn flex items-center gap-1.5 bg-slate-800 border border-slate-600 text-slate-300 rounded-md px-3 py-2 pr-8 text-sm hover:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 focus:border-amber-500 transition w-full">
+                            <span class="lang-flag inline-block flex-shrink-0"><img src="https://flagcdn.com/24x18/vn.png" srcset="https://flagcdn.com/48x36/vn.png 2x" width="24" height="18" alt="VN" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                            <span class="lang-name whitespace-nowrap">Tiếng Việt</span>
+                            <svg class="lang-chevron w-4 h-4 ml-auto flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="lang-dropdown-menu hidden absolute p-2 top-full right-0 mt-1 bg-slate-800 border border-slate-600 rounded-md shadow-xl z-50 max-h-64 overflow-y-auto min-w-[240px]">
+                            
+                            <button type="button" data-lang="ar" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/sa.png" srcset="https://flagcdn.com/48x36/sa.png 2x" width="24" height="18" alt="SA" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>العربية</span>
+                            </button>
+                            
+                            <button type="button" data-lang="ja" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/jp.png" srcset="https://flagcdn.com/48x36/jp.png 2x" width="24" height="18" alt="JP" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>日本語</span>
+                            </button>
+                            
+                            <button type="button" data-lang="zh" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/cn.png" srcset="https://flagcdn.com/48x36/cn.png 2x" width="24" height="18" alt="CN" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>中文</span>
+                            </button>
+                            
+                            <button type="button" data-lang="hi" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/in.png" srcset="https://flagcdn.com/48x36/in.png 2x" width="24" height="18" alt="IN" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>हिन्दी</span>
+                            </button>
+                            
+                            <button type="button" data-lang="bn" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/bd.png" srcset="https://flagcdn.com/48x36/bd.png 2x" width="24" height="18" alt="BD" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>বাংলা</span>
+                            </button>
+                            
+                            <button type="button" data-lang="bs" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/ba.png" srcset="https://flagcdn.com/48x36/ba.png 2x" width="24" height="18" alt="BA" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Bosanski</span>
+                            </button>
+                            
+                            <button type="button" data-lang="de" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/de.png" srcset="https://flagcdn.com/48x36/de.png 2x" width="24" height="18" alt="DE" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Deutsch</span>
+                            </button>
+                            
+                            <button type="button" data-lang="el" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/gr.png" srcset="https://flagcdn.com/48x36/gr.png 2x" width="24" height="18" alt="GR" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Ελληνικά</span>
+                            </button>
+                            
+                            <button type="button" data-lang="en" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/gb.png" srcset="https://flagcdn.com/48x36/gb.png 2x" width="24" height="18" alt="GB" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>English</span>
+                            </button>
+                            
+                            <button type="button" data-lang="es" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/es.png" srcset="https://flagcdn.com/48x36/es.png 2x" width="24" height="18" alt="ES" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Español</span>
+                            </button>
+                            
+                            <button type="button" data-lang="fa" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/ir.png" srcset="https://flagcdn.com/48x36/ir.png 2x" width="24" height="18" alt="IR" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>فارسی</span>
+                            </button>
+                            
+                            <button type="button" data-lang="fr" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/fr.png" srcset="https://flagcdn.com/48x36/fr.png 2x" width="24" height="18" alt="FR" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Français</span>
+                            </button>
+                            
+                            <button type="button" data-lang="hr" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/hr.png" srcset="https://flagcdn.com/48x36/hr.png 2x" width="24" height="18" alt="HR" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Hrvatski</span>
+                            </button>
+                            
+                            <button type="button" data-lang="id" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/id.png" srcset="https://flagcdn.com/48x36/id.png 2x" width="24" height="18" alt="ID" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Bahasa Indonesia</span>
+                            </button>
+                            
+                            <button type="button" data-lang="it" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/it.png" srcset="https://flagcdn.com/48x36/it.png 2x" width="24" height="18" alt="IT" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Italiano</span>
+                            </button>
+                            
+                            <button type="button" data-lang="ku" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0">🌍</span>
+                                <span>Kurdî</span>
+                            </button>
+                            
+                            <button type="button" data-lang="pl" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/pl.png" srcset="https://flagcdn.com/48x36/pl.png 2x" width="24" height="18" alt="PL" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Polski</span>
+                            </button>
+                            
+                            <button type="button" data-lang="pt" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/pt.png" srcset="https://flagcdn.com/48x36/pt.png 2x" width="24" height="18" alt="PT" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Português</span>
+                            </button>
+                            
+                            <button type="button" data-lang="ru" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/ru.png" srcset="https://flagcdn.com/48x36/ru.png 2x" width="24" height="18" alt="RU" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Русский</span>
+                            </button>
+                            
+                            <button type="button" data-lang="sr" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/rs.png" srcset="https://flagcdn.com/48x36/rs.png 2x" width="24" height="18" alt="RS" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Српски</span>
+                            </button>
+                            
+                            <button type="button" data-lang="th" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/th.png" srcset="https://flagcdn.com/48x36/th.png 2x" width="24" height="18" alt="TH" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>ไทย</span>
+                            </button>
+                            
+                            <button type="button" data-lang="tr" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/tr.png" srcset="https://flagcdn.com/48x36/tr.png 2x" width="24" height="18" alt="TR" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Türkçe</span>
+                            </button>
+                            
+                            <button type="button" data-lang="vi" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition bg-slate-700 text-amber-400">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/vn.png" srcset="https://flagcdn.com/48x36/vn.png 2x" width="24" height="18" alt="VN" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Tiếng Việt</span>
+                            </button>
+                            
+                        </div>
+                    </div>
+
+                    <a href="https://github.com/HudHudMind/hudhudscript"
+                       target="_blank" rel="noopener noreferrer"
+                       class="hidden sm:inline-flex items-center gap-1.5 bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold text-sm px-4 py-1.5 rounded-md transition">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        GitHub
+                    </a>
+
+                    <!-- Mobile hamburger -->
+                    <button id="mobile-menu-btn" class="lg:hidden text-slate-300 hover:text-white p-1">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-slate-800 border-t border-slate-700 px-4 py-3 space-y-1">
+            <a href="/" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Trang Chủ</a>
+            <a href="/docs" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Tài Liệu</a>
+            <a href="/examples" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Ví Dụ</a>
+            <a href="/multilingual" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Đa ngôn ngữ</a>
+            
+            <a href="/tools" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Công Cụ</a>
+            <a href="/paradigms" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Mô Hình</a>
+            
+            <a href="/download" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Tải Xuống</a>
+            <a href="/blog/" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Blog</a>
+            <a href="/about/language" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Giới Thiệu</a>
+            <a href="/contributors" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Người Đóng Góp</a>
+        </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        
+<!-- Hero Section -->
+<div class="gradient-bg text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between">
+            <div>
+                <h1 class="text-4xl font-bold mb-2">
+                    VI Language Documentation
+                    <span class="lang-badge">4 Examples</span>
+                </h1>
+                <p class="text-xl text-purple-100">
+                    Interactive code examples with syntax checking, compilation, and execution
+                </p>
+            </div>
+            <div>
+                <a href="/docs/keywords" class="inline-block bg-white text-purple-600 px-6 py-3 rounded-lg hover:bg-gray-100 transition font-medium">
+                    ← All Languages
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Samples Section -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    
+    
+        <!-- Table of Contents -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4">📚 Table of Contents</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                
+                <a href="#sample-1" class="block p-3 border border-gray-200 rounded hover:border-purple-500 hover:bg-purple-50 transition">
+                    <div class="font-medium text-purple-600">Basic Example</div>
+                    <div class="text-sm text-gray-600">Simple variable and arithmetic operations</div>
+                </a>
+                
+                <a href="#sample-2" class="block p-3 border border-gray-200 rounded hover:border-purple-500 hover:bg-purple-50 transition">
+                    <div class="font-medium text-purple-600">Functions</div>
+                    <div class="text-sm text-gray-600">Function declarations and calls</div>
+                </a>
+                
+                <a href="#sample-3" class="block p-3 border border-gray-200 rounded hover:border-purple-500 hover:bg-purple-50 transition">
+                    <div class="font-medium text-purple-600">Loops</div>
+                    <div class="text-sm text-gray-600">While and for loops</div>
+                </a>
+                
+                <a href="#sample-4" class="block p-3 border border-gray-200 rounded hover:border-purple-500 hover:bg-purple-50 transition">
+                    <div class="font-medium text-purple-600">Arrays</div>
+                    <div class="text-sm text-gray-600">Array operations</div>
+                </a>
+                
+            </div>
+        </div>
+
+        <!-- Sample Cards -->
+        
+        <div id="sample-1" class="sample-card">
+            <div class="sample-header">
+                <h2 class="text-2xl font-bold">1. Basic Example</h2>
+                <p class="text-purple-100 mt-1">Simple variable and arithmetic operations</p>
+                <p class="text-sm text-purple-200 mt-2">📄 basic_example.hudhud</p>
+            </div>
+
+            <div class="hudhud-code-block" data-lang="vi" data-file="samples/vi/basic_example.hudhud">
+                <pre class="sample-code"><code class="language-hudhudscript">// Tiếng Việt - Basic Example with NATIVE keywords
+biến a = 10;
+biến b = 20;
+biến tổng = a + b;
+
+in_ra(tổng);
+</code></pre>
+            </div>
+        </div>
+        
+        <div id="sample-2" class="sample-card">
+            <div class="sample-header">
+                <h2 class="text-2xl font-bold">2. Functions</h2>
+                <p class="text-purple-100 mt-1">Function declarations and calls</p>
+                <p class="text-sm text-purple-200 mt-2">📄 functions.hudhud</p>
+            </div>
+
+            <div class="hudhud-code-block" data-lang="vi" data-file="samples/vi/functions.hudhud">
+                <pre class="sample-code"><code class="language-hudhudscript">// Tiếng Việt - Hàm
+// Ví dụ định nghĩa và sử dụng hàm
+
+// Hàm đơn giản
+hàm chào_hỏi() {
+    in_ra(&#34;Xin chào Thế giới!&#34;);
+}
+
+// Hàm có tham số
+hàm cộng(a, b) {
+    trả về a + b;
+}
+
+// Hàm nhiều tham số
+hàm tính(số1, số2, phép_tính) {
+    nếu (phép_tính == &#34;cộng&#34;) {
+        trả về số1 + số2;
+    } không thì {
+        trả về 0;
+    }
+}
+
+// Hàm toán học
+hàm bình_phương(x) {
+    trả về x * x;
+}
+
+hàm lập_phương(x) {
+    trả về x * x * x;
+}
+
+// Sử dụng hàm
+chào_hỏi();
+
+đặt kết_quả1 = cộng(5, 3);
+in_ra(kết_quả1);
+
+đặt kết_quả2 = tính(10, 5, &#34;cộng&#34;);
+in_ra(kết_quả2);
+
+đặt kết_quả_bình_phương = bình_phương(4);
+in_ra(kết_quả_bình_phương);
+
+đặt kết_quả_lập_phương = lập_phương(3);
+in_ra(kết_quả_lập_phương);
+
+// Kết hợp hàm
+đặt tổng = cộng(bình_phương(3), lập_phương(2));
+in_ra(tổng);
+</code></pre>
+            </div>
+        </div>
+        
+        <div id="sample-3" class="sample-card">
+            <div class="sample-header">
+                <h2 class="text-2xl font-bold">3. Loops</h2>
+                <p class="text-purple-100 mt-1">While and for loops</p>
+                <p class="text-sm text-purple-200 mt-2">📄 loops.hudhud</p>
+            </div>
+
+            <div class="hudhud-code-block" data-lang="vi" data-file="samples/vi/loops.hudhud">
+                <pre class="sample-code"><code class="language-hudhudscript">// Tiếng Việt - Ví dụ vòng lặp
+đặt bộ_đếm = 0;
+đặt tối_đa = 5;
+
+trong khi (bộ_đếm &lt; tối_đa) {
+    in_ra(bộ_đếm);
+    bộ_đếm = bộ_đếm + 1;
+}
+
+in_ra(999);
+</code></pre>
+            </div>
+        </div>
+        
+        <div id="sample-4" class="sample-card">
+            <div class="sample-header">
+                <h2 class="text-2xl font-bold">4. Arrays</h2>
+                <p class="text-purple-100 mt-1">Array operations</p>
+                <p class="text-sm text-purple-200 mt-2">📄 arrays.hudhud</p>
+            </div>
+
+            <div class="hudhud-code-block" data-lang="vi" data-file="samples/vi/arrays.hudhud">
+                <pre class="sample-code"><code class="language-hudhudscript">// Tiếng Việt - Mảng
+// Mảng với từ khóa tiếng Việt
+
+// Tạo mảng
+đặt số = [1, 2, 3, 4, 5];
+đặt tên = [&#34;An&#34;, &#34;Bình&#34;, &#34;Chi&#34;];
+
+// Truy cập phần tử
+đặt đầu_tiên = số[0];
+đặt thứ_hai = số[1];
+
+// Kết quả
+đầu_tiên;
+</code></pre>
+            </div>
+        </div>
+        
+
+    
+
+</div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <img src="/static/images/logo/hudhud-96.png" alt="HudHudScript" width="48" height="48" class="rounded-lg">
+                        <span class="text-lg font-bold text-white">HudHud<span class="text-amber-400">Script</span></span>
+                    </div>
+                    <p class="text-sm leading-relaxed">
+                        Ngôn ngữ lập trình tác tử AI đa ngôn ngữ với quản trị tích hợp.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-semibold text-slate-200 uppercase tracking-wider mb-4">Tài Nguyên</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/docs" class="hover:text-white transition">Tài Liệu</a></li>
+                        <li><a href="/examples" class="hover:text-white transition">Ví Dụ</a></li>
+                        
+                        <li><a href="/tools" class="hover:text-white transition">Công Cụ</a></li>
+                        <li><a href="/paradigms" class="hover:text-white transition">Mô Hình</a></li>
+                        <li><a href="/blog/" class="hover:text-white transition">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-semibold text-slate-200 uppercase tracking-wider mb-4">Cộng Đồng</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 shrink-0 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M22.957 7.54c-.7 4.13-3.29 7.1-7.1 7.1H9.28V2.15h6.5c4.07 0 6.91 3.08 7.18 5.39zM0 2.15h3.88v19.7H0V2.15z"/></svg><a href="https://www.patreon.com/cw/hudhudscript" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Patreon</a></li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 shrink-0 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg><a href="https://github.com/HudHudMind/hudhudscript" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">GitHub</a></li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 shrink-0 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg><a href="https://discord.gg/UxEJ5MfH" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Discord</a></li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 shrink-0 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><a href="https://x.com/hudhud_script" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Twitter / X</a></li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 shrink-0 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><a href="https://www.linkedin.com/groups/27050016/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">LinkedIn</a></li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 shrink-0 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><a href="https://www.youtube.com/@HudHudScripting" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">YouTube</a></li>
+                        <li><a href="/contributors" class="hover:text-white transition">Người Đóng Góp</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-semibold text-slate-200 uppercase tracking-wider mb-4">Giới Thiệu</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/about/language" class="hover:text-white transition">Về Ngôn Ngữ</a></li>
+                        <li><a href="/download" class="hover:text-white transition">Tải Xuống</a></li>
+                        <li><a href="mailto:info@hudhudscript.com" class="hover:text-white transition">info@hudhudscript.com</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 mt-10 pt-6 text-center text-sm text-slate-500">
+                <p>&copy; 2026 HudHud Mind. Đã đăng ký bản quyền.</p>
+                <p class="mt-1 text-slate-600">website v0.0.99 &middot; hudhud v0.8.244</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Prism.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="/static/js/prism-hudhudscript.js"></script>
+
+    <script nonce="0Hrbvn_ZG9uXY0DX7t4WjS90ArekbYxvh3DzbQG_dyM">
+        window.SITE_LANGUAGE = 'vi';
+        window.CSRF_TOKEN = '199f74eb80fbdfce2ec10b850ad095be7719a45de5875bf8799f3c16cdc82fd0';
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Custom language dropdown
+        document.querySelectorAll('[data-lang-selector]').forEach(function(dropdown) {
+            const btn = dropdown.querySelector('.lang-dropdown-btn');
+            const menu = dropdown.querySelector('.lang-dropdown-menu');
+            
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                menu.classList.toggle('hidden');
+            });
+            
+            menu.querySelectorAll('.lang-dropdown-item').forEach(function(item) {
+                item.addEventListener('click', function() {
+                    changeLanguage(this.dataset.lang);
+                });
+            });
+        });
+        
+        document.addEventListener('click', function() {
+            document.querySelectorAll('.lang-dropdown-menu').forEach(function(m) {
+                m.classList.add('hidden');
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('pre code:not([class*="language-"])').forEach(function(block) {
+                block.classList.add('language-hudhudscript');
+            });
+            Prism.highlightAll();
+        });
+
+        function changeLanguage(lang) {
+            // Set cookie so language persists across refreshes
+            document.cookie = 'lang=' + lang + ';path=/;max-age=31536000;SameSite=Lax';
+            if (typeof changeAllExamplesLanguage === 'function') {
+                changeAllExamplesLanguage(lang);
+            }
+            const url = new URL(window.location.href);
+            url.searchParams.set('lang', lang);
+            window.location.href = url.toString();
+        }
+    </script>
+
+    <script src="/static/js/hudhud-code-runner.js"></script>
+
+    
+<script nonce="0Hrbvn_ZG9uXY0DX7t4WjS90ArekbYxvh3DzbQG_dyM">
+// Smooth scroll to anchors
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+});
+</script>
+
+
+    <!-- Static Site Enhancements -->
+    <style>
+        /* Check, Run, Compile butonlarını ve çıktı kutularını tamamen gizle */
+        .hudhud-btn-check,
+        .hudhud-btn-compile,
+        .hudhud-btn-run,
+        .hudhud-btn-run_compiled,
+        .hudhud-output,
+        button[data-action="execute"],
+        button[data-mode="check"],
+        button[data-mode="run"],
+        button[data-mode="compile"],
+        button[data-action="clear-output"],
+        button[data-action="test-requirements"],
+        button[data-action="start-interactive"],
+        button[data-action="test-samples"],
+        button[data-action="view-saved-results"],
+        #editor-output,
+        a[href*="/playground"],
+        a[href*="/visual-editor"],
+        a[href*="/admin"],
+        .code-run-button,
+        [data-action="run-code"],
+        .hudhud-run-btn,
+        .code-actions {
+            display: none !important;
+        }
+
+        /* Action Bar ve Copy butonunu koru ve şık hizala */
+        .hudhud-action-bar {
+            display: flex !important;
+            justify-content: flex-end !important;
+            padding: 0.375rem 0.5rem !important;
+            background: #f3f4f6 !important;
+            border-top: 1px solid #e5e7eb !important;
+        }
+
+        .hudhud-btn-copy {
+            display: inline-flex !important;
+            align-items: center !important;
+            background: #4b5563 !important;
+            color: #ffffff !important;
+            padding: 0.25rem 0.75rem !important;
+            border-radius: 0.375rem !important;
+            font-size: 0.75rem !important;
+            font-weight: 600 !important;
+            cursor: pointer !important;
+            transition: background 0.15s ease !important;
+        }
+        .hudhud-btn-copy:hover {
+            background: #374151 !important;
+        }
+
+        /* HudHud Orange Download Buttons */
+        .btn-hudhud-orange,
+        .bg-orange-500 {
+            background-color: #f97316 !important;
+            color: #ffffff !important;
+        }
+        .btn-hudhud-orange:hover,
+        .hover\:bg-orange-600:hover {
+            background-color: #ea580c !important;
+            color: #ffffff !important;
+        }
+        .text-orange-600 {
+            color: #ea580c !important;
+        }
+        .text-orange-700 {
+            color: #c2410c !important;
+        }
+        .bg-orange-50 {
+            background-color: #fff7ed !important;
+        }
+        .bg-orange-100 {
+            background-color: #ffedd5 !important;
+        }
+    </style>
+    <script src="/static/js/static-cache.js"></script>
+    <script>
+    (function() {
+        var currentLang = 'vi';
+        var enabledLangs = ['ar', 'ja', 'zh', 'hi', 'bn', 'bs', 'de', 'el', 'en', 'es', 'fa', 'fr', 'hr', 'id', 'it', 'ku', 'pl', 'pt', 'ru', 'sr', 'th', 'tr', 'vi'];
+
+        // MultiLangCodeViewer'ın statik önbellekten doğrudan kod çekmesini sağla
+        function patchMultiLangCodeViewer() {
+            if (window.MultiLangCodeViewer) {
+                var origLoad = window.MultiLangCodeViewer.prototype.loadCode;
+                window.MultiLangCodeViewer.prototype.loadCode = async function(lang) {
+                    var localized = typeof getLocalizedSampleName === 'function' ? getLocalizedSampleName(this.sampleName, lang) : this.sampleName;
+                    if (window.STATIC_SAMPLES_CACHE && window.STATIC_SAMPLES_CACHE[lang]) {
+                        var code = window.STATIC_SAMPLES_CACHE[lang][localized] || window.STATIC_SAMPLES_CACHE[lang][this.sampleName];
+                        if (code) {
+                            this.codeCache[lang] = code;
+                            this.displayCode(code);
+                            return;
+                        }
+                    }
+                    return origLoad.call(this, lang);
+                };
+            }
+        }
+
+        // Code Organization dosya gezginini statik bağla
+        function initStaticProjectFiles() {
+            if (!window.STATIC_PROJECT_FILES) return;
+            var activeLang = currentLang;
+            var dropdown = document.querySelector('[data-examples-lang-selector]');
+            if (dropdown && dropdown.dataset.current) {
+                activeLang = dropdown.dataset.current;
+            } else if (!window.STATIC_PROJECT_FILES[activeLang]) {
+                activeLang = 'tr';
+            }
+
+            if (window.STATIC_PROJECT_FILES && window.STATIC_PROJECT_FILES[activeLang]) {
+                window.FILE_CONTENTS = window.STATIC_PROJECT_FILES[activeLang];
+                window.CURRENT_PROJECT_LANG = activeLang;
+
+                if (typeof window.openFileInEditor === 'function') {
+                    window.openFileInEditor('main.hudhud');
+                }
+            }
+
+            window.loadProjectFiles = async function(l) {
+                var targetLang = l || activeLang;
+                if (window.STATIC_PROJECT_FILES && window.STATIC_PROJECT_FILES[targetLang]) {
+                    window.FILE_CONTENTS = window.STATIC_PROJECT_FILES[targetLang];
+                    window.CURRENT_PROJECT_LANG = targetLang;
+                    var curFile = window.currentEditorFile || 'main.hudhud';
+                    if (typeof window.openFileInEditor === 'function') {
+                        if (window.FILE_CONTENTS[curFile]) {
+                            window.openFileInEditor(curFile);
+                        } else if (window.FILE_CONTENTS['main.hudhud']) {
+                            window.openFileInEditor('main.hudhud');
+                        }
+                    }
+                    return;
+                }
+            };
+        }
+
+        patchMultiLangCodeViewer();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            patchMultiLangCodeViewer();
+            initStaticProjectFiles();
+
+            // Genel dil değiştirici yönlendirmesi
+            document.querySelectorAll('.lang-dropdown-item').forEach(function(item) {
+                item.onclick = function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    var targetLang = this.getAttribute('data-lang');
+                    if (!targetLang || targetLang === currentLang) return;
+                    
+                    var path = window.location.pathname;
+                    for (var i = 0; i < enabledLangs.length; i++) {
+                        var l = enabledLangs[i];
+                        if (l !== 'en' && path.startsWith('/' + l + '/')) {
+                            path = path.substring(l.length + 1);
+                            break;
+                        } else if (l !== 'en' && path === '/' + l) {
+                            path = '/';
+                            break;
+                        }
+                    }
+                    
+                    var newUrl = targetLang === 'en' ? path : ('/' + targetLang + (path.startsWith('/') ? path : '/' + path));
+                    window.location.href = newUrl;
+                };
+            });
+        });
+    })();
+    </script>
+    
+</body>
+</html>

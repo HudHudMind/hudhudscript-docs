@@ -1,0 +1,13 @@
+// Deutsch - Arrays
+// Arrays mit nativen Schlüsselwörtern
+
+// Arrays erstellen
+lasse zahlen = [1, 2, 3, 4, 5];
+lasse namen = ["Anna", "Bernd", "Christian"];
+
+// Auf Elemente zugreifen
+lasse erstes = zahlen[0];
+lasse zweites = zahlen[1];
+
+// Ergebnis
+erstes;

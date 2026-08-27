@@ -1,0 +1,36 @@
+// English - Event Concepts
+
+event UserLogin {
+    print("User logged in");
+}
+
+event DataReceived {
+    print("Data received");
+}
+
+event ErrorOccurred {
+    print("Error occurred");
+}
+
+function on_login(username) {
+    print("Login: " + username);
+    return "Welcome, " + username;
+}
+
+function on_data(source) {
+    print("Data from: " + source);
+    return "Processed: " + source;
+}
+
+function on_error(message) {
+    print("Error: " + message);
+    return "Handled: " + message;
+}
+
+print("=== Event System ===");
+let r1 = on_login("admin");
+print(r1);
+let r2 = on_data("sensor_1");
+print(r2);
+let r3 = on_error("timeout");
+print(r3);

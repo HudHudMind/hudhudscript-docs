@@ -1,0 +1,13 @@
+// Tiếng Việt - Mảng
+// Mảng với từ khóa tiếng Việt
+
+// Tạo mảng
+đặt số = [1, 2, 3, 4, 5];
+đặt tên = ["An", "Bình", "Chi"];
+
+// Truy cập phần tử
+đặt đầu_tiên = số[0];
+đặt thứ_hai = số[1];
+
+// Kết quả
+đầu_tiên;

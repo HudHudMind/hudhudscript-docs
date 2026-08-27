@@ -1,0 +1,26 @@
+// RU - Physics Module
+
+// Speed = Distance / Time
+функция speed(distance, time) {
+    вернуть distance / time;
+}
+
+// Force = Mass * Acceleration
+функция force(mass, acceleration) {
+    вернуть mass * acceleration;
+}
+
+// Kinetic Energy = 0.5 * Mass * Velocity^2
+функция kineticEnergy(mass, velocity) {
+    вернуть 0.5 * mass * velocity * velocity;
+}
+
+// Potential Energy = Mass * Gravity * Height
+функция potentialEnergy(mass, gravity, height) {
+    вернуть mass * gravity * height;
+}
+
+// Momentum = Mass * Velocity
+функция momentum(mass, velocity) {
+    вернуть mass * velocity;
+}

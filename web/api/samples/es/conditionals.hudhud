@@ -1,0 +1,12 @@
+// Español - Conditional Logic
+sea puntuación = 85;
+
+si (puntuación >= 90) {
+    puntuación;
+} sino {
+    si (puntuación >= 80) {
+        puntuación;
+    } sino {
+        puntuación;
+    }
+}

@@ -1,0 +1,12 @@
+// Polski - Data Processing
+// Using NATIVE Polski keywords
+
+niech value1 = 100;
+niech value2 = 200;
+niech value3 = 300;
+
+niech total = value1+ value2+ value3;
+niech average = total / 3;
+
+drukuj(total);
+drukuj(average);

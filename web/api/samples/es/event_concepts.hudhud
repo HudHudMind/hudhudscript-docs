@@ -1,0 +1,36 @@
+// Español - Event Concepts
+
+evento UserLogin {
+    imprime("User logged in");
+}
+
+evento DataReceived {
+    imprime("Data received");
+}
+
+evento ErrorOccurred {
+    imprime("Error occurred");
+}
+
+función on_login(username) {
+    imprime("Login: " + username);
+    retorna "Welcome, " + username;
+}
+
+función on_data(source) {
+    imprime("Data from: " + source);
+    retorna "Processed: " + source;
+}
+
+función on_error(message) {
+    imprime("Error: " + message);
+    retorna "Handled: " + message;
+}
+
+imprime("=== Event System ===");
+sea r1 = on_login("admin");
+imprime(r1);
+sea r2 = on_data("sensor_1");
+imprime(r2);
+sea r3 = on_error("timeout");
+imprime(r3);

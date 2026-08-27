@@ -1,0 +1,38 @@
+// Deutsch - Entitätskonzepte
+
+sei benutzer = {
+    id: 1,
+    name: "Anna",
+    email: "anna@beispiel.de",
+    rolle: "Entwicklerin"
+};
+
+sei produkt = {
+    id: 101,
+    name: "HudHudScript IDE",
+    version: "2.0",
+    preis: 49
+};
+
+sei bestellung = {
+    id: 1001,
+    benutzer_id: 1,
+    produkt_id: 101,
+    menge: 2,
+    status: "bestätigt"
+};
+
+funktion entität_info(entität) {
+    zurück "Entität #" + entität.id + ": " + entität.name;
+}
+
+funktion berechne_gesamt(bestellung, preis) {
+    zurück bestellung.menge * preis;
+}
+
+drucke("=== Entitätssystem ===");
+drucke(entität_info(benutzer));
+drucke(entität_info(produkt));
+sei gesamt = berechne_gesamt(bestellung, produkt.preis);
+drucke("Bestellung #" + bestellung.id + " Gesamt: " + gesamt);
+drucke("Status: " + bestellung.status);

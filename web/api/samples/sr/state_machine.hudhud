@@ -1,0 +1,9 @@
+// State Machine Example
+нека state = "initial";
+
+ако (state == "initial") {
+    штампај("Starting");
+    state = "running";
+}
+
+штампај(state);

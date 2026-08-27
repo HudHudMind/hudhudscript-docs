@@ -1,0 +1,31 @@
+// 中文 - Modules Import Example
+
+// Import math module (direct access)
+使用 "shuxue.hudhud";
+
+// Import physics with alias (access via fizik.functionName)
+使用 "wuli.hudhud" 作为 fizik;
+
+// Import chemistry (direct access)
+使用 "huaxue.hudhud";
+
+// Using math functions (direct)
+变量 sum = 加(10, 5);
+打印(sum);
+
+变量 product = 乘(4, 7);
+打印(product);
+
+// Using physics functions (via alias: fizik.functionName)
+变量 f = fizik.力(10, 9.8);
+打印(f);
+
+变量 ke = fizik.动能(5, 10);
+打印(ke);
+
+// Using chemistry functions (direct)
+变量 d = 密度(100, 50);
+打印(d);
+
+变量 c = 浓度(2, 5);
+打印(c);

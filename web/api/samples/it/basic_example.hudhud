@@ -1,0 +1,6 @@
+// Italiano - Basic Example with NATIVE keywords
+variabile a = 10;
+variabile b = 20;
+variabile somma = a + b;
+
+stampare(somma);

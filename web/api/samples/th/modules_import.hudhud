@@ -1,0 +1,31 @@
+// TH - Modules Import Example
+
+// Import math module (direct access)
+ใช้ "math.hudhud";
+
+// Import physics with alias (access via fizik.functionName)
+ใช้ "physics.hudhud" เป็น fizik;
+
+// Import chemistry (direct access)
+ใช้ "chemistry.hudhud";
+
+// Using math functions (direct)
+ให้ sum = add(10, 5);
+พิมพ์(sum);
+
+ให้ product = multiply(4, 7);
+พิมพ์(product);
+
+// Using physics functions (via alias: fizik.functionName)
+ให้ f = fizik.force(10, 9.8);
+พิมพ์(f);
+
+ให้ ke = fizik.kineticEnergy(5, 10);
+พิมพ์(ke);
+
+// Using chemistry functions (direct)
+ให้ d = density(100, 50);
+พิมพ์(d);
+
+ให้ c = concentration(2, 5);
+พิมพ์(c);

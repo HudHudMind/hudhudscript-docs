@@ -1,0 +1,45 @@
+// Türkçe - Kontrol Akışı
+değişken sayaç = 0;
+değişken maksimum = 5;
+
+// Döngü (iken) - Türkçe doğal sözdizimi
+iken (sayaç < maksimum) {
+    sayaç = sayaç + 1;
+}
+
+// Koşul - Türkçe doğal sözdizimi: eğer ... ise
+değişken puan = 85;
+değişken sonuç = "";
+
+eğer (puan >= 90) {
+    sonuç = "Mükemmel";
+} değilse {
+    eğer (puan >= 80) {
+        sonuç = "İyi";
+    } değilse {
+        sonuç = "Geçer";
+    }
+}
+
+yaz(sonuç);
+
+değişken farklıBirSonuç = "";
+
+eğer (puan == 100) {
+    farklıBirSonuç = "Süper!";
+} değilse ama (puan >= 90 && puan < 100) {
+    farklıBirSonuç = "Çok iyi";
+} değilse ama (puan >= 80 && puan < 90) {
+    farklıBirSonuç = "iyi";
+} değilse ama (puan >= 70 && puan < 80) {
+    farklıBirSonuç = "İyi olabilir";
+} değilse ama (puan >= 40 && puan < 70) {
+    farklıBirSonuç = "Ortalama";
+}değilse ama (puan >= 10 && puan < 40) {
+    farklıBirSonuç = "Daha çok çalışmalısın";
+}hiçbiri değilse {
+    farklıBirSonuç = "Ya çalışmadın ya da öğretmenin öğretememiş.";
+}
+
+yaz(farklıBirSonuç);
+

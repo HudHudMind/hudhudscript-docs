@@ -1,0 +1,6 @@
+// Hrvatski - Basic Example with NATIVE keywords
+varijabla a = 10;
+varijabla b = 20;
+varijabla suma = a + b;
+
+ispiši(suma);

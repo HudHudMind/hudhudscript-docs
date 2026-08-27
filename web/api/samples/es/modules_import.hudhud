@@ -1,0 +1,31 @@
+// Español - Modules Import Example
+
+// Import math module (direct access)
+usar "matematicas.hudhud";
+
+// Import physics with alias (access via fizik.functionName)
+usar "fisica.hudhud" como fizik;
+
+// Import chemistry (direct access)
+usar "quimica.hudhud";
+
+// Using math functions (direct)
+sea sum = sumar(10, 5);
+imprimir(sum);
+
+sea product = multiplicar(4, 7);
+imprimir(product);
+
+// Using physics functions (via alias: fizik.functionName)
+sea f = fizik.fuerza(10, 9.8);
+imprimir(f);
+
+sea ke = fizik.energiaCinetica(5, 10);
+imprimir(ke);
+
+// Using chemistry functions (direct)
+sea d = densidad(100, 50);
+imprimir(d);
+
+sea c = concentracion(2, 5);
+imprimir(c);

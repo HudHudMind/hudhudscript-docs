@@ -1,0 +1,21 @@
+// English - Chemistry Module
+
+function molarMass(atoms, atomicWeight) {
+    return atoms * atomicWeight;
+}
+
+function concentration(moles, volume) {
+    return moles / volume;
+}
+
+function pH(hydrogenConcentration) {
+    return 14 - hydrogenConcentration;
+}
+
+function density(mass, volume) {
+    return mass / volume;
+}
+
+function dilution(c1, v1, v2) {
+    return (c1 * v1) / v2;
+}

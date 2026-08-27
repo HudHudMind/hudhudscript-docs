@@ -1,0 +1,38 @@
+// Kurdi - Tegehen Heyine
+
+bila bikarhener = {
+    nas: 1,
+    nav: "Leyla",
+    epeyam: "leyla@nimune.com",
+    rol: "bernameçeker"
+};
+
+bila hilber = {
+    nas: 101,
+    nav: "HudHudScript IDE",
+    guherto: "2.0",
+    biha: 49
+};
+
+bila ferman = {
+    nas: 1001,
+    nas_bikarhener: 1,
+    nas_hilber: 101,
+    hejmar: 2,
+    rewş: "pejirandi"
+};
+
+fonksiyon agahi_heyine(heyin) {
+    vegerine "Heyin #" + heyin.nas + ": " + heyin.nav;
+}
+
+fonksiyon tevahi_bihesibine(ferman, biha) {
+    vegerine ferman.hejmar * biha;
+}
+
+çap_bike("=== Sistema Heyine ===");
+çap_bike(agahi_heyine(bikarhener));
+çap_bike(agahi_heyine(hilber));
+bila tevahi = tevahi_bihesibine(ferman, hilber.biha);
+çap_bike("Ferman #" + ferman.nas + " tevahi: " + tevahi);
+çap_bike("Rewş: " + ferman.rewş);

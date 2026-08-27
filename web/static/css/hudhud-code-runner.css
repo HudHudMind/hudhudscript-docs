@@ -1,0 +1,166 @@
+/* HudHudScript Universal Code Runner Styles */
+
+.hudhud-code-block {
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+}
+
+.hudhud-code-block pre {
+    margin: 0;
+    padding: 1rem;
+    background: #1e1e2e;
+    overflow-x: auto;
+}
+
+.hudhud-code-block pre code {
+    color: #cdd6f4;
+    font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+/* RTL support */
+.hudhud-code-block.rtl pre {
+    direction: ltr;
+    text-align: left;
+}
+
+/* Action bar */
+.hudhud-action-bar {
+    display: flex;
+    gap: 0.25rem;
+    padding: 0.375rem 0.5rem;
+    background: #f3f4f6;
+    border-top: 1px solid #e5e7eb;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.hudhud-btn {
+    padding: 0.25rem 0.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    color: white;
+    white-space: nowrap;
+}
+
+.hudhud-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.hudhud-btn-check {
+    background: #3b82f6;
+}
+.hudhud-btn-check:hover:not(:disabled) {
+    background: #2563eb;
+}
+
+.hudhud-btn-compile {
+    background: #10b981;
+}
+.hudhud-btn-compile:hover:not(:disabled) {
+    background: #059669;
+}
+
+.hudhud-btn-run {
+    background: #8b5cf6;
+}
+.hudhud-btn-run:hover:not(:disabled) {
+    background: #7c3aed;
+}
+
+.hudhud-btn-run_compiled {
+    background: #d97706;
+}
+.hudhud-btn-run_compiled:hover:not(:disabled) {
+    background: #b45309;
+}
+
+.hudhud-btn-copy {
+    background: #6b7280;
+}
+.hudhud-btn-copy:hover:not(:disabled) {
+    background: #4b5563;
+}
+
+/* Output area */
+.hudhud-output {
+    display: none;
+    padding: 0.75rem 1rem;
+    background: #111827;
+    color: #9ca3af;
+    font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-height: 250px;
+    overflow-y: auto;
+    position: relative;
+}
+
+.hudhud-output.show {
+    display: block;
+}
+
+.hudhud-output.success {
+    color: #34d399;
+}
+
+.hudhud-output.error {
+    color: #f87171;
+}
+
+.hudhud-output-close {
+    position: absolute;
+    top: 0.375rem;
+    right: 0.5rem;
+    background: none;
+    border: none;
+    color: #6b7280;
+    cursor: pointer;
+    font-size: 0.875rem;
+    padding: 0.25rem;
+}
+.hudhud-output-close:hover {
+    color: #d1d5db;
+}
+
+/* Spinner */
+.hudhud-spinner {
+    display: inline-block;
+    width: 0.875rem;
+    height: 0.875rem;
+    border: 2px solid #6b7280;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: hudhud-spin 0.6s linear infinite;
+    vertical-align: middle;
+}
+
+@keyframes hudhud-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Report Error button */
+.hudhud-report-btn {
+    margin-top: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    background: #dc2626;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 0.65rem;
+    cursor: pointer;
+    float: right;
+}
+.hudhud-report-btn:hover {
+    background: #b91c1c;
+}

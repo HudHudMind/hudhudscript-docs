@@ -1,0 +1,260 @@
+/* Documentation Styles */
+.concept-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.concept-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.concept-diagram {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 1.5rem 0;
+    color: white;
+    text-align: center;
+}
+
+.code-comparison {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.visual-flow {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2rem;
+    background: #f7fafc;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.flow-step {
+    text-align: center;
+    padding: 1rem;
+}
+
+.flow-arrow {
+    font-size: 2rem;
+    color: #667eea;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.feature-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.syntax-highlight {
+    background: #2d2d2d;
+    color: #f8f8f2;
+    padding: 1.5rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+.keyword {
+    color: #ff79c6;
+    font-weight: bold;
+}
+
+.string {
+    color: #f1fa8c;
+}
+
+.comment {
+    color: #6272a4;
+    font-style: italic;
+}
+
+.number {
+    color: #bd93f9;
+}
+
+.docs-nav {
+    position: sticky;
+    top: 80px;
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.docs-nav a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #4a5568;
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: all 0.2s;
+}
+
+.docs-nav a:hover,
+.docs-nav a.active {
+    background: #f7fafc;
+    border-left-color: #667eea;
+    color: #667eea;
+}
+
+.info-box {
+    background: #ebf8ff;
+    border-left: 4px solid #4299e1;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 4px;
+}
+
+.warning-box {
+    background: #fffaf0;
+    border-left: 4px solid #ed8936;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 4px;
+}
+
+.success-box {
+    background: #f0fff4;
+    border-left: 4px solid #48bb78;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 4px;
+}
+
+/* Code Block Styling - Compatible with Prism.js */
+.code-block {
+    background: #2d2d2d;
+    border: 1px solid #1a1a1a;
+    border-radius: 8px;
+    padding: 0;
+    margin: 1.5rem 0;
+    overflow: hidden;
+}
+
+.code-block pre {
+    margin: 0;
+    padding: 1.5rem;
+    overflow-x: auto;
+    background: transparent;
+}
+
+.code-block code {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #ccc;
+    background: transparent;
+}
+
+/* Override Prism theme for better visibility */
+.code-block pre[class*="language-"] {
+    background: #2d2d2d;
+    margin: 0;
+    padding: 1.5rem;
+}
+
+.code-block code[class*="language-"] {
+    background: transparent;
+    color: #ccc;
+}
+
+/* Prism token colors */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #999;
+}
+
+.token.punctuation {
+    color: #ccc;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: #f08d49;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+    color: #7ec699;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+    color: #67cdcc;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+    color: #cc99cd;
+}
+
+.token.function,
+.token.class-name {
+    color: #f8c555;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+    color: #e90;
+}
+
+/* Inline code */
+code {
+    background: #f3f4f6;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+    font-size: 0.875em;
+    color: #e83e8c;
+}
+
+/* Pre without code-block wrapper */
+pre:not(.code-block pre) {
+    background: #2d2d2d;
+    border: 1px solid #1a1a1a;
+    border-radius: 8px;
+    padding: 1.5rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+pre:not(.code-block pre) code {
+    background: transparent;
+    padding: 0;
+    color: #ccc;
+    font-size: 0.9rem;
+}

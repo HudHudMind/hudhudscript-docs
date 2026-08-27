@@ -1,0 +1,14 @@
+// Polski - Logika warunkowa
+niech wynik = 85;
+
+jeśli (wynik >= 90) {
+    drukuj(1000);
+} inaczej {
+    jeśli (wynik >= 80) {
+        drukuj(2000);
+    } inaczej {
+        drukuj(3000);
+    }
+}
+
+drukuj(999);

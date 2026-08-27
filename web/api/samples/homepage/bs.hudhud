@@ -1,0 +1,17 @@
+// Bosanski - Funkcija pozdrava
+
+funkcija pozdravi(ime) {
+    neka poruka = "Zdravo, " + ime + "!";
+    ispiši(poruka);
+    vrati poruka;
+}
+
+funkcija saberi(a, b) {
+    vrati a + b;
+}
+
+neka rezultat = pozdravi("Svijet");
+ispiši(rezultat);
+
+neka zbir = saberi(42, 58);
+ispiši("zbir: " + zbir);

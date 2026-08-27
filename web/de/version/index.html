@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Version Information - HudHudScript</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/logo/hudhud-32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/logo/hudhud-96.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="/static/images/logo/hudhud-256.png">
+
+    
+
+    <!-- Tailwind CSS -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+Arabic:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Noto+Sans+Bengali:wght@400;700&family=Noto+Sans+Thai:wght@400;700&family=Noto+Sans+Devanagari:wght@400;700&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Prism.js for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+    <!-- Tailwind CSS (Compiled) -->
+    <link rel="stylesheet" href="/static/css/tailwind-output.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/custom.css?v=0.0.99">
+
+    <!-- HudHudScript Code Runner (global) -->
+    <link rel="stylesheet" href="/static/css/hudhud-code-runner.css">
+
+    
+</head>
+<body class="bg-slate-50 text-slate-900">
+    <!-- Environment Badge -->
+    
+
+    <!-- Navigation -->
+    <nav class="bg-slate-900 border-b border-slate-700/50 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-14">
+                <!-- Logo -->
+                <a href="/" class="flex items-center gap-2 flex-shrink-0">
+                    <img src="/static/images/logo/hudhud-48.png" alt="HudHudScript" width="32" height="32" class="rounded">
+                    <span class="text-xl font-bold text-white tracking-tight">HudHud<span class="text-amber-400">Script</span></span>
+                </a>
+
+                <!-- Center nav (desktop) -->
+                <div class="hidden lg:flex items-center space-x-1">
+                    <a href="/" class="nav-link text-slate-300 hover:text-white px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800">
+                        Startseite
+                    </a>
+                    <a href="/multilingual" class="nav-link text-slate-300 hover:text-white px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800">
+                        🌐 Mehrsprachig
+                    </a>
+                    <!-- Belgeler -->
+                    <div class="nav-dropdown relative">
+                        <button class="nav-dropdown-btn text-slate-300 hover:text-white px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800 flex items-center gap-1 whitespace-nowrap">
+                            Dokumentation <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="nav-dropdown-menu absolute top-full left-0 pt-1 hidden">
+                            <div class="bg-slate-800 border border-slate-700 rounded-lg shadow-xl py-1 w-40">
+                                <a href="/docs" class="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-700">Dokumentation</a>
+                                <a href="/examples" class="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-700">Beispiele</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tools -->
+                    <div class="nav-dropdown relative">
+                        <button class="nav-dropdown-btn text-slate-300 hover:text-white px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800 flex items-center gap-1 whitespace-nowrap">
+                            Werkzeuge <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="nav-dropdown-menu absolute top-full left-0 pt-1 hidden">
+                            <div class="bg-slate-800 border border-slate-700 rounded-lg shadow-xl py-1 w-40">
+                                <a href="/tools" class="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-700">Werkzeuge</a>
+                                <a href="/paradigms" class="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-700">Paradigmen</a>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Downloads -->
+                    <div class="nav-dropdown relative">
+                        <button class="nav-dropdown-btn text-slate-300 hover:text-white px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800 flex items-center gap-1 whitespace-nowrap">
+                            Herunterladen <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="nav-dropdown-menu absolute top-full left-0 pt-1 hidden">
+                            <div class="bg-slate-800 border border-slate-700 rounded-lg shadow-xl py-1 w-56">
+                                <a href="/download/hudhud-script" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-slate-700">
+                                    <div class="font-medium">HudHudScript</div>
+                                    <div class="text-xs text-slate-500 mt-0.5">Multi-lingual agentic programming language ,  SOP, governance</div>
+                                </a>
+                                <a href="/download/hudhud-aide" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-slate-700">
+                                    <div class="font-medium">HudHud AIDE</div>
+                                    <div class="text-xs text-slate-500 mt-0.5">Official IDE ,  syntax highlighting, autocomplete, AI assistance for 23 languages</div>
+                                </a>
+                                <a href="/download/hudhud-linux" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-slate-700">
+                                    <div class="font-medium text-slate-500">HudHud Linux</div>
+                                    <div class="text-xs text-slate-600 mt-0.5">Modern Linux distro powered by HudHudScript</div>
+                                    <span class="text-xs text-amber-500 font-medium">Demnächst</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- About -->
+                    <div class="nav-dropdown relative">
+                        <button class="nav-dropdown-btn text-slate-300 hover:text-white px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800 flex items-center gap-1 whitespace-nowrap">
+                            Über <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="nav-dropdown-menu absolute top-full left-0 pt-1 hidden">
+                            <div class="bg-slate-800 border border-slate-700 rounded-lg shadow-xl py-1 w-44">
+                                <a href="/about/language" class="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-700">Über die Sprache</a>
+                                <a href="/blog/" class="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-700">Blog</a>
+                                <a href="/contributors" class="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-700">Mitwirkende</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right side -->
+                <div class="flex items-center gap-3 flex-shrink-0">
+                    <div class="lang-dropdown-wrapper relative" data-lang-selector data-current="de">
+                        <button type="button" class="lang-dropdown-btn flex items-center gap-1.5 bg-slate-800 border border-slate-600 text-slate-300 rounded-md px-3 py-2 pr-8 text-sm hover:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 focus:border-amber-500 transition w-full">
+                            <span class="lang-flag inline-block flex-shrink-0"><img src="https://flagcdn.com/24x18/de.png" srcset="https://flagcdn.com/48x36/de.png 2x" width="24" height="18" alt="DE" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                            <span class="lang-name whitespace-nowrap">Deutsch</span>
+                            <svg class="lang-chevron w-4 h-4 ml-auto flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="lang-dropdown-menu hidden absolute p-2 top-full right-0 mt-1 bg-slate-800 border border-slate-600 rounded-md shadow-xl z-50 max-h-64 overflow-y-auto min-w-[240px]">
+                            
+                            <button type="button" data-lang="ar" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/sa.png" srcset="https://flagcdn.com/48x36/sa.png 2x" width="24" height="18" alt="SA" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>العربية</span>
+                            </button>
+                            
+                            <button type="button" data-lang="ja" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/jp.png" srcset="https://flagcdn.com/48x36/jp.png 2x" width="24" height="18" alt="JP" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>日本語</span>
+                            </button>
+                            
+                            <button type="button" data-lang="zh" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/cn.png" srcset="https://flagcdn.com/48x36/cn.png 2x" width="24" height="18" alt="CN" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>中文</span>
+                            </button>
+                            
+                            <button type="button" data-lang="hi" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/in.png" srcset="https://flagcdn.com/48x36/in.png 2x" width="24" height="18" alt="IN" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>हिन्दी</span>
+                            </button>
+                            
+                            <button type="button" data-lang="bn" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/bd.png" srcset="https://flagcdn.com/48x36/bd.png 2x" width="24" height="18" alt="BD" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>বাংলা</span>
+                            </button>
+                            
+                            <button type="button" data-lang="bs" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/ba.png" srcset="https://flagcdn.com/48x36/ba.png 2x" width="24" height="18" alt="BA" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Bosanski</span>
+                            </button>
+                            
+                            <button type="button" data-lang="de" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition bg-slate-700 text-amber-400">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/de.png" srcset="https://flagcdn.com/48x36/de.png 2x" width="24" height="18" alt="DE" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Deutsch</span>
+                            </button>
+                            
+                            <button type="button" data-lang="el" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/gr.png" srcset="https://flagcdn.com/48x36/gr.png 2x" width="24" height="18" alt="GR" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Ελληνικά</span>
+                            </button>
+                            
+                            <button type="button" data-lang="en" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/gb.png" srcset="https://flagcdn.com/48x36/gb.png 2x" width="24" height="18" alt="GB" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>English</span>
+                            </button>
+                            
+                            <button type="button" data-lang="es" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/es.png" srcset="https://flagcdn.com/48x36/es.png 2x" width="24" height="18" alt="ES" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Español</span>
+                            </button>
+                            
+                            <button type="button" data-lang="fa" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/ir.png" srcset="https://flagcdn.com/48x36/ir.png 2x" width="24" height="18" alt="IR" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>فارسی</span>
+                            </button>
+                            
+                            <button type="button" data-lang="fr" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/fr.png" srcset="https://flagcdn.com/48x36/fr.png 2x" width="24" height="18" alt="FR" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Français</span>
+                            </button>
+                            
+                            <button type="button" data-lang="hr" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/hr.png" srcset="https://flagcdn.com/48x36/hr.png 2x" width="24" height="18" alt="HR" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Hrvatski</span>
+                            </button>
+                            
+                            <button type="button" data-lang="id" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/id.png" srcset="https://flagcdn.com/48x36/id.png 2x" width="24" height="18" alt="ID" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Bahasa Indonesia</span>
+                            </button>
+                            
+                            <button type="button" data-lang="it" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/it.png" srcset="https://flagcdn.com/48x36/it.png 2x" width="24" height="18" alt="IT" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Italiano</span>
+                            </button>
+                            
+                            <button type="button" data-lang="ku" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0">🌍</span>
+                                <span>Kurdî</span>
+                            </button>
+                            
+                            <button type="button" data-lang="pl" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/pl.png" srcset="https://flagcdn.com/48x36/pl.png 2x" width="24" height="18" alt="PL" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Polski</span>
+                            </button>
+                            
+                            <button type="button" data-lang="pt" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/pt.png" srcset="https://flagcdn.com/48x36/pt.png 2x" width="24" height="18" alt="PT" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Português</span>
+                            </button>
+                            
+                            <button type="button" data-lang="ru" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/ru.png" srcset="https://flagcdn.com/48x36/ru.png 2x" width="24" height="18" alt="RU" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Русский</span>
+                            </button>
+                            
+                            <button type="button" data-lang="sr" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/rs.png" srcset="https://flagcdn.com/48x36/rs.png 2x" width="24" height="18" alt="RS" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Српски</span>
+                            </button>
+                            
+                            <button type="button" data-lang="th" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/th.png" srcset="https://flagcdn.com/48x36/th.png 2x" width="24" height="18" alt="TH" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>ไทย</span>
+                            </button>
+                            
+                            <button type="button" data-lang="tr" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/tr.png" srcset="https://flagcdn.com/48x36/tr.png 2x" width="24" height="18" alt="TR" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Türkçe</span>
+                            </button>
+                            
+                            <button type="button" data-lang="vi" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/vn.png" srcset="https://flagcdn.com/48x36/vn.png 2x" width="24" height="18" alt="VN" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Tiếng Việt</span>
+                            </button>
+                            
+                        </div>
+                    </div>
+
+                    <a href="https://github.com/HudHudMind/hudhudscript"
+                       target="_blank" rel="noopener noreferrer"
+                       class="hidden sm:inline-flex items-center gap-1.5 bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold text-sm px-4 py-1.5 rounded-md transition">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        GitHub
+                    </a>
+
+                    <!-- Mobile hamburger -->
+                    <button id="mobile-menu-btn" class="lg:hidden text-slate-300 hover:text-white p-1">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-slate-800 border-t border-slate-700 px-4 py-3 space-y-1">
+            <a href="/" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Startseite</a>
+            <a href="/docs" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Dokumentation</a>
+            <a href="/examples" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Beispiele</a>
+            <a href="/multilingual" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Mehrsprachig</a>
+            
+            <a href="/tools" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Werkzeuge</a>
+            <a href="/paradigms" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Paradigmen</a>
+            
+            <a href="/download" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Herunterladen</a>
+            <a href="/blog/" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Blog</a>
+            <a href="/about/language" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Über</a>
+            <a href="/contributors" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Mitwirkende</a>
+        </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        
+<div class="container mx-auto px-4 py-8">
+    <div class="max-w-6xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold mb-4">
+                <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    Version Information
+                </span>
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-400">
+                HudHudScript System and Build Information
+            </p>
+        </div>
+
+        
+        <!-- Version Badge -->
+        <div class="bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg p-8 text-white text-center mb-8">
+            <div class="text-6xl font-bold mb-2">v0.8.244</div>
+            <div class="text-xl opacity-90">Production Ready &#x2705;</div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white dark:bg-gray-800 rounded-lg p-6 text-center shadow-lg">
+                <div class="text-3xl font-bold text-blue-600 mb-2">23</div>
+                <div class="text-gray-600 dark:text-gray-400">Sprachen</div>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg p-6 text-center shadow-lg">
+                <div class="text-3xl font-bold text-green-600 mb-2">100%</div>
+                <div class="text-gray-600 dark:text-gray-400">Tests Passing</div>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg p-6 text-center shadow-lg">
+                <div class="text-3xl font-bold text-purple-600 mb-2">90+</div>
+                <div class="text-gray-600 dark:text-gray-400">MCP Servers</div>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg p-6 text-center shadow-lg">
+                <div class="text-3xl font-bold text-orange-600 mb-2">95%</div>
+                <div class="text-gray-600 dark:text-gray-400">Token Savings</div>
+            </div>
+        </div>
+
+        <!-- Detailed Information Tabs -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+            <!-- Tab Headers -->
+            <div class="flex border-b border-gray-200 dark:border-gray-700">
+                <button class="tab-button active px-6 py-4 font-semibold" data-tab="overview">
+                    Übersicht
+                </button>
+                <button class="tab-button px-6 py-4 font-semibold" data-tab="languages">
+                    Sprachen
+                </button>
+                <button class="tab-button px-6 py-4 font-semibold" data-tab="features">
+                    Funktionen
+                </button>
+                <button class="tab-button px-6 py-4 font-semibold" data-tab="tests">
+                    Tests
+                </button>
+                <button class="tab-button px-6 py-4 font-semibold" data-tab="providers">
+                    Providers
+                </button>
+                <button class="tab-button px-6 py-4 font-semibold" data-tab="raw">
+                    Raw Output
+                </button>
+            </div>
+
+            <!-- Tab Contents -->
+            <div class="p-6">
+                <!-- Overview Tab -->
+                <div id="tab-overview" class="tab-content">
+                    <h2 class="text-2xl font-bold mb-4">System Overview</h2>
+                    <div class="space-y-4">
+                        <div class="flex justify-between py-2 border-b border-gray-200 dark:border-gray-700">
+                            <span class="font-semibold">Version:</span>
+                            <span class="font-mono">0.8.244</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-gray-200 dark:border-gray-700">
+                            <span class="font-semibold">Status:</span>
+                            <span class="text-green-600 font-semibold">Production Ready &#x2705;</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-gray-200 dark:border-gray-700">
+                            <span class="font-semibold">Repository:</span>
+                            <a href="https://github.com/HudHudMind/hudhudscript" class="text-blue-600 hover:underline" target="_blank">
+                                github.com/HudHudMind/hudhudscript
+                            </a>
+                        </div>
+                        <div class="flex justify-between py-2">
+                            <span class="font-semibold">License:</span>
+                            <span>MIT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Languages Tab -->
+                <div id="tab-languages" class="tab-content hidden">
+                    <h2 class="text-2xl font-bold mb-4">Supported Languages</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        
+                        <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <div class="font-bold text-lg">English</div>
+                                    <div class="text-sm text-gray-600 dark:text-gray-400">en</div>
+                                </div>
+                                <div class="text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded">
+                                    SVO
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <div class="font-bold text-lg">Turkish</div>
+                                    <div class="text-sm text-gray-600 dark:text-gray-400">tr</div>
+                                </div>
+                                <div class="text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded">
+                                    SOV
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <div class="font-bold text-lg">Japanese</div>
+                                    <div class="text-sm text-gray-600 dark:text-gray-400">ja</div>
+                                </div>
+                                <div class="text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded">
+                                    SOV + Particles
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <div class="font-bold text-lg">Arabic</div>
+                                    <div class="text-sm text-gray-600 dark:text-gray-400">ar</div>
+                                </div>
+                                <div class="text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded">
+                                    VSO + RTL
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <div class="font-bold text-lg">Spanish</div>
+                                    <div class="text-sm text-gray-600 dark:text-gray-400">es</div>
+                                </div>
+                                <div class="text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded">
+                                    SVO
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <div class="font-bold text-lg">Portuguese</div>
+                                    <div class="text-sm text-gray-600 dark:text-gray-400">pt</div>
+                                </div>
+                                <div class="text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded">
+                                    SVO
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <div class="font-bold text-lg">French</div>
+                                    <div class="text-sm text-gray-600 dark:text-gray-400">fr</div>
+                                </div>
+                                <div class="text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded">
+                                    SVO
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <div class="font-bold text-lg">German</div>
+                                    <div class="text-sm text-gray-600 dark:text-gray-400">de</div>
+                                </div>
+                                <div class="text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded">
+                                    V2
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <div class="font-bold text-lg">Russian</div>
+                                    <div class="text-sm text-gray-600 dark:text-gray-400">ru</div>
+                                </div>
+                                <div class="text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded">
+                                    Free
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <div class="font-bold text-lg">Chinese</div>
+                                    <div class="text-sm text-gray-600 dark:text-gray-400">zh</div>
+                                </div>
+                                <div class="text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded">
+                                    SVO
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 flex items-center justify-center">
+                            <div class="text-center text-gray-600 dark:text-gray-400">
+                                <div class="text-2xl mb-2">+13</div>
+                                <div class="text-sm">More Languages</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features Tab -->
+                <div id="tab-features" class="tab-content hidden">
+                    <h2 class="text-2xl font-bold mb-4">Funktionen</h2>
+                    <div class="space-y-2">
+                        
+                        <div class="flex items-start py-2">
+                            <span class="text-green-600 mr-3 mt-1">✓</span>
+                            <span>Multi-language parser (23 languages)</span>
+                        </div>
+                        
+                        <div class="flex items-start py-2">
+                            <span class="text-green-600 mr-3 mt-1">✓</span>
+                            <span>Full interpreter with provider system</span>
+                        </div>
+                        
+                        <div class="flex items-start py-2">
+                            <span class="text-green-600 mr-3 mt-1">✓</span>
+                            <span>Bytecode compiler &amp; VM</span>
+                        </div>
+                        
+                        <div class="flex items-start py-2">
+                            <span class="text-green-600 mr-3 mt-1">✓</span>
+                            <span>MCP protocol integration (90+ servers)</span>
+                        </div>
+                        
+                        <div class="flex items-start py-2">
+                            <span class="text-green-600 mr-3 mt-1">✓</span>
+                            <span>AI provider support (OpenAI, Anthropic, Ollama)</span>
+                        </div>
+                        
+                        <div class="flex items-start py-2">
+                            <span class="text-green-600 mr-3 mt-1">✓</span>
+                            <span>Governance system</span>
+                        </div>
+                        
+                        <div class="flex items-start py-2">
+                            <span class="text-green-600 mr-3 mt-1">✓</span>
+                            <span>Token optimization (80-95% savings)</span>
+                        </div>
+                        
+                        <div class="flex items-start py-2">
+                            <span class="text-green-600 mr-3 mt-1">✓</span>
+                            <span>Async/await support</span>
+                        </div>
+                        
+                        <div class="flex items-start py-2">
+                            <span class="text-green-600 mr-3 mt-1">✓</span>
+                            <span>Module system</span>
+                        </div>
+                        
+                        <div class="flex items-start py-2">
+                            <span class="text-green-600 mr-3 mt-1">✓</span>
+                            <span>Arrow functions &amp; template strings</span>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Tests Tab -->
+                <div id="tab-tests" class="tab-content hidden">
+                    <h2 class="text-2xl font-bold mb-4">Test Coverage</h2>
+                    <div class="space-y-4">
+                        <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-6 text-center">
+                            <div class="text-4xl font-bold text-green-600 mb-2">76/76 (100%)</div>
+                            <div class="text-lg">Total Tests Passing</div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 text-center">
+                                <div class="text-2xl font-bold mb-2">55/55 (100%)</div>
+                                <div class="text-sm text-gray-600 dark:text-gray-400">Parser Tests</div>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 text-center">
+                                <div class="text-2xl font-bold mb-2">12/12 (100%)</div>
+                                <div class="text-sm text-gray-600 dark:text-gray-400">Compiler Tests</div>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 text-center">
+                                <div class="text-2xl font-bold mb-2">7/7 (100%)</div>
+                                <div class="text-sm text-gray-600 dark:text-gray-400">Assignment Tests</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Providers Tab -->
+                <div id="tab-providers" class="tab-content hidden">
+                    <h2 class="text-2xl font-bold mb-4">AI Provider Status</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between py-3 border-b border-gray-200 dark:border-gray-700">
+                            <div>
+                                <div class="font-semibold">OpenAI</div>
+                                <div class="text-sm text-gray-600 dark:text-gray-400">GPT-4, GPT-3.5</div>
+                            </div>
+                            <div class="text-red-600 font-semibold">
+                                ✗ Not Configured
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between py-3 border-b border-gray-200 dark:border-gray-700">
+                            <div>
+                                <div class="font-semibold">Anthropic</div>
+                                <div class="text-sm text-gray-600 dark:text-gray-400">Claude 3</div>
+                            </div>
+                            <div class="text-red-600 font-semibold">
+                                ✗ Not Configured
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between py-3">
+                            <div>
+                                <div class="font-semibold">Ollama</div>
+                                <div class="text-sm text-gray-600 dark:text-gray-400"></div>
+                            </div>
+                            <div class="text-yellow-600 font-semibold">
+                                ⚠ Check Connection
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Raw Output Tab -->
+                <div id="tab-raw" class="tab-content hidden">
+                    <h2 class="text-2xl font-bold mb-4">Raw CLI Output</h2>
+                    
+                    <pre class="bg-gray-900 text-green-400 p-6 rounded-lg overflow-x-auto font-mono text-sm">╔════════════════════════════════════════════════════════════════╗
+║              HudHudScript - System Information                ║
+╚════════════════════════════════════════════════════════════════╝
+
+📦 Version Information:
+   Version:        0.8.244
+   Package:        hudhudscript-cli
+   Authors:        Onur GÜZEL
+   Repository:     https://github.com/HudHudMind/hudhudscript
+
+🔨 Build Information:
+   Rust Version:   
+   Target:         x86_64
+   OS:             linux
+   Family:         unix
+
+🌍 Language Support:
+   ✓ English (en)     - Subject-Verb-Object (SVO)
+   ✓ Turkish (tr)     - Subject-Object-Verb (SOV)
+   ✓ Japanese (ja)    - SOV + Particles + Kanji numerals
+   ✓ Arabic (ar)      - VSO + RTL + Arabic-Indic numerals
+   ✓ Spanish (es)     - SVO
+   ✓ Portuguese (pt)  - SVO
+   ✓ French (fr)      - SVO
+   ✓ German (de)      - V2 word order
+   ✓ Russian (ru)     - Free word order
+   ✓ Chinese (zh)     - SVO + Characters
+   + 13 more languages
+
+✨ Features:
+   ✓ Multi-language parser (23 languages)
+   ✓ Full interpreter with provider system
+   ✓ Bytecode compiler &amp; VM
+   ✓ MCP protocol integration (90+ servers)
+   ✓ AI provider support (OpenAI, Anthropic, Ollama)
+   ✓ Governance system (constitutions, laws, councils)
+   ✓ Token optimization (80-95% savings)
+   ✓ Async/await support
+   ✓ Module system
+   ✓ Arrow functions &amp; template strings
+
+🤖 AI Provider Status:
+   OpenAI:         ✗ Not configured (set OPENAI_API_KEY)
+   Anthropic:      ✗ Not configured (set ANTHROPIC_API_KEY)
+   Ollama:         ⚠ Check connection (http://localhost:11434)
+
+🔌 MCP Configuration:
+   Config: hudhud.toml [mcp.servers.NAME]
+   Example: [mcp.servers.git] command=&#34;uvx&#34; args=[&#34;mcp-server-git&#34;]
+
+📁 System Paths:
+   Home:           /home/onur
+   Current:        /home/onur/HudHudMind/hudhud-website
+
+🧪 Test Status:
+   Run `cargo test` to see current test results.
+
+📚 Documentation:
+   README:         https://github.com/HudHudMind/hudhudscript
+   Quickstart:     QUICKSTART.md
+   Examples:       examples/
+
+╔════════════════════════════════════════════════════════════════╗
+║  For more information: hudhudscript --help                     ║
+╚════════════════════════════════════════════════════════════════╝
+</pre>
+                    
+                </div>
+            </div>
+        </div>
+
+        
+
+        <!-- API Link -->
+        <div class="mt-8 text-center">
+            <a href="/api/version" class="inline-flex items-center text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                </svg>
+                View JSON API
+            </a>
+        </div>
+    </div>
+</div>
+
+<script nonce="HX3zSfFCYBUpudGUHg_SGvvZzDn4syaCtOief-R3_7o">
+// Tab switching
+document.querySelectorAll('.tab-button').forEach(button => {
+    button.addEventListener('click', () => {
+        const tabName = button.dataset.tab;
+        
+        // Update button states
+        document.querySelectorAll('.tab-button').forEach(b => {
+            b.classList.remove('active', 'border-b-2', 'border-blue-600', 'text-blue-600');
+            b.classList.add('text-gray-600', 'dark:text-gray-400');
+        });
+        button.classList.add('active', 'border-b-2', 'border-blue-600', 'text-blue-600');
+        button.classList.remove('text-gray-600', 'dark:text-gray-400');
+        
+        // Update content visibility
+        document.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.add('hidden');
+        });
+        document.getElementById(`tab-${tabName}`).classList.remove('hidden');
+    });
+});
+</script>
+
+<style nonce="HX3zSfFCYBUpudGUHg_SGvvZzDn4syaCtOief-R3_7o">
+.tab-button {
+    transition: all 0.3s ease;
+}
+.tab-button.active {
+    border-bottom: 2px solid #2563eb;
+    color: #2563eb;
+}
+.tab-button:not(.active) {
+    color: #6b7280;
+}
+.tab-button:hover:not(.active) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+</style>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <img src="/static/images/logo/hudhud-96.png" alt="HudHudScript" width="48" height="48" class="rounded-lg">
+                        <span class="text-lg font-bold text-white">HudHud<span class="text-amber-400">Script</span></span>
+                    </div>
+                    <p class="text-sm leading-relaxed">
+                        Mehrsprachige KI-Agent-Programmiersprache mit integrierter Governance.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-semibold text-slate-200 uppercase tracking-wider mb-4">Ressourcen</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/docs" class="hover:text-white transition">Dokumentation</a></li>
+                        <li><a href="/examples" class="hover:text-white transition">Beispiele</a></li>
+                        
+                        <li><a href="/tools" class="hover:text-white transition">Werkzeuge</a></li>
+                        <li><a href="/paradigms" class="hover:text-white transition">Paradigmen</a></li>
+                        <li><a href="/blog/" class="hover:text-white transition">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-semibold text-slate-200 uppercase tracking-wider mb-4">Gemeinschaft</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 shrink-0 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M22.957 7.54c-.7 4.13-3.29 7.1-7.1 7.1H9.28V2.15h6.5c4.07 0 6.91 3.08 7.18 5.39zM0 2.15h3.88v19.7H0V2.15z"/></svg><a href="https://www.patreon.com/cw/hudhudscript" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Patreon</a></li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 shrink-0 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg><a href="https://github.com/HudHudMind/hudhudscript" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">GitHub</a></li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 shrink-0 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg><a href="https://discord.gg/UxEJ5MfH" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Discord</a></li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 shrink-0 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><a href="https://x.com/hudhud_script" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Twitter / X</a></li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 shrink-0 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><a href="https://www.linkedin.com/groups/27050016/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">LinkedIn</a></li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 shrink-0 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><a href="https://www.youtube.com/@HudHudScripting" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">YouTube</a></li>
+                        <li><a href="/contributors" class="hover:text-white transition">Mitwirkende</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-semibold text-slate-200 uppercase tracking-wider mb-4">Über</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/about/language" class="hover:text-white transition">Über die Sprache</a></li>
+                        <li><a href="/download" class="hover:text-white transition">Herunterladen</a></li>
+                        <li><a href="mailto:info@hudhudscript.com" class="hover:text-white transition">info@hudhudscript.com</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 mt-10 pt-6 text-center text-sm text-slate-500">
+                <p>&copy; 2026 HudHud Mind. Alle Rechte vorbehalten.</p>
+                <p class="mt-1 text-slate-600">website v0.0.99 &middot; hudhud v0.8.244</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Prism.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="/static/js/prism-hudhudscript.js"></script>
+
+    <script nonce="HX3zSfFCYBUpudGUHg_SGvvZzDn4syaCtOief-R3_7o">
+        window.SITE_LANGUAGE = 'de';
+        window.CSRF_TOKEN = '199f74eb80fbdfce2ec10b850ad095be7719a45de5875bf8799f3c16cdc82fd0';
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Custom language dropdown
+        document.querySelectorAll('[data-lang-selector]').forEach(function(dropdown) {
+            const btn = dropdown.querySelector('.lang-dropdown-btn');
+            const menu = dropdown.querySelector('.lang-dropdown-menu');
+            
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                menu.classList.toggle('hidden');
+            });
+            
+            menu.querySelectorAll('.lang-dropdown-item').forEach(function(item) {
+                item.addEventListener('click', function() {
+                    changeLanguage(this.dataset.lang);
+                });
+            });
+        });
+        
+        document.addEventListener('click', function() {
+            document.querySelectorAll('.lang-dropdown-menu').forEach(function(m) {
+                m.classList.add('hidden');
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('pre code:not([class*="language-"])').forEach(function(block) {
+                block.classList.add('language-hudhudscript');
+            });
+            Prism.highlightAll();
+        });
+
+        function changeLanguage(lang) {
+            // Set cookie so language persists across refreshes
+            document.cookie = 'lang=' + lang + ';path=/;max-age=31536000;SameSite=Lax';
+            if (typeof changeAllExamplesLanguage === 'function') {
+                changeAllExamplesLanguage(lang);
+            }
+            const url = new URL(window.location.href);
+            url.searchParams.set('lang', lang);
+            window.location.href = url.toString();
+        }
+    </script>
+
+    <script src="/static/js/hudhud-code-runner.js"></script>
+
+    
+
+    <!-- Static Site Enhancements -->
+    <style>
+        /* Check, Run, Compile butonlarını ve çıktı kutularını tamamen gizle */
+        .hudhud-btn-check,
+        .hudhud-btn-compile,
+        .hudhud-btn-run,
+        .hudhud-btn-run_compiled,
+        .hudhud-output,
+        button[data-action="execute"],
+        button[data-mode="check"],
+        button[data-mode="run"],
+        button[data-mode="compile"],
+        button[data-action="clear-output"],
+        button[data-action="test-requirements"],
+        button[data-action="start-interactive"],
+        button[data-action="test-samples"],
+        button[data-action="view-saved-results"],
+        #editor-output,
+        a[href*="/playground"],
+        a[href*="/visual-editor"],
+        a[href*="/admin"],
+        .code-run-button,
+        [data-action="run-code"],
+        .hudhud-run-btn,
+        .code-actions {
+            display: none !important;
+        }
+
+        /* Action Bar ve Copy butonunu koru ve şık hizala */
+        .hudhud-action-bar {
+            display: flex !important;
+            justify-content: flex-end !important;
+            padding: 0.375rem 0.5rem !important;
+            background: #f3f4f6 !important;
+            border-top: 1px solid #e5e7eb !important;
+        }
+
+        .hudhud-btn-copy {
+            display: inline-flex !important;
+            align-items: center !important;
+            background: #4b5563 !important;
+            color: #ffffff !important;
+            padding: 0.25rem 0.75rem !important;
+            border-radius: 0.375rem !important;
+            font-size: 0.75rem !important;
+            font-weight: 600 !important;
+            cursor: pointer !important;
+            transition: background 0.15s ease !important;
+        }
+        .hudhud-btn-copy:hover {
+            background: #374151 !important;
+        }
+
+        /* HudHud Orange Download Buttons */
+        .btn-hudhud-orange,
+        .bg-orange-500 {
+            background-color: #f97316 !important;
+            color: #ffffff !important;
+        }
+        .btn-hudhud-orange:hover,
+        .hover\:bg-orange-600:hover {
+            background-color: #ea580c !important;
+            color: #ffffff !important;
+        }
+        .text-orange-600 {
+            color: #ea580c !important;
+        }
+        .text-orange-700 {
+            color: #c2410c !important;
+        }
+        .bg-orange-50 {
+            background-color: #fff7ed !important;
+        }
+        .bg-orange-100 {
+            background-color: #ffedd5 !important;
+        }
+    </style>
+    <script src="/static/js/static-cache.js"></script>
+    <script>
+    (function() {
+        var currentLang = 'de';
+        var enabledLangs = ['ar', 'ja', 'zh', 'hi', 'bn', 'bs', 'de', 'el', 'en', 'es', 'fa', 'fr', 'hr', 'id', 'it', 'ku', 'pl', 'pt', 'ru', 'sr', 'th', 'tr', 'vi'];
+
+        // MultiLangCodeViewer'ın statik önbellekten doğrudan kod çekmesini sağla
+        function patchMultiLangCodeViewer() {
+            if (window.MultiLangCodeViewer) {
+                var origLoad = window.MultiLangCodeViewer.prototype.loadCode;
+                window.MultiLangCodeViewer.prototype.loadCode = async function(lang) {
+                    var localized = typeof getLocalizedSampleName === 'function' ? getLocalizedSampleName(this.sampleName, lang) : this.sampleName;
+                    if (window.STATIC_SAMPLES_CACHE && window.STATIC_SAMPLES_CACHE[lang]) {
+                        var code = window.STATIC_SAMPLES_CACHE[lang][localized] || window.STATIC_SAMPLES_CACHE[lang][this.sampleName];
+                        if (code) {
+                            this.codeCache[lang] = code;
+                            this.displayCode(code);
+                            return;
+                        }
+                    }
+                    return origLoad.call(this, lang);
+                };
+            }
+        }
+
+        // Code Organization dosya gezginini statik bağla
+        function initStaticProjectFiles() {
+            if (!window.STATIC_PROJECT_FILES) return;
+            var activeLang = currentLang;
+            var dropdown = document.querySelector('[data-examples-lang-selector]');
+            if (dropdown && dropdown.dataset.current) {
+                activeLang = dropdown.dataset.current;
+            } else if (!window.STATIC_PROJECT_FILES[activeLang]) {
+                activeLang = 'tr';
+            }
+
+            if (window.STATIC_PROJECT_FILES && window.STATIC_PROJECT_FILES[activeLang]) {
+                window.FILE_CONTENTS = window.STATIC_PROJECT_FILES[activeLang];
+                window.CURRENT_PROJECT_LANG = activeLang;
+
+                if (typeof window.openFileInEditor === 'function') {
+                    window.openFileInEditor('main.hudhud');
+                }
+            }
+
+            window.loadProjectFiles = async function(l) {
+                var targetLang = l || activeLang;
+                if (window.STATIC_PROJECT_FILES && window.STATIC_PROJECT_FILES[targetLang]) {
+                    window.FILE_CONTENTS = window.STATIC_PROJECT_FILES[targetLang];
+                    window.CURRENT_PROJECT_LANG = targetLang;
+                    var curFile = window.currentEditorFile || 'main.hudhud';
+                    if (typeof window.openFileInEditor === 'function') {
+                        if (window.FILE_CONTENTS[curFile]) {
+                            window.openFileInEditor(curFile);
+                        } else if (window.FILE_CONTENTS['main.hudhud']) {
+                            window.openFileInEditor('main.hudhud');
+                        }
+                    }
+                    return;
+                }
+            };
+        }
+
+        patchMultiLangCodeViewer();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            patchMultiLangCodeViewer();
+            initStaticProjectFiles();
+
+            // Genel dil değiştirici yönlendirmesi
+            document.querySelectorAll('.lang-dropdown-item').forEach(function(item) {
+                item.onclick = function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    var targetLang = this.getAttribute('data-lang');
+                    if (!targetLang || targetLang === currentLang) return;
+                    
+                    var path = window.location.pathname;
+                    for (var i = 0; i < enabledLangs.length; i++) {
+                        var l = enabledLangs[i];
+                        if (l !== 'en' && path.startsWith('/' + l + '/')) {
+                            path = path.substring(l.length + 1);
+                            break;
+                        } else if (l !== 'en' && path === '/' + l) {
+                            path = '/';
+                            break;
+                        }
+                    }
+                    
+                    var newUrl = targetLang === 'en' ? path : ('/' + targetLang + (path.startsWith('/') ? path : '/' + path));
+                    window.location.href = newUrl;
+                };
+            });
+        });
+    })();
+    </script>
+    
+</body>
+</html>

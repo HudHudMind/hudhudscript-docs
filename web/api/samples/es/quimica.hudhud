@@ -1,0 +1,21 @@
+// Español - Chemistry Module
+
+función masaMolar(atoms, atomicWeight) {
+    retornar atoms * atomicWeight;
+}
+
+función concentracion(moles, volume) {
+    retornar moles / volume;
+}
+
+función pH(hydrogenConcentration) {
+    retornar 14 - hydrogenConcentration;
+}
+
+función densidad(mass, volume) {
+    retornar mass / volume;
+}
+
+función dilucion(c1, v1, v2) {
+    retornar (c1 * v1) / v2;
+}

@@ -1,0 +1,21 @@
+// Русский - Physics Module
+
+функция скорость(distance, time) {
+    вернуть distance / time;
+}
+
+функция сила(mass, acceleration) {
+    вернуть mass * acceleration;
+}
+
+функция кинетическаяЭнергия(mass, velocity) {
+    вернуть 0.5 * mass * velocity * velocity;
+}
+
+функция потенциальнаяЭнергия(mass, gravity, height) {
+    вернуть mass * gravity * height;
+}
+
+функция импульс(mass, velocity) {
+    вернуть mass * velocity;
+}

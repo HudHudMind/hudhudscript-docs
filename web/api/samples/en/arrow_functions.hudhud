@@ -1,0 +1,27 @@
+// English - Arrow Functions
+// Modern, concise syntax for functions
+
+// Arrow function - short syntax
+let add = (a, b) => a + b;
+let multiply = (x, y) => x * y;
+
+print(add(5, 3));      // 8
+print(multiply(4, 7)); // 28
+
+// Arrow function with block
+let calculate = (a, b) => {
+    let sum = a + b;
+    let product = a * b;
+    return sum + product;
+};
+
+let result = calculate(5, 3);
+print(result);  // 23 (8 + 15)
+
+// Single parameter (no parentheses needed)
+let square = x => x * x;
+print(square(6));  // 36
+
+// No parameters
+let greet = () => "Hello!";
+print(greet());  // Hello!

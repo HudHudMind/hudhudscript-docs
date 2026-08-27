@@ -1,0 +1,26 @@
+// FR - Physics Module
+
+// Speed = Distance / Time
+fonction speed(distance, time) {
+    retourner distance / time;
+}
+
+// Force = Mass * Acceleration
+fonction force(mass, acceleration) {
+    retourner mass * acceleration;
+}
+
+// Kinetic Energy = 0.5 * Mass * Velocity^2
+fonction kineticEnergy(mass, velocity) {
+    retourner 0.5 * mass * velocity * velocity;
+}
+
+// Potential Energy = Mass * Gravity * Height
+fonction potentialEnergy(mass, gravity, height) {
+    retourner mass * gravity * height;
+}
+
+// Momentum = Mass * Velocity
+fonction momentum(mass, velocity) {
+    retourner mass * velocity;
+}

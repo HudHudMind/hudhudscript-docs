@@ -1,0 +1,26 @@
+// ZH - Chemistry Module
+
+// Molar Mass
+函数 molarMass(atoms, atomicWeight) {
+    返回 atoms * atomicWeight;
+}
+
+// Concentration = Moles / Volume
+函数 concentration(moles, volume) {
+    返回 moles / volume;
+}
+
+// pH calculation
+函数 pH(hydrogenConcentration) {
+    返回 14 - hydrogenConcentration;
+}
+
+// Density = Mass / Volume
+函数 density(mass, volume) {
+    返回 mass / volume;
+}
+
+// Dilution: C1*V1 = C2*V2
+函数 dilution(c1, v1, v2) {
+    返回 (c1 * v1) / v2;
+}

@@ -1,0 +1,32 @@
+// English - Higher-Order Functions
+// Functions that work with other functions
+
+// Function that returns a function
+function multiplier(factor) {
+    return (x) => x * factor;
+}
+
+let double = multiplier(2);
+let triple = multiplier(3);
+
+print(double(5));  // 10
+print(triple(5));  // 15
+
+// Function that takes a function
+function apply(fn, value) {
+    return fn(value);
+}
+
+print(apply(double, 10));  // 20
+
+// Composition example
+function compose(f, g) {
+    return (x) => f(g(x));
+}
+
+let addOne = (x) => x + 1;
+let timesTwo = (x) => x * 2;
+
+let addThenDouble = compose(timesTwo, addOne);
+print(addThenDouble(5));  // 12 (5+1=6, 6*2=12)
+

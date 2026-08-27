@@ -1,0 +1,44 @@
+// Bosanski - Koncept povratka
+// return
+
+funkcija kvadrat(x) {
+    vrati x * x;
+}
+
+funkcija kub(x) {
+    vrati x * x * x;
+}
+
+ispiši("=== Math Functions ===");
+ispiši("kvadrat(5): " + kvadrat(5));
+ispiši("kub(3): " + kub(3));
+
+funkcija apsolutna(x) {
+    ako (x < 0) {
+        vrati -x;
+    }
+    vrati x;
+}
+
+ispiši("\n=== Absolute ===");
+ispiši("apsolutna(-7): " + apsolutna(-7));
+ispiši("apsolutna(3): " + apsolutna(3));
+
+funkcija kreiraj_tačku(x, y) {
+    vrati { x: x, y: y };
+}
+
+neka p = kreiraj_tačku(10, 20);
+ispiši("\n=== Point ===");
+ispiši("Point: (" + p.x + ", " + p.y + ")");
+
+funkcija faktorijel(n) {
+    ako (n <= 1) {
+        vrati 1;
+    }
+    vrati n * faktorijel(n - 1);
+}
+
+ispiši("\n=== Factorial ===");
+ispiši("5! = " + faktorijel(5));
+ispiši("10! = " + faktorijel(10));

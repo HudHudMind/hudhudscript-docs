@@ -1,0 +1,64 @@
+/**
+ * HudHudScript Syntax Theme - Light
+ * Professional color scheme for code highlighting
+ */
+
+.code-editor {
+    background: #ffffff;
+    color: #000000;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Keywords - Blue */
+.keyword {
+    color: #0000FF;
+    font-weight: bold;
+}
+
+/* Strings - Green */
+.string {
+    color: #008000;
+}
+
+/* Numbers - Orange */
+.number {
+    color: #FF6600;
+}
+
+/* Operators - Gray */
+.operator {
+    color: #666666;
+}
+
+/* Comments - Gray Italic */
+.comment {
+    color: #808080;
+    font-style: italic;
+}
+
+/* Built-in functions - Purple */
+.builtin {
+    color: #795E26;
+    font-weight: 600;
+}
+
+/* Variables - Dark Blue */
+.variable {
+    color: #000080;
+}
+
+/* Functions - Brown */
+.function {
+    color: #795E26;
+}
+
+/* Selection */
+.code-editor::selection {
+    background: #ADD6FF;
+}
+
+.code-editor::-moz-selection {
+    background: #ADD6FF;
+}

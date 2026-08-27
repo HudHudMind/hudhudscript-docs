@@ -1,0 +1,17 @@
+// Français - Fonction de salut
+
+fonction salue(nom) {
+    soit message = "Bonjour, " + nom + "!";
+    affiche(message);
+    retourner message;
+}
+
+fonction additionne(a, b) {
+    retourner a + b;
+}
+
+soit résultat = salue("Monde");
+affiche(résultat);
+
+soit somme = additionne(42, 58);
+affiche("somme: " + somme);

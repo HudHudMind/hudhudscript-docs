@@ -1,0 +1,42 @@
+// Türkçe - Modules & Code Organization
+// Demonstrates module system: kullan/içe_aktar like Rust, Java, C++, Python
+
+// Import math module
+"math.hudhud" kullan;
+
+// Example syntax variations:
+// "math.hudhud" kullan;
+// "math.hudhud" den { add, subtract } kullan;
+// "math.hudhud" math olarak kullan;
+
+// Using functions şuradan math module
+değişken sum = add(10, 5);
+yaz(sum);
+
+değişken diff = subtract(20, 8);
+yaz(diff);
+
+değişken product = multiply(4, 7);
+yaz(product);
+
+değişken quotient = divide(15, 3);
+yaz(quotient);
+
+değişken squared = square(5);
+yaz(squared);
+
+değişken cubed = cube(3);
+yaz(cubed);
+
+değişken absolute = abs(-42);
+yaz(absolute);
+
+değişken maximum = max(100, 50);
+yaz(maximum);
+
+değişken minimum = min(100, 50);
+yaz(minimum);
+
+// Complex calculation using multiple functions
+değişken result = add(multiply(5, 3), divide(20, 4));
+yaz(result);

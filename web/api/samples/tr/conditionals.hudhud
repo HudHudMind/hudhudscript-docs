@@ -1,0 +1,12 @@
+// Türkçe - Koşullu Mantık
+değişken puan = 85;
+
+eğer (puan >= 90) {
+    puan;
+} değilse {
+    eğer (puan >= 80) {
+        puan;
+    } değilse {
+        puan;
+    }
+}

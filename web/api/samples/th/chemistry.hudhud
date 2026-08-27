@@ -1,0 +1,21 @@
+// TH - Chemistry Module
+
+ฟังก์ชัน molarMass(atoms, atomicWeight) {
+    คืนค่า atoms * atomicWeight;
+}
+
+ฟังก์ชัน concentration(moles, volume) {
+    คืนค่า moles / volume;
+}
+
+ฟังก์ชัน pH(hydrogenConcentration) {
+    คืนค่า 14 - hydrogenConcentration;
+}
+
+ฟังก์ชัน density(mass, volume) {
+    คืนค่า mass / volume;
+}
+
+ฟังก์ชัน dilution(c1, v1, v2) {
+    คืนค่า (c1 * v1) / v2;
+}

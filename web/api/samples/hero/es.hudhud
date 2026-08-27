@@ -1,0 +1,19 @@
+// Español - Demo
+función saludar(nombre) {
+    retornar "Hola, " + nombre + "!";
+}
+
+función sumar(a, b) {
+    retornar a + b;
+}
+
+definir mensaje = saludar("Mundo");
+imprimir(mensaje);
+
+definir suma = 0;
+definir contador = 1;
+mientras (contador <= 10) {
+    suma = sumar(suma, contador);
+    contador = contador + 1;
+}
+imprimir("Suma 1-10: " + suma);

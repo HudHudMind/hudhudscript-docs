@@ -1,0 +1,14 @@
+// Kurdi - Mantiqe merci
+bila puan = 85;
+
+eger (puan >= 90) {
+    çap_bike(1000);
+} wella {
+    eger (puan >= 80) {
+        çap_bike(2000);
+    } wella {
+        çap_bike(3000);
+    }
+}
+
+çap_bike(999);

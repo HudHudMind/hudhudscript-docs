@@ -1,0 +1,7 @@
+// Español - Customer Service Agent
+// Using NATIVE Español keywords
+
+sea saludo = "Hola, ¿cómo puedo ayudarte?";
+sea respuesta = "Te ayudaré con tu solicitud.";
+
+saludo;

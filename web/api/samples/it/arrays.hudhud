@@ -1,0 +1,13 @@
+// Italiano - Array
+// Array con parole chiave native
+
+// Creare array
+sia numeri = [1, 2, 3, 4, 5];
+sia nomi = ["Alice", "Bruno", "Carlo"];
+
+// Accedere agli elementi
+sia primo = numeri[0];
+sia secondo = numeri[1];
+
+// Risultato
+primo;

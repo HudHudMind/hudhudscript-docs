@@ -1,0 +1,19 @@
+// Français - Demo
+fonction saluer(nom) {
+    retourner "Bonjour, " + nom + "!";
+}
+
+fonction ajouter(a, b) {
+    retourner a + b;
+}
+
+soit message = saluer("Monde");
+affiche(message);
+
+soit somme = 0;
+soit compteur = 1;
+pendant (compteur <= 10) {
+    somme = ajouter(somme, compteur);
+    compteur = compteur + 1;
+}
+affiche("Somme 1-10: " + somme);

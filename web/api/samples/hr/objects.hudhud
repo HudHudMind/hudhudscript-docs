@@ -1,0 +1,16 @@
+// Hrvatski - Objekti
+// Objekti s domaćim ključnim riječima
+
+// Kreiraj objekt
+neka osoba = {
+    ime: "Ana",
+    godine: 30,
+    grad: "Zagreb"
+};
+
+// Pristupi svojstvima
+neka ime = osoba.ime;
+neka godine = osoba.godine;
+
+// Rezultat
+ime;

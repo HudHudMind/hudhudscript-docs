@@ -1,0 +1,10 @@
+// Tiếng Việt - Ví dụ vòng lặp
+đặt bộ_đếm = 0;
+đặt tối_đa = 5;
+
+trong khi (bộ_đếm < tối_đa) {
+    in_ra(bộ_đếm);
+    bộ_đếm = bộ_đếm + 1;
+}
+
+in_ra(999);

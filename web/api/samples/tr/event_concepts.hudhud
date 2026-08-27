@@ -1,0 +1,36 @@
+// Türkçe - Event Concepts
+
+olay UserLogin {
+    yazdır("User logged in");
+}
+
+olay DataReceived {
+    yazdır("Data received");
+}
+
+olay ErrorOccurred {
+    yazdır("Error occurred");
+}
+
+işlev on_login(username) {
+    yazdır("Login: " + username);
+    dön "Welcome, " + username;
+}
+
+işlev on_data(source) {
+    yazdır("Data from: " + source);
+    dön "Processed: " + source;
+}
+
+işlev on_error(message) {
+    yazdır("Error: " + message);
+    dön "Handled: " + message;
+}
+
+yazdır("=== Event System ===");
+değişken r1 = on_login("admin");
+yazdır(r1);
+değişken r2 = on_data("sensor_1");
+yazdır(r2);
+değişken r3 = on_error("timeout");
+yazdır(r3);

@@ -1,0 +1,12 @@
+// Српски - Data Processing
+// Using NATIVE Српски keywords
+
+нека value1 = 100;
+нека value2 = 200;
+нека value3 = 300;
+
+нека total = value1+ value2+ value3;
+нека average = total / 3;
+
+štampaj(total);
+štampaj(average);

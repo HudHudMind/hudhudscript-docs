@@ -1,0 +1,58 @@
+// English - Functions
+// Function definition and usage examples
+
+// Simple function
+function greet() {
+    print("Hello World!");
+}
+
+// Function with parameters
+function add(a, b) {
+    return a + b;
+}
+
+// Multi-parameter function
+function calculate(num1, num2, operation) {
+    if (operation == "add") {
+        return num1 + num2;
+    } else if (operation == "subtract") {
+        return num1 - num2;
+    } else if (operation == "multiply") {
+        return num1 * num2;
+    } else if (operation == "divide") {
+        return num1 / num2;
+    } else {
+        return 0;
+    }
+}
+
+// Mathematical functions
+function square(x) {
+    return x * x;
+}
+
+function cube(x) {
+    return x * x * x;
+}
+
+// Using functions
+greet();
+
+let result1 = add(5, 3);
+print(result1);
+
+let result2 = calculate(10, 5, "add");
+print(result2);
+
+let result3 = calculate(10, 5, "multiply");
+print(result3);
+
+let square_result = square(4);
+print(square_result);
+
+let cube_result = cube(3);
+print(cube_result);
+
+// Function composition
+let total = add(square(3), cube(2));
+print(total);

@@ -1,0 +1,21 @@
+// Türkçe - Physics Module
+
+işlev hiz(uzaklık, zaman) {
+    dön uzaklık / zaman;
+}
+
+işlev kuvvet(kütle, ivme) {
+    dön kütle * ivme;
+}
+
+işlev kinetikEnerji(kütle, hız) {
+    dön 0.5 * kütle * hız * hız;
+}
+
+işlev potansiyelEnerji(kütle, yerçekimi, yükseklik) {
+    dön kütle * yerçekimi * yükseklik;
+}
+
+işlev momentum(kütle, hız) {
+    dön kütle * hız;
+}

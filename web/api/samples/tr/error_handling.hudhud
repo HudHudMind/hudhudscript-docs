@@ -1,0 +1,50 @@
+// Türkçe - Hata Yönetimi
+// Basit hata kontrolü ile hata yönetimi
+
+// Hata durumunu kontrol eden işlev
+işlev böl(a, b) {
+    eğer (b == 0) {
+        dön { hata: doğru, mesaj: "Sıfıra bölme hatası", değer: 0 };
+    }
+    dön { hata: yanlış, mesaj: "", değer: a / b };
+}
+
+yazdır("=== Bölme İşlemi ===");
+
+// İlk bölme
+yazdır("10 / 2 işlemi:");
+değişken sonuç1 = böl(10, 2);
+eğer (sonuç1.hata) {
+    yazdır("Hata: " + sonuç1.mesaj);
+} değilse {
+    yazdır("10 / 2 = " + sonuç1.değer);
+}
+
+// Sıfıra bölme
+yazdır("10 / 0 işlemi:");
+değişken sonuç2 = böl(10, 0);
+eğer (sonuç2.hata) {
+    yazdır("Hata yakalandı: " + sonuç2.mesaj);
+} değilse {
+    yazdır("Sonuç: " + sonuç2.değer);
+}
+
+// Dosya işleme benzeri örnek
+yazdır("=== Dosya İşleme ===");
+
+işlev dosya_isle(filename) {
+    eğer (filename == "") {
+        dön { başarılı: yanlış, mesaj: "Boş dosya adı hatası" };
+    }
+    yazdır("İşleniyor: " + filename);
+    dön { başarılı: doğru, veri: "Veri kaynağı " + filename };
+}
+
+değişken dosya_sonuç = dosya_isle("report.txt");
+eğer (dosya_sonuç.başarılı) {
+    yazdır("Sonuç: " + dosya_sonuç.veri);
+} değilse {
+    yazdır("Hata: " + dosya_sonuç.mesaj);
+}
+
+yazdır("Hepsi tamam");

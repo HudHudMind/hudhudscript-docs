@@ -1,0 +1,56 @@
+// Indonesia - Fungsi
+// Contoh definisi dan penggunaan fungsi
+
+// Fungsi sederhana
+fungsi sambut() {
+    cetak("Halo Dunia!");
+}
+
+// Fungsi dengan parameter
+fungsi tambah(a, b) {
+    kembalikan a + b;
+}
+
+// Fungsi multi-parameter
+fungsi hitung(angka1, angka2, operasi) {
+    jika (operasi == "tambah") {
+        kembalikan angka1 + angka2;
+    } kalau (operasi == "kurang") {
+        kembalikan angka1 - angka2;
+    } kalau (operasi == "kali") {
+        kembalikan angka1 * angka2;
+    } kalau (operasi == "bagi") {
+        kembalikan angka1 / angka2;
+    }
+}
+
+// Fungsi matematika
+fungsi kuadrat(x) {
+    kembalikan x * x;
+}
+
+fungsi pangkat_tiga(x) {
+    kembalikan x * x * x;
+}
+
+// Menggunakan fungsi
+sambut();
+
+biar hasil1 = tambah(5, 3);
+cetak(hasil1);
+
+biar hasil2 = hitung(10, 5, "tambah");
+cetak(hasil2);
+
+biar hasil3 = hitung(10, 5, "kali");
+cetak(hasil3);
+
+biar hasil_kuadrat = kuadrat(4);
+cetak(hasil_kuadrat);
+
+biar hasil_pangkat = pangkat_tiga(3);
+cetak(hasil_pangkat);
+
+// Komposisi fungsi
+biar total = tambah(kuadrat(3), pangkat_tiga(2));
+cetak(total);

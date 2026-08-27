@@ -1,0 +1,35 @@
+// Deutsch - Kundenservice-Agent
+
+gesetz Respekt_Gesetz {
+    beschreibung: "Der Agent muss hoeflich und respektvoll sein",
+    prioritaet: 1
+}
+
+verfassung Service_Verfassung {
+    gesetze: [Respekt_Gesetz],
+    beschreibung: "Kundenservice-Rahmenwerk"
+}
+
+agent Service_Agent {
+    modell: "gpt-4"
+}
+
+funktion begrüße(kundenname) {
+    sei nachricht = "Hallo " + kundenname + ", wie kann ich Ihnen helfen?";
+    drucke(nachricht);
+    zurück nachricht;
+}
+
+funktion bearbeite_anfrage(typ, details) {
+    wenn (typ == "Beschwerde") {
+        drucke("Ich entschuldige mich fuer die Unannehmlichkeiten. Ich werde Ihnen helfen.");
+    } sonst {
+        drucke("Vielen Dank fuer Ihre Anfrage. Ich bearbeite sie jetzt.");
+    }
+    zurück "Bearbeitet: " + typ + " - " + details;
+}
+
+drucke("=== Kundenservice-Agent ===");
+begrüße("Hans");
+sei ergebnis = bearbeite_anfrage("Beschwerde", "Lieferverzoegerung");
+drucke(ergebnis);

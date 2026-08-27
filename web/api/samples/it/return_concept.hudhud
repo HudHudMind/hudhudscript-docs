@@ -1,0 +1,44 @@
+// Italiano - Concetto di Ritorno
+// return
+
+funzione quadrato(x) {
+    ritorna x * x;
+}
+
+funzione cubo(x) {
+    ritorna x * x * x;
+}
+
+stampa("=== Math Functions ===");
+stampa("quadrato(5): " + quadrato(5));
+stampa("cubo(3): " + cubo(3));
+
+funzione assoluto(x) {
+    se (x < 0) {
+        ritorna -x;
+    }
+    ritorna x;
+}
+
+stampa("\n=== Absolute ===");
+stampa("assoluto(-7): " + assoluto(-7));
+stampa("assoluto(3): " + assoluto(3));
+
+funzione crea_punto(x, y) {
+    ritorna { x: x, y: y };
+}
+
+sia p = crea_punto(10, 20);
+stampa("\n=== Point ===");
+stampa("Point: (" + p.x + ", " + p.y + ")");
+
+funzione fattoriale(n) {
+    se (n <= 1) {
+        ritorna 1;
+    }
+    ritorna n * fattoriale(n - 1);
+}
+
+stampa("\n=== Factorial ===");
+stampa("5! = " + fattoriale(5));
+stampa("10! = " + fattoriale(10));

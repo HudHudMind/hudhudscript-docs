@@ -1,0 +1,36 @@
+// Polski - Event Concepts
+
+zdarzenie UserLogin {
+    drukuj("User logged in");
+}
+
+zdarzenie DataReceived {
+    drukuj("Data received");
+}
+
+zdarzenie ErrorOccurred {
+    drukuj("Error occurred");
+}
+
+funkcja on_login(username) {
+    drukuj("Login: " + username);
+    zwróć "Welcome, " + username;
+}
+
+funkcja on_data(source) {
+    drukuj("Data from: " + source);
+    zwróć "Processed: " + source;
+}
+
+funkcja on_error(message) {
+    drukuj("Error: " + message);
+    zwróć "Handled: " + message;
+}
+
+drukuj("=== Event System ===");
+niech r1 = on_login("admin");
+drukuj(r1);
+niech r2 = on_data("sensor_1");
+drukuj(r2);
+niech r3 = on_error("timeout");
+drukuj(r3);

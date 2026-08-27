@@ -1,0 +1,38 @@
+// English - Entity Concepts
+
+let user = {
+    id: 1,
+    name: "Alice",
+    email: "alice@example.com",
+    role: "developer"
+};
+
+let product = {
+    id: 101,
+    name: "HudHudScript IDE",
+    version: "2.0",
+    price: 49
+};
+
+let order = {
+    id: 1001,
+    user_id: 1,
+    product_id: 101,
+    quantity: 2,
+    status: "confirmed"
+};
+
+function entity_info(entity) {
+    return "Entity #" + entity.id + ": " + entity.name;
+}
+
+function calculate_total(order, price) {
+    return order.quantity * price;
+}
+
+print("=== Entity System ===");
+print(entity_info(user));
+print(entity_info(product));
+let total = calculate_total(order, product.price);
+print("Order #" + order.id + " total: " + total);
+print("Status: " + order.status);

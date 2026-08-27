@@ -1,0 +1,44 @@
+// Français - Concept de Retour
+// return
+
+fonction carré(x) {
+    retour x * x;
+}
+
+fonction cube(x) {
+    retour x * x * x;
+}
+
+affiche("=== Math Functions ===");
+affiche("carré(5): " + carré(5));
+affiche("cube(3): " + cube(3));
+
+fonction absolu(x) {
+    si (x < 0) {
+        retour -x;
+    }
+    retour x;
+}
+
+affiche("\n=== Absolute ===");
+affiche("absolu(-7): " + absolu(-7));
+affiche("absolu(3): " + absolu(3));
+
+fonction créer_point(x, y) {
+    retour { x: x, y: y };
+}
+
+soit p = créer_point(10, 20);
+affiche("\n=== Point ===");
+affiche("Point: (" + p.x + ", " + p.y + ")");
+
+fonction factorielle(n) {
+    si (n <= 1) {
+        retour 1;
+    }
+    retour n * factorielle(n - 1);
+}
+
+affiche("\n=== Factorial ===");
+affiche("5! = " + factorielle(5));
+affiche("10! = " + factorielle(10));

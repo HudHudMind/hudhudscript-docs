@@ -1,0 +1,16 @@
+// Bosanski - Objekti
+// Objekti sa domaćim ključnim riječima
+
+// Kreiraj objekat
+neka osoba = {
+    ime: "Amina",
+    godine: 30,
+    grad: "Sarajevo"
+};
+
+// Pristupi svojstvima
+neka ime = osoba.ime;
+neka godine = osoba.godine;
+
+// Rezultat
+ime;

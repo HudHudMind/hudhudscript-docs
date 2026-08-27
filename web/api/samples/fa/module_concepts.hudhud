@@ -1,0 +1,42 @@
+// فارسی - Modules & Code Organization
+// Demonstrates module system: استفاده/وارد_کن like Rust, Java, C++, Python
+
+// Import math module
+"math.hudhud" kullan;
+
+// Example syntax variations:
+// "math.hudhud" استفاده;
+// "math.hudhud" از { add, subtract } استفاده;
+// "math.hudhud" math به_عنوان استفاده;
+
+// Using functions از math module
+بگذار sum = add(10, 5);
+چاپ(sum);
+
+بگذار diff = subtract(20, 8);
+چاپ(diff);
+
+بگذار product = multiply(4, 7);
+چاپ(product);
+
+بگذار quotient = divide(15, 3);
+چاپ(quotient);
+
+بگذار squared = square(5);
+چاپ(squared);
+
+بگذار cubed = cube(3);
+چاپ(cubed);
+
+بگذار absolute = abs(-42);
+چاپ(absolute);
+
+بگذار maximum = max(100, 50);
+چاپ(maximum);
+
+بگذار minimum = min(100, 50);
+چاپ(minimum);
+
+// Complex calculation using multiple functions
+بگذار result = add(multiply(5, 3), divide(20, 4));
+چاپ(result);

@@ -1,0 +1,42 @@
+// Italiano - Modules & Code Organization
+// Demonstrates module system: use/import like Rust, Java, C++, Python
+
+// Import math module
+use "math.hudhud";
+
+// Example syntax variations:
+// use "math.hudhud";
+// use { add, subtract } from "math.hudhud";
+// use "math.hudhud" as math;
+
+// Using functions from math module
+variabile sum = add(10, 5);
+stampa(sum);
+
+variabile diff = subtract(20, 8);
+stampa(diff);
+
+variabile product = multiply(4, 7);
+stampa(product);
+
+variabile quotient = divide(15, 3);
+stampa(quotient);
+
+variabile squared = square(5);
+stampa(squared);
+
+variabile cubed = cube(3);
+stampa(cubed);
+
+variabile absolute = abs(-42);
+stampa(absolute);
+
+variabile maximum = max(100, 50);
+stampa(maximum);
+
+variabile minimum = min(100, 50);
+stampa(minimum);
+
+// Complex calculation using multiple functions
+variabile result = add(multiply(5, 3), divide(20, 4));
+stampa(result);

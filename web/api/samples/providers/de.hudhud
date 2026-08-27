@@ -1,0 +1,24 @@
+// Deutsch - providers.hudhud
+
+anbieter DeepSeekProvider {
+    apiKey: env("DEEPSEEK_API_KEY"),
+    type: "deepseek",
+    name: "DeepSeek API",
+    baseUrl: env("DEEPSEEK_BASE_URL"),
+    temperatur: 0.8
+}
+
+anbieter AnthropicProvider {
+    apiKey: env("ANTHROPIC_API_KEY"),
+    type: "anthropic",
+    name: "Anthropic Claude",
+    model: "claude-opus-4.6",
+    temperatur: 0.9
+}
+
+anbieter OpenAIProvider {
+    apiKey: env("OPENAI_API_KEY"),
+    type: "openai",
+    name: "OpenAI GPT",
+    temperatur: 0.6
+}

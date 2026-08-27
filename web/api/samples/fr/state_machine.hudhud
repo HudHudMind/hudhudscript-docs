@@ -1,0 +1,9 @@
+// State Machine Example
+variable state = "initial";
+
+si (state == "initial") {
+    afficher("Starting");
+    state = "running";
+}
+
+afficher(state);

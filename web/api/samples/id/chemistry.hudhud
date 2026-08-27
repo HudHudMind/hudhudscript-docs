@@ -1,0 +1,21 @@
+// ID - Chemistry Module
+
+fungsi molarMass(atoms, atomicWeight) {
+    kembali atoms * atomicWeight;
+}
+
+fungsi concentration(moles, volume) {
+    kembali moles / volume;
+}
+
+fungsi pH(hydrogenConcentration) {
+    kembali 14 - hydrogenConcentration;
+}
+
+fungsi density(mass, volume) {
+    kembali mass / volume;
+}
+
+fungsi dilution(c1, v1, v2) {
+    kembali (c1 * v1) / v2;
+}

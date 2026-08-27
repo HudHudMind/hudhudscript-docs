@@ -1,0 +1,63 @@
+// RU - Math Module
+
+// Addition
+функция add(a, b) {
+    вернуть a + b;
+}
+
+// Subtraction
+функция subtract(a, b) {
+    вернуть a - b;
+}
+
+// Multiplication
+функция multiply(a, b) {
+    вернуть a * b;
+}
+
+// Division
+функция divide(a, b) {
+    если (b == 0) {
+        печать("Error: Division by zero!");
+        вернуть 0;
+    } иначе {
+        вернуть a / b;
+    }
+}
+
+// Square
+функция square(x) {
+    вернуть x * x;
+}
+
+// Cube
+функция cube(x) {
+    вернуть x * x * x;
+}
+
+// Absolute value
+функция abs(x) {
+    если (x < 0) {
+        вернуть -x;
+    } иначе {
+        вернуть x;
+    }
+}
+
+// Maximum
+функция max(a, b) {
+    если (a > b) {
+        вернуть a;
+    } иначе {
+        вернуть b;
+    }
+}
+
+// Minimum
+функция min(a, b) {
+    если (a < b) {
+        вернуть a;
+    } иначе {
+        вернуть b;
+    }
+}

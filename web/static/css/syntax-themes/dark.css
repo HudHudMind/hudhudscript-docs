@@ -1,0 +1,64 @@
+/**
+ * HudHudScript Syntax Theme - Dark
+ * VS Code Dark+ inspired color scheme
+ */
+
+.code-editor {
+    background: #1E1E1E;
+    color: #D4D4D4;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Keywords - Light Blue */
+.keyword {
+    color: #569CD6;
+    font-weight: bold;
+}
+
+/* Strings - Orange */
+.string {
+    color: #CE9178;
+}
+
+/* Numbers - Light Green */
+.number {
+    color: #B5CEA8;
+}
+
+/* Operators - Light Gray */
+.operator {
+    color: #D4D4D4;
+}
+
+/* Comments - Green */
+.comment {
+    color: #6A9955;
+    font-style: italic;
+}
+
+/* Built-in functions - Yellow */
+.builtin {
+    color: #DCDCAA;
+    font-weight: 600;
+}
+
+/* Variables - Light Blue */
+.variable {
+    color: #9CDCFE;
+}
+
+/* Functions - Yellow */
+.function {
+    color: #DCDCAA;
+}
+
+/* Selection */
+.code-editor::selection {
+    background: #264F78;
+}
+
+.code-editor::-moz-selection {
+    background: #264F78;
+}

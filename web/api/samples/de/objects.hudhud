@@ -1,0 +1,16 @@
+// Deutsch - Objekte
+// Objekte mit nativen Schlüsselwörtern
+
+// Objekt erstellen
+sei person = {
+    name: "Anna",
+    alter: 30,
+    stadt: "Berlin"
+};
+
+// Auf Eigenschaften zugreifen
+sei name = person.name;
+sei alter = person.alter;
+
+// Ergebnis
+name;

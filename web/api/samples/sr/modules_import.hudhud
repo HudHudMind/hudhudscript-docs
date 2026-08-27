@@ -1,0 +1,31 @@
+// SR - Modules Import Example
+
+// Import math module (direct access)
+користи "math.hudhud";
+
+// Import physics with alias (access via fizik.functionName)
+користи "physics.hudhud" као fizik;
+
+// Import chemistry (direct access)
+користи "chemistry.hudhud";
+
+// Using math functions (direct)
+нека sum = add(10, 5);
+штампај(sum);
+
+нека product = multiply(4, 7);
+штампај(product);
+
+// Using physics functions (via alias: fizik.functionName)
+нека f = fizik.force(10, 9.8);
+штампај(f);
+
+нека ke = fizik.kineticEnergy(5, 10);
+штампај(ke);
+
+// Using chemistry functions (direct)
+нека d = density(100, 50);
+штампај(d);
+
+нека c = concentration(2, 5);
+штампај(c);

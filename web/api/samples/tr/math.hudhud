@@ -1,0 +1,64 @@
+// Türkçe - Math Module
+// Basic mathematical operations
+
+// Addition
+işlev add(a, b) {
+    dön a + b;
+}
+
+// Subtraction
+işlev subtract(a, b) {
+    dön a - b;
+}
+
+// Multiplication
+işlev multiply(a, b) {
+    dön a * b;
+}
+
+// Division
+işlev divide(a, b) {
+    eğer (b == 0) {
+        yaz("Error: Division by zero!");
+        dön 0;
+    } değilse {
+        dön a / b;
+    }
+}
+
+// Square
+işlev square(x) {
+    dön x * x;
+}
+
+// Cube
+işlev cube(x) {
+    dön x * x * x;
+}
+
+// Absolute value
+işlev abs(x) {
+    eğer (x < 0) {
+        dön -x;
+    } değilse {
+        dön x;
+    }
+}
+
+// Maximum of two numbers
+işlev max(a, b) {
+    eğer (a > b) {
+        dön a;
+    } değilse {
+        dön b;
+    }
+}
+
+// Minimum of two numbers
+işlev min(a, b) {
+    eğer (a < b) {
+        dön a;
+    } değilse {
+        dön b;
+    }
+}

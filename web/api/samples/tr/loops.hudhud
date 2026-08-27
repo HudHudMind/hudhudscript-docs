@@ -1,0 +1,13 @@
+// Türkçe - Döngüler
+// Türkçe - Yerel anahtar kelimelerle döngüler
+
+// Basit döngü - 1'den 5'e kadar topla
+değişken toplam = 0;
+değişken sayaç = 1;
+
+iken (sayaç <= 5) {
+    toplam = toplam + sayaç;
+    sayaç = sayaç + 1;
+}
+
+toplam;

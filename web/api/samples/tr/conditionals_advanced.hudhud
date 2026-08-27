@@ -1,0 +1,44 @@
+// Türkçe - Gelişmiş Koşullar (Advanced Conditionals)
+
+// Basit koşul
+değişken sayı = -5;
+
+eğer (sayı < 0) {
+    yaz("Sayı negatif");
+}
+
+// Eğer-değilse
+değişken yaş = 18;
+
+eğer (yaş >= 18) {
+    yaz("Yetişkin");
+} değilse {
+    yaz("Çocuk");
+}
+
+// Çoklu koşullar (değilse eğer)
+değişken puan = 75;
+
+eğer (puan >= 90) {
+    yaz("Mükemmel");
+} değilse ama (puan >= 70) {
+    yaz("İyi");
+} değilse ama (puan >= 50) {
+    yaz("Orta");
+} değilse {
+    yaz("Yetersiz");
+}
+
+// İç içe koşullar
+değişken sıcaklık = 25;
+değişken yağmurlu = yanlış;
+
+eğer (sıcaklık > 20) {
+    eğer (yağmurlu) {
+        yaz("Sıcak ama yağmurlu");
+    } değilse {
+        yaz("Güzel hava");
+    }
+} değilse {
+    yaz("Soğuk hava");
+}

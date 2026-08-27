@@ -1,0 +1,16 @@
+// Français - Objets
+// Objets avec mots-clés natifs
+
+// Créer un objet
+soit personne = {
+    nom: "Alice",
+    âge: 30,
+    ville: "Paris"
+};
+
+// Accéder aux propriétés
+soit nom = personne.nom;
+soit âge = personne.âge;
+
+// Résultat
+nom;

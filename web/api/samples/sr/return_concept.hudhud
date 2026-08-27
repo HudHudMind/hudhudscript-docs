@@ -1,0 +1,44 @@
+// Српски - Концепт повратка
+// return
+
+funkcija квадрат(x) {
+    vrati x * x;
+}
+
+funkcija куб(x) {
+    vrati x * x * x;
+}
+
+ispiši("=== Math Functions ===");
+ispiši("квадрат(5): " + квадрат(5));
+ispiši("куб(3): " + куб(3));
+
+funkcija апсолутна(x) {
+    ako (x < 0) {
+        vrati -x;
+    }
+    vrati x;
+}
+
+ispiši("\n=== Absolute ===");
+ispiši("апсолутна(-7): " + апсолутна(-7));
+ispiši("апсолутна(3): " + апсолутна(3));
+
+funkcija креирај_тачку(x, y) {
+    vrati { x: x, y: y };
+}
+
+neka p = креирај_тачку(10, 20);
+ispiši("\n=== Point ===");
+ispiši("Point: (" + p.x + ", " + p.y + ")");
+
+funkcija факторијел(n) {
+    ako (n <= 1) {
+        vrati 1;
+    }
+    vrati n * факторијел(n - 1);
+}
+
+ispiši("\n=== Factorial ===");
+ispiši("5! = " + факторијел(5));
+ispiši("10! = " + факторијел(10));

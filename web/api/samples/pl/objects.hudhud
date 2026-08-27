@@ -1,0 +1,16 @@
+// Polski - Obiekty
+// Obiekty z natywnymi słowami kluczowymi
+
+// Tworzenie obiektu
+niech osoba = {
+    imię: "Alicja",
+    wiek: 30,
+    miasto: "Warszawa"
+};
+
+// Dostęp do właściwości
+niech imię = osoba.imię;
+niech wiek = osoba.wiek;
+
+// Wynik
+imię;

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>DEBUG - Syntax Highlighting</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        
+        h1 { margin-bottom: 20px; color: #4CAF50; }
+        
+        .test-info {
+            background: #2d2d30;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-left: 4px solid #4CAF50;
+        }
+        
+        .editor-wrapper {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            border: 2px solid #4CAF50;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #1E1E1E;
+        }
+        
+        #code-input,
+        #code-display {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 15px;
+            margin: 0;
+            border: none;
+            outline: none;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            overflow: auto;
+            box-sizing: border-box;
+        }
+        
+        #code-input {
+            resize: none;
+            color: transparent;
+            caret-color: #4CAF50;
+            background: transparent;
+            z-index: 2;
+        }
+        
+        #code-display {
+            z-index: 1;
+            pointer-events: none;
+            background: #1E1E1E;
+            color: #D4D4D4;
+        }
+        
+        #code-display code {
+            display: block;
+        }
+        
+        /* Syntax colors */
+        .keyword { color: #C586C0; font-weight: bold; }
+        .string { color: #CE9178; }
+        .number { color: #B5CEA8; }
+        .comment { color: #6A9955; font-style: italic; }
+        .builtin { color: #4EC9B0; }
+        
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            background: #2d2d30;
+            border-radius: 4px;
+        }
+        
+        .status div {
+            margin: 5px 0;
+            font-family: monospace;
+        }
+        
+        .ok { color: #4CAF50; }
+        .error { color: #f44336; }
+    </style>
+</head>
+<body>
+    <h1>🔍 DEBUG: Syntax Highlighting Test</h1>
+    
+    <div class="test-info">
+        <strong>Test Amacı:</strong> HTML tagları görünüyor mu kontrol et<br>
+        <strong>Beklenen:</strong> Sadece renkli kod, HTML yok<br>
+        <strong>Durum:</strong> <span id="test-status">Test ediliyor...</span>
+    </div>
+    
+    <div class="editor-wrapper">
+        <pre id="code-display"><code id="code-highlighted"></code></pre>
+        <textarea id="code-input" placeholder="Buraya kod yazın..."></textarea>
+    </div>
+    
+    <div class="status">
+        <div><strong>Debug Bilgileri:</strong></div>
+        <div id="debug-info"></div>
+    </div>
+    
+    <script>
+        const input = document.getElementById('code-input');
+        const display = document.getElementById('code-highlighted');
+        const debugInfo = document.getElementById('debug-info');
+        const testStatus = document.getElementById('test-status');
+        
+        function escapeHtml(text) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, m => map[m]);
+        }
+        
+        function highlight(code) {
+            if (!code) return '';
+            
+            let html = escapeHtml(code);
+            
+            // Strings
+            html = html.replace(/"([^"]*)"/g, '<span class="string">"$1"</span>');
+            
+            // Numbers
+            html = html.replace(/\b(\d+)\b/g, '<span class="number">$1</span>');
+            
+            // Keywords
+            const keywords = ['değişken', 'fonksiyon', 'dön', 'herbir', 'içinde'];
+            keywords.forEach(kw => {
+                const regex = new RegExp(`\\b${kw}\\b`, 'g');
+                html = html.replace(regex, `<span class="keyword">${kw}</span>`);
+            });
+            
+            // Builtins
+            html = html.replace(/\byaz\b/g, '<span class="builtin">yaz</span>');
+            
+            return html;
+        }
+        
+        function updateHighlighting() {
+            const code = input.value;
+            const highlighted = highlight(code);
+            
+            // CRITICAL: HTML'i display'e yaz, input'a DEĞİL!
+            display.innerHTML = highlighted + '\n';
+            
+            // Debug
+            updateDebugInfo(code, highlighted);
+            
+            // Scroll sync
+            const displayPre = document.getElementById('code-display');
+            displayPre.scrollTop = input.scrollTop;
+            displayPre.scrollLeft = input.scrollLeft;
+        }
+        
+        function updateDebugInfo(code, highlighted) {
+            const hasSpanTags = highlighted.includes('<span');
+            const inputHasHtml = input.value.includes('<span');
+            
+            let info = '';
+            info += `<div>Input değeri uzunluğu: ${code.length}</div>`;
+            info += `<div>Highlighted HTML uzunluğu: ${highlighted.length}</div>`;
+            info += `<div>Highlighted HTML'de span var mı: ${hasSpanTags ? 'EVET ✓' : 'HAYIR'}</div>`;
+            info += `<div class="${inputHasHtml ? 'error' : 'ok'}">Textarea'da HTML var mı: ${inputHasHtml ? 'EVET ✗ (HATA!)' : 'HAYIR ✓'}</div>`;
+            info += `<div>display.innerHTML ilk 100 karakter: <code>${escapeHtml(display.innerHTML.substring(0, 100))}</code></div>`;
+            
+            debugInfo.innerHTML = info;
+            
+            if (inputHasHtml) {
+                testStatus.innerHTML = '<span class="error">HATA: Textarea\'da HTML görünüyor!</span>';
+            } else if (hasSpanTags) {
+                testStatus.innerHTML = '<span class="ok">BAŞARILI: Sadece display\'de HTML var</span>';
+            } else {
+                testStatus.innerHTML = '<span>Kod yazın...</span>';
+            }
+        }
+        
+        // Event listeners
+        input.addEventListener('input', updateHighlighting);
+        input.addEventListener('scroll', () => {
+            const displayPre = document.getElementById('code-display');
+            displayPre.scrollTop = input.scrollTop;
+            displayPre.scrollLeft = input.scrollLeft;
+        });
+        
+        // Tab support
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Tab') {
+                e.preventDefault();
+                const start = input.selectionStart;
+                const end = input.selectionEnd;
+                input.value = input.value.substring(0, start) + '    ' + input.value.substring(end);
+                input.selectionStart = input.selectionEnd = start + 4;
+                updateHighlighting();
+            }
+        });
+        
+        // Load sample
+        const sample = `// Türkçe Örnek
+değişken sayı = 42;
+yaz("Merhaba Dünya!");
+
+fonksiyon topla(a, b) {
+    dön a + b;
+}`;
+        
+        input.value = sample;
+        updateHighlighting();
+        
+        // Initial debug
+        setTimeout(() => {
+            console.log('=== DEBUG INFO ===');
+            console.log('Input element:', input);
+            console.log('Display element:', display);
+            console.log('Input value:', input.value);
+            console.log('Display innerHTML:', display.innerHTML);
+            console.log('Input has <span>?', input.value.includes('<span>'));
+        }, 100);
+    </script>
+</body>
+</html>

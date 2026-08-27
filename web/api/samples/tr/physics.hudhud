@@ -1,0 +1,27 @@
+// Türkçe - Physics Module
+// Basic physics calculations
+
+// Speed = Distance / Time
+işlev speed(distance, time) {
+    dön distance / time;
+}
+
+// Force = Mass * Acceleration
+işlev force(mass, acceleration) {
+    dön mass * acceleration;
+}
+
+// Kinetic Energy = 0.5 * Mass * Velocity^2
+işlev kineticEnergy(mass, velocity) {
+    dön 0.5 * mass * velocity * velocity;
+}
+
+// Potential Energy = Mass * Gravity * Height
+işlev potentialEnergy(mass, gravity, height) {
+    dön mass * gravity * height;
+}
+
+// Momentum = Mass * Velocity
+işlev momentum(mass, velocity) {
+    dön mass * velocity;
+}

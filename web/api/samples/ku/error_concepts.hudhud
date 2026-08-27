@@ -1,0 +1,43 @@
+// Kurdi - Error Concepts
+
+fonksiyon validate_age(age) {
+    eger (age < 0) {
+        baveje "Invalid age: negative";
+    }
+    eger (age > 150) {
+        baveje "Invalid age: too large";
+    }
+    vegerine age;
+}
+
+fonksiyon validate_email(email) {
+    eger (email == "") {
+        baveje "Empty email";
+    }
+    çap_bike("Email valid: " + email);
+    vegerine email;
+}
+
+çap_bike("=== Validation ===");
+
+biceribine {
+    validate_age(25);
+    çap_bike("Age 25: valid");
+} bigire (error) {
+    çap_bike("Error: " + error);
+}
+
+biceribine {
+    validate_age(-5);
+} bigire (error) {
+    çap_bike("Error: " + error);
+}
+
+biceribine {
+    validate_email("user@example.com");
+    validate_email("");
+} bigire (error) {
+    çap_bike("Email error: " + error);
+} di_dawiye {
+    çap_bike("Validation complete");
+}

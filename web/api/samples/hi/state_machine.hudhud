@@ -1,0 +1,9 @@
+// State Machine Example
+मान_लो state = "initial";
+
+अगर (state == "initial") {
+    प्रिंट("Starting");
+    state = "running";
+}
+
+प्रिंट(state);

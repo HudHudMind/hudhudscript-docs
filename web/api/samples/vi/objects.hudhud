@@ -1,0 +1,16 @@
+// Tiếng Việt - Đối tượng
+// Đối tượng với từ khóa tiếng Việt
+
+// Tạo đối tượng
+đặt người = {
+    tên: "An",
+    tuổi: 30,
+    thành_phố: "Hà Nội"
+};
+
+// Truy cập thuộc tính
+đặt tên = người.tên;
+đặt tuổi = người.tuổi;
+
+// Kết quả
+tên;

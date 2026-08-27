@@ -1,0 +1,19 @@
+// Italiano - Demo
+funzione saluta(nome) {
+    ritornare "Ciao, " + nome + "!";
+}
+
+funzione somma(a, b) {
+    ritornare a + b;
+}
+
+variabile messaggio = saluta("Mondo");
+stampa(messaggio);
+
+variabile totale = 0;
+variabile contatore = 1;
+mentre (contatore <= 10) {
+    totale = somma(totale, contatore);
+    contatore = contatore + 1;
+}
+stampa("Somma 1-10: " + totale);

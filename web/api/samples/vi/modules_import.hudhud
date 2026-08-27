@@ -1,0 +1,31 @@
+// VI - Modules Import Example
+
+// Import math module (direct access)
+sử_dụng "math.hudhud";
+
+// Import physics with alias (access via fizik.functionName)
+sử_dụng "physics.hudhud" như fizik;
+
+// Import chemistry (direct access)
+sử_dụng "chemistry.hudhud";
+
+// Using math functions (direct)
+cho sum = add(10, 5);
+in_ra(sum);
+
+cho product = multiply(4, 7);
+in_ra(product);
+
+// Using physics functions (via alias: fizik.functionName)
+cho f = fizik.force(10, 9.8);
+in_ra(f);
+
+cho ke = fizik.kineticEnergy(5, 10);
+in_ra(ke);
+
+// Using chemistry functions (direct)
+cho d = density(100, 50);
+in_ra(d);
+
+cho c = concentration(2, 5);
+in_ra(c);

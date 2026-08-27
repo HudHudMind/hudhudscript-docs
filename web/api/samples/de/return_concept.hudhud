@@ -1,0 +1,44 @@
+// Deutsch - Rückgabe-Konzept
+// return
+
+funktion quadrat(x) {
+    zurück x * x;
+}
+
+funktion würfel(x) {
+    zurück x * x * x;
+}
+
+drucke("=== Math Functions ===");
+drucke("quadrat(5): " + quadrat(5));
+drucke("würfel(3): " + würfel(3));
+
+funktion absolut(x) {
+    wenn (x < 0) {
+        zurück -x;
+    }
+    zurück x;
+}
+
+drucke("\n=== Absolute ===");
+drucke("absolut(-7): " + absolut(-7));
+drucke("absolut(3): " + absolut(3));
+
+funktion punkt_erstellen(x, y) {
+    zurück { x: x, y: y };
+}
+
+sei p = punkt_erstellen(10, 20);
+drucke("\n=== Point ===");
+drucke("Point: (" + p.x + ", " + p.y + ")");
+
+funktion fakultät(n) {
+    wenn (n <= 1) {
+        zurück 1;
+    }
+    zurück n * fakultät(n - 1);
+}
+
+drucke("\n=== Factorial ===");
+drucke("5! = " + fakultät(5));
+drucke("10! = " + fakultät(10));

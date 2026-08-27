@@ -1,0 +1,42 @@
+// Türkçe - Gelişmiş Döngüler (Advanced Loops)
+
+// While döngüsü
+değişken sayaç = 0;
+iken (sayaç < 5) {
+    yaz(sayaç);
+    sayaç = sayaç + 1;
+}
+
+// Koşullu döngü
+değişken toplam = 0;
+değişken i = 1;
+iken (i <= 10) {
+    toplam = toplam + i;
+    i = i + 1;
+}
+yaz(toplam);
+
+// İç içe döngüler
+değişken x = 1;
+iken (x <= 3) {
+    değişken y = 1;
+    iken (y <= 3) {
+        yaz(x * y);
+        y = y + 1;
+    }
+    x = x + 1;
+}
+
+// Break ve devam
+değişken sayı = 1;
+iken (sayı <= 10) {
+    eğer (sayı == 5) {
+        sayı = sayı + 1;
+        devam;
+    }
+    eğer (sayı == 8) {
+        kır;
+    }
+    yaz(sayı);
+    sayı = sayı + 1;
+}

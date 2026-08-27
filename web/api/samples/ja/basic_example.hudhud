@@ -1,0 +1,4 @@
+// 日本語 - Basic Example with NATIVE keywords
+変数 エックス = 10;
+変数 ワイ = 210;
+変数 合計 = エックス + ワイ;

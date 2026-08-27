@@ -1,0 +1,16 @@
+// Kurdi - Objects
+// Objects with native keywords
+
+// Create object
+guherbar mirov = {
+    nave: "Ehmed",
+    temen: 30,
+    bajar: "Hewler"
+};
+
+// Access properties
+guherbar nave = mirov.nave;
+guherbar temen = mirov.temen;
+
+// Result
+nave;

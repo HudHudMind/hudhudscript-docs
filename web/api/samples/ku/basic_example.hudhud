@@ -1,0 +1,6 @@
+// Kurdi - Basic Example with NATIVE keywords
+guherbar yek = 10;
+guherbar du = 20;
+guherbar kom = yek + du;
+
+çap_bike(kom);

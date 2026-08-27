@@ -1,0 +1,13 @@
+// Türkçe - Diziler
+// Türkçe - Yerel anahtar kelimelerle diziler
+
+// Dizi oluştur
+değişken sayılar = [1, 2, 3, 4, 5];
+değişken isimler = ["Davut", "Ayşe", "Mehmet"];
+
+// Elemanlara eriş
+değişken ilk = sayılar[0];
+değişken ikinci = sayılar[1];
+
+// Boş dizi
+değişken liste = [];

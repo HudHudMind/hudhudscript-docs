@@ -1,0 +1,8 @@
+// Polski - Agent Obsługi Klienta
+// Używając NATYWNYCH słów kluczowych Polskiego
+
+niech powitanie = "Dzień dobry, jak mogę pomóc?";
+niech odpowiedź = "Pomogę z Państwa zgłoszeniem.";
+
+drukuj(powitanie);
+drukuj(odpowiedź);

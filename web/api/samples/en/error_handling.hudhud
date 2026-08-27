@@ -1,0 +1,50 @@
+// English - Error Handling
+// Simple error control with if-else
+
+// Function that checks for errors
+function divide(a, b) {
+    if (b == 0) {
+        return { error: true, message: "Division by zero error", value: 0 };
+    }
+    return { error: false, message: "", value: a / b };
+}
+
+print("=== Division Operation ===");
+
+// First division
+print("10 / 2 operation:");
+let result1 = divide(10, 2);
+if (result1.error) {
+    print("Error: " + result1.message);
+} else {
+    print("10 / 2 = " + result1.value);
+}
+
+// Division by zero
+print("10 / 0 operation:");
+let result2 = divide(10, 0);
+if (result2.error) {
+    print("Error caught: " + result2.message);
+} else {
+    print("Result: " + result2.value);
+}
+
+// File processing example
+print("=== File Processing ===");
+
+function process_file(filename) {
+    if (filename == "") {
+        return { success: false, message: "Empty filename error" };
+    }
+    print("Processing: " + filename);
+    return { success: true, data: "Data from " + filename };
+}
+
+let file_result = process_file("report.txt");
+if (file_result.success) {
+    print("Result: " + file_result.data);
+} else {
+    print("Error: " + file_result.message);
+}
+
+print("All done");

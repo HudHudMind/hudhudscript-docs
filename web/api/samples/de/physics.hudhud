@@ -1,0 +1,26 @@
+// DE - Physics Module
+
+// Speed = Distance / Time
+funktion speed(distance, time) {
+    zurück distance / time;
+}
+
+// Force = Mass * Acceleration
+funktion force(mass, acceleration) {
+    zurück mass * acceleration;
+}
+
+// Kinetic Energy = 0.5 * Mass * Velocity^2
+funktion kineticEnergy(mass, velocity) {
+    zurück 0.5 * mass * velocity * velocity;
+}
+
+// Potential Energy = Mass * Gravity * Height
+funktion potentialEnergy(mass, gravity, height) {
+    zurück mass * gravity * height;
+}
+
+// Momentum = Mass * Velocity
+funktion momentum(mass, velocity) {
+    zurück mass * velocity;
+}

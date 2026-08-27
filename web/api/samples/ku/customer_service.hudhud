@@ -1,0 +1,8 @@
+// Kurdi - Ajansa Xizmeta Xeridar
+// Bi karanina peyv bejeyen XWECIHI yen Kurdi
+
+bila silav = "Silav, ez çawa dikarim alikariya we bikim?";
+bila bersiv = "Ez e daxwaza we bi cih binim.";
+
+çap_bike(silav);
+çap_bike(bersiv);

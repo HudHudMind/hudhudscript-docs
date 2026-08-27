@@ -1,0 +1,9 @@
+// State Machine Example
+let state = "initial";
+
+if (state == "initial") {
+    print("Starting");
+    state = "running";
+}
+
+print(state);

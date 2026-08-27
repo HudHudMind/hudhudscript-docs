@@ -1,0 +1,31 @@
+// Deutsch - Modules Import Example
+
+// Import math module (direct access)
+verwenden "mathematik.hudhud";
+
+// Import physics with alias (access via fizik.functionName)
+verwenden "physik.hudhud" als fizik;
+
+// Import chemistry (direct access)
+verwenden "chemie.hudhud";
+
+// Using math functions (direct)
+variable sum = addieren(10, 5);
+drucken(sum);
+
+variable product = multiplizieren(4, 7);
+drucken(product);
+
+// Using physics functions (via alias: fizik.functionName)
+variable f = fizik.kraft(10, 9.8);
+drucken(f);
+
+variable ke = fizik.kinetischeEnergie(5, 10);
+drucken(ke);
+
+// Using chemistry functions (direct)
+variable d = dichte(100, 50);
+drucken(d);
+
+variable c = konzentration(2, 5);
+drucken(c);

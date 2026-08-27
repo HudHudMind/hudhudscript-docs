@@ -1,0 +1,54 @@
+// English - Math Module
+
+function add(a, b) {
+    return a + b;
+}
+
+function subtract(a, b) {
+    return a - b;
+}
+
+function multiply(a, b) {
+    return a * b;
+}
+
+function divide(a, b) {
+    if (b == 0) {
+        print("Error: Division by zero!");
+        return 0;
+    } else {
+        return a / b;
+    }
+}
+
+function square(x) {
+    return x * x;
+}
+
+function cube(x) {
+    return x * x * x;
+}
+
+function abs(x) {
+    if (x < 0) {
+        return -x;
+    } else {
+        return x;
+    }
+}
+
+function max(a, b) {
+    if (a > b) {
+        return a;
+    } else {
+        return b;
+    }
+}
+
+function min(a, b) {
+    if (a < b) {
+        return a;
+    } else {
+        return b;
+    }
+}

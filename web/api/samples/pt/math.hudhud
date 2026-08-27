@@ -1,0 +1,54 @@
+// PT - Math Module
+
+function add(a, b) {
+    retornar a + b;
+}
+
+function subtract(a, b) {
+    retornar a - b;
+}
+
+function multiply(a, b) {
+    retornar a * b;
+}
+
+function divide(a, b) {
+    se (b == 0) {
+        imprimir("Error: Division by zero!");
+        retornar 0;
+    } senão {
+        retornar a / b;
+    }
+}
+
+function square(x) {
+    retornar x * x;
+}
+
+function cube(x) {
+    retornar x * x * x;
+}
+
+function abs(x) {
+    se (x < 0) {
+        retornar -x;
+    } senão {
+        retornar x;
+    }
+}
+
+function max(a, b) {
+    se (a > b) {
+        retornar a;
+    } senão {
+        retornar b;
+    }
+}
+
+function min(a, b) {
+    se (a < b) {
+        retornar a;
+    } senão {
+        retornar b;
+    }
+}

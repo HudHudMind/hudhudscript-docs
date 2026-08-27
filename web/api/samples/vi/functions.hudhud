@@ -1,0 +1,49 @@
+// Tiếng Việt - Hàm
+// Ví dụ định nghĩa và sử dụng hàm
+
+// Hàm đơn giản
+hàm chào_hỏi() {
+    in_ra("Xin chào Thế giới!");
+}
+
+// Hàm có tham số
+hàm cộng(a, b) {
+    trả về a + b;
+}
+
+// Hàm nhiều tham số
+hàm tính(số1, số2, phép_tính) {
+    nếu (phép_tính == "cộng") {
+        trả về số1 + số2;
+    } không thì {
+        trả về 0;
+    }
+}
+
+// Hàm toán học
+hàm bình_phương(x) {
+    trả về x * x;
+}
+
+hàm lập_phương(x) {
+    trả về x * x * x;
+}
+
+// Sử dụng hàm
+chào_hỏi();
+
+đặt kết_quả1 = cộng(5, 3);
+in_ra(kết_quả1);
+
+đặt kết_quả2 = tính(10, 5, "cộng");
+in_ra(kết_quả2);
+
+đặt kết_quả_bình_phương = bình_phương(4);
+in_ra(kết_quả_bình_phương);
+
+đặt kết_quả_lập_phương = lập_phương(3);
+in_ra(kết_quả_lập_phương);
+
+// Kết hợp hàm
+đặt tổng = cộng(bình_phương(3), lập_phương(2));
+in_ra(tổng);

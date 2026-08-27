@@ -1,0 +1,103 @@
+// GOVERNANCE AS LANGUAGE PRIMITIVES
+// Constitution -> laws -> rules -> subjects -> council -> swarm -> community.
+
+law ProtectSecrets {
+    description: "Credentials and private data must never enter output";
+    enforcement: mandatory;
+    rules: ["redact-secrets", "deny-credential-export"];
+}
+
+law AuthorizeEffects {
+    description: "Network, MCP, process, and publish actions require approval";
+    enforcement: mandatory;
+    rules: ["capability-check", "human-approval-for-publish"];
+}
+
+law RequireEvidence {
+    description: "A release decision must include test evidence";
+    enforcement: mandatory;
+    rules: ["tests-pass", "three-votes-required"];
+}
+
+constitution TrustedDelivery {
+    description: "Policy for governed software delivery";
+    laws: [
+        { name: "ProtectSecrets", enforcement: "mandatory" },
+        { name: "AuthorizeEffects", enforcement: "mandatory" },
+        { name: "RequireEvidence", enforcement: "mandatory" }
+    ];
+}
+
+rule ReleaseQuorum {
+    description: "At least three of four reviewers must approve";
+    threshold: 3;
+    action: "release";
+}
+
+role Judge { can review, can vote }
+role Auditor { can inspect, can report }
+role Executor { can stage, can publish }
+
+subject LegalReviewer has Judge {
+    state vote: true;
+    on review(self, proposal) { self.vote = proposal != ""; }
+    on vote(self) { return self.vote; }
+}
+
+subject SecurityAuditor has Auditor {
+    state vote: true;
+    on inspect(self, evidence) { self.vote = evidence == "tests-pass"; }
+    on report(self) { return self.vote; }
+}
+
+subject ReleaseOperator has Executor {
+    state staged: false;
+    state published: false;
+    on stage(self) { self.staged = true; }
+    on publish(self) { self.published = self.staged; }
+}
+
+let council_members = ["LegalReviewer", "SecurityAuditor", "ReleaseOperator", "HumanOwner"];
+let quorum_required = 3;
+let community_councils = ["ReleaseCouncil"];
+
+council ReleaseCouncil {
+    constitution: "TrustedDelivery";
+    quorum: quorum_required;
+    members: council_members;
+    rules: ["ReleaseQuorum", "RequireEvidence"];
+}
+
+swarm AuditSwarm {
+    agents: ["LegalReviewer", "SecurityAuditor"];
+    strategy: "parallel";
+}
+
+community DeliveryCommunity {
+    councils: community_councils;
+    members: council_members;
+}
+
+let votes = [true, true, true, false];
+let approvals = 0;
+let i = 0;
+
+while (i < votes.length) {
+    if (votes[i]) {
+        approvals = approvals + 1;
+    }
+    i = i + 1;
+}
+
+let approved = approvals >= quorum_required;
+
+print("Constitution: " + TrustedDelivery.description);
+print("Laws: " + TrustedDelivery.laws.length);
+print("Council members: " + council_members.length);
+print("Council quorum: " + quorum_required);
+print("Approvals: " + approvals);
+print("Release approved:");
+print(approved);
+print("Audit strategy: " + AuditSwarm.strategy);
+print("Community councils: " + community_councils.length);
+print("Community members: " + council_members.length);

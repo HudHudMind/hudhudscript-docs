@@ -1,0 +1,54 @@
+// PL - Math Module
+
+function add(a, b) {
+    zwróć a + b;
+}
+
+function subtract(a, b) {
+    zwróć a - b;
+}
+
+function multiply(a, b) {
+    zwróć a * b;
+}
+
+function divide(a, b) {
+    jeśli (b == 0) {
+        drukuj("Error: Division by zero!");
+        zwróć 0;
+    } w_przeciwnym_razie {
+        zwróć a / b;
+    }
+}
+
+function square(x) {
+    zwróć x * x;
+}
+
+function cube(x) {
+    zwróć x * x * x;
+}
+
+function abs(x) {
+    jeśli (x < 0) {
+        zwróć -x;
+    } w_przeciwnym_razie {
+        zwróć x;
+    }
+}
+
+function max(a, b) {
+    jeśli (a > b) {
+        zwróć a;
+    } w_przeciwnym_razie {
+        zwróć b;
+    }
+}
+
+function min(a, b) {
+    jeśli (a < b) {
+        zwróć a;
+    } w_przeciwnym_razie {
+        zwróć b;
+    }
+}

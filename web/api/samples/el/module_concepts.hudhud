@@ -1,0 +1,42 @@
+// Ελληνικά - Modules & Code Organization
+// Demonstrates module system: χρήση/εισαγωγή like Rust, Java, C++, Python
+
+// Import math module
+χρήση "math.hudhud";
+
+// Example syntax variations:
+// χρήση "math.hudhud";
+// χρήση { add, subtract } από "math.hudhud";
+// χρήση "math.hudhud" ως math;
+
+// Using functions από math module
+ας sum = add(10, 5);
+εκτύπωση(sum);
+
+ας diff = subtract(20, 8);
+εκτύπωση(diff);
+
+ας product = multiply(4, 7);
+εκτύπωση(product);
+
+ας quotient = divide(15, 3);
+εκτύπωση(quotient);
+
+ας squared = square(5);
+εκτύπωση(squared);
+
+ας cubed = cube(3);
+εκτύπωση(cubed);
+
+ας absolute = abs(-42);
+εκτύπωση(absolute);
+
+ας maximum = max(100, 50);
+εκτύπωση(maximum);
+
+ας minimum = min(100, 50);
+εκτύπωση(minimum);
+
+// Complex calculation using multiple functions
+ας result = add(multiply(5, 3), divide(20, 4));
+εκτύπωση(result);

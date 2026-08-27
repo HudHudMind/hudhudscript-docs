@@ -1,0 +1,42 @@
+// Deutsch - Funktionen
+
+funktion grüßen() {
+    drucke("Hallo Welt!");
+}
+
+funktion addieren(a, b) {
+    zurück a + b;
+}
+
+funktion berechnen(zahl1, zahl2, operation) {
+    wenn (operation == "addieren") {
+        zurück zahl1 + zahl2;
+    } sonst {
+        zurück 0;
+    }
+}
+
+funktion quadrat(x) {
+    zurück x * x;
+}
+
+funktion würfel(x) {
+    zurück x * x * x;
+}
+
+grüßen();
+
+lasse ergebnis1 = addieren(5, 3);
+drucke(ergebnis1);
+
+lasse ergebnis2 = berechnen(10, 5, "addieren");
+drucke(ergebnis2);
+
+lasse quadrat_ergebnis = quadrat(4);
+drucke(quadrat_ergebnis);
+
+lasse würfel_ergebnis = würfel(3);
+drucke(würfel_ergebnis);
+
+lasse gesamt = addieren(quadrat(3), würfel(2));
+drucke(gesamt);

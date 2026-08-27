@@ -1,0 +1,19 @@
+// Kurdi - Demo
+fonksiyon silav(nav) {
+    vegere "Silav, " + nav + "!";
+}
+
+fonksiyon le_zede_bike(a, b) {
+    vegere a + b;
+}
+
+guherbar peyam = silav("Cihan");
+çap_bike(peyam);
+
+guherbar berhev = 0;
+guherbar hejmar = 1;
+dema_ku (hejmar <= 10) {
+    berhev = le_zede_bike(berhev, hejmar);
+    hejmar = hejmar + 1;
+}
+çap_bike("Berhev 1-10: " + berhev);

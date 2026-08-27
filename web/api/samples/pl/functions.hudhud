@@ -1,0 +1,49 @@
+// Polski - Funkcje
+// Przykłady definiowania i używania funkcji
+
+// Prosta funkcja
+funkcja przywitaj() {
+    drukuj("Witaj Świecie!");
+}
+
+// Funkcja z parametrami
+funkcja dodaj(a, b) {
+    zwróć a + b;
+}
+
+// Funkcja z wieloma parametrami
+funkcja oblicz(num1, num2, operacja) {
+    jeśli (operacja == "dodaj") {
+        zwróć num1 + num2;
+    } inaczej {
+        zwróć 0;
+    }
+}
+
+// Funkcje matematyczne
+funkcja kwadrat(x) {
+    zwróć x * x;
+}
+
+funkcja sześcian(x) {
+    zwróć x * x * x;
+}
+
+// Użycie funkcji
+przywitaj();
+
+niech wynik1 = dodaj(5, 3);
+drukuj(wynik1);
+
+niech wynik2 = oblicz(10, 5, "dodaj");
+drukuj(wynik2);
+
+niech wynik_kwadrat = kwadrat(4);
+drukuj(wynik_kwadrat);
+
+niech wynik_sześcian = sześcian(3);
+drukuj(wynik_sześcian);
+
+// Kompozycja funkcji
+niech suma = dodaj(kwadrat(3), sześcian(2));
+drukuj(suma);

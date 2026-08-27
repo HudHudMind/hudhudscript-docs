@@ -1,0 +1,13 @@
+// Polski - Tablice
+// Tablice z natywnymi słowami kluczowymi
+
+// Tworzenie tablic
+niech liczby = [1, 2, 3, 4, 5];
+niech imiona = ["Alicja", "Bartek", "Czarek"];
+
+// Dostęp do elementów
+niech pierwszy = liczby[0];
+niech drugi = liczby[1];
+
+// Wynik
+pierwszy;

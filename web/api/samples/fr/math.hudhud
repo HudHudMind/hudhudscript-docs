@@ -1,0 +1,54 @@
+// Français - Module mathématique
+
+fonction additionner(a, b) {
+    retour a + b;
+}
+
+fonction soustraire(a, b) {
+    retour a - b;
+}
+
+fonction multiplier(a, b) {
+    retour a * b;
+}
+
+fonction diviser(a, b) {
+    si (b == 0) {
+        affiche("Erreur: Division par zéro!");
+        retour 0;
+    } sinon {
+        retour a / b;
+    }
+}
+
+fonction carré(x) {
+    retour x * x;
+}
+
+fonction cube(x) {
+    retour x * x * x;
+}
+
+fonction absolue(x) {
+    si (x < 0) {
+        retour -x;
+    } sinon {
+        retour x;
+    }
+}
+
+fonction maximum(a, b) {
+    si (a > b) {
+        retour a;
+    } sinon {
+        retour b;
+    }
+}
+
+fonction minimum(a, b) {
+    si (a < b) {
+        retour a;
+    } sinon {
+        retour b;
+    }
+}

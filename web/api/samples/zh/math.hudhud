@@ -1,0 +1,63 @@
+// ZH - Math Module
+
+// Addition
+function add(a, b) {
+    返回 a + b;
+}
+
+// Subtraction
+function subtract(a, b) {
+    返回 a - b;
+}
+
+// Multiplication
+function multiply(a, b) {
+    返回 a * b;
+}
+
+// Division
+function divide(a, b) {
+    如果 (b == 0) {
+        打印("Error: Division by zero!");
+        返回 0;
+    } 否则 {
+        返回 a / b;
+    }
+}
+
+// Square
+function square(x) {
+    返回 x * x;
+}
+
+// Cube
+function cube(x) {
+    返回 x * x * x;
+}
+
+// Absolute value
+function abs(x) {
+    如果 (x < 0) {
+        返回 -x;
+    } 否则 {
+        返回 x;
+    }
+}
+
+// Maximum
+function max(a, b) {
+    如果 (a > b) {
+        返回 a;
+    } 否则 {
+        返回 b;
+    }
+}
+
+// Minimum
+function min(a, b) {
+    如果 (a < b) {
+        返回 a;
+    } 否则 {
+        返回 b;
+    }
+}

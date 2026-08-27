@@ -1,0 +1,17 @@
+// Italiano - Funzione di saluto
+
+funzione saluta(nome) {
+    variabile messaggio = "Ciao, " + nome + "!";
+    stampare(messaggio);
+    ritornare messaggio;
+}
+
+funzione somma(a, b) {
+    ritornare a + b;
+}
+
+variabile risultato = saluta("Mondo");
+stampare(risultato);
+
+variabile totale = somma(42, 58);
+stampare("totale: " + totale);

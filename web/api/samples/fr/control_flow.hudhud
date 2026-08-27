@@ -1,0 +1,23 @@
+// Français - Flux de contrôle
+soit compteur = 0;
+soit maximum = 5;
+
+// Boucle
+tantque (compteur < maximum) {
+    compteur = compteur + 1;
+}
+
+// Condition
+soit note = 85;
+
+si (note >= 90) {
+    note;
+} sinon {
+    si (note >= 80) {
+        note;
+    } sinon {
+        note;
+    }
+}
+
+compteur;

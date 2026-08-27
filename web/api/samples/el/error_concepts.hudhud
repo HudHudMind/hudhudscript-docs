@@ -1,0 +1,43 @@
+// Ελληνικά - Error Concepts
+
+συνάρτηση validate_age(age) {
+    αν (age < 0) {
+        ρίξε "Invalid age: negative";
+    }
+    αν (age > 150) {
+        ρίξε "Invalid age: too large";
+    }
+    επέστρεψε age;
+}
+
+συνάρτηση validate_email(email) {
+    αν (email == "") {
+        ρίξε "Empty email";
+    }
+    εκτύπωσε("Email valid: " + email);
+    επέστρεψε email;
+}
+
+εκτύπωσε("=== Validation ===");
+
+δοκίμασε {
+    validate_age(25);
+    εκτύπωσε("Age 25: valid");
+} πιάσε (error) {
+    εκτύπωσε("Error: " + error);
+}
+
+δοκίμασε {
+    validate_age(-5);
+} πιάσε (error) {
+    εκτύπωσε("Error: " + error);
+}
+
+δοκίμασε {
+    validate_email("user@example.com");
+    validate_email("");
+} πιάσε (error) {
+    εκτύπωσε("Email error: " + error);
+} τελικά {
+    εκτύπωσε("Validation complete");
+}

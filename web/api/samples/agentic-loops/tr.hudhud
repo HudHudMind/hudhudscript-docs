@@ -1,0 +1,78 @@
+// Türkçe — Ajan Programlama Döngü Mühendisliği
+
+// 1. Sağlayıcı Yapılandırması
+sağlayıcı DeepSeekSağlayıcı {
+    apiAnahtarı: env("DEEPSEEK_API_KEY"),
+    tür: "deepseek",
+    ad: "DeepSeek API",
+    sıcaklık: 0.7
+}
+
+// 2. Yönetişim Kuralları
+yasa etik_yasası {
+    açıklama: "Ajanlar etik ve şeffaf davranmalıdır",
+    öncelik: 1
+}
+
+yasa güvenlik_yasası {
+    açıklama: "Ajanlar zarar vermemeli veya gizliliği ihlal etmemelidir",
+    öncelik: 1
+}
+
+// 3. Anayasa ve Konsey
+anayasa ajan_anayasası {
+    yasalar: [etik_yasası, güvenlik_yasası],
+    açıklama: "Ajan Döngü Yönetişim Çerçevesi"
+}
+
+konsey denetim_konseyi {
+    üyeler: 3,
+    anayasa: ajan_anayasası,
+    açıklama: "Ajan döngü yürütmesini denetler"
+}
+
+// 4. Ajan Tanımı
+ajan otomasyon_ajanı {
+    sağlayıcı: DeepSeekSağlayıcı,
+    model: "deepseek-chat",
+    konsey: denetim_konseyi,
+    açıklama: "Hedef tabanlı otomasyon ajanı"
+}
+
+// 5. Hedef Tabanlı Döngü Otomasyonu
+işlev görevleri_işle(hedef, görevler, maks_yineleme) {
+    değişken tamamlanan = 0;
+    değişken yineleme = 0;
+    
+    yazdır("=== Hedef: " + hedef + " ===");
+    
+    iken (yineleme < maks_yineleme ve tamamlanan < görevler.say()) {
+        değişken şuanki_görev = görevler[yineleme];
+        yazdır("İşleniyor: " + şuanki_görev);
+        
+        // Ajan görevi değerlendirir ve tamamlar
+        değişken sonuç = değerlendir(hedef, şuanki_görev);
+        
+        eğer (sonuç == "başarılı") {
+            tamamlanan = tamamlanan + 1;
+            yazdır("✓ Tamamlandı: " + şuanki_görev);
+        } değilse {
+            yazdır("↻ Tekrar deneniyor: " + şuanki_görev);
+        }
+        
+        yineleme = yineleme + 1;
+    }
+    
+    dön tamamlanan;
+}
+
+// 6. Otomasyon döngüsünü çalıştır
+değişken hedef = "CI/CD dağıtım hattını otomatikleştir";
+değişken görev_listesi = ["Projeyi derle", "Testleri çalıştır", "Hazırlık ortamına dağıt", "Sağlık kontrolü yap", "Canlı ortama dağıt"];
+
+değişken tamam = görevleri_işle(hedef, görev_listesi, 50);
+yazdır("Tamamlanan: " + tamam + " / " + görev_listesi.say() + " görev");
+
+// 7. Konsey incelemesi
+değişken konsey_kararı = denetim_konseyi.incele();
+yazdır("Konsey İncelemesi: " + konsey_kararı);

@@ -1,0 +1,170 @@
+// MULTICHAIN SOFTWARE FACTORY
+// Discovery, Build, and Git Release have independent failure boundaries.
+
+chain DiscoveryChain {
+    loop Requirements {
+        step write_requirements {
+            let stage = Temp.dir("hudhud-discovery-");
+            let requirements_file = stage.path + "/requirements.json";
+            let requirements = Web.json({
+                stories: ["auth", "billing", "audit"],
+                acceptance: "all tests green"
+            });
+
+            file.write(requirements_file, requirements.body);
+            result.bytes = file.read(requirements_file).length;
+            print("Requirements: " + requirements_file);
+
+            gate requirements_gate {
+                when result.bytes > 0 -> done
+                else -> retry
+            }
+        }
+    }
+    on_done: next
+    on_fail: fail
+
+    loop Architecture {
+        step write_threat_model {
+            let stage = Temp.dir("hudhud-architecture-");
+            let threat_file = stage.path + "/threats.md";
+            let threats = "- secret leak\n- path traversal\n- process spawn\n";
+
+            file.write(threat_file, threats);
+            result.bytes = file.read(threat_file).length;
+            print("Threat model bytes: " + result.bytes);
+
+            gate architecture_gate {
+                when result.bytes == threats.length -> done
+                else -> fail
+            }
+        }
+    }
+    on_done: done
+    on_fail: fail
+}
+
+chain BuildChain {
+    loop Implementation {
+        step generate_patch_and_diff {
+            let stage = Temp.dir("hudhud-implementation-");
+            let app_file = stage.path + "/app.js";
+
+            file.write(app_file, "console.log('not-ready');\n");
+            exec.output("git -C " + stage.path + " init -q");
+            exec.output("git -C " + stage.path + " add app.js");
+            let patch_result = fs.patch_apply(
+                app_file,
+                "'not-ready'",
+                "'ready'"
+            );
+            result.diff = exec.output(
+                "git -C " + stage.path + " diff --no-ext-diff -- app.js"
+            );
+            result.output = exec.output("node " + app_file);
+            print(result.diff);
+
+            gate implementation_gate {
+                when patch_result.replacements == 1
+                    && result.output.length == 6
+                    && result.diff.length > 0 -> done
+                else -> retry
+            }
+        }
+    }
+    on_done: next
+    on_fail: fail
+
+    loop Integration {
+        step run_integration_suite {
+            let stage = Temp.dir("hudhud-build-integration-");
+            let suite_file = stage.path + "/integration.js";
+
+            file.write(
+                suite_file,
+                "const services = ['database', 'queue', 'http'];\nconsole.log(services.length);\n"
+            );
+            result.passed = exec.output("node " + suite_file);
+            print("Integration checks passed: " + result.passed);
+
+            gate integration_gate {
+                when result.passed.length == 2 -> done
+                else -> retry
+            }
+        }
+    }
+    on_done: done
+    on_fail: fail
+}
+
+chain ReleaseChain {
+    loop Approval {
+        step count_votes {
+            let votes = [1, 1, 0, 1];
+            let approvals = votes[0] + votes[1] + votes[2] + votes[3];
+
+            result.approvals = approvals;
+            result.total = votes.length;
+            print("Release approval: " + result.approvals + "/" + result.total);
+
+            gate approval_gate {
+                when result.approvals >= 3 -> done
+                else -> fail
+            }
+        }
+    }
+    on_done: next
+    on_fail: fail
+
+    loop Deploy {
+        step push_to_git_remote {
+            let work = Temp.dir("hudhud-release-work-");
+            let remote = Temp.dir("hudhud-release-remote-");
+            let artifact = work.path + "/app.js";
+
+            exec.output("git -C " + work.path + " init -q -b main");
+            exec.output("git -C " + work.path + " config user.name HudHudRelease");
+            exec.output(
+                "git -C " + work.path + " config user.email release@hudhud.local"
+            );
+            file.write(artifact, "console.log('release-0.7.358');\n");
+            exec.output("git -C " + work.path + " add app.js");
+            exec.output(
+                "git -c core.hooksPath=/dev/null -C "
+                + work.path
+                + " commit -qm release-0.7.358"
+            );
+            exec.output("git init --bare -q " + remote.path);
+            exec.output(
+                "git -C "
+                + work.path
+                + " remote add deploy "
+                + remote.path
+            );
+            exec.output("git -C " + work.path + " push -q deploy main");
+
+            let local_revision = exec.output(
+                "git -C " + work.path + " rev-parse HEAD"
+            );
+            let deployed_revision = exec.output(
+                "git --git-dir="
+                + remote.path
+                + " rev-parse refs/heads/main"
+            );
+            result.deployed = local_revision == deployed_revision;
+            result.revision = local_revision.substring(0, 12);
+            print("Git deployed revision: " + result.revision);
+
+            gate deploy_gate {
+                when result.deployed -> done
+                else -> fail
+            }
+        }
+    }
+    on_done: done
+    on_fail: fail
+}
+
+run chain DiscoveryChain;
+run chain BuildChain;
+run chain ReleaseChain;

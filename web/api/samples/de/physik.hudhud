@@ -1,0 +1,21 @@
+// Deutsch - Physics Module
+
+function geschwindigkeit(distance, time) {
+    zurück distance / time;
+}
+
+function kraft(mass, acceleration) {
+    zurück mass * acceleration;
+}
+
+function kinetischeEnergie(mass, velocity) {
+    zurück 0.5 * mass * velocity * velocity;
+}
+
+function potentielleEnergie(mass, gravity, height) {
+    zurück mass * gravity * height;
+}
+
+function impuls(mass, velocity) {
+    zurück mass * velocity;
+}

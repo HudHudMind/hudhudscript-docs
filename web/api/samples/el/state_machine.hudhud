@@ -1,0 +1,9 @@
+// State Machine Example
+ας state = "initial";
+
+αν (state == "initial") {
+    εκτύπωση("Starting");
+    state = "running";
+}
+
+εκτύπωση(state);

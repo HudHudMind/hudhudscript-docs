@@ -1,0 +1,190 @@
+// English - Subject-Oriented Programming
+// A paradigm unique to HudHudScript: modeling entities as subjects
+
+// ============================================
+// 1. Basic Subject Definition
+// ============================================
+
+subject User {
+    name: "Alice Johnson",
+    email: "alice@example.com",
+    role: "developer",
+    active: true,
+    registered: "2024-01-15"
+}
+
+subject Manager {
+    name: "Bob Smith",
+    email: "bob@example.com",
+    role: "manager",
+    active: true,
+    department: "engineering",
+    team_size: 8
+}
+
+print("=== Basic Subjects ===");
+print(User.name + " (" + User.role + ")");
+print(Manager.name + " - " + Manager.department + " department");
+
+// ============================================
+// 2. Domain Modeling
+// ============================================
+
+subject Product {
+    id: 1001,
+    name: "HudHudScript IDE Pro",
+    version: "3.0",
+    price: 299,
+    category: "software",
+    stock: 500,
+    active: true
+}
+
+subject Order {
+    id: 5001,
+    customer: "Alice Johnson",
+    product_name: "HudHudScript IDE Pro",
+    quantity: 2,
+    unit_price: 299,
+    status: "confirmed",
+    date: "2024-03-20"
+}
+
+function order_total(order) {
+    return order.quantity * order.unit_price;
+}
+
+print("\n=== Domain Modeling ===");
+print("Product: " + Product.name + " v" + Product.version + " - $" + Product.price);
+print("Stock: " + Product.stock + " units");
+let total = order_total(Order);
+print("Order #" + Order.id + ": " + Order.quantity + " units = $" + total);
+print("Status: " + Order.status);
+
+// ============================================
+// 3. Subject Interactions
+// ============================================
+
+subject Student {
+    name: "Diana Chen",
+    id: 2024001,
+    major: "Computer Science",
+    year: 3,
+    gpa: 3.45
+}
+
+subject Professor {
+    name: "Prof. James Wilson",
+    title: "Professor",
+    department: "Computer Science",
+    courses: 4
+}
+
+subject Course {
+    code: "CS301",
+    name: "Data Structures",
+    credits: 4,
+    capacity: 60,
+    enrolled: 45,
+    instructor: "Prof. James Wilson"
+}
+
+function occupancy_rate(course) {
+    return (course.enrolled * 100) / course.capacity;
+}
+
+function is_honors(student) {
+    if (student.gpa >= 3.5) {
+        return "Yes - Honors Student";
+    } else {
+        return "No";
+    }
+}
+
+print("\n=== Subject Interactions ===");
+print(Student.name + " - " + Student.major);
+print("GPA: " + Student.gpa + " - Honors: " + is_honors(Student));
+print(Course.code + " " + Course.name + " (" + Course.credits + " credits)");
+print("Occupancy: " + occupancy_rate(Course) + "%");
+print("Instructor: " + Course.instructor);
+
+// ============================================
+// 4. State Machine Pattern
+// ============================================
+
+subject Task {
+    title: "API Development",
+    description: "REST API endpoint design",
+    assignee: "Alice Johnson",
+    priority: "high",
+    status: "in_progress",
+    estimated_days: 5,
+    elapsed_days: 3
+}
+
+function task_report(task) {
+    let remaining = task.estimated_days - task.elapsed_days;
+    let percent = (task.elapsed_days * 100) / task.estimated_days;
+
+    print("Task: " + task.title);
+    print("Assignee: " + task.assignee);
+    print("Status: " + task.status + " (" + percent + "% complete)");
+    print("Remaining: " + remaining + " days");
+    return percent;
+}
+
+function advance_task(task) {
+    if (task.status == "pending") {
+        return "in_progress";
+    } else if (task.status == "in_progress") {
+        return "review";
+    } else if (task.status == "review") {
+        return "completed";
+    } else {
+        return task.status;
+    }
+}
+
+print("\n=== State Machine ===");
+task_report(Task);
+let next_status = advance_task(Task);
+print("Next status: " + next_status);
+
+// ============================================
+// 5. Factory with Subject Arrays
+// ============================================
+
+function CreateEmployee(name, department, salary) {
+    return {
+        name: name,
+        department: department,
+        salary: salary,
+        active: true
+    };
+}
+
+let team = [
+    CreateEmployee("Elif Arslan", "Backend", 95000),
+    CreateEmployee("Can Ozkan", "Frontend", 88000),
+    CreateEmployee("Seda Yildiz", "DevOps", 102000),
+    CreateEmployee("Burak Sahin", "Mobile", 91000)
+];
+
+function team_report(team) {
+    print("Team Report:");
+    print("─────────────────────────────");
+    let total_salary = 0;
+    let idx = 0;
+    while (idx < 4) {
+        let emp = team[idx];
+        print(emp.name + " | " + emp.department + " | $" + emp.salary);
+        total_salary = total_salary + emp.salary;
+        idx = idx + 1;
+    }
+    print("─────────────────────────────");
+    print("Total payroll: $" + total_salary);
+    print("Average salary: $" + (total_salary / 4));
+}
+
+print("\n=== Team Management ===");
+team_report(team);

@@ -1,0 +1,43 @@
+// فارسی - Error Concepts
+
+تابع validate_age(age) {
+    اگر (age < 0) {
+        پرتاب "Invalid age: negative";
+    }
+    اگر (age > 150) {
+        پرتاب "Invalid age: too large";
+    }
+    برگردان age;
+}
+
+تابع validate_email(email) {
+    اگر (email == "") {
+        پرتاب "Empty email";
+    }
+    چاپ("Email valid: " + email);
+    برگردان email;
+}
+
+چاپ("=== Validation ===");
+
+امتحان {
+    validate_age(25);
+    چاپ("Age 25: valid");
+} بگیر (error) {
+    چاپ("Error: " + error);
+}
+
+امتحان {
+    validate_age(-5);
+} بگیر (error) {
+    چاپ("Error: " + error);
+}
+
+امتحان {
+    validate_email("user@example.com");
+    validate_email("");
+} بگیر (error) {
+    چاپ("Email error: " + error);
+} در_نهایت {
+    چاپ("Validation complete");
+}

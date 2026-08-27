@@ -1,0 +1,21 @@
+// TH - Physics Module
+
+ฟังก์ชัน speed(distance, time) {
+    คืนค่า distance / time;
+}
+
+ฟังก์ชัน force(mass, acceleration) {
+    คืนค่า mass * acceleration;
+}
+
+ฟังก์ชัน kineticEnergy(mass, velocity) {
+    คืนค่า 0.5 * mass * velocity * velocity;
+}
+
+ฟังก์ชัน potentialEnergy(mass, gravity, height) {
+    คืนค่า mass * gravity * height;
+}
+
+ฟังก์ชัน momentum(mass, velocity) {
+    คืนค่า mass * velocity;
+}

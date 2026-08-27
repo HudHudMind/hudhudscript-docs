@@ -1,0 +1,29 @@
+// fr - Switch Concepts
+// Using if-else for multiple conditions
+
+function dayType(day) {
+    if (day == "Monday") { return "Weekday"; }
+    if (day == "Tuesday") { return "Weekday"; }
+    if (day == "Wednesday") { return "Weekday"; }
+    if (day == "Thursday") { return "Weekday"; }
+    if (day == "Friday") { return "Weekday"; }
+    if (day == "Saturday") { return "Weekend"; }
+    if (day == "Sunday") { return "Weekend"; }
+    return "Unknown";
+}
+
+print("=== Day Types ===");
+print("Monday: " + dayType("Monday"));
+print("Saturday: " + dayType("Saturday"));
+print("Holiday: " + dayType("Holiday"));
+
+function statusMessage(code) {
+    if (code == 200) { return "OK"; }
+    if (code == 404) { return "Not Found"; }
+    if (code == 500) { return "Server Error"; }
+    return "Unknown";
+}
+
+print("=== HTTP Status ===");
+print("200: " + statusMessage(200));
+print("404: " + statusMessage(404));

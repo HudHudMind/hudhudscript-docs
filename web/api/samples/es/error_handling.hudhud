@@ -1,0 +1,50 @@
+// Español - Manejo de errores
+// Control de errores simple con if-else
+
+// Función que verifica errores
+función dividir(a, b) {
+    si (b == 0) {
+        devolver { error: verdadero, mensaje: "Error de división por cero", valor: 0 };
+    }
+    devolver { error: falso, mensaje: "", valor: a / b };
+}
+
+imprimir("=== Operación de División ===");
+
+// Primera división
+imprimir("Operación 10 / 2:");
+definir resultado1 = dividir(10, 2);
+si (resultado1.error) {
+    imprimir("Error: " + resultado1.mensaje);
+} sino {
+    imprimir("10 / 2 = " + resultado1.valor);
+}
+
+// División por cero
+imprimir("Operación 10 / 0:");
+definir resultado2 = dividir(10, 0);
+si (resultado2.error) {
+    imprimir("Error capturado: " + resultado2.mensaje);
+} sino {
+    imprimir("Resultado: " + resultado2.valor);
+}
+
+// Ejemplo de procesamiento de archivos
+imprimir("=== Procesamiento de Archivos ===");
+
+función procesar_archivo(nombre) {
+    si (nombre == "") {
+        devolver { exitoso: falso, mensaje: "Error: nombre de archivo vacío" };
+    }
+    imprimir("Procesando: " + nombre);
+    devolver { exitoso: verdadero, datos: "Datos de " + nombre };
+}
+
+definir resultado_archivo = procesar_archivo("reporte.txt");
+si (resultado_archivo.exitoso) {
+    imprimir("Resultado: " + resultado_archivo.datos);
+} sino {
+    imprimir("Error: " + resultado_archivo.mensaje);
+}
+
+imprimir("Todo completado");

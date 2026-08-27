@@ -1,0 +1,36 @@
+// 中文 - Event Concepts
+
+事件 UserLogin {
+    打印("User logged in");
+}
+
+事件 DataReceived {
+    打印("Data received");
+}
+
+事件 ErrorOccurred {
+    打印("Error occurred");
+}
+
+函数 on_login(username) {
+    打印("Login: " + username);
+    返回 "Welcome, " + username;
+}
+
+函数 on_data(source) {
+    打印("Data from: " + source);
+    返回 "Processed: " + source;
+}
+
+函数 on_error(message) {
+    打印("Error: " + message);
+    返回 "Handled: " + message;
+}
+
+打印("=== Event System ===");
+变量 r1 = on_login("admin");
+打印(r1);
+变量 r2 = on_data("sensor_1");
+打印(r2);
+变量 r3 = on_error("timeout");
+打印(r3);

@@ -1,0 +1,12 @@
+// ภาษาไทย - Data Processing
+// Using NATIVE ภาษาไทย keywords
+
+ให้ value1 = 100;
+ให้ value2 = 200;
+ให้ value3 = 300;
+
+ให้ total = value1+ value2+ value3;
+ให้ average = total / 3;
+
+พิมพ์(total);
+พิมพ์(average);

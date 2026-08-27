@@ -1,0 +1,54 @@
+// Italiano - Modulo di matematica
+
+funzione somma(a, b) {
+    ritorna a + b;
+}
+
+funzione sottrai(a, b) {
+    ritorna a - b;
+}
+
+funzione moltiplica(a, b) {
+    ritorna a * b;
+}
+
+funzione dividi(a, b) {
+    se (b == 0) {
+        stampa("Errore: Divisione per zero!");
+        ritorna 0;
+    } altrimenti {
+        ritorna a / b;
+    }
+}
+
+funzione quadrato(x) {
+    ritorna x * x;
+}
+
+funzione cubo(x) {
+    ritorna x * x * x;
+}
+
+funzione valore_assoluto(x) {
+    se (x < 0) {
+        ritorna -x;
+    } altrimenti {
+        ritorna x;
+    }
+}
+
+funzione massimo(a, b) {
+    se (a > b) {
+        ritorna a;
+    } altrimenti {
+        ritorna b;
+    }
+}
+
+funzione minimo(a, b) {
+    se (a < b) {
+        ritorna a;
+    } altrimenti {
+        ritorna b;
+    }
+}

@@ -1,0 +1,21 @@
+// العربية - Physics Module
+
+دالة سرعة(distance, time) {
+    ارجع distance / time;
+}
+
+دالة قوة(mass, acceleration) {
+    ارجع mass * acceleration;
+}
+
+دالة طاقةحركية(mass, velocity) {
+    ارجع 0.5 * mass * velocity * velocity;
+}
+
+دالة طاقةكامنة(mass, gravity, height) {
+    ارجع mass * gravity * height;
+}
+
+دالة زخم(mass, velocity) {
+    ارجع mass * velocity;
+}

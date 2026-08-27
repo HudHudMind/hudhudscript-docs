@@ -1,0 +1,13 @@
+// Français - Tableaux
+// Tableaux avec mots-clés natifs
+
+// Créer des tableaux
+soit nombres = [1, 2, 3, 4, 5];
+soit prénoms = ["Alice", "Bernard", "Charles"];
+
+// Accéder aux éléments
+soit premier = nombres[0];
+soit deuxième = nombres[1];
+
+// Résultat
+premier;

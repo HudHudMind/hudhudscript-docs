@@ -1,0 +1,42 @@
+// Српски - Modules & Code Organization
+// Demonstrates module system: користи/увези like Rust, Java, C++, Python
+
+// Import math module
+користи "math.hudhud";
+
+// Example syntax variations:
+// користи "math.hudhud";
+// користи { add, subtract } од "math.hudhud";
+// користи "math.hudhud" као math;
+
+// Using functions из math module
+нека sum = add(10, 5);
+штампај(sum);
+
+нека diff = subtract(20, 8);
+штампај(diff);
+
+нека product = multiply(4, 7);
+штампај(product);
+
+нека quotient = divide(15, 3);
+штампај(quotient);
+
+нека squared = square(5);
+штампај(squared);
+
+нека cubed = cube(3);
+штампај(cubed);
+
+нека absolute = abs(-42);
+штампај(absolute);
+
+нека maximum = max(100, 50);
+штампај(maximum);
+
+нека minimum = min(100, 50);
+штампај(minimum);
+
+// Complex calculation using multiple functions
+нека result = add(multiply(5, 3), divide(20, 4));
+штампај(result);

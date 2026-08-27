@@ -1,0 +1,9 @@
+// State Machine Example
+пусть state = "initial";
+
+если (state == "initial") {
+    печать("Starting");
+    state = "running";
+}
+
+печать(state);

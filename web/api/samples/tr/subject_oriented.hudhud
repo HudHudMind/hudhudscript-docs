@@ -1,0 +1,190 @@
+// Türkçe - Özne Yönelimli Programlama
+// HudHudScript'e özgü paradigma: varlıkları özne olarak modelleme
+
+// ============================================
+// 1. Temel Özne Tanımlama
+// ============================================
+
+özne Kullanıcı {
+    isim: "Ayşe Yılmaz",
+    eposta: "ayse@ornek.com",
+    rol: "geliştirici",
+    aktif: doğru,
+    kayıt_tarihi: "2024-01-15"
+}
+
+özne Yönetici {
+    isim: "Mehmet Kaya",
+    eposta: "mehmet@ornek.com",
+    rol: "yönetici",
+    aktif: doğru,
+    departman: "mühendislik",
+    takım_büyüklüğü: 8
+}
+
+yaz("=== Temel Özneler ===");
+yaz(Kullanıcı.isim + " (" + Kullanıcı.rol + ")");
+yaz(Yönetici.isim + " - " + Yönetici.departman + " departmanı");
+
+// ============================================
+// 2. İş Alanı Modelleme
+// ============================================
+
+özne Ürün {
+    kimlik: 1001,
+    isim: "HudHudScript IDE Pro",
+    sürüm: "3.0",
+    fiyat: 299,
+    kategori: "yazılım",
+    stok: 500,
+    aktif: doğru
+}
+
+özne Sipariş {
+    kimlik: 5001,
+    müşteri: "Ayşe Yılmaz",
+    ürün_adı: "HudHudScript IDE Pro",
+    adet: 2,
+    birim_fiyat: 299,
+    durum: "onaylandı",
+    tarih: "2024-03-20"
+}
+
+işlev sipariş_tutarı(sipariş) {
+    dön sipariş.adet * sipariş.birim_fiyat;
+}
+
+yaz("\n=== İş Alanı Modelleme ===");
+yaz("Ürün: " + Ürün.isim + " v" + Ürün.sürüm + " - " + Ürün.fiyat + " TL");
+yaz("Stok: " + Ürün.stok + " adet");
+değişken tutar = sipariş_tutarı(Sipariş);
+yaz("Sipariş #" + Sipariş.kimlik + ": " + Sipariş.adet + " adet = " + tutar + " TL");
+yaz("Durum: " + Sipariş.durum);
+
+// ============================================
+// 3. Özne Etkileşimleri
+// ============================================
+
+özne Öğrenci {
+    isim: "Elif Demir",
+    numara: 2024001,
+    bölüm: "Bilgisayar Mühendisliği",
+    sınıf: 3,
+    not_ortalaması: 3.45
+}
+
+özne Öğretim_Üyesi {
+    isim: "Prof. Dr. Ali Vural",
+    unvan: "Profesör",
+    bölüm: "Bilgisayar Mühendisliği",
+    ders_sayısı: 4
+}
+
+özne Ders {
+    kod: "BM301",
+    isim: "Veri Yapıları",
+    kredi: 4,
+    kontenjan: 60,
+    kayıtlı: 45,
+    öğretim_üyesi: "Prof. Dr. Ali Vural"
+}
+
+işlev doluluk_oranı(ders) {
+    dön (ders.kayıtlı * 100) / ders.kontenjan;
+}
+
+işlev onur_öğrencisi_mi(öğrenci) {
+    eğer (öğrenci.not_ortalaması >= 3.5) {
+        dön "Evet - Onur Öğrencisi";
+    } hiçbiri değilse {
+        dön "Hayır";
+    }
+}
+
+yaz("\n=== Özne Etkileşimleri ===");
+yaz(Öğrenci.isim + " - " + Öğrenci.bölüm);
+yaz("Not Ortalaması: " + Öğrenci.not_ortalaması + " - Onur: " + onur_öğrencisi_mi(Öğrenci));
+yaz(Ders.kod + " " + Ders.isim + " (" + Ders.kredi + " kredi)");
+yaz("Doluluk: " + doluluk_oranı(Ders) + "%");
+yaz("Veren: " + Ders.öğretim_üyesi);
+
+// ============================================
+// 4. Durum Makinesi (State Pattern)
+// ============================================
+
+özne Görev {
+    başlık: "API Geliştirme",
+    açıklama: "REST API endpoint tasarımı",
+    sorumlu: "Ayşe Yılmaz",
+    öncelik: "yüksek",
+    durum: "devam_ediyor",
+    tahmini_süre: 5,
+    geçen_süre: 3
+}
+
+işlev görev_durumu(görev) {
+    değişken kalan = görev.tahmini_süre - görev.geçen_süre;
+    değişken yüzde = (görev.geçen_süre * 100) / görev.tahmini_süre;
+
+    yaz("Görev: " + görev.başlık);
+    yaz("Sorumlu: " + görev.sorumlu);
+    yaz("Durum: " + görev.durum + " (" + yüzde + "% tamamlandı)");
+    yaz("Kalan süre: " + kalan + " gün");
+    dön yüzde;
+}
+
+işlev görev_ilerlet(görev) {
+    eğer (görev.durum == "bekliyor") {
+        dön "devam_ediyor";
+    } değilse ama (görev.durum == "devam_ediyor") {
+        dön "inceleme";
+    } değilse ama (görev.durum == "inceleme") {
+        dön "tamamlandı";
+    } hiçbiri değilse {
+        dön görev.durum;
+    }
+}
+
+yaz("\n=== Durum Makinesi ===");
+görev_durumu(Görev);
+değişken sonraki = görev_ilerlet(Görev);
+yaz("Sonraki durum: " + sonraki);
+
+// ============================================
+// 5. Fabrika ile Özne Dizileri
+// ============================================
+
+işlev ÇalışanOluştur(isim, departman, maaş) {
+    dön {
+        isim: isim,
+        departman: departman,
+        maaş: maaş,
+        aktif: doğru
+    };
+}
+
+değişken takım = [
+    ÇalışanOluştur("Elif Arslan", "Backend", 35000),
+    ÇalışanOluştur("Can Özkan", "Frontend", 32000),
+    ÇalışanOluştur("Seda Yıldız", "DevOps", 38000),
+    ÇalışanOluştur("Burak Şahin", "Mobil", 34000)
+];
+
+işlev departman_raporu(takım) {
+    yaz("Takım Raporu:");
+    yaz("─────────────────────────");
+    değişken toplam_maaş = 0;
+    değişken idx = 0;
+    iken (idx < 4) {
+        değişken çalışan = takım[idx];
+        yaz(çalışan.isim + " | " + çalışan.departman + " | " + çalışan.maaş + " TL");
+        toplam_maaş = toplam_maaş + çalışan.maaş;
+        idx = idx + 1;
+    }
+    yaz("─────────────────────────");
+    yaz("Toplam maaş gideri: " + toplam_maaş + " TL");
+    yaz("Ortalama maaş: " + (toplam_maaş / 4) + " TL");
+}
+
+yaz("\n=== Takım Yönetimi ===");
+departman_raporu(takım);

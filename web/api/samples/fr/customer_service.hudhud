@@ -1,0 +1,8 @@
+// Français - Agent de Service Client
+// Utilisant les mots-clés NATIFS du Français
+
+soit salutation = "Bonjour, comment puis-je vous aider?";
+soit réponse = "Je vais vous aider avec votre demande.";
+
+affiche(salutation);
+affiche(réponse);

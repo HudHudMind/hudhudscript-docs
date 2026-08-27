@@ -1,0 +1,10 @@
+// Bosanski - Petlje
+neka brojač = 0;
+neka maksimum = 5;
+
+dok (brojač < maksimum) {
+    ispiši(brojač);
+    brojač = brojač + 1;
+}
+
+ispiši(999);

@@ -1,0 +1,21 @@
+// SR - Physics Module
+
+на speed(distance, time) {
+    врати distance / time;
+}
+
+на force(mass, acceleration) {
+    врати mass * acceleration;
+}
+
+на kineticEnergy(mass, velocity) {
+    врати 0.5 * mass * velocity * velocity;
+}
+
+на potentialEnergy(mass, gravity, height) {
+    врати mass * gravity * height;
+}
+
+на momentum(mass, velocity) {
+    врати mass * velocity;
+}

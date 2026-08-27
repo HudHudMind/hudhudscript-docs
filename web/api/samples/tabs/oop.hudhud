@@ -1,0 +1,66 @@
+// OBJECT-ORIENTED PROGRAMMING
+// Private/protected members, constructors, super, inheritance,
+// method overriding, traits, and fluent method chaining.
+
+trait Describable {
+    function describe();
+}
+
+class Account implements Describable {
+    private let balance = 0;
+    protected let owner = "";
+
+    constructor(owner, opening_balance) {
+        this.owner = owner;
+        this.balance = opening_balance;
+    }
+
+    private normalize(amount) {
+        if (amount < 0) {
+            return 0;
+        }
+        return amount;
+    }
+
+    protected apply_bonus(rate) {
+        this.balance = this.balance + (this.balance * rate);
+    }
+
+    public deposit(amount) {
+        let safe_amount = this.normalize(amount);
+        this.balance = this.balance + safe_amount;
+        return this;
+    }
+
+    public value() {
+        return this.balance;
+    }
+
+    public describe() {
+        return this.owner + " account";
+    }
+}
+
+class SavingsAccount extends Account implements Describable {
+    constructor(owner, opening_balance) {
+        super(owner, opening_balance);
+    }
+
+    public grow(rate) {
+        this.apply_bonus(rate);
+        return this;
+    }
+
+    public describe() {
+        return "Savings: " + this.owner;
+    }
+}
+
+let account = new SavingsAccount("Ada", 100);
+account.deposit(50).grow(0.10);
+
+let final_balance = account.value();
+let label = account.describe();
+
+print("Description: " + label);
+print("Balance: " + final_balance);

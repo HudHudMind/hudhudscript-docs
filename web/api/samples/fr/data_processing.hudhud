@@ -1,0 +1,12 @@
+// Français - Data Processing
+// Using NATIVE Français keywords
+
+variable value1 = 100;
+variable value2 = 200;
+variable value3 = 300;
+
+variable total = value1+ value2+ value3;
+variable average = total / 3;
+
+afficher(total);
+afficher(average);

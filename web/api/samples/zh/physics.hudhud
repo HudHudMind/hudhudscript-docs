@@ -1,0 +1,26 @@
+// ZH - Physics Module
+
+// Speed = Distance / Time
+函数 speed(distance, time) {
+    返回 distance / time;
+}
+
+// Force = Mass * Acceleration
+函数 force(mass, acceleration) {
+    返回 mass * acceleration;
+}
+
+// Kinetic Energy = 0.5 * Mass * Velocity^2
+函数 kineticEnergy(mass, velocity) {
+    返回 0.5 * mass * velocity * velocity;
+}
+
+// Potential Energy = Mass * Gravity * Height
+函数 potentialEnergy(mass, gravity, height) {
+    返回 mass * gravity * height;
+}
+
+// Momentum = Mass * Velocity
+函数 momentum(mass, velocity) {
+    返回 mass * velocity;
+}

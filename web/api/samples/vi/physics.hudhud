@@ -1,0 +1,21 @@
+// VI - Physics Module
+
+hàm speed(distance, time) {
+    trả_về distance / time;
+}
+
+hàm force(mass, acceleration) {
+    trả_về mass * acceleration;
+}
+
+hàm kineticEnergy(mass, velocity) {
+    trả_về 0.5 * mass * velocity * velocity;
+}
+
+hàm potentialEnergy(mass, gravity, height) {
+    trả_về mass * gravity * height;
+}
+
+hàm momentum(mass, velocity) {
+    trả_về mass * velocity;
+}

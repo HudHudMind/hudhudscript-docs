@@ -1,0 +1,9 @@
+// State Machine Example
+定義 state = "initial";
+
+もし (state == "initial") {
+    表示("Starting");
+    state = "running";
+}
+
+表示(state);

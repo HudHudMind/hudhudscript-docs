@@ -1,0 +1,62 @@
+// Deutsch - Code Organization by Topic
+// Organizing code into logical folders
+
+// Project Structure:
+// 
+// project/
+//   ├── agent/
+//   │   ├── agent_definition.hudhud
+//   │   ├── agent_tasks.hudhud
+//   │   ├── agent_tools.hudhud
+//   │   └── agent_providers.hudhud
+//   │
+//   ├── constitution/
+//   │   ├── constitution.hudhud
+//   │   ├── laws.hudhud
+//   │   ├── rules.hudhud
+//   │   ├── ruleset.hudhud
+//   │   └── rulechain.hudhud
+//   │
+//   ├── data/
+//   │   ├── note.hudhud
+//   │   ├── chord.hudhud
+//   │   ├── melody.hudhud
+//   │   ├── harmony.hudhud
+//   │   └── rhythm.hudhud
+//   │
+//   ├── governance/
+//   │   ├── council.hudhud
+//   │   ├── swarm.hudhud
+//   │   ├── community.hudhud
+//   │   └── enforcement.hudhud
+//   │
+//   ├── flow/
+//   │   ├── dataflow.hudhud
+//   │   ├── layer.hudhud
+//   │   ├── network.hudhud
+//   │   └── orchestration.hudhud
+//   │
+//   ├── state/
+//   │   ├── entity.hudhud
+//   │   ├── state_machine.hudhud
+//   │   ├── event.hudhud
+//   │   └── intent.hudhud
+//   │
+//   └── utils/
+//       ├── math.hudhud
+//       ├── physics.hudhud
+//       ├── chemistry.hudhud
+//       └── helpers.hudhud
+
+// Benefits of this organization:
+// 1. Clear separation of concerns
+// 2. Easy to find related code
+// 3. Scalable für large projects
+// 4. Team collaboration friendly
+// 5. Modular and maintainable
+
+// Example imports:
+// verwenden "agent/agent_definition.hudhud";
+// verwenden "constitution/laws.hudhud";
+// verwenden "data/note.hudhud";
+// verwenden "utils/math.hudhud";

@@ -1,0 +1,17 @@
+// Indonesia - Fungsi salam
+
+fungsi sapa(nama) {
+    variabel pesan = "Halo, " + nama + "!";
+    cetak(pesan);
+    kembali pesan;
+}
+
+fungsi tambah(a, b) {
+    kembali a + b;
+}
+
+variabel hasil = sapa("Dunia");
+cetak(hasil);
+
+variabel jumlah = tambah(42, 58);
+cetak("jumlah: " + jumlah);

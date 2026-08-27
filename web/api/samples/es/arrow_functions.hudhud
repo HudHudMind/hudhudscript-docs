@@ -1,0 +1,27 @@
+// Espanol - Funciones Flecha
+// Sintaxis moderna y concisa para funciones
+
+// Funcion flecha - sintaxis corta
+sea sumar = (a, b) => a + b;
+sea multiplicar = (x, y) => x * y;
+
+imprime(sumar(5, 3));      // 8
+imprime(multiplicar(4, 7)); // 28
+
+// Funcion flecha con bloque
+sea calcular = (a, b) => {
+    sea suma = a + b;
+    sea producto = a * b;
+    retorna suma + producto;
+};
+
+sea resultado = calcular(5, 3);
+imprime(resultado);  // 23 (8 + 15)
+
+// Un solo parametro (no se necesitan parentesis)
+sea cuadrado = x => x * x;
+imprime(cuadrado(6));  // 36
+
+// Sin parametros
+sea saludar = () => "Hola!";
+imprime(saludar());  // Hola!

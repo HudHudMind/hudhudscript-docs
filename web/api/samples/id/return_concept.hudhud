@@ -1,0 +1,44 @@
+// Bahasa Indonesia - Konsep Return
+// return
+
+fungsi kuadrat(x) {
+    kembalikan x * x;
+}
+
+fungsi kubik(x) {
+    kembalikan x * x * x;
+}
+
+cetak("=== Math Functions ===");
+cetak("kuadrat(5): " + kuadrat(5));
+cetak("kubik(3): " + kubik(3));
+
+fungsi absolut(x) {
+    jika (x < 0) {
+        kembalikan -x;
+    }
+    kembalikan x;
+}
+
+cetak("\n=== Absolute ===");
+cetak("absolut(-7): " + absolut(-7));
+cetak("absolut(3): " + absolut(3));
+
+fungsi buat_titik(x, y) {
+    kembalikan { x: x, y: y };
+}
+
+biar p = buat_titik(10, 20);
+cetak("\n=== Point ===");
+cetak("Point: (" + p.x + ", " + p.y + ")");
+
+fungsi faktorial(n) {
+    jika (n <= 1) {
+        kembalikan 1;
+    }
+    kembalikan n * faktorial(n - 1);
+}
+
+cetak("\n=== Factorial ===");
+cetak("5! = " + faktorial(5));
+cetak("10! = " + faktorial(10));

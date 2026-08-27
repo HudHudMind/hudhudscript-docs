@@ -1,0 +1,51 @@
+// TERMINAL UI
+// Uses ratatui on a real terminal and the same state model in headless runners.
+
+use tui;
+
+let active_agents = 4;
+let completed_tasks = 3;
+let total_tasks = 5;
+let progress = completed_tasks * 100 / total_tasks;
+let agents = [
+    "planner: done",
+    "builder: active",
+    "reviewer: waiting",
+    "judge: waiting"
+];
+let interactive = Terminal.isatty();
+
+if (interactive) {
+    tui.init();
+    tui.block({
+        title: "HudHudScript Agent Monitor",
+        borders: "all",
+        area: { x: 0, y: 0, width: 48, height: 3 }
+    });
+    tui.paragraph({
+        text: "Agents: " + active_agents + " | Tasks: " + completed_tasks + "/" + total_tasks,
+        style: { fg: "green", bold: 1 },
+        area: { x: 1, y: 1, width: 46, height: 1 }
+    });
+    tui.list({
+        items: agents,
+        area: { x: 0, y: 4, width: 48, height: 5 }
+    });
+    tui.gauge({
+        value: progress,
+        max: 100,
+        label: "Pipeline Progress",
+        style: { fg: "cyan" },
+        area: { x: 0, y: 10, width: 48, height: 1 }
+    });
+    tui.draw();
+    let event = tui.poll_event(2000);
+    tui.restore();
+} else {
+    print("HudHudScript Agent Monitor");
+    print("Agents: " + active_agents + " | Tasks: " + completed_tasks + "/" + total_tasks);
+    print(agents);
+}
+
+print("Completed tasks: " + completed_tasks);
+print("Progress: " + progress);

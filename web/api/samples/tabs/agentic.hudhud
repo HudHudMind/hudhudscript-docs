@@ -1,0 +1,74 @@
+// AGENTIC PROGRAMMING
+// Provider and council topology. No paid API call is made in this offline demo.
+
+provider DeepSeek {
+    type: "deepseek";
+    model: "deepseek-chat";
+    api_key: env("DEEPSEEK_API_KEY");
+}
+
+provider OpenAI {
+    type: "openai";
+    model: "gpt-4o";
+    api_key: env("OPENAI_API_KEY");
+}
+
+provider Anthropic {
+    type: "anthropic";
+    model: "claude-3-5-sonnet-20241022";
+    api_key: env("ANTHROPIC_API_KEY");
+}
+
+provider Kimi {
+    type: "kimi";
+    model: "moonshot-v1-8k";
+    api_key: env("KIMI_API_KEY");
+}
+
+agent Planner {
+    role: "planner";
+    intent: "Turn the question into an evidence-backed plan";
+    provider: DeepSeek;
+}
+
+agent Critic {
+    role: "critic";
+    intent: "Find unsupported assumptions and failure modes";
+    provider: Anthropic;
+}
+
+agent Implementer {
+    role: "implementer";
+    intent: "Produce the smallest verifiable implementation";
+    provider: OpenAI;
+}
+
+agent Judge {
+    role: "judge";
+    intent: "Compare evidence and issue the final verdict";
+    provider: Kimi;
+}
+
+let council_members = ["Planner", "Critic", "Implementer", "Judge"];
+let quorum_required = 3;
+
+council ModelCouncil {
+    quorum: quorum_required;
+    members: council_members;
+    rules: ["cite-evidence", "critic-must-review", "three-votes-required"];
+}
+
+let question = "How should we ship a safe parser change?";
+let roles = [Planner.role, Critic.role, Implementer.role, Judge.role];
+let provider_types = [
+    DeepSeek.type,
+    Anthropic.type,
+    OpenAI.type,
+    Kimi.type
+];
+
+print("Question: " + question);
+print("Council members: " + council_members.length);
+print("Council quorum: " + quorum_required);
+print("Flow: " + roles[0] + " -> " + roles[1] + " -> " + roles[2] + " -> " + roles[3]);
+print("Providers: " + provider_types[0] + ", " + provider_types[1] + ", " + provider_types[2] + ", " + provider_types[3]);

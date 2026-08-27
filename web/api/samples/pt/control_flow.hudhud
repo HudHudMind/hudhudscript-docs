@@ -1,0 +1,23 @@
+// Português - Fluxo de Controle
+variável contador = 0;
+variável máximo = 5;
+
+// Loop
+enquanto (contador < máximo) {
+    contador = contador + 1;
+}
+
+// Conditional
+variável pontuação = 85;
+
+se (pontuação >= 90) {
+    pontuação;
+} senão {
+    se (pontuação >= 80) {
+        pontuação;
+    } senão {
+        pontuação;
+    }
+}
+
+contador;

@@ -1,0 +1,23 @@
+// Deutsch - Kontrollfluss
+variable zähler = 0;
+variable maximum = 5;
+
+// Loop
+während (zähler < maximum) {
+    zähler = zähler + 1;
+}
+
+// Conditional
+variable punktzahl = 85;
+
+wenn (punktzahl >= 90) {
+    punktzahl;
+} sonst {
+    wenn (punktzahl >= 80) {
+        punktzahl;
+    } sonst {
+        punktzahl;
+    }
+}
+
+zähler;

@@ -1,0 +1,36 @@
+// Ελληνικά - Event Concepts
+
+γεγονός UserLogin {
+    εκτύπωσε("User logged in");
+}
+
+γεγονός DataReceived {
+    εκτύπωσε("Data received");
+}
+
+γεγονός ErrorOccurred {
+    εκτύπωσε("Error occurred");
+}
+
+συνάρτηση on_login(username) {
+    εκτύπωσε("Login: " + username);
+    επέστρεψε "Welcome, " + username;
+}
+
+συνάρτηση on_data(source) {
+    εκτύπωσε("Data from: " + source);
+    επέστρεψε "Processed: " + source;
+}
+
+συνάρτηση on_error(message) {
+    εκτύπωσε("Error: " + message);
+    επέστρεψε "Handled: " + message;
+}
+
+εκτύπωσε("=== Event System ===");
+έστω r1 = on_login("admin");
+εκτύπωσε(r1);
+έστω r2 = on_data("sensor_1");
+εκτύπωσε(r2);
+έστω r3 = on_error("timeout");
+εκτύπωσε(r3);

@@ -1,0 +1,70 @@
+// English - Switch/Case Concepts
+// Using if-else for multiple conditions
+
+function day_type(day) {
+    if (day == "Monday") {
+        return "Weekday";
+    }
+    if (day == "Tuesday") {
+        return "Weekday";
+    }
+    if (day == "Wednesday") {
+        return "Weekday";
+    }
+    if (day == "Thursday") {
+        return "Weekday";
+    }
+    if (day == "Friday") {
+        return "Weekday";
+    }
+    if (day == "Saturday") {
+        return "Weekend";
+    }
+    if (day == "Sunday") {
+        return "Weekend";
+    }
+    return "Unknown";
+}
+
+print("=== Day Types ===");
+print("Monday: " + day_type("Monday"));
+print("Saturday: " + day_type("Saturday"));
+print("Holiday: " + day_type("Holiday"));
+
+function grade_letter(score) {
+    if (score == 90) {
+        return "A";
+    }
+    if (score == 80) {
+        return "B";
+    }
+    if (score == 70) {
+        return "C";
+    }
+    if (score == 60) {
+        return "D";
+    }
+    return "F";
+}
+
+print("=== Grades ===");
+print("90: " + grade_letter(90));
+print("70: " + grade_letter(70));
+print("50: " + grade_letter(50));
+
+function status_message(code) {
+    if (code == 200) {
+        return "OK";
+    }
+    if (code == 404) {
+        return "Not Found";
+    }
+    if (code == 500) {
+        return "Server Error";
+    }
+    return "Unknown Status";
+}
+
+print("=== HTTP Status ===");
+print("200: " + status_message(200));
+print("404: " + status_message(404));

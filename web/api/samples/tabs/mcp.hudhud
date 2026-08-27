@@ -1,0 +1,43 @@
+// MODEL CONTEXT PROTOCOL
+// The offline sample models the same typed server/tool manifest without
+// starting a process. Live `mcp` declarations require sandbox permission.
+
+let workspace = {
+    name: "Workspace",
+    transport: "stdio",
+    command: "npx",
+    tools: [
+        { name: "read_file", input: "path:string" },
+        { name: "write_file", input: "path:string,content:string" }
+    ]
+};
+
+let issue_tracker = {
+    name: "IssueTracker",
+    transport: "sse",
+    url: "http://127.0.0.1:8081/mcp",
+    tools: [
+        { name: "get_issue", input: "id:string" }
+    ]
+};
+
+let servers = [workspace, issue_tracker];
+let tool_count = workspace.tools.length + issue_tracker.tools.length;
+
+agent Maintainer {
+    role: "maintainer";
+    intent: "Inspect source, implement a patch, and update its issue";
+}
+
+print("Servers: " + servers.length);
+print("Tools: " + tool_count);
+print("Workspace transport: " + workspace.transport);
+print("Issue tracker transport: " + issue_tracker.transport);
+print("Agent role: " + Maintainer.role);
+
+// Live syntax, intentionally not executed by the public website:
+// mcp Workspace {
+//     transport: "stdio";
+//     command: "npx";
+//     tool read_file(path: string) { return path; }
+// }

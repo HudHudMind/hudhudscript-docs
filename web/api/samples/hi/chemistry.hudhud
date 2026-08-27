@@ -1,0 +1,21 @@
+// HI - Chemistry Module
+
+फ़ंक्शन molarMass(atoms, atomicWeight) {
+    वापस_करो atoms * atomicWeight;
+}
+
+फ़ंक्शन concentration(moles, volume) {
+    वापस_करो moles / volume;
+}
+
+फ़ंक्शन pH(hydrogenConcentration) {
+    वापस_करो 14 - hydrogenConcentration;
+}
+
+फ़ंक्शन density(mass, volume) {
+    वापस_करो mass / volume;
+}
+
+फ़ंक्शन dilution(c1, v1, v2) {
+    वापस_करो (c1 * v1) / v2;
+}

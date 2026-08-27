@@ -1,0 +1,6 @@
+// Português - Basic Example with NATIVE keywords
+variável a = 10;
+variável b = 20;
+variável soma = a + b;
+
+imprimir(soma);

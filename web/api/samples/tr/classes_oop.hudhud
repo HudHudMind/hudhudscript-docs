@@ -1,0 +1,167 @@
+// Türkçe - Sınıflar ve Nesne Yönelimli Programlama (OOP)
+// HudHudScript'te sınıf tabanlı programlama
+
+// ============================================
+// 1. Temel Sınıf Tanımlama
+// ============================================
+
+// Erişim belirleyicileri: açık (public), gizli (private), saklı (protected)
+sınıf Hayvan {
+    açık değişken isim = "Bilinmiyor";
+    açık değişken tür = "Bilinmiyor";
+    açık değişken yaş = 0;
+    açık değişken canlı = doğru;
+    gizli değişken kimlik = "H-001";
+}
+
+yaz("=== Temel Sınıf ===");
+yaz("Sınıf tanımlandı: Hayvan");
+
+// ============================================
+// 2. Kalıtım (Inheritance) — <- operatörü
+// ============================================
+
+// Araç temel sınıfı
+sınıf Araç {
+    açık değişken marka = "Bilinmiyor";
+    açık değişken model = "Bilinmiyor";
+    açık değişken yıl = 2024;
+    gizli değişken motor_no = "MOTOR-0000";
+    saklı değişken üretim_maliyeti = 50000;
+}
+
+// Araba <- Araç (Araba, Araç'tan türetilmiş)
+sınıf Araba <- Araç {
+    açık değişken renk = "beyaz";
+    açık değişken kapı_sayısı = 4;
+    gizli değişken kilometre = 0;
+}
+
+// Sedan <- Araba <- Araç (çok seviyeli kalıtım)
+sınıf Sedan <- Araba {
+    açık değişken bagaj_hacmi = 500;
+    açık değişken tip = "sedan";
+}
+
+// SUV <- Araba <- Araç
+sınıf SUV <- Araba {
+    açık değişken dört_çeker = doğru;
+    açık değişken yükseklik = 180;
+    açık değişken arazi_modu = "kapalı";
+}
+
+yaz("\n=== Kalıtım Hiyerarşisi ===");
+yaz("Araç → Araba → Sedan");
+yaz("Araç → Araba → SUV");
+
+// ============================================
+// 3. Statik Alanlar (Static Fields)
+// ============================================
+
+sınıf ArabaFabrikası {
+    statik açık değişken toplam_üretim = 0;
+    statik gizli değişken fabrika_kodu = "FAB-2024";
+    statik açık değişken kuruluş_yılı = 2020;
+    statik açık değişken konum = "İstanbul";
+}
+
+yaz("\n=== Statik Alanlar ===");
+yaz("Fabrika: " + ArabaFabrikası.konum);
+yaz("Kuruluş: " + ArabaFabrikası.kuruluş_yılı);
+
+// ============================================
+// 4. Erişim Belirleyicileri (Access Modifiers)
+// ============================================
+
+sınıf BankaHesabı {
+    açık değişken hesap_sahibi = "Ayşe Yılmaz";
+    açık değişken hesap_türü = "Vadesiz";
+    saklı değişken bakiye = 10000;
+    gizli değişken şifre = "gizli123";
+    gizli değişken güvenlik_kodu = "XYZ";
+    açık değişken para_birimi = "TL";
+}
+
+yaz("\n=== Erişim Belirleyicileri ===");
+yaz("açık (public)  → Herkese açık: hesap_sahibi, hesap_türü");
+yaz("saklı (protected) → Sadece sınıf ve alt sınıflar: bakiye");
+yaz("gizli (private)  → Sadece sınıf içi: şifre, güvenlik_kodu");
+
+// ============================================
+// 5. Sınıf Hiyerarşisi — Canlı Varlıklar
+// ============================================
+
+sınıf CanlıVarlık {
+    açık değişken isim = "Bilinmiyor";
+    açık değişken yaş = 0;
+    saklı değişken enerji = 100;
+    gizli değişken dna = "ACGT";
+}
+
+sınıf Memeli <- CanlıVarlık {
+    açık değişken kan_sıcaklığı = "sıcak";
+    açık değişken tüy = doğru;
+}
+
+sınıf Kuş <- CanlıVarlık {
+    açık değişken kanat_açıklığı = 0;
+    açık değişken uçabilir = doğru;
+}
+
+sınıf Kedi <- Memeli {
+    açık değişken cins = "Tekir";
+    açık değişken iç_mekan = doğru;
+    açık değişken renk = "turuncu";
+}
+
+sınıf Köpek <- Memeli {
+    açık değişken cins = "Golden";
+    açık değişken eğitimli = yanlış;
+    açık değişken boyut = "büyük";
+}
+
+sınıf Papağan <- Kuş {
+    açık değişken konuşabilir = doğru;
+    açık değişken renk = "yeşil";
+    açık değişken kelime_sayısı = 50;
+}
+
+yaz("\n=== Canlı Varlık Hiyerarşisi ===");
+yaz("CanlıVarlık");
+yaz("  ├── Memeli");
+yaz("  │   ├── Kedi (cins: " + Kedi.cins + ", renk: " + Kedi.renk + ")");
+yaz("  │   └── Köpek (cins: " + Köpek.cins + ", boyut: " + Köpek.boyut + ")");
+yaz("  └── Kuş");
+yaz("      └── Papağan (konuşabilir: " + Papağan.konuşabilir + ", kelime: " + Papağan.kelime_sayısı + ")");
+
+// ============================================
+// 6. İş Dünyası Sınıfları
+// ============================================
+
+sınıf Şirket {
+    açık değişken isim = "HudHud Teknoloji";
+    açık değişken sektör = "Yazılım";
+    açık değişken kuruluş = 2023;
+    açık değişken çalışan_sayısı = 45;
+    gizli değişken vergi_no = "TR-12345678";
+}
+
+sınıf Departman {
+    açık değişken isim = "Mühendislik";
+    açık değişken yönetici = "Mehmet Kaya";
+    açık değişken kişi_sayısı = 12;
+    açık değişken bütçe = 500000;
+}
+
+sınıf Çalışan {
+    açık değişken isim = "Elif Demir";
+    açık değişken unvan = "Kıdemli Geliştirici";
+    açık değişken departman = "Mühendislik";
+    saklı değişken maaş = 35000;
+    gizli değişken tc_no = "12345678901";
+}
+
+yaz("\n=== İş Dünyası ===");
+yaz(Şirket.isim + " - " + Şirket.sektör);
+yaz("Departman: " + Departman.isim + " (" + Departman.kişi_sayısı + " kişi)");
+yaz("Çalışan: " + Çalışan.isim + " - " + Çalışan.unvan);

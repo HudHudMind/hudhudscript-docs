@@ -1,0 +1,21 @@
+// SR - Chemistry Module
+
+на molarMass(atoms, atomicWeight) {
+    врати atoms * atomicWeight;
+}
+
+на concentration(moles, volume) {
+    врати moles / volume;
+}
+
+на pH(hydrogenConcentration) {
+    врати 14 - hydrogenConcentration;
+}
+
+на density(mass, volume) {
+    врати mass / volume;
+}
+
+на dilution(c1, v1, v2) {
+    врати (c1 * v1) / v2;
+}

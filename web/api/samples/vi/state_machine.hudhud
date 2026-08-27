@@ -1,0 +1,9 @@
+// State Machine Example
+cho state = "initial";
+
+nếu (state == "initial") {
+    in_ra("Starting");
+    state = "running";
+}
+
+in_ra(state);

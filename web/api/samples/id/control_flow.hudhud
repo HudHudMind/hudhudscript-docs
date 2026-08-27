@@ -1,0 +1,23 @@
+// Indonesia - Alur Kontrol
+variabel penghitung = 0;
+variabel maksimum = 5;
+
+// Loop
+selama (penghitung < maksimum) {
+    penghitung = penghitung + 1;
+}
+
+// Conditional
+variabel skor = 85;
+
+jika (skor >= 90) {
+    skor;
+} jika_tidak {
+    jika (skor >= 80) {
+        skor;
+    } jika_tidak {
+        skor;
+    }
+}
+
+penghitung;

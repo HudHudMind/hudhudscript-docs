@@ -1,0 +1,21 @@
+// Italiano - Modulo di fisica
+
+funzione velocità(distanza, tempo) {
+    ritorna distanza / tempo;
+}
+
+funzione forza(massa, accelerazione) {
+    ritorna massa * accelerazione;
+}
+
+funzione energia_cinetica(massa, velocità) {
+    ritorna 0.5 * massa * velocità * velocità;
+}
+
+funzione energia_potenziale(massa, gravità, altezza) {
+    ritorna massa * gravità * altezza;
+}
+
+funzione quantità_moto(massa, velocità) {
+    ritorna massa * velocità;
+}

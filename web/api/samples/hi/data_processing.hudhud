@@ -1,0 +1,12 @@
+// हिन्दी - Data Processing
+// Using NATIVE हिन्दी keywords
+
+मान_लो data1 = 100;
+मान_लो data2 = 200;
+मान_लो data3 = 300;
+
+मान_लो total = value1+ value2+ value3;
+मान_लो average = total / 3;
+
+प्रिंट(total);
+प्रिंट(average);

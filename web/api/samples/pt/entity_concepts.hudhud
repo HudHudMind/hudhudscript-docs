@@ -1,0 +1,38 @@
+// Português - Conceitos de Entidade
+
+seja utilizador = {
+    id: 1,
+    nome: "Alice",
+    email: "alice@exemplo.com",
+    papel: "desenvolvedor"
+};
+
+seja produto = {
+    id: 101,
+    nome: "HudHudScript IDE",
+    versão: "2.0",
+    preço: 49
+};
+
+seja encomenda = {
+    id: 1001,
+    id_utilizador: 1,
+    id_produto: 101,
+    quantidade: 2,
+    estado: "confirmado"
+};
+
+função info_entidade(entidade) {
+    retorna "Entidade #" + entidade.id + ": " + entidade.nome;
+}
+
+função calcular_total(encomenda, preço) {
+    retorna encomenda.quantidade * preço;
+}
+
+imprima("=== Sistema de Entidades ===");
+imprima(info_entidade(utilizador));
+imprima(info_entidade(produto));
+seja total = calcular_total(encomenda, produto.preço);
+imprima("Encomenda #" + encomenda.id + " total: " + total);
+imprima("Estado: " + encomenda.estado);

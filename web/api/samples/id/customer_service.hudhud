@@ -1,0 +1,8 @@
+// Bahasa Indonesia - Agen Layanan Pelanggan
+// Menggunakan kata kunci ASLI Bahasa Indonesia
+
+biar salam = "Halo, bagaimana saya bisa membantu Anda?";
+biar tanggapan = "Saya akan membantu permintaan Anda.";
+
+cetak(salam);
+cetak(tanggapan);

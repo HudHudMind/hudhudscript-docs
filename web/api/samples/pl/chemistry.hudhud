@@ -1,0 +1,21 @@
+// PL - Chemistry Module
+
+funkcja molarMass(atoms, atomicWeight) {
+    zwróć atoms * atomicWeight;
+}
+
+funkcja concentration(moles, volume) {
+    zwróć moles / volume;
+}
+
+funkcja pH(hydrogenConcentration) {
+    zwróć 14 - hydrogenConcentration;
+}
+
+funkcja density(mass, volume) {
+    zwróć mass / volume;
+}
+
+funkcja dilution(c1, v1, v2) {
+    zwróć (c1 * v1) / v2;
+}

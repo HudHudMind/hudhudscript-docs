@@ -1,0 +1,38 @@
+// Polski - Koncepcje Encji
+
+niech użytkownik = {
+    id: 1,
+    nazwa: "Alicja",
+    email: "alicja@przykład.pl",
+    rola: "programistka"
+};
+
+niech produkt = {
+    id: 101,
+    nazwa: "HudHudScript IDE",
+    wersja: "2.0",
+    cena: 49
+};
+
+niech zamówienie = {
+    id: 1001,
+    id_użytkownika: 1,
+    id_produktu: 101,
+    ilość: 2,
+    stan: "potwierdzony"
+};
+
+funkcja info_encji(encja) {
+    zwróć "Encja #" + encja.id + ": " + encja.nazwa;
+}
+
+funkcja oblicz_sumę(zamówienie, cena) {
+    zwróć zamówienie.ilość * cena;
+}
+
+drukuj("=== System Encji ===");
+drukuj(info_encji(użytkownik));
+drukuj(info_encji(produkt));
+niech suma = oblicz_sumę(zamówienie, produkt.cena);
+drukuj("Zamówienie #" + zamówienie.id + " suma: " + suma);
+drukuj("Stan: " + zamówienie.stan);

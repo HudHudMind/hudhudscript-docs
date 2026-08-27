@@ -1,0 +1,18 @@
+// English - Data Processing
+// Data processing with native keywords
+
+// Define data
+let value1 = 100;
+let value2 = 200;
+let value3 = 300;
+
+// Calculate
+let total = value1+ value2+ value3;
+let average = total / 3;
+
+// Conditional processing
+if (average > 150) {
+    let status = "high";
+} else {
+    let status = "low";
+}

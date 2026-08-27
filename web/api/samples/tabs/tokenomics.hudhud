@@ -1,0 +1,26 @@
+// TOKENOMICS
+// Cost-aware iteration using runtime session measurements.
+
+let initial_cost = tokenomics.session_cost();
+let budget_health = tokenomics.budget_health();
+let tasks = ["validate", "transform", "export"];
+let completed = 0;
+let i = 0;
+
+while (i < tasks.length) {
+    let current_cost = tokenomics.session_cost();
+    if (current_cost > 1.0) {
+        break;
+    }
+
+    completed = completed + 1;
+    i = i + 1;
+}
+
+let final_cost = tokenomics.session_cost();
+
+print("Initial cost: " + initial_cost);
+print("Budget health: " + budget_health);
+print("Tasks available: " + tasks.length);
+print("Tasks completed: " + completed);
+print("Final cost: " + final_cost);

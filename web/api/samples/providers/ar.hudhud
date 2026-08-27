@@ -1,0 +1,24 @@
+// العربية - providers.hudhud
+
+مزود DeepSeekProvider {
+    apiKey: env("DEEPSEEK_API_KEY"),
+    type: "deepseek",
+    اسم: "DeepSeek API",
+    baseUrl: env("DEEPSEEK_BASE_URL"),
+    حرارة: ٠.٨
+}
+
+مزود AnthropicProvider {
+    apiKey: env("ANTHROPIC_API_KEY"),
+    type: "anthropic",
+    اسم: "Anthropic Claude",
+    model: "claude-opus-4.6",
+    حرارة: ٠.٩
+}
+
+مزود OpenAIProvider {
+    apiKey: env("OPENAI_API_KEY"),
+    type: "openai",
+    اسم: "OpenAI GPT",
+    حرارة: ٠.٦
+}

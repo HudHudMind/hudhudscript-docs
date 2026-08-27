@@ -1,0 +1,7 @@
+// 日本語 - Customer Service Agent
+// Using NATIVE 日本語 keywords
+
+定義 挨拶 = "こんにちは、どのようにお手伝いできますか？";
+定義 応答 = "ご要望にお応えいたします。";
+
+挨拶;

@@ -1,0 +1,24 @@
+// Ελληνικά - providers.hudhud
+
+πάροχος DeepSeekProvider {
+    apiKey: env("DEEPSEEK_API_KEY"),
+    type: "deepseek",
+    όνομα: "DeepSeek API",
+    baseUrl: env("DEEPSEEK_BASE_URL"),
+    θερμοκρασία: 0.8
+}
+
+πάροχος AnthropicProvider {
+    apiKey: env("ANTHROPIC_API_KEY"),
+    type: "anthropic",
+    όνομα: "Anthropic Claude",
+    model: "claude-opus-4.6",
+    θερμοκρασία: 0.9
+}
+
+πάροχος OpenAIProvider {
+    apiKey: env("OPENAI_API_KEY"),
+    type: "openai",
+    όνομα: "OpenAI GPT",
+    θερμοκρασία: 0.6
+}

@@ -1,0 +1,152 @@
+// English - Object-Oriented Programming (OOP)
+// Object-based programming patterns in HudHudScript
+
+// ============================================
+// 1. Basic Object Definition
+// ============================================
+
+object Animal {
+    name: "Unknown",
+    species: "Unknown",
+    age: 0,
+    alive: true
+}
+
+object Cat {
+    name: "Whiskers",
+    species: "Cat",
+    age: 3,
+    alive: true,
+    color: "orange",
+    indoor: true
+}
+
+print("=== Basic Objects ===");
+print(Animal.name);
+print(Cat.name + " (" + Cat.species + ") - " + Cat.age + " years old");
+
+// ============================================
+// 2. Factory Functions (Constructor Pattern)
+// ============================================
+
+function CreateCar(brand, model, year, color) {
+    return {
+        brand: brand,
+        model: model,
+        year: year,
+        color: color,
+        mileage: 0,
+        running: true
+    };
+}
+
+let car1 = CreateCar("Toyota", "Corolla", 2024, "white");
+let car2 = CreateCar("Honda", "Civic", 2023, "black");
+
+print("\n=== Factory Functions ===");
+print(car1.brand + " " + car1.model + " - " + car1.color);
+print(car2.brand + " " + car2.model + " - " + car2.color);
+
+// ============================================
+// 3. Behavior Functions (Method Pattern)
+// ============================================
+
+function car_info(car) {
+    return car.brand + " " + car.model + " (" + car.year + ") " + car.color;
+}
+
+function drive(car, distance) {
+    let new_km = car.mileage + distance;
+    print(car.brand + " drove " + distance + " km. Total: " + new_km + " km");
+    return new_km;
+}
+
+function car_age(car) {
+    return 2024 - car.year;
+}
+
+print("\n=== Behavior Functions ===");
+print(car_info(car1));
+drive(car1, 150);
+drive(car1, 230);
+print("Car age: " + car_age(car1) + " years");
+
+// ============================================
+// 4. Object Composition
+// ============================================
+
+function CreateAddress(city, district, neighborhood) {
+    return {
+        city: city,
+        district: district,
+        neighborhood: neighborhood
+    };
+}
+
+function CreatePerson(name, age, address) {
+    return {
+        name: name,
+        age: age,
+        address: address,
+        occupation: "Not specified"
+    };
+}
+
+let home_addr = CreateAddress("London", "Camden", "Primrose Hill");
+let person = CreatePerson("Alice", 28, home_addr);
+
+print("\n=== Object Composition ===");
+print(person.name + " - " + person.age + " years old");
+print("Address: " + person.address.neighborhood + ", " + person.address.district + "/" + person.address.city);
+
+// ============================================
+// 5. Collections and Object Arrays
+// ============================================
+
+let students = [
+    CreatePerson("Bob", 20, CreateAddress("New York", "Manhattan", "SoHo")),
+    CreatePerson("Charlie", 22, CreateAddress("San Francisco", "Mission", "Valencia")),
+    CreatePerson("Diana", 21, CreateAddress("Chicago", "Lincoln Park", "DePaul"))
+];
+
+print("\n=== Object Collections ===");
+let idx = 0;
+while (idx < 3) {
+    let student = students[idx];
+    print(student.name + " - " + student.address.city);
+    idx = idx + 1;
+}
+
+// ============================================
+// 6. Business Logic Object (Shopping Cart)
+// ============================================
+
+function CreateCartItem(product, price, quantity) {
+    return {
+        product: product,
+        price: price,
+        quantity: quantity
+    };
+}
+
+function item_total(item) {
+    return item.price * item.quantity;
+}
+
+let cart = [
+    CreateCartItem("Laptop", 1200, 1),
+    CreateCartItem("Mouse", 25, 2),
+    CreateCartItem("Keyboard", 75, 1)
+];
+
+print("\n=== Shopping Cart ===");
+let grand_total = 0;
+let s = 0;
+while (s < 3) {
+    let item = cart[s];
+    let total = item_total(item);
+    print(item.product + " x" + item.quantity + " = $" + total);
+    grand_total = grand_total + total;
+    s = s + 1;
+}
+print("Grand Total: $" + grand_total);

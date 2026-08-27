@@ -1,0 +1,152 @@
+// Türkçe - Nesne Yönelimli Programlama (OOP)
+// HudHudScript'te nesne tabanlı programlama kalıpları
+
+// ============================================
+// 1. Temel Nesne Tanımlama
+// ============================================
+
+nesne Hayvan {
+    isim: "Bilinmiyor",
+    tür: "Bilinmiyor",
+    yaş: 0,
+    canlı: doğru
+}
+
+nesne Kedi {
+    isim: "Tekir",
+    tür: "Kedi",
+    yaş: 3,
+    canlı: doğru,
+    renk: "turuncu",
+    iç_mekan: doğru
+}
+
+yaz("=== Temel Nesneler ===");
+yaz(Hayvan.isim);
+yaz(Kedi.isim + " (" + Kedi.tür + ") - " + Kedi.yaş + " yaşında");
+
+// ============================================
+// 2. Fabrika Fonksiyonları (Constructor Pattern)
+// ============================================
+
+işlev ArabaOluştur(marka, model, yıl, renk) {
+    dön {
+        marka: marka,
+        model: model,
+        yıl: yıl,
+        renk: renk,
+        kilometre: 0,
+        çalışıyor: doğru
+    };
+}
+
+değişken araba1 = ArabaOluştur("Toyota", "Corolla", 2024, "beyaz");
+değişken araba2 = ArabaOluştur("Honda", "Civic", 2023, "siyah");
+
+yaz("\n=== Fabrika Fonksiyonu ===");
+yaz(araba1.marka + " " + araba1.model + " - " + araba1.renk);
+yaz(araba2.marka + " " + araba2.model + " - " + araba2.renk);
+
+// ============================================
+// 3. Davranış Fonksiyonları (Method Pattern)
+// ============================================
+
+işlev araba_bilgisi(araba) {
+    dön araba.marka + " " + araba.model + " (" + araba.yıl + ") " + araba.renk;
+}
+
+işlev araba_sür(araba, mesafe) {
+    değişken yeni_km = araba.kilometre + mesafe;
+    yaz(araba.marka + " " + mesafe + " km yol aldı. Toplam: " + yeni_km + " km");
+    dön yeni_km;
+}
+
+işlev araba_yaşı(araba) {
+    dön 2024 - araba.yıl;
+}
+
+yaz("\n=== Davranış Fonksiyonları ===");
+yaz(araba_bilgisi(araba1));
+araba_sür(araba1, 150);
+araba_sür(araba1, 230);
+yaz("Araç yaşı: " + araba_yaşı(araba1) + " yıl");
+
+// ============================================
+// 4. Nesne Kompozisyonu
+// ============================================
+
+işlev AdresOluştur(şehir, ilçe, mahalle) {
+    dön {
+        şehir: şehir,
+        ilçe: ilçe,
+        mahalle: mahalle
+    };
+}
+
+işlev KişiOluştur(isim, yaş, adres) {
+    dön {
+        isim: isim,
+        yaş: yaş,
+        adres: adres,
+        meslek: "Belirtilmemiş"
+    };
+}
+
+değişken ev_adresi = AdresOluştur("İstanbul", "Kadıköy", "Moda");
+değişken kişi = KişiOluştur("Davut", 28, ev_adresi);
+
+yaz("\n=== Nesne Kompozisyonu ===");
+yaz(kişi.isim + " - " + kişi.yaş + " yaşında");
+yaz("Adres: " + kişi.adres.mahalle + ", " + kişi.adres.ilçe + "/" + kişi.adres.şehir);
+
+// ============================================
+// 5. Koleksiyon ve Nesne Dizileri
+// ============================================
+
+değişken öğrenciler = [
+    KişiOluştur("Elif", 20, AdresOluştur("Ankara", "Çankaya", "Kızılay")),
+    KişiOluştur("Mehmet", 22, AdresOluştur("İzmir", "Konak", "Alsancak")),
+    KişiOluştur("Zeynep", 21, AdresOluştur("Bursa", "Nilüfer", "Özlüce"))
+];
+
+yaz("\n=== Nesne Koleksiyonları ===");
+değişken idx = 0;
+iken (idx < 3) {
+    değişken öğrenci = öğrenciler[idx];
+    yaz(öğrenci.isim + " - " + öğrenci.adres.şehir);
+    idx = idx + 1;
+}
+
+// ============================================
+// 6. Hesaplama Nesnesi (Alışveriş Sepeti)
+// ============================================
+
+işlev SepetÖğesiOluştur(ürün, fiyat, adet) {
+    dön {
+        ürün: ürün,
+        fiyat: fiyat,
+        adet: adet
+    };
+}
+
+işlev toplam_fiyat(öğe) {
+    dön öğe.fiyat * öğe.adet;
+}
+
+değişken sepet = [
+    SepetÖğesiOluştur("Laptop", 25000, 1),
+    SepetÖğesiOluştur("Mouse", 500, 2),
+    SepetÖğesiOluştur("Klavye", 1200, 1)
+];
+
+yaz("\n=== Alışveriş Sepeti ===");
+değişken genel_toplam = 0;
+değişken s = 0;
+iken (s < 3) {
+    değişken öğe = sepet[s];
+    değişken tutar = toplam_fiyat(öğe);
+    yaz(öğe.ürün + " x" + öğe.adet + " = " + tutar + " TL");
+    genel_toplam = genel_toplam + tutar;
+    s = s + 1;
+}
+yaz("Genel Toplam: " + genel_toplam + " TL");

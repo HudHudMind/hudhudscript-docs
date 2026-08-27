@@ -1,0 +1,230 @@
+// E-Ticaret Sistemi - Modüler Kod Organizasyonu
+// Function-based modüler mimari
+
+yaz("============================================================");
+yaz("E-Ticaret Sistemi - Modüler Kod Organizasyonu");
+yaz("============================================================\n");
+
+//
+// MODELS - Veri Modelleri
+//
+
+// src/models/user.hudhud
+işlev userOlustur(name, email, password) {
+    dön {
+        id: Math.floor(Math.random() * 10000),
+        name: name,
+        email: email,
+        password: password,
+        createdAt: "2024-03-07"
+    };
+}
+
+işlev userBilgi(user) {
+    dön "User #" + user.id + ": " + user.name + " (" + user.email + ")";
+}
+
+// src/models/product.hudhud
+işlev productOlustur(name, price, stock, category) {
+    dön {
+        id: Math.floor(Math.random() * 10000),
+        name: name,
+        price: price,
+        stock: stock,
+        category: category
+    };
+}
+
+işlev productBilgi(product) {
+    dön product.name + " - " + product.price + " TL (Stok: " + product.stock + ", Kategori: " + product.category + ")";
+}
+
+işlev productStokta(product) {
+    dön product.stock > 0;
+}
+
+// src/models/order.hudhud
+işlev orderOlustur(userId, productId, quantity, totalPrice) {
+    dön {
+        id: Math.floor(Math.random() * 10000),
+        userId: userId,
+        productId: productId,
+        quantity: quantity,
+        totalPrice: totalPrice,
+        status: "pending",
+        createdAt: "2024-03-07"
+    };
+}
+
+işlev orderBilgi(order) {
+    dön "Siparis #" + order.id + " - Kullanici: " + order.userId + ", Urun: " + order.productId + ", Adet: " + order.quantity + ", Toplam: " + order.totalPrice + " TL, Durum: " + order.status;
+}
+
+//
+// SERVICES - Is Mantigi Servisleri
+//
+
+// src/services/auth.hudhud
+işlev authKaydet(user) {
+    dön {
+        success: doğru,
+        userId: user.id,
+        message: "Kullanici basariyla kaydedildi"
+    };
+}
+
+işlev authGiris(email, password) {
+    dön {
+        success: doğru,
+        token: "token_" + Math.floor(Math.random() * 1000),
+        message: "Giris basarili"
+    };
+}
+
+// src/services/payment.hudhud
+işlev odemeIsle(orderId, amount, method) {
+    değişken success = doğru;
+    eğer (success) {
+        dön {
+            success: doğru,
+            transactionId: "TXN_" + Math.floor(Math.random() * 100000),
+            amount: amount,
+            method: method,
+            message: "Odeme basarili"
+        };
+    } değilse {
+        dön {
+            success: yanlış,
+            error: "Odeme basarisiz"
+        };
+    }
+}
+
+// src/services/notification.hudhud
+işlev bildirimGonder(to, subject, message) {
+    yaz("   Email gonderildi:");
+    yaz("      Kime: " + to);
+    yaz("      Konu: " + subject);
+    yaz("      Mesaj: " + message);
+    dön doğru;
+}
+
+//
+// UTILS - Yardimci Fonksiyonlar
+//
+
+// src/utils/validation.hudhud
+işlev emailGecerli(email) {
+    dön email.length > 5;
+}
+
+işlev sifreGecerli(password) {
+    dön password.length >= 6;
+}
+
+işlev fiyatGecerli(price) {
+    dön price > 0;
+}
+
+// src/utils/formatting.hudhud
+işlev paraBirimi(amount, currency) {
+    eğer (currency == "TRY") {
+        dön amount + " TL";
+    } değilse {
+        eğer (currency == "USD") {
+            dön "$" + amount;
+        } değilse {
+            dön amount + " " + currency;
+        }
+    }
+}
+
+//
+// MAIN - Uygulama Akisi
+//
+
+yaz("1. KULLANICI KAYDI");
+yaz("-----------------------------------------------------------\n");
+
+// Yeni kullanici olustur
+değişken newUser = userOlustur("Davut Suleyman", "davut@example.com", "guvenli123");
+yaz("Kullanici olusturuldu: " + userBilgi(newUser));
+
+// Email dogrula
+eğer (emailGecerli(newUser.email)) {
+    yaz("OK Email gecerli: " + newUser.email);
+} değilse {
+    yaz("HATA Email gecersiz");
+}
+
+// Kullaniciyi kaydet
+değişken authResult = authKaydet(newUser);
+eğer (authResult.success) {
+    yaz("OK " + authResult.message + " (ID: " + authResult.userId + ")");
+    bildirimGonder(
+        newUser.email,
+        "Hos Geldiniz!",
+        "Aramiza hos geldiniz, " + newUser.name
+    );
+}
+
+yaz("\n2. URUN OLUSTURMA");
+yaz("-----------------------------------------------------------\n");
+
+// Urun olustur
+değişken product = productOlustur("MacBook Pro M3", 45000, 10, "Elektronik");
+yaz("Urun olusturuldu: " + productBilgi(product));
+
+// Fiyat dogrula
+eğer (fiyatGecerli(product.price)) {
+    yaz("OK Fiyat gecerli: " + paraBirimi(product.price, "TRY"));
+}
+
+// Stok kontrolu
+eğer (productStokta(product)) {
+    yaz("OK Urun stokta mevcut");
+} değilse {
+    yaz("HATA Urun stokta yok");
+}
+
+yaz("\n3. SIPARIS OLUSTURMA");
+yaz("-----------------------------------------------------------\n");
+
+// Siparis olustur
+değişken order = orderOlustur(
+    newUser.id,
+    product.id,
+    1,
+    product.price
+);
+yaz("Siparis olusturuldu: " + orderBilgi(order));
+
+yaz("\n4. ODEME ISLEMI");
+yaz("-----------------------------------------------------------\n");
+
+// Odeme isle
+değişken paymentResult = odemeIsle(
+    order.id,
+    order.totalPrice,
+    "credit_card"
+);
+
+eğer (paymentResult.success) {
+    yaz("OK " + paymentResult.message);
+    yaz("  Islem No: " + paymentResult.transactionId);
+    yaz("  Tutar: " + paraBirimi(paymentResult.amount, "TRY"));
+    yaz("  Yontem: " + paymentResult.method);
+
+    bildirimGonder(
+        newUser.email,
+        "Siparisıniz Onaylandi",
+        "Siparis numaraniz: " + order.id + " - Toplam: " + paraBirimi(order.totalPrice, "TRY")
+    );
+} değilse {
+    yaz("HATA Odeme basarisiz: " + paymentResult.error);
+}
+
+yaz("\n============================================================");
+yaz("OK E-Ticaret sistemi demo tamamlandi!");
+yaz("OK Moduler, olceklenebilir ve bakimi kolay mimari");
+yaz("============================================================");

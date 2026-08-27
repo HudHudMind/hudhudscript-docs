@@ -1,0 +1,23 @@
+// English - Control Flow
+let counter = 0;
+let max = 5;
+
+// Loop
+while (counter < max) {
+    counter = counter + 1;
+}
+
+// Conditional
+let score = 85;
+
+if (score >= 90) {
+    score;
+} else {
+    if (score >= 80) {
+        score;
+    } else {
+        score;
+    }
+}
+
+counter;

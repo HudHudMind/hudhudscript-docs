@@ -1,0 +1,19 @@
+// Tiếng Việt - Demo
+hàm chào(tên) {
+    trả_về "Xin chào, " + tên + "!";
+}
+
+hàm cộng(a, b) {
+    trả_về a + b;
+}
+
+cho tin_nhắn = chào("Thế giới");
+in_ra(tin_nhắn);
+
+cho tổng = 0;
+cho đếm = 1;
+trong_khi (đếm <= 10) {
+    tổng = cộng(tổng, đếm);
+    đếm = đếm + 1;
+}
+in_ra("Tổng 1-10: " + tổng);

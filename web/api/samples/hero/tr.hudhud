@@ -1,0 +1,26 @@
+// Türkçe - Demo
+işlev selamla(isim) {
+    dön "Merhaba, " + isim + "!";
+}
+
+işlev topla(a, b) {
+    dön a + b;
+}
+
+değişken mesaj = selamla("Dünya");
+yazdır(mesaj);
+
+değişken toplam = 0;
+değişken sayaç = 1;
+(sayaç <= 10) iken {
+    toplam = topla(toplam, sayaç);
+    
+	(sayaç%2==0) ise {
+		yaz("Çift sayı:" + sayaç);
+	} değilse {
+		yaz("Tek sayı:" + sayaç);
+	}	    
+
+    sayaç = sayaç + 1;
+}
+yazdır("Toplam 1-10: " + toplam);

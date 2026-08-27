@@ -1,0 +1,5 @@
+// Test module içe_aktar
+"cebir.hudhud" kullan;
+
+değişken sonuc = topla(10, 5);
+yaz(sonuc);

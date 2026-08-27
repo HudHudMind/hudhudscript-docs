@@ -1,0 +1,19 @@
+// Português - Demo
+função saudar(nome) {
+    retornar "Olá, " + nome + "!";
+}
+
+função somar(a, b) {
+    retornar a + b;
+}
+
+variável mensagem = saudar("Mundo");
+imprima(mensagem);
+
+variável soma = 0;
+variável contador = 1;
+enquanto (contador <= 10) {
+    soma = somar(soma, contador);
+    contador = contador + 1;
+}
+imprima("Soma 1-10: " + soma);

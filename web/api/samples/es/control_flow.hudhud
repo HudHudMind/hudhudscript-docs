@@ -1,0 +1,23 @@
+// Español - Control Flow
+sea contador = 0;
+sea máximo = 5;
+
+// Loop
+mientras (contador < máximo) {
+    contador = contador + 1;
+}
+
+// Conditional
+sea puntuación = 85;
+
+si (puntuación >= 90) {
+    puntuación;
+} sino {
+    si (puntuación >= 80) {
+        puntuación;
+    } sino {
+        puntuación;
+    }
+}
+
+contador;

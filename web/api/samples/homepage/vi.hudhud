@@ -1,0 +1,16 @@
+// Tiếng Việt - Hàm chào
+
+hàm chào(tên) {
+    biến tin_nhắn = "Xin chào, " + tên + "!";
+    trả_về tin_nhắn;
+}
+
+hàm cộng(a, b) {
+    trả_về a + b;
+}
+
+biến kết_quả = chào("Thế giới");
+in_ra(kết_quả);
+
+biến tổng = cộng(42, 58);
+in_ra("tổng: " + tổng);

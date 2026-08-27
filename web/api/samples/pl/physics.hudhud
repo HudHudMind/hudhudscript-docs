@@ -1,0 +1,21 @@
+// PL - Physics Module
+
+funkcja speed(distance, time) {
+    zwróć distance / time;
+}
+
+funkcja force(mass, acceleration) {
+    zwróć mass * acceleration;
+}
+
+funkcja kineticEnergy(mass, velocity) {
+    zwróć 0.5 * mass * velocity * velocity;
+}
+
+funkcja potentialEnergy(mass, gravity, height) {
+    zwróć mass * gravity * height;
+}
+
+funkcja momentum(mass, velocity) {
+    zwróć mass * velocity;
+}

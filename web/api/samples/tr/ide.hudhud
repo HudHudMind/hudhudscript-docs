@@ -1,0 +1,208 @@
+// HudHud IDE Modülü - Dosya ve Proje Yönetimi
+
+// Dosya işlemleri
+işlev dosya_oku(yol) {
+    yaz("Dosya okunuyor: " + yol);
+    dön {
+        yol: yol,
+        içerik: "// Dosya içeriği buraya gelecek",
+        satırlar: 42,
+        boyut: "1.2 KB"
+    };
+}
+
+işlev dosya_yaz(yol, içerik) {
+    yaz("Dosya kaydediliyor: " + yol);
+    dön {
+        başarılı: doğru,
+        mesaj: "Dosya başarıyla kaydedildi"
+    };
+}
+
+işlev dosya_sil(yol) {
+    yaz("Dosya siliniyor: " + yol);
+    dön {
+        başarılı: doğru,
+        mesaj: "Dosya silindi"
+    };
+}
+
+// Klasör işlemleri
+işlev klasör_oluştur(yol) {
+    yaz("Klasör oluşturuluyor: " + yol);
+    dön {
+        başarılı: doğru,
+        yol: yol
+    };
+}
+
+işlev klasör_listele(yol) {
+    yaz("Klasör listeleniyor: " + yol);
+    dön [
+        { isim: "main.hudhud", tür: "dosya", boyut: "1.2 KB" },
+        { isim: "src", tür: "klasör", boyut: "-" },
+        { isim: "tests", tür: "klasör", boyut: "-" }
+    ];
+}
+
+// Kod çalıştırma
+işlev kod_kontrol(kod) {
+    yaz("Syntax kontrolü yapılıyor...");
+    dön {
+        başarılı: doğru,
+        hatalar: [],
+        uyarılar: []
+    };
+}
+
+işlev kod_derle(kod) {
+    yaz("Kod derleniyor...");
+    dön {
+        başarılı: doğru,
+        bytecode: "0x4844534352495054",
+        boyut: "2.5 KB"
+    };
+}
+
+işlev kod_çalıştır(kod) {
+    yaz("Kod çalıştırılıyor...");
+    dön {
+        başarılı: doğru,
+        çıktı: "Program başarıyla çalıştı!",
+        süre: "0.15s"
+    };
+}
+
+// Proje yönetimi
+işlev proje_oluştur(isim, açıklama) {
+    yaz("Yeni proje oluşturuluyor: " + isim);
+    
+    değişken proje = {
+        isim: isim,
+        açıklama: açıklama,
+        versiyon: "1.0.0",
+        yazar: "HudHud Developer",
+        oluşturma_tarihi: "2024-03-07",
+        dosyalar: [],
+        bağımlılıklar: {}
+    };
+    
+    // Ana dosyayı oluştur
+    dosya_yaz(isim + "/main.hudhud", "// Ana dosya");
+    
+    // package.json oluştur
+    dosya_yaz(isim + "/package.json", "package config");
+    
+    dön proje;
+}
+
+işlev paket_oluştur(proje_yolu) {
+    yaz("Paket oluşturuluyor...");
+    
+    değişken dosyalar = klasör_listele(proje_yolu);
+    değişken paket_ismi = proje_yolu + "-1.0.0.hudhudpkg";
+    
+    yaz("Paket oluşturuldu: " + paket_ismi);
+    
+    dön {
+        başarılı: doğru,
+        paket: paket_ismi,
+        boyut: "15.3 KB",
+        dosya_sayısı: dosyalar.length
+    };
+}
+
+// Git işlemleri
+işlev kaydet_degisiklik(mesaj) {
+    yaz("Commit yapılıyor: " + mesaj);
+    dön {
+        başarılı: doğru,
+        kod: "a1b2c3d",
+        mesaj: mesaj
+    };
+}
+
+işlev yukle_degisiklik(branch) {
+    yaz("Push yapılıyor: " + branch);
+    dön {
+        başarılı: doğru,
+        branch: branch,
+        commits: 1
+    };
+}
+
+// Terminal işlemleri
+işlev terminal_komut_çalıştır(komut) {
+    yaz("$ " + komut);
+    
+    eğer (komut == "ls") {
+        dön "main.hudhud package.json src tests";
+    } değilse ama (komut == "pwd") {
+        dön "/home/user/my-project";
+    } değilse {
+        dön "Komut çalıştırıldı: " + komut;
+    }
+}
+
+// Arama ve değiştirme
+işlev dosyalarda_ara(arama_metni, klasör) {
+    yaz("Aranıyor: " + arama_metni);
+    
+    dön [
+        { dosya: "main.hudhud", satır: 5, içerik: "yaz kodu" },
+        { dosya: "src/utils.hudhud", satır: 12, içerik: "yaz kodu" }
+    ];
+}
+
+işlev dosyalarda_değiştir(eski, yeni, klasör) {
+    yaz("Değiştiriliyor: " + eski + " -> " + yeni);
+    
+    dön {
+        başarılı: doğru,
+        değişen_dosya: 3,
+        toplam_değişiklik: 7
+    };
+}
+
+// Örnek kullanım
+yaz("=== HudHud IDE Modülü ===\n");
+
+// Yeni proje oluştur
+değişken proje = proje_oluştur("my-app", "Harika bir uygulama");
+yaz("Proje oluşturuldu: " + proje.isim);
+
+// Dosya oku
+değişken dosya = dosya_oku("my-app/main.hudhud");
+yaz("Dosya okundu: " + dosya.satırlar + " satır");
+
+// Kod kontrol et
+değişken kontrol = kod_kontrol("yaz('test');");
+eğer (kontrol.başarılı) {
+    yaz("Syntax kontrolü başarılı");
+}
+
+// Kod derle
+değişken derleme = kod_derle("yaz('test');");
+eğer (derleme.başarılı) {
+    yaz("Derleme başarılı: " + derleme.boyut);
+}
+
+// Kod çalıştır
+değişken çalıştırma = kod_çalıştır("yaz('Merhaba Dünya!');");
+eğer (çalıştırma.başarılı) {
+    yaz("Çalıştırma başarılı: " + çalıştırma.süre);
+}
+
+// Paket oluştur
+değişken paket = paket_oluştur("my-app");
+yaz("Paket: " + paket.paket + " (" + paket.boyut + ")");
+
+// Git commit
+değişken kayit_sonuc = kaydet_degisiklik("feat: ilk commit");
+yaz("Kayit: " + kayit_sonuc.kod);
+
+// Dosyalarda ara
+değişken sonuçlar = dosyalarda_ara("yaz", "my-app");
+yaz("Arama sonuçları: " + sonuçlar.length + " eşleşme");
+
+yaz("IDE modülü hazır!");

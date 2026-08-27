@@ -1,0 +1,9 @@
+// State Machine Example
+sea state = "initial";
+
+si (state == "initial") {
+    imprimir("Starting");
+    state = "running";
+}
+
+imprimir(state);

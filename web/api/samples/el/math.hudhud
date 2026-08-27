@@ -1,0 +1,54 @@
+// EL - Math Module
+
+function add(a, b) {
+    επιστροφή a + b;
+}
+
+function subtract(a, b) {
+    επιστροφή a - b;
+}
+
+function multiply(a, b) {
+    επιστροφή a * b;
+}
+
+function divide(a, b) {
+    αν (b == 0) {
+        εκτύπωση("Error: Division by zero!");
+        επιστροφή 0;
+    } αλλιώς {
+        επιστροφή a / b;
+    }
+}
+
+function square(x) {
+    επιστροφή x * x;
+}
+
+function cube(x) {
+    επιστροφή x * x * x;
+}
+
+function abs(x) {
+    αν (x < 0) {
+        επιστροφή -x;
+    } αλλιώς {
+        επιστροφή x;
+    }
+}
+
+function max(a, b) {
+    αν (a > b) {
+        επιστροφή a;
+    } αλλιώς {
+        επιστροφή b;
+    }
+}
+
+function min(a, b) {
+    αν (a < b) {
+        επιστροφή a;
+    } αλλιώς {
+        επιστροφή b;
+    }
+}

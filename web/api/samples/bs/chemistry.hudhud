@@ -1,0 +1,21 @@
+// BS - Chemistry Module
+
+funkcija molarMass(atoms, atomicWeight) {
+    vrati atoms * atomicWeight;
+}
+
+funkcija concentration(moles, volume) {
+    vrati moles / volume;
+}
+
+funkcija pH(hydrogenConcentration) {
+    vrati 14 - hydrogenConcentration;
+}
+
+funkcija density(mass, volume) {
+    vrati mass / volume;
+}
+
+funkcija dilution(c1, v1, v2) {
+    vrati (c1 * v1) / v2;
+}

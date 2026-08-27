@@ -1,0 +1,10 @@
+// Deutsch - Schleifen
+lasse zähler = 0;
+lasse maximum = 5;
+
+während (zähler < maximum) {
+    drucke(zähler);
+    zähler = zähler + 1;
+}
+
+drucke(999);

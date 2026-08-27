@@ -1,0 +1,2081 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HudHudScript - Multi-lingual AI Agent Programming Language</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/logo/hudhud-32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/logo/hudhud-96.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="/static/images/logo/hudhud-256.png">
+
+    
+
+    <!-- Tailwind CSS -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+Arabic:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Noto+Sans+Bengali:wght@400;700&family=Noto+Sans+Thai:wght@400;700&family=Noto+Sans+Devanagari:wght@400;700&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Prism.js for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+    <!-- Tailwind CSS (Compiled) -->
+    <link rel="stylesheet" href="/static/css/tailwind-output.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/custom.css?v=0.0.99">
+
+    <!-- HudHudScript Code Runner (global) -->
+    <link rel="stylesheet" href="/static/css/hudhud-code-runner.css">
+
+    
+</head>
+<body class="bg-slate-50 text-slate-900">
+    <!-- Environment Badge -->
+    
+
+    <!-- Navigation -->
+    <nav class="bg-slate-900 border-b border-slate-700/50 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-14">
+                <!-- Logo -->
+                <a href="/" class="flex items-center gap-2 flex-shrink-0">
+                    <img src="/static/images/logo/hudhud-48.png" alt="HudHudScript" width="32" height="32" class="rounded">
+                    <span class="text-xl font-bold text-white tracking-tight">HudHud<span class="text-amber-400">Script</span></span>
+                </a>
+
+                <!-- Center nav (desktop) -->
+                <div class="hidden lg:flex items-center space-x-1">
+                    <a href="/" class="nav-link text-slate-300 hover:text-white px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800">
+                        Início
+                    </a>
+                    <a href="/multilingual" class="nav-link text-slate-300 hover:text-white px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800">
+                        🌐 Multilíngue
+                    </a>
+                    <!-- Belgeler -->
+                    <div class="nav-dropdown relative">
+                        <button class="nav-dropdown-btn text-slate-300 hover:text-white px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800 flex items-center gap-1 whitespace-nowrap">
+                            Documentação <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="nav-dropdown-menu absolute top-full left-0 pt-1 hidden">
+                            <div class="bg-slate-800 border border-slate-700 rounded-lg shadow-xl py-1 w-40">
+                                <a href="/docs" class="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-700">Documentação</a>
+                                <a href="/examples" class="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-700">Exemplos</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tools -->
+                    <div class="nav-dropdown relative">
+                        <button class="nav-dropdown-btn text-slate-300 hover:text-white px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800 flex items-center gap-1 whitespace-nowrap">
+                            Ferramentas <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="nav-dropdown-menu absolute top-full left-0 pt-1 hidden">
+                            <div class="bg-slate-800 border border-slate-700 rounded-lg shadow-xl py-1 w-40">
+                                <a href="/tools" class="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-700">Ferramentas</a>
+                                <a href="/paradigms" class="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-700">Paradigmas</a>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Downloads -->
+                    <div class="nav-dropdown relative">
+                        <button class="nav-dropdown-btn text-slate-300 hover:text-white px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800 flex items-center gap-1 whitespace-nowrap">
+                            Baixar <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="nav-dropdown-menu absolute top-full left-0 pt-1 hidden">
+                            <div class="bg-slate-800 border border-slate-700 rounded-lg shadow-xl py-1 w-56">
+                                <a href="/download/hudhud-script" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-slate-700">
+                                    <div class="font-medium">HudHudScript</div>
+                                    <div class="text-xs text-slate-500 mt-0.5">Multi-lingual agentic programming language ,  SOP, governance</div>
+                                </a>
+                                <a href="/download/hudhud-aide" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-slate-700">
+                                    <div class="font-medium">HudHud AIDE</div>
+                                    <div class="text-xs text-slate-500 mt-0.5">Official IDE ,  syntax highlighting, autocomplete, AI assistance for 23 languages</div>
+                                </a>
+                                <a href="/download/hudhud-linux" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-slate-700">
+                                    <div class="font-medium text-slate-500">HudHud Linux</div>
+                                    <div class="text-xs text-slate-600 mt-0.5">Modern Linux distro powered by HudHudScript</div>
+                                    <span class="text-xs text-amber-500 font-medium">Em breve</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- About -->
+                    <div class="nav-dropdown relative">
+                        <button class="nav-dropdown-btn text-slate-300 hover:text-white px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800 flex items-center gap-1 whitespace-nowrap">
+                            Sobre <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="nav-dropdown-menu absolute top-full left-0 pt-1 hidden">
+                            <div class="bg-slate-800 border border-slate-700 rounded-lg shadow-xl py-1 w-44">
+                                <a href="/about/language" class="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-700">Sobre a linguagem</a>
+                                <a href="/blog/" class="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-700">Blog</a>
+                                <a href="/contributors" class="block px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-700">Contribuidores</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right side -->
+                <div class="flex items-center gap-3 flex-shrink-0">
+                    <div class="lang-dropdown-wrapper relative" data-lang-selector data-current="pt">
+                        <button type="button" class="lang-dropdown-btn flex items-center gap-1.5 bg-slate-800 border border-slate-600 text-slate-300 rounded-md px-3 py-2 pr-8 text-sm hover:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 focus:border-amber-500 transition w-full">
+                            <span class="lang-flag inline-block flex-shrink-0"><img src="https://flagcdn.com/24x18/pt.png" srcset="https://flagcdn.com/48x36/pt.png 2x" width="24" height="18" alt="PT" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                            <span class="lang-name whitespace-nowrap">Português</span>
+                            <svg class="lang-chevron w-4 h-4 ml-auto flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="lang-dropdown-menu hidden absolute p-2 top-full right-0 mt-1 bg-slate-800 border border-slate-600 rounded-md shadow-xl z-50 max-h-64 overflow-y-auto min-w-[240px]">
+                            
+                            <button type="button" data-lang="ar" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/sa.png" srcset="https://flagcdn.com/48x36/sa.png 2x" width="24" height="18" alt="SA" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>العربية</span>
+                            </button>
+                            
+                            <button type="button" data-lang="ja" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/jp.png" srcset="https://flagcdn.com/48x36/jp.png 2x" width="24" height="18" alt="JP" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>日本語</span>
+                            </button>
+                            
+                            <button type="button" data-lang="zh" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/cn.png" srcset="https://flagcdn.com/48x36/cn.png 2x" width="24" height="18" alt="CN" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>中文</span>
+                            </button>
+                            
+                            <button type="button" data-lang="hi" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/in.png" srcset="https://flagcdn.com/48x36/in.png 2x" width="24" height="18" alt="IN" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>हिन्दी</span>
+                            </button>
+                            
+                            <button type="button" data-lang="bn" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/bd.png" srcset="https://flagcdn.com/48x36/bd.png 2x" width="24" height="18" alt="BD" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>বাংলা</span>
+                            </button>
+                            
+                            <button type="button" data-lang="bs" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/ba.png" srcset="https://flagcdn.com/48x36/ba.png 2x" width="24" height="18" alt="BA" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Bosanski</span>
+                            </button>
+                            
+                            <button type="button" data-lang="de" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/de.png" srcset="https://flagcdn.com/48x36/de.png 2x" width="24" height="18" alt="DE" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Deutsch</span>
+                            </button>
+                            
+                            <button type="button" data-lang="el" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/gr.png" srcset="https://flagcdn.com/48x36/gr.png 2x" width="24" height="18" alt="GR" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Ελληνικά</span>
+                            </button>
+                            
+                            <button type="button" data-lang="en" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/gb.png" srcset="https://flagcdn.com/48x36/gb.png 2x" width="24" height="18" alt="GB" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>English</span>
+                            </button>
+                            
+                            <button type="button" data-lang="es" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/es.png" srcset="https://flagcdn.com/48x36/es.png 2x" width="24" height="18" alt="ES" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Español</span>
+                            </button>
+                            
+                            <button type="button" data-lang="fa" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/ir.png" srcset="https://flagcdn.com/48x36/ir.png 2x" width="24" height="18" alt="IR" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>فارسی</span>
+                            </button>
+                            
+                            <button type="button" data-lang="fr" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/fr.png" srcset="https://flagcdn.com/48x36/fr.png 2x" width="24" height="18" alt="FR" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Français</span>
+                            </button>
+                            
+                            <button type="button" data-lang="hr" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/hr.png" srcset="https://flagcdn.com/48x36/hr.png 2x" width="24" height="18" alt="HR" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Hrvatski</span>
+                            </button>
+                            
+                            <button type="button" data-lang="id" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/id.png" srcset="https://flagcdn.com/48x36/id.png 2x" width="24" height="18" alt="ID" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Bahasa Indonesia</span>
+                            </button>
+                            
+                            <button type="button" data-lang="it" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/it.png" srcset="https://flagcdn.com/48x36/it.png 2x" width="24" height="18" alt="IT" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Italiano</span>
+                            </button>
+                            
+                            <button type="button" data-lang="ku" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0">🌍</span>
+                                <span>Kurdî</span>
+                            </button>
+                            
+                            <button type="button" data-lang="pl" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/pl.png" srcset="https://flagcdn.com/48x36/pl.png 2x" width="24" height="18" alt="PL" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Polski</span>
+                            </button>
+                            
+                            <button type="button" data-lang="pt" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition bg-slate-700 text-amber-400">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/pt.png" srcset="https://flagcdn.com/48x36/pt.png 2x" width="24" height="18" alt="PT" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Português</span>
+                            </button>
+                            
+                            <button type="button" data-lang="ru" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/ru.png" srcset="https://flagcdn.com/48x36/ru.png 2x" width="24" height="18" alt="RU" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Русский</span>
+                            </button>
+                            
+                            <button type="button" data-lang="sr" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/rs.png" srcset="https://flagcdn.com/48x36/rs.png 2x" width="24" height="18" alt="RS" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Српски</span>
+                            </button>
+                            
+                            <button type="button" data-lang="th" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/th.png" srcset="https://flagcdn.com/48x36/th.png 2x" width="24" height="18" alt="TH" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>ไทย</span>
+                            </button>
+                            
+                            <button type="button" data-lang="tr" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/tr.png" srcset="https://flagcdn.com/48x36/tr.png 2x" width="24" height="18" alt="TR" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Türkçe</span>
+                            </button>
+                            
+                            <button type="button" data-lang="vi" class="lang-dropdown-item flex items-center gap-1.5 w-full text-left whitespace-nowrap px-3 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition ">
+                                <span class="inline-block w-4 h-3 flex-shrink-0"><img src="https://flagcdn.com/24x18/vn.png" srcset="https://flagcdn.com/48x36/vn.png 2x" width="24" height="18" alt="VN" class="inline-block rounded-sm relative -top-px" loading="lazy"></span>
+                                <span>Tiếng Việt</span>
+                            </button>
+                            
+                        </div>
+                    </div>
+
+                    <a href="https://github.com/HudHudMind/hudhudscript"
+                       target="_blank" rel="noopener noreferrer"
+                       class="hidden sm:inline-flex items-center gap-1.5 bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold text-sm px-4 py-1.5 rounded-md transition">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        GitHub
+                    </a>
+
+                    <!-- Mobile hamburger -->
+                    <button id="mobile-menu-btn" class="lg:hidden text-slate-300 hover:text-white p-1">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-slate-800 border-t border-slate-700 px-4 py-3 space-y-1">
+            <a href="/" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Início</a>
+            <a href="/docs" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Documentação</a>
+            <a href="/examples" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Exemplos</a>
+            <a href="/multilingual" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Multilíngue</a>
+            
+            <a href="/tools" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Ferramentas</a>
+            <a href="/paradigms" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Paradigmas</a>
+            
+            <a href="/download" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Baixar</a>
+            <a href="/blog/" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Blog</a>
+            <a href="/about/language" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Sobre</a>
+            <a href="/contributors" class="block text-slate-300 hover:text-white px-3 py-2 text-sm rounded-md hover:bg-slate-700">Contribuidores</a>
+        </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        
+<!-- Hero Section -->
+<div class="gradient-bg text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+        <div class="text-center">
+            <img src="/static/images/logo/hudhud-128.png" alt="HudHudScript" width="96" height="96" class="mx-auto mb-6 drop-shadow-2xl">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight">
+                Programação Agêntica <span class="text-amber-400">Engenharia de Loops</span>
+            </h1>
+            <p class="text-lg sm:text-xl mb-4 text-slate-300 max-w-2xl mx-auto">
+                Automação baseada em objetivos com agentes IA, conselhos de governança, MCP e loops autônomos
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+                
+                <a href="/download"
+                   class="inline-flex items-center justify-center px-8 py-3.5 text-base font-semibold rounded-lg border-2 border-slate-400 text-white hover:bg-white/10 transition">
+                    Baixar
+                </a>
+            </div>
+
+            <!-- Paradigm Tabs -->
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-center justify-center gap-1 flex-wrap mb-4" id="paradigm-tabs" role="tablist" aria-label="HudHudScript samples">
+                    <button class="paradigm-tab px-3 py-1.5 rounded-lg text-xs font-medium transition bg-amber-500 text-slate-900" data-paradigm="agentic">⚡ Agentic</button>
+                    <button class="paradigm-tab px-3 py-1.5 rounded-lg text-xs font-medium transition text-slate-300 hover:bg-white/10" data-paradigm="agenticdevelopment">🛠️ Agentic Dev</button>
+                    <button class="paradigm-tab px-3 py-1.5 rounded-lg text-xs font-medium transition text-slate-300 hover:bg-white/10" data-paradigm="loop">🔄 Loop</button>
+                    <button class="paradigm-tab px-3 py-1.5 rounded-lg text-xs font-medium transition text-slate-300 hover:bg-white/10" data-paradigm="loopengineering">🎯 LoopEng</button>
+                    <button class="paradigm-tab px-3 py-1.5 rounded-lg text-xs font-medium transition text-slate-300 hover:bg-white/10" data-paradigm="loopchain">⛓️ LoopChain</button>
+                    <button class="paradigm-tab px-3 py-1.5 rounded-lg text-xs font-medium transition text-slate-300 hover:bg-white/10" data-paradigm="multichain">🔗 MultiChain</button>
+                    <button class="paradigm-tab px-3 py-1.5 rounded-lg text-xs font-medium transition text-slate-300 hover:bg-white/10" data-paradigm="governance">🏛️ Governance</button>
+                    <button class="paradigm-tab px-3 py-1.5 rounded-lg text-xs font-medium transition text-slate-300 hover:bg-white/10" data-paradigm="tokenomics">💰 Tokenomics</button>
+                    <button class="paradigm-tab px-3 py-1.5 rounded-lg text-xs font-medium transition text-slate-300 hover:bg-white/10" data-paradigm="mcp">🔌 MCP</button>
+                    <button class="paradigm-tab px-3 py-1.5 rounded-lg text-xs font-medium transition text-slate-300 hover:bg-white/10" data-paradigm="web">🌐 Web</button>
+                    <button class="paradigm-tab px-3 py-1.5 rounded-lg text-xs font-medium transition text-slate-300 hover:bg-white/10" data-paradigm="tui">🖥️ TUI</button>
+                    <button class="paradigm-tab px-3 py-1.5 rounded-lg text-xs font-medium transition text-slate-300 hover:bg-white/10" data-paradigm="oop">📦 OOP</button>
+                    <button class="paradigm-tab px-3 py-1.5 rounded-lg text-xs font-medium transition text-slate-300 hover:bg-white/10" data-paradigm="sop">🧠 SOP</button>
+                    <button class="paradigm-tab px-3 py-1.5 rounded-lg text-xs font-medium transition text-slate-300 hover:bg-white/10" data-paradigm="visual">🎨 Visual</button>
+                </div>
+
+                <div id="paradigm-content">
+                
+                
+                
+                    <div class="paradigm-panel " data-paradigm="agentic">
+                        <div class="terminal-window text-left">
+                            <div class="terminal-header"><div class="flex items-center gap-1.5"><span class="terminal-dot bg-red-500"></span><span class="terminal-dot bg-yellow-500"></span><span class="terminal-dot bg-green-500"></span><span class="ml-2 text-xs text-slate-500 font-mono">agentic.hudhud</span></div></div>
+                            <pre class="p-3 text-xs leading-relaxed max-h-[32rem] overflow-auto"><code class="language-hudhudscript">// AGENTIC PROGRAMMING
+// Provider and council topology. No paid API call is made in this offline demo.
+
+provider DeepSeek {
+    type: &#34;deepseek&#34;;
+    model: &#34;deepseek-chat&#34;;
+    api_key: env(&#34;DEEPSEEK_API_KEY&#34;);
+}
+
+provider OpenAI {
+    type: &#34;openai&#34;;
+    model: &#34;gpt-4o&#34;;
+    api_key: env(&#34;OPENAI_API_KEY&#34;);
+}
+
+provider Anthropic {
+    type: &#34;anthropic&#34;;
+    model: &#34;claude-3-5-sonnet-20241022&#34;;
+    api_key: env(&#34;ANTHROPIC_API_KEY&#34;);
+}
+
+provider Kimi {
+    type: &#34;kimi&#34;;
+    model: &#34;moonshot-v1-8k&#34;;
+    api_key: env(&#34;KIMI_API_KEY&#34;);
+}
+
+agent Planner {
+    role: &#34;planner&#34;;
+    intent: &#34;Turn the question into an evidence-backed plan&#34;;
+    provider: DeepSeek;
+}
+
+agent Critic {
+    role: &#34;critic&#34;;
+    intent: &#34;Find unsupported assumptions and failure modes&#34;;
+    provider: Anthropic;
+}
+
+agent Implementer {
+    role: &#34;implementer&#34;;
+    intent: &#34;Produce the smallest verifiable implementation&#34;;
+    provider: OpenAI;
+}
+
+agent Judge {
+    role: &#34;judge&#34;;
+    intent: &#34;Compare evidence and issue the final verdict&#34;;
+    provider: Kimi;
+}
+
+let council_members = [&#34;Planner&#34;, &#34;Critic&#34;, &#34;Implementer&#34;, &#34;Judge&#34;];
+let quorum_required = 3;
+
+council ModelCouncil {
+    quorum: quorum_required;
+    members: council_members;
+    rules: [&#34;cite-evidence&#34;, &#34;critic-must-review&#34;, &#34;three-votes-required&#34;];
+}
+
+let question = &#34;How should we ship a safe parser change?&#34;;
+let roles = [Planner.role, Critic.role, Implementer.role, Judge.role];
+let provider_types = [
+    DeepSeek.type,
+    Anthropic.type,
+    OpenAI.type,
+    Kimi.type
+];
+
+print(&#34;Question: &#34; + question);
+print(&#34;Council members: &#34; + council_members.length);
+print(&#34;Council quorum: &#34; + quorum_required);
+print(&#34;Flow: &#34; + roles[0] + &#34; -&gt; &#34; + roles[1] + &#34; -&gt; &#34; + roles[2] + &#34; -&gt; &#34; + roles[3]);
+print(&#34;Providers: &#34; + provider_types[0] + &#34;, &#34; + provider_types[1] + &#34;, &#34; + provider_types[2] + &#34;, &#34; + provider_types[3]);
+</code></pre>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2 text-center">Agêntico: 4 provedores (DeepSeek, OpenAI, Anthropic, Kimi). ModelCouncil com Planejador, Crítico, Implementador, Juiz.</p>
+                    </div>
+                
+                    <div class="paradigm-panel hidden" data-paradigm="agenticdevelopment">
+                        <div class="terminal-window text-left">
+                            <div class="terminal-header"><div class="flex items-center gap-1.5"><span class="terminal-dot bg-red-500"></span><span class="terminal-dot bg-yellow-500"></span><span class="terminal-dot bg-green-500"></span><span class="ml-2 text-xs text-slate-500 font-mono">agenticdevelopment.hudhud</span></div></div>
+                            <pre class="p-3 text-xs leading-relaxed max-h-[32rem] overflow-auto"><code class="language-hudhudscript">// AGENTIC DEVELOPMENT
+// Real files and tool evidence. No loop or chain is used.
+
+agent Architect {
+    role: &#34;architect&#34;;
+    intent: &#34;Define the smallest testable change&#34;;
+}
+
+agent Developer {
+    role: &#34;developer&#34;;
+    intent: &#34;Apply an exact atomic patch&#34;;
+}
+
+agent Reviewer {
+    role: &#34;reviewer&#34;;
+    intent: &#34;Inspect the real source diff and final file&#34;;
+}
+
+let allowed_tools = [
+    &#34;file.write&#34;,
+    &#34;file.read&#34;,
+    &#34;fs.patch_apply&#34;,
+    &#34;exec.output&#34;
+];
+let workspace_record = Temp.dir(&#34;hudhud-agentic-dev-&#34;);
+let workspace = workspace_record.path;
+let source_file = workspace + &#34;/calculator.hud&#34;;
+let baseline_source = &#34;fn add(left, right) {\n    return left - right;\n}\n&#34;;
+let expected_source = &#34;fn add(left, right) {\n    return left + right;\n}\n&#34;;
+
+// Temp.dir supplies the path; no user-controlled string reaches exec.output.
+file.write(source_file, baseline_source);
+exec.output(&#34;git -C &#34; + workspace + &#34; init -q&#34;);
+exec.output(&#34;git -C &#34; + workspace + &#34; add calculator.hud&#34;);
+
+let patch_result = fs.patch_apply(
+    source_file,
+    &#34;return left - right;&#34;,
+    &#34;return left + right;&#34;
+);
+let final_source = file.read(source_file);
+let source_diff = exec.output(
+    &#34;git -C &#34; + workspace + &#34; diff --no-ext-diff -- calculator.hud&#34;
+);
+let verified = patch_result.modified
+    &amp;&amp; patch_result.replacements == 1
+    &amp;&amp; final_source == expected_source
+    &amp;&amp; source_diff.length &gt; 0;
+
+print(&#34;Architect: &#34; + Architect.intent);
+print(&#34;Allowlisted tools: &#34; + allowed_tools.length);
+print(&#34;Developer replacements: &#34; + patch_result.replacements);
+print(&#34;Reviewer verified:&#34;);
+print(verified);
+print(&#34;File: &#34; + source_file);
+print(source_diff);
+</code></pre>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2 text-center">Agentic Development: agents write a real source file, apply one atomic patch, verify final content, and print the real Git diff without loops or chains.</p>
+                    </div>
+                
+                    <div class="paradigm-panel hidden" data-paradigm="loop">
+                        <div class="terminal-window text-left">
+                            <div class="terminal-header"><div class="flex items-center gap-1.5"><span class="terminal-dot bg-red-500"></span><span class="terminal-dot bg-yellow-500"></span><span class="terminal-dot bg-green-500"></span><span class="ml-2 text-xs text-slate-500 font-mono">loop.hudhud</span></div></div>
+                            <pre class="p-3 text-xs leading-relaxed max-h-[32rem] overflow-auto"><code class="language-hudhudscript">// LOOP PRIMITIVES
+// Repetition, convergence, retry, done, and fail gates.
+
+let builds = 0;
+
+loop RepeatBuild mode: times(3) {
+    step build_once {
+        builds = builds + 1;
+        gate build_gate {
+            when true -&gt; continue
+            else -&gt; fail
+        }
+    }
+}
+
+let defects = 3;
+
+loop FixUntilClean mode: until(defects == 0) {
+    step patch_once {
+        defects = defects - 1;
+        gate defect_gate {
+            when true -&gt; continue
+            else -&gt; fail
+        }
+    }
+}
+
+let recovery_attempts = 0;
+
+loop BoundedRecovery {
+    step connect {
+        recovery_attempts = recovery_attempts + 1;
+        gate recovery_gate {
+            when true -&gt; done
+            else -&gt; retry
+        }
+    }
+}
+
+run loop RepeatBuild;
+run loop FixUntilClean;
+run loop BoundedRecovery;
+
+print(&#34;Builds: &#34; + builds);
+print(&#34;Defects: &#34; + defects);
+print(&#34;Recovery attempts: &#34; + recovery_attempts);
+</code></pre>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2 text-center">Loop: times, until, retry, done and fail gates with measured state.</p>
+                    </div>
+                
+                    <div class="paradigm-panel hidden" data-paradigm="loopengineering">
+                        <div class="terminal-window text-left">
+                            <div class="terminal-header"><div class="flex items-center gap-1.5"><span class="terminal-dot bg-red-500"></span><span class="terminal-dot bg-yellow-500"></span><span class="terminal-dot bg-green-500"></span><span class="ml-2 text-xs text-slate-500 font-mono">loopengineering.hudhud</span></div></div>
+                            <pre class="p-3 text-xs leading-relaxed max-h-[32rem] overflow-auto"><code class="language-hudhudscript">// LOOP ENGINEERING
+// Observe -&gt; patch -&gt; run again -&gt; accept only measured evidence.
+
+let workspace_record = Temp.dir(&#34;hudhud-loop-eng-&#34;);
+let workspace = workspace_record.path;
+let source_file = workspace + &#34;/calculator.js&#34;;
+let broken_source = &#34;function add(left, right) {\n  return left - right;\n}\nconsole.log(add(2, 3));\n&#34;;
+let fixed_source = &#34;function add(left, right) {\n  return left + right;\n}\nconsole.log(add(2, 3));\n&#34;;
+let expected_output = &#34;5\n&#34;;
+
+file.write(source_file, broken_source);
+exec.output(&#34;git -C &#34; + workspace + &#34; init -q&#34;);
+exec.output(&#34;git -C &#34; + workspace + &#34; add calculator.js&#34;);
+
+let attempts = 0;
+let test_runs = 0;
+let failures = 1;
+let replacements = 0;
+
+loop RepairAndRetest goal(target: failures == 0) {
+    step observe_patch_verify {
+        attempts = attempts + 1;
+        test_runs = test_runs + 1;
+
+        let failing_output = exec.output(&#34;node &#34; + source_file);
+        let patch_result = fs.patch_apply(
+            source_file,
+            &#34;return left - right;&#34;,
+            &#34;return left + right;&#34;
+        );
+        replacements = replacements + patch_result.replacements;
+
+        test_runs = test_runs + 1;
+        let passing_output = exec.output(&#34;node &#34; + source_file);
+        failures = passing_output.length - expected_output.length;
+
+        print(&#34;Before patch: &#34; + failing_output);
+        print(&#34;After patch: &#34; + passing_output);
+
+        gate evidence_gate {
+            when failures == 0 -&gt; done
+            else -&gt; fail
+        }
+    }
+}
+
+run loop RepairAndRetest;
+
+let final_source = file.read(source_file);
+let final_output = exec.output(&#34;node &#34; + source_file);
+let source_diff = exec.output(
+    &#34;git -C &#34; + workspace + &#34; diff --no-ext-diff -- calculator.js&#34;
+);
+let verified = final_source == fixed_source
+    &amp;&amp; final_output.length == expected_output.length
+    &amp;&amp; source_diff.length &gt; 0;
+
+print(&#34;Attempts: &#34; + attempts);
+print(&#34;Test runs: &#34; + test_runs);
+print(&#34;Patch replacements: &#34; + replacements);
+print(&#34;Final program output: &#34; + final_output);
+print(&#34;Verified:&#34;);
+print(verified);
+print(source_diff);
+
+chain ProductDelivery {
+    loop Scope {
+        step write_specification {
+            let stage = Temp.dir(&#34;hudhud-scope-&#34;);
+            let spec_file = stage.path + &#34;/requirements.md&#34;;
+            let spec = &#34;# Calculator\n\n- add(left, right)\n- output must be 5\n&#34;;
+
+            file.write(spec_file, spec);
+            result.bytes = file.read(spec_file).length;
+            print(&#34;Specification bytes: &#34; + result.bytes);
+
+            gate scope_gate {
+                when result.bytes == spec.length -&gt; done
+                else -&gt; fail
+            }
+        }
+    }
+    on_done: next
+    on_fail: fail
+
+    loop Build {
+        step generate_and_execute {
+            let stage = Temp.dir(&#34;hudhud-build-&#34;);
+            let app_file = stage.path + &#34;/app.js&#34;;
+
+            file.write(app_file, &#34;console.log(2 + 3);\n&#34;);
+            result.output = exec.output(&#34;node &#34; + app_file);
+            print(&#34;Build output: &#34; + result.output);
+
+            gate build_gate {
+                when result.output.length == 2 -&gt; done
+                else -&gt; retry
+            }
+        }
+    }
+    on_done: next
+    on_fail: fail
+
+    loop Review {
+        step inspect_real_diff {
+            let stage = Temp.dir(&#34;hudhud-review-&#34;);
+            let app_file = stage.path + &#34;/app.js&#34;;
+
+            file.write(app_file, &#34;console.log(2 - 3);\n&#34;);
+            exec.output(&#34;git -C &#34; + stage.path + &#34; init -q&#34;);
+            exec.output(&#34;git -C &#34; + stage.path + &#34; add app.js&#34;);
+            let patch_result = fs.patch_apply(app_file, &#34;2 - 3&#34;, &#34;2 + 3&#34;);
+            result.diff = exec.output(
+                &#34;git -C &#34; + stage.path + &#34; diff --no-ext-diff -- app.js&#34;
+            );
+            print(result.diff);
+
+            gate review_gate {
+                when patch_result.replacements == 1
+                    &amp;&amp; result.diff.length &gt; 0 -&gt; done
+                else -&gt; fail
+            }
+        }
+    }
+    on_done: next
+    on_fail: fail
+
+    loop Publish {
+        step publish_artifact {
+            let release = Temp.dir(&#34;hudhud-publish-&#34;);
+            let artifact = release.path + &#34;/calculator.js&#34;;
+
+            file.write(artifact, &#34;console.log(2 + 3);\n&#34;);
+            result.output = exec.output(&#34;node &#34; + artifact);
+            result.artifact = artifact;
+            print(&#34;Published: &#34; + result.artifact);
+
+            gate publish_gate {
+                when result.output.length == 2
+                    &amp;&amp; file.exists(result.artifact) -&gt; done
+                else -&gt; fail
+            }
+        }
+    }
+    on_done: done
+    on_fail: fail
+}
+
+run chain ProductDelivery;
+</code></pre>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2 text-center">Runs broken generated code, patches the real file, reruns the test, verifies output, and prints the source diff.</p>
+                    </div>
+                
+                    <div class="paradigm-panel hidden" data-paradigm="loopchain">
+                        <div class="terminal-window text-left">
+                            <div class="terminal-header"><div class="flex items-center gap-1.5"><span class="terminal-dot bg-red-500"></span><span class="terminal-dot bg-yellow-500"></span><span class="terminal-dot bg-green-500"></span><span class="ml-2 text-xs text-slate-500 font-mono">loopchain.hudhud</span></div></div>
+                            <pre class="p-3 text-xs leading-relaxed max-h-[32rem] overflow-auto"><code class="language-hudhudscript">// LOOPCHAIN
+// Every delivery stage leaves real file, execution, patch, or diff evidence.
+
+chain DeliveryPipeline {
+    loop Plan {
+        step write_plan {
+            let stage = Temp.dir(&#34;hudhud-plan-&#34;);
+            let plan_file = stage.path + &#34;/plan.md&#34;;
+            let plan = &#34;# Plan\n1. Generate code\n2. Run tests\n3. Review diff\n&#34;;
+
+            file.write(plan_file, plan);
+            result.bytes = file.read(plan_file).length;
+            print(&#34;Plan: &#34; + plan_file);
+
+            gate plan_gate {
+                when result.bytes == plan.length -&gt; done
+                else -&gt; retry
+            }
+        }
+    }
+    on_done: next
+    on_fail: fail
+
+    loop Build {
+        step generate_program {
+            let stage = Temp.dir(&#34;hudhud-compile-&#34;);
+            let app_file = stage.path + &#34;/app.js&#34;;
+
+            file.write(app_file, &#34;console.log([&#39;lexer&#39;, &#39;parser&#39;, &#39;vm&#39;].length);\n&#34;);
+            result.output = exec.output(&#34;node &#34; + app_file);
+            print(&#34;Compiled module count: &#34; + result.output);
+
+            gate build_gate {
+                when result.output.length == 2 -&gt; done
+                else -&gt; retry
+            }
+        }
+    }
+    on_done: next
+    on_fail: fail
+
+    loop UnitTest {
+        step run_generated_test {
+            let stage = Temp.dir(&#34;hudhud-unit-&#34;);
+            let test_file = stage.path + &#34;/unit.js&#34;;
+
+            file.write(
+                test_file,
+                &#34;const checks = [2 + 3 === 5, 3 * 3 === 9, 8 / 2 === 4];\nconsole.log(checks.filter(Boolean).length);\n&#34;
+            );
+            result.passed = exec.output(&#34;node &#34; + test_file);
+            print(&#34;Unit tests passed: &#34; + result.passed);
+
+            gate unit_gate {
+                when result.passed.length == 2 -&gt; done
+                else -&gt; retry
+            }
+        }
+    }
+    on_done: next
+    on_fail: fail
+
+    loop IntegrationTest {
+        step test_contract {
+            let stage = Temp.dir(&#34;hudhud-integration-&#34;);
+            let contract_file = stage.path + &#34;/contract.js&#34;;
+
+            file.write(
+                contract_file,
+                &#34;const response = {status: 200, body: {ready: true}};\nconsole.log(response.status === 200 &amp;&amp; response.body.ready);\n&#34;
+            );
+            result.output = exec.output(&#34;node &#34; + contract_file);
+            print(&#34;Integration contract: &#34; + result.output);
+
+            gate integration_gate {
+                when result.output.length == 5 -&gt; done
+                else -&gt; retry
+            }
+        }
+    }
+    on_done: next
+    on_fail: fail
+
+    loop Review {
+        step patch_and_show_diff {
+            let stage = Temp.dir(&#34;hudhud-diff-&#34;);
+            let app_file = stage.path + &#34;/app.js&#34;;
+
+            file.write(app_file, &#34;const timeout = 5;\nconsole.log(timeout);\n&#34;);
+            exec.output(&#34;git -C &#34; + stage.path + &#34; init -q&#34;);
+            exec.output(&#34;git -C &#34; + stage.path + &#34; add app.js&#34;);
+            let patch_result = fs.patch_apply(
+                app_file,
+                &#34;const timeout = 5;&#34;,
+                &#34;const timeout = 30;&#34;
+            );
+            result.diff = exec.output(
+                &#34;git -C &#34; + stage.path + &#34; diff --no-ext-diff -- app.js&#34;
+            );
+            print(result.diff);
+
+            gate review_gate {
+                when patch_result.replacements == 1
+                    &amp;&amp; result.diff.length &gt; 0 -&gt; done
+                else -&gt; fail
+            }
+        }
+    }
+    on_done: next
+    on_fail: fail
+
+    loop Deploy {
+        step deploy_and_probe {
+            let release = Temp.dir(&#34;hudhud-deploy-&#34;);
+            let artifact = release.path + &#34;/app.js&#34;;
+
+            file.write(artifact, &#34;console.log(&#39;healthy&#39;);\n&#34;);
+            result.health = exec.output(&#34;node &#34; + artifact);
+            print(&#34;Deployed artifact: &#34; + artifact);
+            print(&#34;Health probe: &#34; + result.health);
+
+            gate deploy_gate {
+                when file.exists(artifact)
+                    &amp;&amp; result.health.length == 8 -&gt; done
+                else -&gt; fail
+            }
+        }
+    }
+    on_done: done
+    on_fail: fail
+}
+
+run chain DeliveryPipeline;
+</code></pre>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2 text-center">Plan, build, unit, integration, review, and deploy stages produce real files, executions, patches, and diffs.</p>
+                    </div>
+                
+                    <div class="paradigm-panel hidden" data-paradigm="multichain">
+                        <div class="terminal-window text-left">
+                            <div class="terminal-header"><div class="flex items-center gap-1.5"><span class="terminal-dot bg-red-500"></span><span class="terminal-dot bg-yellow-500"></span><span class="terminal-dot bg-green-500"></span><span class="ml-2 text-xs text-slate-500 font-mono">multichain.hudhud</span></div></div>
+                            <pre class="p-3 text-xs leading-relaxed max-h-[32rem] overflow-auto"><code class="language-hudhudscript">// MULTICHAIN SOFTWARE FACTORY
+// Discovery, Build, and Git Release have independent failure boundaries.
+
+chain DiscoveryChain {
+    loop Requirements {
+        step write_requirements {
+            let stage = Temp.dir(&#34;hudhud-discovery-&#34;);
+            let requirements_file = stage.path + &#34;/requirements.json&#34;;
+            let requirements = Web.json({
+                stories: [&#34;auth&#34;, &#34;billing&#34;, &#34;audit&#34;],
+                acceptance: &#34;all tests green&#34;
+            });
+
+            file.write(requirements_file, requirements.body);
+            result.bytes = file.read(requirements_file).length;
+            print(&#34;Requirements: &#34; + requirements_file);
+
+            gate requirements_gate {
+                when result.bytes &gt; 0 -&gt; done
+                else -&gt; retry
+            }
+        }
+    }
+    on_done: next
+    on_fail: fail
+
+    loop Architecture {
+        step write_threat_model {
+            let stage = Temp.dir(&#34;hudhud-architecture-&#34;);
+            let threat_file = stage.path + &#34;/threats.md&#34;;
+            let threats = &#34;- secret leak\n- path traversal\n- process spawn\n&#34;;
+
+            file.write(threat_file, threats);
+            result.bytes = file.read(threat_file).length;
+            print(&#34;Threat model bytes: &#34; + result.bytes);
+
+            gate architecture_gate {
+                when result.bytes == threats.length -&gt; done
+                else -&gt; fail
+            }
+        }
+    }
+    on_done: done
+    on_fail: fail
+}
+
+chain BuildChain {
+    loop Implementation {
+        step generate_patch_and_diff {
+            let stage = Temp.dir(&#34;hudhud-implementation-&#34;);
+            let app_file = stage.path + &#34;/app.js&#34;;
+
+            file.write(app_file, &#34;console.log(&#39;not-ready&#39;);\n&#34;);
+            exec.output(&#34;git -C &#34; + stage.path + &#34; init -q&#34;);
+            exec.output(&#34;git -C &#34; + stage.path + &#34; add app.js&#34;);
+            let patch_result = fs.patch_apply(
+                app_file,
+                &#34;&#39;not-ready&#39;&#34;,
+                &#34;&#39;ready&#39;&#34;
+            );
+            result.diff = exec.output(
+                &#34;git -C &#34; + stage.path + &#34; diff --no-ext-diff -- app.js&#34;
+            );
+            result.output = exec.output(&#34;node &#34; + app_file);
+            print(result.diff);
+
+            gate implementation_gate {
+                when patch_result.replacements == 1
+                    &amp;&amp; result.output.length == 6
+                    &amp;&amp; result.diff.length &gt; 0 -&gt; done
+                else -&gt; retry
+            }
+        }
+    }
+    on_done: next
+    on_fail: fail
+
+    loop Integration {
+        step run_integration_suite {
+            let stage = Temp.dir(&#34;hudhud-build-integration-&#34;);
+            let suite_file = stage.path + &#34;/integration.js&#34;;
+
+            file.write(
+                suite_file,
+                &#34;const services = [&#39;database&#39;, &#39;queue&#39;, &#39;http&#39;];\nconsole.log(services.length);\n&#34;
+            );
+            result.passed = exec.output(&#34;node &#34; + suite_file);
+            print(&#34;Integration checks passed: &#34; + result.passed);
+
+            gate integration_gate {
+                when result.passed.length == 2 -&gt; done
+                else -&gt; retry
+            }
+        }
+    }
+    on_done: done
+    on_fail: fail
+}
+
+chain ReleaseChain {
+    loop Approval {
+        step count_votes {
+            let votes = [1, 1, 0, 1];
+            let approvals = votes[0] + votes[1] + votes[2] + votes[3];
+
+            result.approvals = approvals;
+            result.total = votes.length;
+            print(&#34;Release approval: &#34; + result.approvals + &#34;/&#34; + result.total);
+
+            gate approval_gate {
+                when result.approvals &gt;= 3 -&gt; done
+                else -&gt; fail
+            }
+        }
+    }
+    on_done: next
+    on_fail: fail
+
+    loop Deploy {
+        step push_to_git_remote {
+            let work = Temp.dir(&#34;hudhud-release-work-&#34;);
+            let remote = Temp.dir(&#34;hudhud-release-remote-&#34;);
+            let artifact = work.path + &#34;/app.js&#34;;
+
+            exec.output(&#34;git -C &#34; + work.path + &#34; init -q -b main&#34;);
+            exec.output(&#34;git -C &#34; + work.path + &#34; config user.name HudHudRelease&#34;);
+            exec.output(
+                &#34;git -C &#34; + work.path + &#34; config user.email release@hudhud.local&#34;
+            );
+            file.write(artifact, &#34;console.log(&#39;release-0.7.358&#39;);\n&#34;);
+            exec.output(&#34;git -C &#34; + work.path + &#34; add app.js&#34;);
+            exec.output(
+                &#34;git -c core.hooksPath=/dev/null -C &#34;
+                + work.path
+                + &#34; commit -qm release-0.7.358&#34;
+            );
+            exec.output(&#34;git init --bare -q &#34; + remote.path);
+            exec.output(
+                &#34;git -C &#34;
+                + work.path
+                + &#34; remote add deploy &#34;
+                + remote.path
+            );
+            exec.output(&#34;git -C &#34; + work.path + &#34; push -q deploy main&#34;);
+
+            let local_revision = exec.output(
+                &#34;git -C &#34; + work.path + &#34; rev-parse HEAD&#34;
+            );
+            let deployed_revision = exec.output(
+                &#34;git --git-dir=&#34;
+                + remote.path
+                + &#34; rev-parse refs/heads/main&#34;
+            );
+            result.deployed = local_revision == deployed_revision;
+            result.revision = local_revision.substring(0, 12);
+            print(&#34;Git deployed revision: &#34; + result.revision);
+
+            gate deploy_gate {
+                when result.deployed -&gt; done
+                else -&gt; fail
+            }
+        }
+    }
+    on_done: done
+    on_fail: fail
+}
+
+run chain DiscoveryChain;
+run chain BuildChain;
+run chain ReleaseChain;
+</code></pre>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2 text-center">Independent Discovery, Build, and Release chains end with a real commit pushed to a temporary Git remote.</p>
+                    </div>
+                
+                    <div class="paradigm-panel hidden" data-paradigm="governance">
+                        <div class="terminal-window text-left">
+                            <div class="terminal-header"><div class="flex items-center gap-1.5"><span class="terminal-dot bg-red-500"></span><span class="terminal-dot bg-yellow-500"></span><span class="terminal-dot bg-green-500"></span><span class="ml-2 text-xs text-slate-500 font-mono">governance.hudhud</span></div></div>
+                            <pre class="p-3 text-xs leading-relaxed max-h-[32rem] overflow-auto"><code class="language-hudhudscript">// GOVERNANCE AS LANGUAGE PRIMITIVES
+// Constitution -&gt; laws -&gt; rules -&gt; subjects -&gt; council -&gt; swarm -&gt; community.
+
+law ProtectSecrets {
+    description: &#34;Credentials and private data must never enter output&#34;;
+    enforcement: mandatory;
+    rules: [&#34;redact-secrets&#34;, &#34;deny-credential-export&#34;];
+}
+
+law AuthorizeEffects {
+    description: &#34;Network, MCP, process, and publish actions require approval&#34;;
+    enforcement: mandatory;
+    rules: [&#34;capability-check&#34;, &#34;human-approval-for-publish&#34;];
+}
+
+law RequireEvidence {
+    description: &#34;A release decision must include test evidence&#34;;
+    enforcement: mandatory;
+    rules: [&#34;tests-pass&#34;, &#34;three-votes-required&#34;];
+}
+
+constitution TrustedDelivery {
+    description: &#34;Policy for governed software delivery&#34;;
+    laws: [
+        { name: &#34;ProtectSecrets&#34;, enforcement: &#34;mandatory&#34; },
+        { name: &#34;AuthorizeEffects&#34;, enforcement: &#34;mandatory&#34; },
+        { name: &#34;RequireEvidence&#34;, enforcement: &#34;mandatory&#34; }
+    ];
+}
+
+rule ReleaseQuorum {
+    description: &#34;At least three of four reviewers must approve&#34;;
+    threshold: 3;
+    action: &#34;release&#34;;
+}
+
+role Judge { can review, can vote }
+role Auditor { can inspect, can report }
+role Executor { can stage, can publish }
+
+subject LegalReviewer has Judge {
+    state vote: true;
+    on review(self, proposal) { self.vote = proposal != &#34;&#34;; }
+    on vote(self) { return self.vote; }
+}
+
+subject SecurityAuditor has Auditor {
+    state vote: true;
+    on inspect(self, evidence) { self.vote = evidence == &#34;tests-pass&#34;; }
+    on report(self) { return self.vote; }
+}
+
+subject ReleaseOperator has Executor {
+    state staged: false;
+    state published: false;
+    on stage(self) { self.staged = true; }
+    on publish(self) { self.published = self.staged; }
+}
+
+let council_members = [&#34;LegalReviewer&#34;, &#34;SecurityAuditor&#34;, &#34;ReleaseOperator&#34;, &#34;HumanOwner&#34;];
+let quorum_required = 3;
+let community_councils = [&#34;ReleaseCouncil&#34;];
+
+council ReleaseCouncil {
+    constitution: &#34;TrustedDelivery&#34;;
+    quorum: quorum_required;
+    members: council_members;
+    rules: [&#34;ReleaseQuorum&#34;, &#34;RequireEvidence&#34;];
+}
+
+swarm AuditSwarm {
+    agents: [&#34;LegalReviewer&#34;, &#34;SecurityAuditor&#34;];
+    strategy: &#34;parallel&#34;;
+}
+
+community DeliveryCommunity {
+    councils: community_councils;
+    members: council_members;
+}
+
+let votes = [true, true, true, false];
+let approvals = 0;
+let i = 0;
+
+while (i &lt; votes.length) {
+    if (votes[i]) {
+        approvals = approvals + 1;
+    }
+    i = i + 1;
+}
+
+let approved = approvals &gt;= quorum_required;
+
+print(&#34;Constitution: &#34; + TrustedDelivery.description);
+print(&#34;Laws: &#34; + TrustedDelivery.laws.length);
+print(&#34;Council members: &#34; + council_members.length);
+print(&#34;Council quorum: &#34; + quorum_required);
+print(&#34;Approvals: &#34; + approvals);
+print(&#34;Release approved:&#34;);
+print(approved);
+print(&#34;Audit strategy: &#34; + AuditSwarm.strategy);
+print(&#34;Community councils: &#34; + community_councils.length);
+print(&#34;Community members: &#34; + council_members.length);
+</code></pre>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2 text-center">Constitution, laws, rules, role-bearing subjects, council quorum, swarm and community.</p>
+                    </div>
+                
+                    <div class="paradigm-panel hidden" data-paradigm="tokenomics">
+                        <div class="terminal-window text-left">
+                            <div class="terminal-header"><div class="flex items-center gap-1.5"><span class="terminal-dot bg-red-500"></span><span class="terminal-dot bg-yellow-500"></span><span class="terminal-dot bg-green-500"></span><span class="ml-2 text-xs text-slate-500 font-mono">tokenomics.hudhud</span></div></div>
+                            <pre class="p-3 text-xs leading-relaxed max-h-[32rem] overflow-auto"><code class="language-hudhudscript">// TOKENOMICS
+// Cost-aware iteration using runtime session measurements.
+
+let initial_cost = tokenomics.session_cost();
+let budget_health = tokenomics.budget_health();
+let tasks = [&#34;validate&#34;, &#34;transform&#34;, &#34;export&#34;];
+let completed = 0;
+let i = 0;
+
+while (i &lt; tasks.length) {
+    let current_cost = tokenomics.session_cost();
+    if (current_cost &gt; 1.0) {
+        break;
+    }
+
+    completed = completed + 1;
+    i = i + 1;
+}
+
+let final_cost = tokenomics.session_cost();
+
+print(&#34;Initial cost: &#34; + initial_cost);
+print(&#34;Budget health: &#34; + budget_health);
+print(&#34;Tasks available: &#34; + tasks.length);
+print(&#34;Tasks completed: &#34; + completed);
+print(&#34;Final cost: &#34; + final_cost);
+</code></pre>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2 text-center">Tokenomics: session_cost(), budget_health(). Cost-aware autonomous loops with budget-threshold break.</p>
+                    </div>
+                
+                    <div class="paradigm-panel hidden" data-paradigm="mcp">
+                        <div class="terminal-window text-left">
+                            <div class="terminal-header"><div class="flex items-center gap-1.5"><span class="terminal-dot bg-red-500"></span><span class="terminal-dot bg-yellow-500"></span><span class="terminal-dot bg-green-500"></span><span class="ml-2 text-xs text-slate-500 font-mono">mcp.hudhud</span></div></div>
+                            <pre class="p-3 text-xs leading-relaxed max-h-[32rem] overflow-auto"><code class="language-hudhudscript">// MODEL CONTEXT PROTOCOL
+// The offline sample models the same typed server/tool manifest without
+// starting a process. Live `mcp` declarations require sandbox permission.
+
+let workspace = {
+    name: &#34;Workspace&#34;,
+    transport: &#34;stdio&#34;,
+    command: &#34;npx&#34;,
+    tools: [
+        { name: &#34;read_file&#34;, input: &#34;path:string&#34; },
+        { name: &#34;write_file&#34;, input: &#34;path:string,content:string&#34; }
+    ]
+};
+
+let issue_tracker = {
+    name: &#34;IssueTracker&#34;,
+    transport: &#34;sse&#34;,
+    url: &#34;http://127.0.0.1:8081/mcp&#34;,
+    tools: [
+        { name: &#34;get_issue&#34;, input: &#34;id:string&#34; }
+    ]
+};
+
+let servers = [workspace, issue_tracker];
+let tool_count = workspace.tools.length + issue_tracker.tools.length;
+
+agent Maintainer {
+    role: &#34;maintainer&#34;;
+    intent: &#34;Inspect source, implement a patch, and update its issue&#34;;
+}
+
+print(&#34;Servers: &#34; + servers.length);
+print(&#34;Tools: &#34; + tool_count);
+print(&#34;Workspace transport: &#34; + workspace.transport);
+print(&#34;Issue tracker transport: &#34; + issue_tracker.transport);
+print(&#34;Agent role: &#34; + Maintainer.role);
+
+// Live syntax, intentionally not executed by the public website:
+// mcp Workspace {
+//     transport: &#34;stdio&#34;;
+//     command: &#34;npx&#34;;
+//     tool read_file(path: string) { return path; }
+// }
+</code></pre>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2 text-center">Safe offline server and tool manifest; live declarations remain sandbox-gated.</p>
+                    </div>
+                
+                    <div class="paradigm-panel hidden" data-paradigm="web">
+                        <div class="terminal-window text-left">
+                            <div class="terminal-header"><div class="flex items-center gap-1.5"><span class="terminal-dot bg-red-500"></span><span class="terminal-dot bg-yellow-500"></span><span class="terminal-dot bg-green-500"></span><span class="ml-2 text-xs text-slate-500 font-mono">web.hudhud</span></div></div>
+                            <pre class="p-3 text-xs leading-relaxed max-h-[32rem] overflow-auto"><code class="language-hudhudscript">// WEB RUNTIME
+// Response builders and route matching without starting an infinite server loop.
+
+let html = Web.html(&#34;&lt;h1&gt;HudHudScript&lt;/h1&gt;&#34;, 200);
+let json = Web.json({ name: &#34;HudHud&#34;, active: true }, 200);
+
+print(&#34;HTML status: &#34; + html.status);
+print(&#34;JSON content type: &#34; + json.content_type);
+
+// Live mode:
+// let app = Web.serve({ host: &#34;127.0.0.1&#34;, port: 8080, reuse_port: true });
+// let request = Web.accept(app);
+// Web.respond(request, html);
+</code></pre>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2 text-center">Real HTML and JSON response builders without an infinite server loop.</p>
+                    </div>
+                
+                    <div class="paradigm-panel hidden" data-paradigm="tui">
+                        <div class="terminal-window text-left">
+                            <div class="terminal-header"><div class="flex items-center gap-1.5"><span class="terminal-dot bg-red-500"></span><span class="terminal-dot bg-yellow-500"></span><span class="terminal-dot bg-green-500"></span><span class="ml-2 text-xs text-slate-500 font-mono">tui.hudhud</span></div></div>
+                            <pre class="p-3 text-xs leading-relaxed max-h-[32rem] overflow-auto"><code class="language-hudhudscript">// TERMINAL UI
+// Uses ratatui on a real terminal and the same state model in headless runners.
+
+use tui;
+
+let active_agents = 4;
+let completed_tasks = 3;
+let total_tasks = 5;
+let progress = completed_tasks * 100 / total_tasks;
+let agents = [
+    &#34;planner: done&#34;,
+    &#34;builder: active&#34;,
+    &#34;reviewer: waiting&#34;,
+    &#34;judge: waiting&#34;
+];
+let interactive = Terminal.isatty();
+
+if (interactive) {
+    tui.init();
+    tui.block({
+        title: &#34;HudHudScript Agent Monitor&#34;,
+        borders: &#34;all&#34;,
+        area: { x: 0, y: 0, width: 48, height: 3 }
+    });
+    tui.paragraph({
+        text: &#34;Agents: &#34; + active_agents + &#34; | Tasks: &#34; + completed_tasks + &#34;/&#34; + total_tasks,
+        style: { fg: &#34;green&#34;, bold: 1 },
+        area: { x: 1, y: 1, width: 46, height: 1 }
+    });
+    tui.list({
+        items: agents,
+        area: { x: 0, y: 4, width: 48, height: 5 }
+    });
+    tui.gauge({
+        value: progress,
+        max: 100,
+        label: &#34;Pipeline Progress&#34;,
+        style: { fg: &#34;cyan&#34; },
+        area: { x: 0, y: 10, width: 48, height: 1 }
+    });
+    tui.draw();
+    let event = tui.poll_event(2000);
+    tui.restore();
+} else {
+    print(&#34;HudHudScript Agent Monitor&#34;);
+    print(&#34;Agents: &#34; + active_agents + &#34; | Tasks: &#34; + completed_tasks + &#34;/&#34; + total_tasks);
+    print(agents);
+}
+
+print(&#34;Completed tasks: &#34; + completed_tasks);
+print(&#34;Progress: &#34; + progress);
+</code></pre>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2 text-center">TTY-aware TUI: renders block, paragraph, list, and gauge widgets in a terminal; uses the same state model for safe headless output in web runners.</p>
+                    </div>
+                
+                    <div class="paradigm-panel hidden" data-paradigm="oop">
+                        <div class="terminal-window text-left">
+                            <div class="terminal-header"><div class="flex items-center gap-1.5"><span class="terminal-dot bg-red-500"></span><span class="terminal-dot bg-yellow-500"></span><span class="terminal-dot bg-green-500"></span><span class="ml-2 text-xs text-slate-500 font-mono">oop.hudhud</span></div></div>
+                            <pre class="p-3 text-xs leading-relaxed max-h-[32rem] overflow-auto"><code class="language-hudhudscript">// OBJECT-ORIENTED PROGRAMMING
+// Private/protected members, constructors, super, inheritance,
+// method overriding, traits, and fluent method chaining.
+
+trait Describable {
+    function describe();
+}
+
+class Account implements Describable {
+    private let balance = 0;
+    protected let owner = &#34;&#34;;
+
+    constructor(owner, opening_balance) {
+        this.owner = owner;
+        this.balance = opening_balance;
+    }
+
+    private normalize(amount) {
+        if (amount &lt; 0) {
+            return 0;
+        }
+        return amount;
+    }
+
+    protected apply_bonus(rate) {
+        this.balance = this.balance + (this.balance * rate);
+    }
+
+    public deposit(amount) {
+        let safe_amount = this.normalize(amount);
+        this.balance = this.balance + safe_amount;
+        return this;
+    }
+
+    public value() {
+        return this.balance;
+    }
+
+    public describe() {
+        return this.owner + &#34; account&#34;;
+    }
+}
+
+class SavingsAccount extends Account implements Describable {
+    constructor(owner, opening_balance) {
+        super(owner, opening_balance);
+    }
+
+    public grow(rate) {
+        this.apply_bonus(rate);
+        return this;
+    }
+
+    public describe() {
+        return &#34;Savings: &#34; + this.owner;
+    }
+}
+
+let account = new SavingsAccount(&#34;Ada&#34;, 100);
+account.deposit(50).grow(0.10);
+
+let final_balance = account.value();
+let label = account.describe();
+
+print(&#34;Description: &#34; + label);
+print(&#34;Balance: &#34; + final_balance);
+</code></pre>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2 text-center">Private and protected members, constructors, super, inheritance, traits, overriding and fluent chaining.</p>
+                    </div>
+                
+                    <div class="paradigm-panel hidden" data-paradigm="sop">
+                        <div class="terminal-window text-left">
+                            <div class="terminal-header"><div class="flex items-center gap-1.5"><span class="terminal-dot bg-red-500"></span><span class="terminal-dot bg-yellow-500"></span><span class="terminal-dot bg-green-500"></span><span class="ml-2 text-xs text-slate-500 font-mono">sop.hudhud</span></div></div>
+                            <pre class="p-3 text-xs leading-relaxed max-h-[32rem] overflow-auto"><code class="language-hudhudscript">// SUBJECT-ORIENTED PROGRAMMING
+// Fantasy combat composed from roles, subjects, a view, effects, and relations.
+
+role Fighter { can attack, can defend }
+role Caster { can cast, can channel }
+role Bearer { can wield, can resist }
+
+subject Knight has Fighter {
+    state health: 120;
+    state power: 25;
+
+    on attack(self) {
+        let amount = PhysicalDamage(self.power);
+        self.mark_hit(amount);
+        return amount;
+    }
+
+    on defend(self) {
+        self.health = self.health + 5;
+    }
+}
+
+subject KnightLog of Knight {
+    state hits: 0;
+    state damage_dealt: 0;
+
+    on mark_hit(self, amount) {
+        self.hits = self.hits + 1;
+        self.damage_dealt = self.damage_dealt + amount;
+    }
+}
+
+subject Mage has Caster {
+    state mana: 100;
+    state power: 40;
+
+    on cast(self) {
+        self.mana = self.mana - 15;
+        return MagicalDamage(self.power + 10);
+    }
+
+    on channel(self) {
+        self.mana = self.mana + 20;
+    }
+}
+
+subject RingBearer has Bearer {
+    state health: 90;
+    state resolve: 30;
+
+    on wield(self) {
+        self.resolve = self.resolve - 5;
+        return MagicalDamage(35);
+    }
+
+    on resist(self) {
+        self.resolve = self.resolve + 10;
+    }
+}
+
+subject Wraith has Fighter {
+    state health: 150;
+    state power: 20;
+
+    on attack(self) {
+        return PhysicalDamage(self.power);
+    }
+
+    on defend(self) {
+        self.health = self.health + 5;
+    }
+}
+
+effect on PhysicalDamage(amount) {
+    return amount;
+}
+
+effect on MagicalDamage(amount) {
+    return amount;
+}
+
+compose Knight {
+    on attack: combine [KnightLog]
+}
+
+relation Knight &lt;-&gt; RingBearer { loyalty: 90 }
+relation RingBearer &lt;-&gt; Wraith { hostility: 100 }
+
+let knight = spawn Knight;
+let mage = spawn Mage;
+let bearer = spawn RingBearer;
+let wraith = spawn Wraith;
+let fellowship = get_relation(knight, bearer);
+let enemy = get_relation(bearer, wraith);
+
+knight.attack();
+mage.cast();
+bearer.wield();
+wraith.attack();
+
+let knight_damage = knight.power;
+let mage_damage = mage.power + 10;
+let bearer_damage = 35;
+let wraith_damage = wraith.power;
+
+let wraith_remaining = wraith.health - knight_damage - mage_damage - bearer_damage;
+let bearer_remaining = bearer.health - wraith_damage;
+
+print(&#34;Knight hits: &#34; + knight.hits);
+print(&#34;Knight damage: &#34; + knight.damage_dealt);
+print(&#34;Mage mana: &#34; + mage.mana);
+print(&#34;Bearer health: &#34; + bearer_remaining);
+print(&#34;Bearer resolve: &#34; + bearer.resolve);
+print(&#34;Loyalty: &#34; + fellowship.loyalty);
+print(&#34;Hostility: &#34; + enemy.hostility);
+print(&#34;Wraith health: &#34; + wraith_remaining);
+</code></pre>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2 text-center">SOP: roles, subjects, view composition, relations and stateful fantasy combat.</p>
+                    </div>
+                
+                    <!-- Visual (special: drag-drop) -->
+                    <div class="paradigm-panel hidden" data-paradigm="visual">
+                        <div class="terminal-window text-left" style="overflow:hidden">
+                            <div class="terminal-header"><div class="flex items-center gap-1.5"><span class="terminal-dot bg-red-500"></span><span class="terminal-dot bg-yellow-500"></span><span class="terminal-dot bg-green-500"></span><span class="ml-2 text-xs text-slate-500 font-mono">Editor Visual</span></div></div>
+                            <div id="mini-ve-canvas" style="background:#1a1a2e;background-image:radial-gradient(circle,#2d3561 1px,transparent 1px);background-size:20px 20px;min-height:340px;position:relative;overflow:hidden;cursor:default;">
+                                <svg id="mini-ve-svg" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;overflow:visible"></svg>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2 text-center">Visual: Drag nodes to rearrange. provider → council → agent → tasks → tools. n8n-style.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Multi-Language Grid -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+    <div class="text-center mb-10">
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">Codifique na sua língua</h2>
+        <p class="text-lg text-slate-600 mb-6 h-7">
+            <span id="rotating-subtitle">O mesmo loop agêntico, 23 idiomas humanos. Escreva agentes, governança e automação na sua língua nativa.</span>
+        </p>
+        <div class="flex flex-wrap justify-center gap-3">
+            <a href="/multilingual" class="inline-flex items-center px-5 py-2.5 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition text-sm font-medium">Ver todos os 23 idiomas</a>
+            <a href="/docs/lang/en" class="inline-flex items-center px-5 py-2.5 bg-amber-500 text-slate-900 rounded-lg hover:bg-amber-400 transition text-sm font-medium">Exemplos Interativos</a>
+        </div>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </div>
+</div>
+
+<!-- All Paradigms Section -->
+<div class="bg-white py-16 lg:py-20 border-t border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14">
+            <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">Programming Paradigms</h2>
+            <p class="text-lg text-slate-600">HudHudScript uniquely combines agentic, functional, OOP, SOP, governance, and multi-agent paradigms</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            
+            
+            
+            <div class="feature-card bg-slate-50 rounded-lg p-7 border-l-4 border-l-amber-400">
+                <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center mb-4 font-bold text-lg"><span>🔄</span></div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Engenharia de loops agênticos</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Defina agentes com provedores e deixe-os iterar autonomamente. Loops alimentados por provedores que executam até os objetivos serem atingidos.</p>
+            </div>
+            
+            <div class="feature-card bg-slate-50 rounded-lg p-7 border-l-4 border-l-emerald-400">
+                <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4 font-bold text-lg"><span>🏛️</span></div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Governança em primeiro lugar</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Constituição, leis, conselhos e enxames incorporados na linguagem. Agentes operam dentro de limites governados.</p>
+            </div>
+            
+            <div class="feature-card bg-slate-50 rounded-lg p-7 border-l-4 border-l-blue-400">
+                <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4 font-bold text-lg"><span>OO</span></div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Orientado a Objetos</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">OOP completo: classes, herança, polimorfismo, encapsulamento. Objetos com métodos e propriedades em cada idioma.</p>
+            </div>
+            
+            <div class="feature-card bg-slate-50 rounded-lg p-7 border-l-4 border-l-purple-400">
+                <div class="w-10 h-10 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mb-4 font-bold text-lg"><span>SO</span></div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Orientado ao Sujeito</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Sujeitos, domínios e organização hierárquica de agentes. Primitivas SOP para arquiteturas de agentes complexas.Subjects, domains, and hierarchical agent organization with SOP primitives.</p>
+            </div>
+            
+            <div class="feature-card bg-slate-50 rounded-lg p-7 border-l-4 border-l-cyan-400">
+                <div class="w-10 h-10 rounded-lg bg-cyan-100 text-cyan-600 flex items-center justify-center mb-4 font-bold text-lg"><span>λ</span></div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Programação Funcional</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Funções de primeira classe, closures, imutabilidade e operações de ordem superior. Componha funções como dados.</p>
+            </div>
+            
+            <div class="feature-card bg-slate-50 rounded-lg p-7 border-l-4 border-l-rose-400">
+                <div class="w-10 h-10 rounded-lg bg-rose-100 text-rose-600 flex items-center justify-center mb-4 font-bold text-lg"><span>🪼</span></div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Multi-agente e enxame</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Coordene múltiplos agentes em enxames paralelos ou sequenciais. Comunidades, transmissões e mensagens entre agentes.Coordinate multiple agents in parallel or sequential swarms for distributed processing.</p>
+            </div>
+            
+            <div class="feature-card bg-slate-50 rounded-lg p-7 border-l-4 border-l-amber-400">
+                <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center mb-4 font-bold text-lg"><span>23</span></div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Multilíngue</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Escreva código em 23 idiomas humanos. O mesmo programa é executado de forma idêntica - árabe, japonês, turco, inglês e mais.</p>
+            </div>
+            
+            <div class="feature-card bg-slate-50 rounded-lg p-7 border-l-4 border-l-indigo-400">
+                <div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4 font-bold text-lg"><span>🔌</span></div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">MCP + provedor IA nativo</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">DeepSeek, OpenAI, Anthropic, Ollama. MCP conecta-se a mais de 90 serviços: PostgreSQL, Redis, Git, sistema de arquivos.</p>
+            </div>
+            
+            <div class="feature-card bg-slate-50 rounded-lg p-7 border-l-4 border-l-teal-400">
+                <div class="w-10 h-10 rounded-lg bg-teal-100 text-teal-600 flex items-center justify-center mb-4 font-bold text-lg"><span>🖥️</span></div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Web + TUI + assíncrono</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Módulo Web, widgets TUI (divisão, lista, medidor), async/await nativo, combinadores Promise, arquitetura orientada a eventos.</p>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<!-- Stats -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center max-w-3xl mx-auto">
+        <div><div class="text-4xl font-extrabold text-amber-500 mb-1">9</div><div class="text-sm text-slate-500 font-medium">Paradigmas</div></div>
+        <div><div class="text-4xl font-extrabold text-amber-500 mb-1">5+</div><div class="text-sm text-slate-500 font-medium">Providers</div></div>
+        <div><div class="text-4xl font-extrabold text-amber-500 mb-1">90+</div><div class="text-sm text-slate-500 font-medium">MCP Servers</div></div>
+        <div><div class="text-4xl font-extrabold text-amber-500 mb-1">23</div><div class="text-sm text-slate-500 font-medium">Idiomas</div></div>
+    </div>
+</div>
+
+<!-- CTA -->
+<div class="gradient-bg text-white py-16 lg:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl lg:text-4xl font-bold mb-4">Agentes autônomos</h2>
+        <p class="text-lg mb-8 text-slate-300">Define agents, set goals, establish councils — the loop does the rest. Multi-lingual, AI-native, governance-built-in.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            
+            <a href="/docs" class="inline-flex items-center justify-center px-8 py-3.5 text-base font-semibold rounded-lg border-2 border-slate-400 text-white hover:bg-white/10 transition">Ler Documentação</a>
+        </div>
+    </div>
+</div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <img src="/static/images/logo/hudhud-96.png" alt="HudHudScript" width="48" height="48" class="rounded-lg">
+                        <span class="text-lg font-bold text-white">HudHud<span class="text-amber-400">Script</span></span>
+                    </div>
+                    <p class="text-sm leading-relaxed">
+                        Linguagem de programação de agentes IA multilíngue com governança integrada.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-semibold text-slate-200 uppercase tracking-wider mb-4">Recursos</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/docs" class="hover:text-white transition">Documentação</a></li>
+                        <li><a href="/examples" class="hover:text-white transition">Exemplos</a></li>
+                        
+                        <li><a href="/tools" class="hover:text-white transition">Ferramentas</a></li>
+                        <li><a href="/paradigms" class="hover:text-white transition">Paradigmas</a></li>
+                        <li><a href="/blog/" class="hover:text-white transition">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-semibold text-slate-200 uppercase tracking-wider mb-4">Comunidade</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 shrink-0 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M22.957 7.54c-.7 4.13-3.29 7.1-7.1 7.1H9.28V2.15h6.5c4.07 0 6.91 3.08 7.18 5.39zM0 2.15h3.88v19.7H0V2.15z"/></svg><a href="https://www.patreon.com/cw/hudhudscript" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Patreon</a></li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 shrink-0 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg><a href="https://github.com/HudHudMind/hudhudscript" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">GitHub</a></li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 shrink-0 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg><a href="https://discord.gg/UxEJ5MfH" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Discord</a></li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 shrink-0 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><a href="https://x.com/hudhud_script" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Twitter / X</a></li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 shrink-0 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><a href="https://www.linkedin.com/groups/27050016/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">LinkedIn</a></li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 shrink-0 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><a href="https://www.youtube.com/@HudHudScripting" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">YouTube</a></li>
+                        <li><a href="/contributors" class="hover:text-white transition">Contribuidores</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-semibold text-slate-200 uppercase tracking-wider mb-4">Sobre</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/about/language" class="hover:text-white transition">Sobre a Linguagem</a></li>
+                        <li><a href="/download" class="hover:text-white transition">Baixar</a></li>
+                        <li><a href="mailto:info@hudhudscript.com" class="hover:text-white transition">info@hudhudscript.com</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 mt-10 pt-6 text-center text-sm text-slate-500">
+                <p>&copy; 2026 HudHud Mind. Todos os direitos reservados.</p>
+                <p class="mt-1 text-slate-600">website v0.0.99 &middot; hudhud v0.8.244</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Prism.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="/static/js/prism-hudhudscript.js"></script>
+
+    <script nonce="z3MvJonTilJMe3nGfLBIzc-8Sg3sgiyfDMb1XttdS7c">
+        window.SITE_LANGUAGE = 'pt';
+        window.CSRF_TOKEN = '199f74eb80fbdfce2ec10b850ad095be7719a45de5875bf8799f3c16cdc82fd0';
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Custom language dropdown
+        document.querySelectorAll('[data-lang-selector]').forEach(function(dropdown) {
+            const btn = dropdown.querySelector('.lang-dropdown-btn');
+            const menu = dropdown.querySelector('.lang-dropdown-menu');
+            
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                menu.classList.toggle('hidden');
+            });
+            
+            menu.querySelectorAll('.lang-dropdown-item').forEach(function(item) {
+                item.addEventListener('click', function() {
+                    changeLanguage(this.dataset.lang);
+                });
+            });
+        });
+        
+        document.addEventListener('click', function() {
+            document.querySelectorAll('.lang-dropdown-menu').forEach(function(m) {
+                m.classList.add('hidden');
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('pre code:not([class*="language-"])').forEach(function(block) {
+                block.classList.add('language-hudhudscript');
+            });
+            Prism.highlightAll();
+        });
+
+        function changeLanguage(lang) {
+            // Set cookie so language persists across refreshes
+            document.cookie = 'lang=' + lang + ';path=/;max-age=31536000;SameSite=Lax';
+            if (typeof changeAllExamplesLanguage === 'function') {
+                changeAllExamplesLanguage(lang);
+            }
+            const url = new URL(window.location.href);
+            url.searchParams.set('lang', lang);
+            window.location.href = url.toString();
+        }
+    </script>
+
+    <script src="/static/js/hudhud-code-runner.js"></script>
+
+    
+<script nonce="z3MvJonTilJMe3nGfLBIzc-8Sg3sgiyfDMb1XttdS7c">
+// Paradigm tab switching
+document.addEventListener('click', function(e) {
+    const tab = e.target.closest('.paradigm-tab');
+    if (!tab) return;
+    const paradigm = tab.dataset.paradigm;
+    document.querySelectorAll('.paradigm-tab').forEach(t => {
+        t.classList.remove('bg-amber-500', 'text-slate-900');
+        t.classList.add('text-slate-300', 'hover:bg-white/10');
+    });
+    tab.classList.add('bg-amber-500', 'text-slate-900');
+    tab.classList.remove('text-slate-300', 'hover:bg-white/10');
+    document.querySelectorAll('.paradigm-panel').forEach(p => {
+        if (p.dataset.paradigm === paradigm) { p.classList.remove('hidden'); if (paradigm === 'visual') initMiniVE(); }
+        else { p.classList.add('hidden'); }
+    });
+});
+
+// Mini Visual Editor (drag-drop)
+let miniVEInitialized = false;
+function initMiniVE() {
+    if (miniVEInitialized) return;
+    miniVEInitialized = true;
+    const canvas = document.getElementById('mini-ve-canvas');
+    const svg = document.getElementById('mini-ve-svg');
+    if (!canvas || !svg) return;
+
+    const nodeDefs = [
+        {id:'p1',type:'provider',icon:'🔌',name:'DeepSeek',x:25,y:10,color:'#ea580c',w:150,f:[{k:'type',v:'deepseek'}]},
+        {id:'p2',type:'provider',icon:'🔌',name:'OpenAI',x:250,y:10,color:'#ea580c',w:140,f:[{k:'type',v:'openai'}]},
+        {id:'c1',type:'council',icon:'🏛️',name:'Oversight',x:110,y:105,color:'#dc2626',w:200,f:[{k:'members',v:'3'},{k:'strategy',v:'majority'}]},
+        {id:'a1',type:'agent',icon:'🤖',name:'Automation',x:125,y:200,color:'#7c3aed',w:180,f:[{k:'model',v:'deepseek-chat'}]},
+        {id:'t1',type:'task',icon:'📋',name:'analyze',x:10,y:295,color:'#2563eb',w:120,f:[]},
+        {id:'t2',type:'task',icon:'📋',name:'build',x:150,y:295,color:'#2563eb',w:110,f:[]},
+        {id:'t3',type:'task',icon:'📋',name:'deploy',x:280,y:295,color:'#2563eb',w:110,f:[]},
+        {id:'l1',type:'tool',icon:'🔧',name:'compiler',x:55,y:380,color:'#16a34a',w:130,f:[]},
+        {id:'l2',type:'tool',icon:'🔧',name:'database',x:220,y:380,color:'#16a34a',w:130,f:[]},
+    ];
+    const edges = [
+        {from:'p1',to:'c1'},{from:'p2',to:'c1'},{from:'c1',to:'a1'},
+        {from:'a1',to:'t1'},{from:'a1',to:'t2'},{from:'a1',to:'t3'},
+        {from:'t1',to:'l1'},{from:'t2',to:'l1'},{from:'t2',to:'l2'},{from:'t3',to:'l2'},
+    ];
+    const nodes = {};
+
+    function createNode(def) {
+        const el = document.createElement('div');
+        el.id = 'mn-'+def.id;
+        el.style.cssText = 'position:absolute;left:'+def.x+'px;top:'+def.y+'px;min-width:'+def.w+'px;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.5);border:1px solid '+def.color+'66;cursor:grab;z-index:2;user-select:none;';
+        const hdr = def.type==='provider'?'#7c2d12,#ea580c':def.type==='council'?'#7f1d1d,#dc2626':def.type==='agent'?'#5b21b6,#7c3aed':def.type==='task'?'#1e3a8a,#2563eb':'#14532d,#16a34a';
+        let fhtml = def.f.map(f=>'<div style="display:flex;align-items:center;padding:1px 8px;gap:4px"><span style="font-size:8px;color:#64748b;min-width:42px">'+f.k+'</span><input value="'+f.v+'" readonly style="background:#1e293b;border:1px solid #334155;border-radius:3px;color:#e2e8f0;font-size:9px;padding:1px 4px;flex:1"></div>').join('');
+        el.innerHTML = '<div style="background:linear-gradient(135deg,'+hdr+');padding:5px 8px;border-radius:7px 7px 0 0;display:flex;align-items:center;gap:4px;font-size:10px;font-weight:700;color:#fff"><span>'+def.icon+'</span><span>'+def.type+'</span><span style="font-size:9px;opacity:.7;margin-left:auto">'+def.name+'</span></div><div class="mn-body" style="background:rgba(15,20,40,.95);border-radius:0 0 7px 7px;padding:3px 0">'+fhtml+'<div style="display:flex;align-items:center;padding:2px 8px 1px"><div style="width:8px;height:8px;border-radius:50%;background:'+def.color+';border:2px solid #fff;flex-shrink:0;margin-left:-4px"></div><div style="flex:1"></div><div style="width:8px;height:8px;border-radius:50%;background:#fff;border:2px solid '+def.color+';flex-shrink:0;margin-right:-4px"></div></div></div>';
+        canvas.appendChild(el);
+        nodes[def.id] = {el,x:def.x,y:def.y,w:def.w};
+        makeDraggable(el, def.id);
+    }
+
+    function makeDraggable(el, id) {
+        let dragging=false,ox,oy;
+        el.addEventListener('mousedown',function(e){
+            if(e.target.tagName==='INPUT')return;
+            dragging=true;
+            const r=canvas.getBoundingClientRect();
+            ox=e.clientX-r.left-nodes[id].x;
+            oy=e.clientY-r.top-nodes[id].y;
+            el.style.cursor='grabbing';el.style.zIndex=10;
+            e.preventDefault();
+        });
+        document.addEventListener('mousemove',function(e){
+            if(!dragging||!nodes[id])return;
+            const r=canvas.getBoundingClientRect();
+            nodes[id].x=e.clientX-r.left-ox;
+            nodes[id].y=e.clientY-r.top-oy;
+            nodes[id].x=Math.max(0,Math.min(r.width-nodes[id].w,nodes[id].x));
+            nodes[id].y=Math.max(0,Math.min(r.height-55,nodes[id].y));
+            el.style.left=nodes[id].x+'px';
+            el.style.top=nodes[id].y+'px';
+            drawEdges();
+        });
+        document.addEventListener('mouseup',function(){if(dragging){dragging=false;el.style.cursor='grab';el.style.zIndex=2;}});
+    }
+
+    function drawEdges() {
+        let html='';
+        edges.forEach(function(e){
+            const fn=nodes[e.from],tn=nodes[e.to];
+            if(!fn||!tn)return;
+            const x1=fn.x+fn.w/2,y1=fn.y+54,x2=tn.x+tn.w/2,y2=tn.y-2;
+            const mid=(y1+y2)/2;
+            const color=fn.el.style.borderColor||'#fff';
+            html+='<path d="M'+x1+','+y1+' C'+x1+','+mid+' '+x2+','+mid+' '+x2+','+y2+'" stroke="'+color+'" stroke-width="1.5" fill="none" opacity="0.5" stroke-dasharray="4,3"/>';
+            html+='<polygon points="'+x2+','+y2+' '+(x2-3)+','+(y2-5)+' '+(x2+3)+','+(y2-5)+'" fill="'+color+'" opacity="0.5"/>';
+        });
+        svg.innerHTML=html;
+    }
+
+    nodeDefs.forEach(createNode);
+    drawEdges();
+    let rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(drawEdges,50);});
+}
+
+if(document.querySelector('.paradigm-panel[data-paradigm="visual"]:not(.hidden)'))initMiniVE();
+
+// ── Rotating subtitle ────────────────────────────────────────────────────
+(function() {
+    var phrases = [
+        "O mesmo loop agêntico, 23 idiomas humanos. Escreva agentes, governança e automação na sua língua nativa.",
+        "Build multi-agent swarms that collaborate in real time",
+        "Create AI constitutions with laws, councils, and roles",
+        "Code in Turkish, Japanese, Arabic — 23+ human languages",
+        "Connect AI agents to databases, REST APIs, and MCP servers",
+        "Design subject-oriented programs with relations and observers",
+        "Build RAG pipelines with vector stores and semantic search",
+        "Create visual node graphs like Unreal Blueprints",
+        "Run AI tasks with OpenAI, Anthropic, and any provider",
+        "Define object-oriented classes with fields and methods",
+        "Chain data pipelines with the pipe operator",
+        "Orchestrate parallel and sequential execution flows",
+        "Use vector math and tensor operations for ML pipelines",
+        "Loop, branch, break and continue — full control flow",
+        "Store knowledge and recall it with AI-powered memory",
+    ];
+    var el = document.getElementById('rotating-subtitle');
+    if (!el) return;
+    var i = 0;
+    function rotate() {
+        el.style.opacity = '0';
+        el.style.transition = 'opacity 0.3s ease';
+        setTimeout(function() {
+            i = (i + 1) % phrases.length;
+            el.textContent = phrases[i];
+            el.style.opacity = '1';
+        }, 300);
+    }
+    setInterval(rotate, 3500);
+})();
+</script>
+
+
+    <!-- Static Site Enhancements -->
+    <style>
+        /* Check, Run, Compile butonlarını ve çıktı kutularını tamamen gizle */
+        .hudhud-btn-check,
+        .hudhud-btn-compile,
+        .hudhud-btn-run,
+        .hudhud-btn-run_compiled,
+        .hudhud-output,
+        button[data-action="execute"],
+        button[data-mode="check"],
+        button[data-mode="run"],
+        button[data-mode="compile"],
+        button[data-action="clear-output"],
+        button[data-action="test-requirements"],
+        button[data-action="start-interactive"],
+        button[data-action="test-samples"],
+        button[data-action="view-saved-results"],
+        #editor-output,
+        a[href*="/playground"],
+        a[href*="/visual-editor"],
+        a[href*="/admin"],
+        .code-run-button,
+        [data-action="run-code"],
+        .hudhud-run-btn,
+        .code-actions {
+            display: none !important;
+        }
+
+        /* Action Bar ve Copy butonunu koru ve şık hizala */
+        .hudhud-action-bar {
+            display: flex !important;
+            justify-content: flex-end !important;
+            padding: 0.375rem 0.5rem !important;
+            background: #f3f4f6 !important;
+            border-top: 1px solid #e5e7eb !important;
+        }
+
+        .hudhud-btn-copy {
+            display: inline-flex !important;
+            align-items: center !important;
+            background: #4b5563 !important;
+            color: #ffffff !important;
+            padding: 0.25rem 0.75rem !important;
+            border-radius: 0.375rem !important;
+            font-size: 0.75rem !important;
+            font-weight: 600 !important;
+            cursor: pointer !important;
+            transition: background 0.15s ease !important;
+        }
+        .hudhud-btn-copy:hover {
+            background: #374151 !important;
+        }
+
+        /* HudHud Orange Download Buttons */
+        .btn-hudhud-orange,
+        .bg-orange-500 {
+            background-color: #f97316 !important;
+            color: #ffffff !important;
+        }
+        .btn-hudhud-orange:hover,
+        .hover\:bg-orange-600:hover {
+            background-color: #ea580c !important;
+            color: #ffffff !important;
+        }
+        .text-orange-600 {
+            color: #ea580c !important;
+        }
+        .text-orange-700 {
+            color: #c2410c !important;
+        }
+        .bg-orange-50 {
+            background-color: #fff7ed !important;
+        }
+        .bg-orange-100 {
+            background-color: #ffedd5 !important;
+        }
+    </style>
+    <script src="/static/js/static-cache.js"></script>
+    <script>
+    (function() {
+        var currentLang = 'pt';
+        var enabledLangs = ['ar', 'ja', 'zh', 'hi', 'bn', 'bs', 'de', 'el', 'en', 'es', 'fa', 'fr', 'hr', 'id', 'it', 'ku', 'pl', 'pt', 'ru', 'sr', 'th', 'tr', 'vi'];
+
+        // MultiLangCodeViewer'ın statik önbellekten doğrudan kod çekmesini sağla
+        function patchMultiLangCodeViewer() {
+            if (window.MultiLangCodeViewer) {
+                var origLoad = window.MultiLangCodeViewer.prototype.loadCode;
+                window.MultiLangCodeViewer.prototype.loadCode = async function(lang) {
+                    var localized = typeof getLocalizedSampleName === 'function' ? getLocalizedSampleName(this.sampleName, lang) : this.sampleName;
+                    if (window.STATIC_SAMPLES_CACHE && window.STATIC_SAMPLES_CACHE[lang]) {
+                        var code = window.STATIC_SAMPLES_CACHE[lang][localized] || window.STATIC_SAMPLES_CACHE[lang][this.sampleName];
+                        if (code) {
+                            this.codeCache[lang] = code;
+                            this.displayCode(code);
+                            return;
+                        }
+                    }
+                    return origLoad.call(this, lang);
+                };
+            }
+        }
+
+        // Code Organization dosya gezginini statik bağla
+        function initStaticProjectFiles() {
+            if (!window.STATIC_PROJECT_FILES) return;
+            var activeLang = currentLang;
+            var dropdown = document.querySelector('[data-examples-lang-selector]');
+            if (dropdown && dropdown.dataset.current) {
+                activeLang = dropdown.dataset.current;
+            } else if (!window.STATIC_PROJECT_FILES[activeLang]) {
+                activeLang = 'tr';
+            }
+
+            if (window.STATIC_PROJECT_FILES && window.STATIC_PROJECT_FILES[activeLang]) {
+                window.FILE_CONTENTS = window.STATIC_PROJECT_FILES[activeLang];
+                window.CURRENT_PROJECT_LANG = activeLang;
+
+                if (typeof window.openFileInEditor === 'function') {
+                    window.openFileInEditor('main.hudhud');
+                }
+            }
+
+            window.loadProjectFiles = async function(l) {
+                var targetLang = l || activeLang;
+                if (window.STATIC_PROJECT_FILES && window.STATIC_PROJECT_FILES[targetLang]) {
+                    window.FILE_CONTENTS = window.STATIC_PROJECT_FILES[targetLang];
+                    window.CURRENT_PROJECT_LANG = targetLang;
+                    var curFile = window.currentEditorFile || 'main.hudhud';
+                    if (typeof window.openFileInEditor === 'function') {
+                        if (window.FILE_CONTENTS[curFile]) {
+                            window.openFileInEditor(curFile);
+                        } else if (window.FILE_CONTENTS['main.hudhud']) {
+                            window.openFileInEditor('main.hudhud');
+                        }
+                    }
+                    return;
+                }
+            };
+        }
+
+        patchMultiLangCodeViewer();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            patchMultiLangCodeViewer();
+            initStaticProjectFiles();
+
+            // Genel dil değiştirici yönlendirmesi
+            document.querySelectorAll('.lang-dropdown-item').forEach(function(item) {
+                item.onclick = function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    var targetLang = this.getAttribute('data-lang');
+                    if (!targetLang || targetLang === currentLang) return;
+                    
+                    var path = window.location.pathname;
+                    for (var i = 0; i < enabledLangs.length; i++) {
+                        var l = enabledLangs[i];
+                        if (l !== 'en' && path.startsWith('/' + l + '/')) {
+                            path = path.substring(l.length + 1);
+                            break;
+                        } else if (l !== 'en' && path === '/' + l) {
+                            path = '/';
+                            break;
+                        }
+                    }
+                    
+                    var newUrl = targetLang === 'en' ? path : ('/' + targetLang + (path.startsWith('/') ? path : '/' + path));
+                    window.location.href = newUrl;
+                };
+            });
+        });
+    })();
+    </script>
+    
+</body>
+</html>
