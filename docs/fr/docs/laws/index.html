@@ -368,9 +368,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
     <script src="/static/js/prism-hudhudscript.js"></script>
 
-    <script nonce="NpagkQu-KKe0yWkJKkv1dPEW5GFKvaa_dJTkiwgB5bM">
+    <script nonce="hOR5is88zPFXulavhvGuH2TbvlRAIkVdkC_17sv87NU">
         window.SITE_LANGUAGE = 'fr';
-        window.CSRF_TOKEN = '07bfdbfa2d5de17e91eba6ddb379b6ee2ba1254f80e19e614cd847c63efc30d5';
+        window.CSRF_TOKEN = '4b0333696d4caa2db30317dcbd74da463c2b958d8ef8935b4bbdfcc3442334cc';
 
         // Mobile menu toggle
         document.getElementById('mobile-menu-btn').addEventListener('click', function() {
@@ -407,16 +407,7 @@
             Prism.highlightAll();
         });
 
-        function changeLanguage(lang) {
-            // Set cookie so language persists across refreshes
-            document.cookie = 'lang=' + lang + ';path=/;max-age=31536000;SameSite=Lax';
-            if (typeof changeAllExamplesLanguage === 'function') {
-                changeAllExamplesLanguage(lang);
-            }
-            const url = new URL(window.location.href);
-            url.searchParams.set('lang', lang);
-            window.location.href = url.toString();
-        }
+        function changeLanguage(lang) { if (window.changeLanguage) window.changeLanguage(lang); }
     </script>
 
     <script src="/static/js/hudhud-code-runner.js"></script>
@@ -566,9 +557,10 @@
         // Statik sitede genel dil değiştirme fonksiyonu
         window.changeLanguage = function(targetLang) {
             if (!targetLang) return;
-            
-            localStorage.setItem('hudhudscript_language', targetLang);
-            document.cookie = 'lang=' + targetLang + ';path=/;max-age=31536000;SameSite=Lax';
+            try {
+                localStorage.setItem('hudhudscript_language', targetLang);
+                document.cookie = 'lang=' + targetLang + ';path=/;max-age=31536000;SameSite=Lax';
+            } catch(e) {}
 
             var path = window.location.pathname;
 
@@ -598,6 +590,21 @@
 
             window.location.href = newUrl;
         };
+
+        // Kök İngilizce sayfadayken daha önce Türkçe vb. seçilmişse otomatik ilgili dile yönlendir
+        if (currentLang === 'en' && (window.location.pathname === '/' || window.location.pathname === '/index.html')) {
+            var savedLang = null;
+            try {
+                savedLang = localStorage.getItem('hudhudscript_language');
+            } catch(e) {}
+            if (!savedLang) {
+                var match = document.cookie.match(/(?:^|;\s*)lang=([^;]+)/);
+                if (match) savedLang = match[1];
+            }
+            if (savedLang && savedLang !== 'en' && enabledLangs.indexOf(savedLang) !== -1) {
+                window.location.replace('/' + savedLang + '/');
+            }
+        }
 
         patchMultiLangCodeViewer();
 

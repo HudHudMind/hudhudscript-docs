@@ -30,7 +30,7 @@
 
     
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
-<style nonce="VMzpbh_zsETnCzvkag-Dk6ZpemGoh8_xSsNYfdHK678">
+<style nonce="98zf-eiKag_HBTCl8lPIVxNll3n7Yv-QfYz8d-4iI4M">
     .sample-card {
         background: white;
         border-radius: 0.5rem;
@@ -633,9 +633,9 @@ erstes;
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
     <script src="/static/js/prism-hudhudscript.js"></script>
 
-    <script nonce="VMzpbh_zsETnCzvkag-Dk6ZpemGoh8_xSsNYfdHK678">
+    <script nonce="98zf-eiKag_HBTCl8lPIVxNll3n7Yv-QfYz8d-4iI4M">
         window.SITE_LANGUAGE = 'hi';
-        window.CSRF_TOKEN = '07bfdbfa2d5de17e91eba6ddb379b6ee2ba1254f80e19e614cd847c63efc30d5';
+        window.CSRF_TOKEN = '4b0333696d4caa2db30317dcbd74da463c2b958d8ef8935b4bbdfcc3442334cc';
 
         // Mobile menu toggle
         document.getElementById('mobile-menu-btn').addEventListener('click', function() {
@@ -672,22 +672,13 @@ erstes;
             Prism.highlightAll();
         });
 
-        function changeLanguage(lang) {
-            // Set cookie so language persists across refreshes
-            document.cookie = 'lang=' + lang + ';path=/;max-age=31536000;SameSite=Lax';
-            if (typeof changeAllExamplesLanguage === 'function') {
-                changeAllExamplesLanguage(lang);
-            }
-            const url = new URL(window.location.href);
-            url.searchParams.set('lang', lang);
-            window.location.href = url.toString();
-        }
+        function changeLanguage(lang) { if (window.changeLanguage) window.changeLanguage(lang); }
     </script>
 
     <script src="/static/js/hudhud-code-runner.js"></script>
 
     
-<script nonce="VMzpbh_zsETnCzvkag-Dk6ZpemGoh8_xSsNYfdHK678">
+<script nonce="98zf-eiKag_HBTCl8lPIVxNll3n7Yv-QfYz8d-4iI4M">
 // Smooth scroll to anchors
 document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
     anchor.addEventListener('click', function (e) {
@@ -844,9 +835,10 @@ document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
         // Statik sitede genel dil değiştirme fonksiyonu
         window.changeLanguage = function(targetLang) {
             if (!targetLang) return;
-            
-            localStorage.setItem('hudhudscript_language', targetLang);
-            document.cookie = 'lang=' + targetLang + ';path=/;max-age=31536000;SameSite=Lax';
+            try {
+                localStorage.setItem('hudhudscript_language', targetLang);
+                document.cookie = 'lang=' + targetLang + ';path=/;max-age=31536000;SameSite=Lax';
+            } catch(e) {}
 
             var path = window.location.pathname;
 
@@ -876,6 +868,21 @@ document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
 
             window.location.href = newUrl;
         };
+
+        // Kök İngilizce sayfadayken daha önce Türkçe vb. seçilmişse otomatik ilgili dile yönlendir
+        if (currentLang === 'en' && (window.location.pathname === '/' || window.location.pathname === '/index.html')) {
+            var savedLang = null;
+            try {
+                savedLang = localStorage.getItem('hudhudscript_language');
+            } catch(e) {}
+            if (!savedLang) {
+                var match = document.cookie.match(/(?:^|;\s*)lang=([^;]+)/);
+                if (match) savedLang = match[1];
+            }
+            if (savedLang && savedLang !== 'en' && enabledLangs.indexOf(savedLang) !== -1) {
+                window.location.replace('/' + savedLang + '/');
+            }
+        }
 
         patchMultiLangCodeViewer();
 
