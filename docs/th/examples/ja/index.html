@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ตัวอย่าง - HudHudScript</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/static/images/logo/hudhud-32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="/static/images/logo/hudhud-96.png">
     <link rel="apple-touch-icon" sizes="256x256" href="/static/images/logo/hudhud-256.png">
 
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LN9PNJQ2YN"></script>
-    <script nonce="ly-P_vP23qKxks4Cr6Rob1VoDFgJgo012eXT8EYxlk0">
+    <script nonce="-75uKG6F1Auz7T62KVJgHqcDquw6HjLSI5zy3poFL3Y">
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -1339,9 +1341,9 @@ yaz(result);</code></pre>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
     <script src="/static/js/prism-hudhudscript.js"></script>
 
-    <script nonce="ly-P_vP23qKxks4Cr6Rob1VoDFgJgo012eXT8EYxlk0">
+    <script nonce="-75uKG6F1Auz7T62KVJgHqcDquw6HjLSI5zy3poFL3Y">
         window.SITE_LANGUAGE = 'th';
-        window.CSRF_TOKEN = 'f19028a7dd75dc72acdd0d1e9984750557f87032a842612d44bae846e1e253c0';
+        window.CSRF_TOKEN = '4486091cca08fba85e7e434f7e4d80cc4d9abc699083fa628fa02eeb15e47c77';
 
         // Mobile menu toggle
         document.getElementById('mobile-menu-btn').addEventListener('click', function() {
@@ -1386,7 +1388,7 @@ yaz(result);</code></pre>
     
 <script src="/static/js/lazy-examples.js?v=1.0"></script>
 <script src="/static/js/multilang-code-viewer.js?v=1.0"></script>
-<script nonce="ly-P_vP23qKxks4Cr6Rob1VoDFgJgo012eXT8EYxlk0">
+<script nonce="-75uKG6F1Auz7T62KVJgHqcDquw6HjLSI5zy3poFL3Y">
     // Set global language selector to match URL language or site language on page load
     document.addEventListener('DOMContentLoaded', function() {
         const dropdown = document.querySelector('[data-examples-lang-selector]');
@@ -3565,7 +3567,7 @@ yaz(result);</code></pre>
                     if (!href) return;
 
                     if (href.startsWith('#') || href.startsWith('http://') || href.startsWith('https://') || href.startsWith('mailto:') || href.startsWith('javascript:')) return;
-                    if (href.startsWith('/static/') || href.startsWith('/api/')) return;
+                    if (href.startsWith('/static/') || href.startsWith('/api/') || href.startsWith('/favicon.ico') || href.startsWith('/bookmark')) return;
 
                     if (href === '/' || href === '') {
                         e.preventDefault();
